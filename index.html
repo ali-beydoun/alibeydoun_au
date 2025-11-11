@@ -13,6 +13,13 @@
     <!-- Calendar Overview -->
     <div id="calendar-view" class="view active">
         <header class="app-header">
+            <button class="info-button" onclick="showQuickReference()" title="Trip Info">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="12" y1="16" x2="12" y2="12"/>
+                    <line x1="12" y1="8" x2="12.01" y2="8"/>
+                </svg>
+            </button>
             <h1>Tokyo Trip</h1>
             <p class="subtitle">November 26 - December 3, 2025</p>
         </header>
@@ -36,6 +43,24 @@
 
         <div class="day-content" id="day-content">
             <!-- Content will be populated by JavaScript -->
+        </div>
+    </div>
+
+    <!-- Activity Detail Modal -->
+    <div id="activity-modal" class="modal">
+        <div class="modal-backdrop" onclick="closeActivityModal()"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="modal-close" onclick="closeActivityModal()">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M18 6L6 18M6 6l12 12"/>
+                    </svg>
+                </button>
+                <h3 id="modal-title"></h3>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <!-- Activity details will be populated here -->
+            </div>
         </div>
     </div>
 

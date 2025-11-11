@@ -1,3 +1,16 @@
+// Key Trip Info (Quick Reference)
+const tripInfo = {
+    hotel: {
+        name: 'Hotel Keihan Tsukiji Ginza Grande',
+        address: '3-5-4, Tsukiji, Chuo-ku 104-0045 Tokyo Japan',
+        location: 'Tsukiji, Tokyo'
+    },
+    flights: [
+        { number: 'QF59', route: 'Sydney → Tokyo', date: 'Nov 26', time: '12:00 - 20:00' },
+        { number: 'QF26', route: 'Tokyo → Sydney', date: 'Dec 3', time: '06:55 - 18:50' }
+    ]
+};
+
 // Trip Data
 const tripData = [
     {
@@ -12,11 +25,40 @@ const tripData = [
             route: 'Sydney → Tokyo',
             departure: '12:00',
             arrival: '20:00',
-            airport: 'Haneda Airport'
+            airport: 'Haneda Airport (HND)'
         },
-        morning: [],
+        morning: [
+            {
+                time: '08:30',
+                title: 'Arrive at Sydney Airport',
+                description: 'Check-in for QF59 flight to Tokyo',
+                details: {
+                    location: 'Sydney International Airport',
+                    terminal: 'International Terminal',
+                    tips: 'Arrive early for international check-in and security'
+                }
+            }
+        ],
         afternoon: [],
-        evening: []
+        evening: [
+            {
+                time: '20:00',
+                title: 'Airport Transfer - Klook',
+                description: 'Pick-up at Haneda Airport',
+                location: 'Tokyo Haneda International Airport',
+                details: {
+                    service: 'Comfort 7 seater',
+                    passengers: '2 Passenger(s)',
+                    pickup: 'Tokyo Haneda International Airport (HND)',
+                    dropoff: 'Hotel Keihan Tsukiji Ginza Grande',
+                    dropoffAddress: '3-5-4, Tsukiji, Chuo-ku 104-0045 Tokyo Japan',
+                    bookingRef: 'AUD 135.08',
+                    status: 'Booking confirmed',
+                    pickupTime: 'Nov 26, 2025, 8:00 PM (Local time)',
+                    note: 'Driver will meet you at arrivals'
+                }
+            }
+        ]
     },
     {
         id: 2,
@@ -188,17 +230,25 @@ function renderDayDetail(dayId) {
         if (section.activities.length > 0) {
             html += `<div class="time-section">
                 <h3 class="section-header">${section.title}</h3>
-                ${section.activities.map(activity => `
-                    <div class="activity-card">
+                ${section.activities.map((activity, index) => {
+                    const activityId = `${dayId}-${section.title.toLowerCase()}-${index}`;
+                    const hasDetails = activity.details && Object.keys(activity.details).length > 0;
+                    const cardClass = hasDetails ? 'activity-card clickable' : 'activity-card';
+                    const onClick = hasDetails ? `onclick="showActivityDetail(${dayId}, '${section.title.toLowerCase()}', ${index})"` : '';
+
+                    return `
+                    <div class="${cardClass}" ${onClick}>
                         <div class="activity-header">
                             ${activity.time ? `<span class="activity-time">${activity.time}</span>` : ''}
                         </div>
                         <div class="activity-title">${activity.title}</div>
                         ${activity.description ? `<div class="activity-description">${activity.description}</div>` : ''}
-                        ${activity.location ? `
+                        ${hasDetails ? `<div class="tap-hint">Tap for details</div>` : ''}
+                        ${activity.location && !hasDetails ? `
                             <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(activity.location)}"
                                target="_blank"
-                               class="map-link">
+                               class="map-link"
+                               onclick="event.stopPropagation()">
                                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                                     <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
                                     <circle cx="12" cy="10" r="3"/>
@@ -207,7 +257,7 @@ function renderDayDetail(dayId) {
                             </a>
                         ` : ''}
                     </div>
-                `).join('')}
+                `}).join('')}
             </div>`;
         }
     });
@@ -248,6 +298,111 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 500);
     }
 });
+
+// Activity detail modal functions
+function showActivityDetail(dayId, section, activityIndex) {
+    const day = tripData.find(d => d.id === dayId);
+    if (!day) return;
+
+    const activity = day[section][activityIndex];
+    if (!activity || !activity.details) return;
+
+    document.getElementById('modal-title').textContent = activity.title;
+
+    let modalHTML = '';
+
+    // Render all detail fields
+    Object.entries(activity.details).forEach(([key, value]) => {
+        const label = key.charAt(0).toUpperCase() + key.slice(1).replace(/([A-Z])/g, ' $1');
+        modalHTML += `
+            <div class="detail-row">
+                <div class="detail-label">${label}</div>
+                <div class="detail-value">${value}</div>
+            </div>
+        `;
+    });
+
+    // Add action buttons if location exists
+    if (activity.location || activity.details.pickup || activity.details.dropoff) {
+        modalHTML += '<div class="detail-actions">';
+
+        if (activity.location) {
+            modalHTML += `
+                <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(activity.location)}"
+                   target="_blank"
+                   class="action-button">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                        <circle cx="12" cy="10" r="3"/>
+                    </svg>
+                    Open in Maps
+                </a>
+            `;
+        }
+
+        if (activity.details.dropoffAddress) {
+            modalHTML += `
+                <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(activity.details.dropoffAddress)}"
+                   target="_blank"
+                   class="action-button secondary">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                        <circle cx="12" cy="10" r="3"/>
+                    </svg>
+                    Navigate to Hotel
+                </a>
+            `;
+        }
+
+        modalHTML += '</div>';
+    }
+
+    document.getElementById('modal-body').innerHTML = modalHTML;
+    document.getElementById('activity-modal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeActivityModal() {
+    document.getElementById('activity-modal').classList.remove('active');
+    document.body.style.overflow = '';
+}
+
+// Quick reference info button
+function showQuickReference() {
+    document.getElementById('modal-title').textContent = 'Trip Info';
+
+    let modalHTML = `
+        <div class="detail-row">
+            <div class="detail-label">Hotel</div>
+            <div class="detail-value large">${tripInfo.hotel.name}</div>
+            <div class="detail-value">${tripInfo.hotel.address}</div>
+        </div>
+        <div class="detail-row">
+            <div class="detail-label">Flights</div>
+            ${tripInfo.flights.map(flight => `
+                <div class="detail-value">
+                    <strong>${flight.number}</strong> • ${flight.route}<br>
+                    ${flight.date} • ${flight.time}
+                </div>
+            `).join('<br>')}
+        </div>
+        <div class="detail-actions">
+            <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(tripInfo.hotel.address)}"
+               target="_blank"
+               class="action-button">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                    <circle cx="12" cy="10" r="3"/>
+                </svg>
+                Navigate to Hotel
+            </a>
+        </div>
+    `;
+
+    document.getElementById('modal-body').innerHTML = modalHTML;
+    document.getElementById('activity-modal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
 
 // Handle browser back button
 window.addEventListener('popstate', () => {

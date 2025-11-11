@@ -44,6 +44,7 @@ body {
     padding: 60px 20px 30px;
     text-align: center;
     border-bottom: 1px solid var(--ios-border);
+    position: relative;
 }
 
 .app-header h1 {
@@ -57,6 +58,27 @@ body {
     font-size: 17px;
     color: var(--ios-gray);
     font-weight: 400;
+}
+
+.info-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--ios-light-gray);
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--ios-blue);
+    transition: background 0.2s;
+}
+
+.info-button:active {
+    background: var(--ios-border);
 }
 
 /* Day Grid */
@@ -208,6 +230,23 @@ body {
     border: 1px solid rgba(0, 0, 0, 0.04);
 }
 
+.activity-card.clickable {
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.activity-card.clickable:active {
+    transform: scale(0.98);
+    box-shadow: var(--shadow-medium);
+}
+
+.tap-hint {
+    font-size: 13px;
+    color: var(--ios-blue);
+    margin-top: 8px;
+    font-weight: 500;
+}
+
 .activity-header {
     display: flex;
     justify-content: space-between;
@@ -316,6 +355,162 @@ body {
     }
 }
 
+/* Activity Detail Modal */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+}
+
+.modal.active {
+    display: flex;
+    align-items: flex-end;
+    animation: modalFadeIn 0.3s ease;
+}
+
+.modal-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+.modal-content {
+    position: relative;
+    background: var(--ios-background);
+    width: 100%;
+    max-height: 85vh;
+    border-radius: 16px 16px 0 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    animation: modalSlideUp 0.3s ease;
+}
+
+.modal-header {
+    padding: 20px;
+    border-bottom: 1px solid var(--ios-border);
+    position: relative;
+}
+
+.modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: var(--ios-light-gray);
+    border: none;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--ios-gray);
+    transition: background 0.2s;
+}
+
+.modal-close:active {
+    background: var(--ios-border);
+}
+
+.modal-header h3 {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: -0.3px;
+    padding-right: 40px;
+}
+
+.modal-body {
+    padding: 20px;
+    overflow-y: auto;
+    flex: 1;
+}
+
+.detail-row {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--ios-light-gray);
+}
+
+.detail-row:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.detail-label {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ios-gray);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+}
+
+.detail-value {
+    font-size: 17px;
+    color: #000;
+    line-height: 1.5;
+}
+
+.detail-value.large {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.detail-actions {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.action-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 14px 20px;
+    background: var(--ios-blue);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+.action-button:active {
+    opacity: 0.8;
+}
+
+.action-button.secondary {
+    background: var(--ios-light-gray);
+    color: var(--ios-blue);
+}
+
+.info-badge {
+    display: inline-block;
+    padding: 6px 12px;
+    background: rgba(0, 122, 255, 0.1);
+    color: var(--ios-blue);
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    margin-top: 4px;
+}
+
 /* Smooth transitions */
 .view {
     animation: fadeIn 0.3s ease;
@@ -327,5 +522,23 @@ body {
     }
     to {
         opacity: 1;
+    }
+}
+
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes modalSlideUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
     }
 }

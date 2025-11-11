@@ -1,0 +1,331 @@
+/* iOS Design System */
+:root {
+    --ios-blue: #007AFF;
+    --ios-gray: #8E8E93;
+    --ios-light-gray: #F2F2F7;
+    --ios-border: #C6C6C8;
+    --ios-background: #FFFFFF;
+    --ios-card-background: #FFFFFF;
+    --shadow-small: 0 1px 3px rgba(0, 0, 0, 0.1);
+    --shadow-medium: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --border-radius: 12px;
+    --border-radius-small: 8px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', sans-serif;
+    background: var(--ios-light-gray);
+    color: #000;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+}
+
+/* Views */
+.view {
+    display: none;
+    min-height: 100vh;
+}
+
+.view.active {
+    display: block;
+}
+
+/* App Header */
+.app-header {
+    background: var(--ios-background);
+    padding: 60px 20px 30px;
+    text-align: center;
+    border-bottom: 1px solid var(--ios-border);
+}
+
+.app-header h1 {
+    font-size: 34px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 4px;
+}
+
+.app-header .subtitle {
+    font-size: 17px;
+    color: var(--ios-gray);
+    font-weight: 400;
+}
+
+/* Day Grid */
+.day-grid {
+    padding: 16px;
+    display: grid;
+    gap: 12px;
+}
+
+.day-card {
+    background: var(--ios-card-background);
+    border-radius: var(--border-radius);
+    padding: 16px 20px;
+    box-shadow: var(--shadow-small);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.day-card:active {
+    transform: scale(0.98);
+    box-shadow: var(--shadow-medium);
+}
+
+.day-card.current {
+    border: 2px solid var(--ios-blue);
+    background: linear-gradient(135deg, rgba(0, 122, 255, 0.03) 0%, rgba(0, 122, 255, 0.01) 100%);
+}
+
+.day-card.travel {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+}
+
+.day-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.day-number {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--ios-gray);
+}
+
+.day-card.current .day-number {
+    color: var(--ios-blue);
+}
+
+.day-card.travel .day-number {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.day-badge {
+    font-size: 13px;
+    padding: 4px 10px;
+    background: var(--ios-light-gray);
+    border-radius: 12px;
+    font-weight: 500;
+}
+
+.day-card.current .day-badge {
+    background: var(--ios-blue);
+    color: white;
+}
+
+.day-card.travel .day-badge {
+    background: rgba(255, 255, 255, 0.25);
+    color: white;
+}
+
+.day-name {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    letter-spacing: -0.3px;
+}
+
+.day-date {
+    font-size: 15px;
+    color: var(--ios-gray);
+    font-weight: 400;
+}
+
+.day-card.travel .day-date {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* Detail Header */
+.detail-header {
+    background: var(--ios-background);
+    padding: 16px 20px;
+    border-bottom: 1px solid var(--ios-border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.back-button {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: none;
+    border: none;
+    color: var(--ios-blue);
+    font-size: 17px;
+    cursor: pointer;
+    padding: 8px 0;
+    margin-bottom: 12px;
+    font-weight: 400;
+}
+
+.back-button:active {
+    opacity: 0.5;
+}
+
+.detail-header h2 {
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+/* Day Content */
+.day-content {
+    padding: 20px 16px;
+}
+
+.time-section {
+    margin-bottom: 32px;
+}
+
+.section-header {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    padding: 0 4px;
+    letter-spacing: -0.3px;
+}
+
+.activity-card {
+    background: var(--ios-card-background);
+    border-radius: var(--border-radius);
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: var(--shadow-small);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+}
+
+.activity-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+}
+
+.activity-time {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--ios-blue);
+    background: rgba(0, 122, 255, 0.1);
+    padding: 4px 10px;
+    border-radius: 6px;
+    white-space: nowrap;
+}
+
+.activity-title {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 4px;
+    letter-spacing: -0.2px;
+}
+
+.activity-description {
+    font-size: 15px;
+    color: var(--ios-gray);
+    line-height: 1.4;
+    margin-bottom: 12px;
+}
+
+.map-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--ios-blue);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    padding: 8px 12px;
+    background: rgba(0, 122, 255, 0.08);
+    border-radius: var(--border-radius-small);
+    transition: background 0.2s;
+}
+
+.map-link:active {
+    background: rgba(0, 122, 255, 0.15);
+}
+
+.flight-info {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: var(--border-radius);
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: var(--shadow-medium);
+}
+
+.flight-header {
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    opacity: 0.9;
+    margin-bottom: 8px;
+}
+
+.flight-number {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.flight-details {
+    font-size: 15px;
+    line-height: 1.6;
+    opacity: 0.95;
+}
+
+.empty-section {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--ios-gray);
+    font-size: 15px;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+    .day-grid {
+        grid-template-columns: repeat(2, 1fr);
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 24px;
+    }
+
+    .day-content {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 32px 24px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .day-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Smooth transitions */
+.view {
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

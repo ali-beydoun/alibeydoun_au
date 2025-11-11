@@ -16,6 +16,65 @@ const tripInfo = {
     ]
 };
 
+// Weather data storage
+let weatherData = {};
+
+// Weather code to emoji mapping (Open-Meteo weather codes)
+const weatherEmoji = {
+    0: '☀️',   // Clear sky
+    1: '🌤️',  // Mainly clear
+    2: '⛅',  // Partly cloudy
+    3: '☁️',   // Overcast
+    45: '🌫️', // Fog
+    48: '🌫️', // Depositing rime fog
+    51: '🌦️', // Light drizzle
+    53: '🌧️', // Moderate drizzle
+    55: '🌧️', // Dense drizzle
+    61: '🌧️', // Slight rain
+    63: '🌧️', // Moderate rain
+    65: '🌧️', // Heavy rain
+    71: '🌨️', // Slight snow
+    73: '🌨️', // Moderate snow
+    75: '🌨️', // Heavy snow
+    77: '🌨️', // Snow grains
+    80: '🌦️', // Slight rain showers
+    81: '🌧️', // Moderate rain showers
+    82: '🌧️', // Violent rain showers
+    85: '🌨️', // Slight snow showers
+    86: '🌨️', // Heavy snow showers
+    95: '⛈️',  // Thunderstorm
+    96: '⛈️',  // Thunderstorm with slight hail
+    99: '⛈️'   // Thunderstorm with heavy hail
+};
+
+// Fetch weather data from Open-Meteo
+async function fetchWeather() {
+    try {
+        const response = await fetch(
+            'https://api.open-meteo.com/v1/forecast?' +
+            'latitude=35.6762&longitude=139.6503&' +
+            'daily=temperature_2m_max,temperature_2m_min,weathercode&' +
+            'timezone=Asia/Tokyo&' +
+            'start_date=2025-11-26&end_date=2025-12-03'
+        );
+        const data = await response.json();
+
+        // Store weather data indexed by date
+        data.daily.time.forEach((date, index) => {
+            weatherData[date] = {
+                max: Math.round(data.daily.temperature_2m_max[index]),
+                min: Math.round(data.daily.temperature_2m_min[index]),
+                code: data.daily.weathercode[index]
+            };
+        });
+
+        // Re-render calendar with weather data
+        renderCalendar();
+    } catch (error) {
+        console.log('Weather data unavailable');
+    }
+}
+
 // Trip Data
 const tripData = [
     {
@@ -204,6 +263,21 @@ function renderCalendar() {
         const isCurrentDay = day.id === currentDayId;
         const cardClass = `day-card ${day.type} ${isCurrentDay ? 'current' : ''}`;
 
+        // Get weather for this day (map day to date)
+        const dateMap = {
+            1: '2025-11-26', 2: '2025-11-27', 3: '2025-11-28',
+            4: '2025-11-29', 5: '2025-11-30', 6: '2025-12-01',
+            7: '2025-12-02', 8: '2025-12-03', 9: '2025-12-03'
+        };
+        const dayDate = dateMap[day.id];
+        const weather = weatherData[dayDate];
+        const weatherHTML = weather ? `
+            <div class="day-weather">
+                <span class="weather-icon">${weatherEmoji[weather.code] || '🌤️'}</span>
+                <span class="weather-temp">${weather.max}°/${weather.min}°C</span>
+            </div>
+        ` : '';
+
         return `
             <div class="${cardClass}" onclick="showDay(${day.id})">
                 <div class="day-card-header">
@@ -212,6 +286,7 @@ function renderCalendar() {
                 </div>
                 <div class="day-name">${day.dayOfWeek}</div>
                 <div class="day-date">${day.dateShort}</div>
+                ${weatherHTML}
             </div>
         `;
     }).join('');
@@ -307,9 +382,45 @@ function showCalendar() {
     window.scrollTo(0, 0);
 }
 
+// Update Tokyo time display
+function updateTokyoTime() {
+    const tokyoTime = new Date().toLocaleTimeString('en-US', {
+        timeZone: 'Asia/Tokyo',
+        hour: '2-digit',
+        minute: '2-digit',
+        hour12: true
+    });
+    document.getElementById('time-display').textContent = `Tokyo ${tokyoTime}`;
+}
+
+// Update countdown
+function updateCountdown() {
+    const now = new Date();
+    const tripStart = new Date('2025-11-26T00:00:00');
+    const tripEnd = new Date('2025-12-03T23:59:59');
+
+    if (now < tripStart) {
+        const diffTime = tripStart - now;
+        const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+        document.getElementById('countdown-display').textContent =
+            diffDays === 1 ? '✈️ Tomorrow!' : `✈️ ${diffDays} days to go`;
+    } else if (now >= tripStart && now <= tripEnd) {
+        document.getElementById('countdown-display').textContent = '🎌 You\'re in Tokyo!';
+    } else {
+        document.getElementById('countdown-display').textContent = '🌸 Memories made';
+    }
+}
+
 // Initialize app
 document.addEventListener('DOMContentLoaded', () => {
     renderCalendar();
+    fetchWeather();
+
+    // Update time and countdown
+    updateTokyoTime();
+    updateCountdown();
+    setInterval(updateTokyoTime, 1000);
+    setInterval(updateCountdown, 60000);
 
     // Auto-navigate to current day if on trip
     const currentDayId = getCurrentDayId();

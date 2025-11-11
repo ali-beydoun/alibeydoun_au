@@ -3,7 +3,12 @@ const tripInfo = {
     hotel: {
         name: 'Hotel Keihan Tsukiji Ginza Grande',
         address: '3-5-4, Tsukiji, Chuo-ku 104-0045 Tokyo Japan',
-        location: 'Tsukiji, Tokyo'
+        location: 'Tsukiji, Tokyo',
+        phone: '+81-3-5565-1001',
+        checkIn: '3:00 PM',
+        checkOut: '11:00 AM',
+        website: 'https://tsukijiginza.hotelkeihan.co.jp/',
+        notes: '2 min walk from Tsukiji station (Hibiya line). 24-hour front desk. Baggage storage available.'
     },
     flights: [
         { number: 'QF59', route: 'Sydney → Tokyo', date: 'Nov 26', time: '12:00 - 20:00' },
@@ -149,9 +154,27 @@ const tripData = [
             route: 'Tokyo → Sydney',
             departure: '06:55',
             arrival: '18:50',
-            airport: 'Haneda Airport'
+            airport: 'Haneda Airport (HND)'
         },
-        morning: [],
+        morning: [
+            {
+                time: '04:30',
+                title: 'Airport Transfer - Klook',
+                description: 'Pick-up at hotel for return flight',
+                location: 'Hotel Keihan Tsukiji Ginza Grande',
+                details: {
+                    service: 'Comfort 7 seater',
+                    passengers: '2 Passenger(s)',
+                    pickup: 'Hotel Keihan Tsukiji Ginza Grande',
+                    pickupAddress: '3-5-4, Tsukiji, Chuo-ku 104-0045 Tokyo Japan',
+                    dropoff: 'Tokyo Haneda International Airport (HND)',
+                    bookingRef: 'AUD 112.12',
+                    status: 'Booking confirmed',
+                    pickupTime: 'Dec 3, 2025, 4:30 AM (Local time)',
+                    note: 'Very early departure - driver will meet you at hotel'
+                }
+            }
+        ],
         afternoon: [],
         evening: []
     }
@@ -378,6 +401,14 @@ function showQuickReference() {
             <div class="detail-value">${tripInfo.hotel.address}</div>
         </div>
         <div class="detail-row">
+            <div class="detail-label">Check-in / Check-out</div>
+            <div class="detail-value">Check-in: ${tripInfo.hotel.checkIn}<br>Check-out: ${tripInfo.hotel.checkOut}</div>
+        </div>
+        <div class="detail-row">
+            <div class="detail-label">Hotel Notes</div>
+            <div class="detail-value">${tripInfo.hotel.notes}</div>
+        </div>
+        <div class="detail-row">
             <div class="detail-label">Flights</div>
             ${tripInfo.flights.map(flight => `
                 <div class="detail-value">
@@ -387,14 +418,31 @@ function showQuickReference() {
             `).join('<br>')}
         </div>
         <div class="detail-actions">
+            <a href="tel:${tripInfo.hotel.phone}"
+               class="action-button">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+                Call Hotel
+            </a>
             <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(tripInfo.hotel.address)}"
                target="_blank"
-               class="action-button">
+               class="action-button secondary">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                     <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
                     <circle cx="12" cy="10" r="3"/>
                 </svg>
                 Navigate to Hotel
+            </a>
+            <a href="${tripInfo.hotel.website}"
+               target="_blank"
+               class="action-button secondary">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="2" y1="12" x2="22" y2="12"/>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                </svg>
+                Hotel Website
             </a>
         </div>
     `;

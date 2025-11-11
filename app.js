@@ -2,9 +2,9 @@
 const tripInfo = {
     hotel: {
         name: 'Hotel Keihan Tsukiji Ginza Grande',
-        address: '3-5-4, Tsukiji, Chuo-ku 104-0045 Tokyo Japan',
+        address: '3 Chome-5-4 Tsukiji, Chuo City, Tokyo 104-0045, Japan',
         location: 'Tsukiji, Tokyo',
-        phone: '+81-3-5565-1001',
+        phone: '+81 3-5565-1001',
         checkIn: '3:00 PM',
         checkOut: '11:00 AM',
         website: 'https://tsukijiginza.hotelkeihan.co.jp/',
@@ -115,7 +115,7 @@ const tripData = [
                     passengers: '2 Passenger(s)',
                     pickup: 'Tokyo Haneda International Airport (HND)',
                     dropoff: 'Hotel Keihan Tsukiji Ginza Grande',
-                    dropoffAddress: '3-5-4, Tsukiji, Chuo-ku 104-0045 Tokyo Japan',
+                    dropoffAddress: '3 Chome-5-4 Tsukiji, Chuo City, Tokyo 104-0045, Japan',
                     bookingRef: 'AUD 135.08',
                     status: 'Booking confirmed',
                     pickupTime: 'Nov 26, 2025, 8:00 PM (Local time)',
@@ -225,7 +225,7 @@ const tripData = [
                     service: 'Comfort 7 seater',
                     passengers: '2 Passenger(s)',
                     pickup: 'Hotel Keihan Tsukiji Ginza Grande',
-                    pickupAddress: '3-5-4, Tsukiji, Chuo-ku 104-0045 Tokyo Japan',
+                    pickupAddress: '3 Chome-5-4 Tsukiji, Chuo City, Tokyo 104-0045, Japan',
                     dropoff: 'Tokyo Haneda International Airport (HND)',
                     bookingRef: 'AUD 112.12',
                     status: 'Booking confirmed',
@@ -476,7 +476,7 @@ function showActivityDetail(dayId, section, activityIndex) {
 
         if (activity.details.dropoffAddress) {
             modalHTML += `
-                <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(activity.details.dropoffAddress)}"
+                <a href="https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent('Hotel Keihan Tsukiji Ginza Grande, ' + activity.details.dropoffAddress)}"
                    target="_blank"
                    class="action-button secondary">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -536,7 +536,7 @@ function showQuickReference() {
                 </svg>
                 Call Hotel
             </a>
-            <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(tripInfo.hotel.address)}"
+            <a href="https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(tripInfo.hotel.name + ', ' + tripInfo.hotel.address)}"
                target="_blank"
                class="action-button secondary">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">

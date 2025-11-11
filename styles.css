@@ -50,6 +50,23 @@ body {
     position: relative;
 }
 
+.travelers-photo {
+    margin: 0 auto 20px;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 8px 24px rgba(192, 108, 132, 0.3);
+}
+
+.travelers-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+}
+
 .app-header h1 {
     font-size: 32px;
     font-weight: 700;

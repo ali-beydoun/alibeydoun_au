@@ -458,33 +458,35 @@ const tripData = [
                 description: 'Leisurely breakfast at hotel',
                 details: {
                     location: 'Hotel Keihan Tsukiji Ginza Grande',
-                    tips: 'Take your time with breakfast. Plan to leave hotel by 10:00 AM.'
+                    tips: 'Take your time with breakfast. Plan to leave hotel by 10:00 AM for Ginza stroll.'
                 }
             },
             {
                 time: '10:00',
-                title: 'Tsukiji Outer Market Walk',
-                description: 'Explore historic seafood market area',
-                location: 'Tsukiji Outer Market',
+                title: 'Ginza Luxury Shopping District Stroll',
+                description: 'Window shop iconic luxury flagships & architecture',
+                location: 'Ginza Chuo-dori (Central Street)',
                 details: {
-                    address: '3-15-1 Tsukiji, Chuo City, Tokyo 104-8435',
-                    walkingTime: '5-10 min walk from hotel',
-                    duration: '30-40 minutes exploring',
-                    highlights: 'Fresh seafood vendors, street food, kitchenware shops, traditional atmosphere',
-                    tips: 'Even though the inner wholesale market moved to Toyosu, the outer market is still vibrant with shops and food stalls. Great cultural experience.'
+                    walkingTime: '10-15 min walk from hotel',
+                    duration: '1.5 hours exploring (until ~11:30)',
+                    highlights: 'Chanel Ginza, Dior Ginza, Hermès, Louis Vuitton, Gucci, Ginza Six (rooftop garden), Uniqlo Ginza flagship, Itoya stationery flagship',
+                    route: 'Start from Ginza 4-chome crossing (iconic intersection) → Walk Chuo-dori northward → Explore side streets',
+                    vibe: 'Tokyo\'s most prestigious shopping district. Wide tree-lined streets, art deco architecture, luxury window displays',
+                    tips: 'Perfect introduction to Tokyo luxury for first-timers. Most shops open 11:00-12:00, so focus on window shopping, architecture, and atmosphere. Save vintage shopping for Harajuku evening when everything is open.',
+                    note: 'This sets the luxury/designer theme for the day before heading to Shibuya Sky'
                 }
             },
             {
-                time: '11:00',
+                time: '11:30',
                 title: 'Transit to Shibuya',
-                description: 'Hibiya Line to Ebisu, transfer to JR Yamanote',
+                description: 'Ginza Line direct to Shibuya (30 min)',
                 details: {
-                    from: 'Tsukiji Station (Hibiya Line)',
+                    from: 'Ginza Station (Tokyo Metro Ginza Line)',
                     to: 'Shibuya Station (Central/East Exit)',
-                    route: 'Hibiya Line: Tsukiji → Ebisu (20 min) → Transfer to JR Yamanote Line (5 min walk) → Ebisu → Shibuya (3 min)',
-                    totalTime: '~35 minutes including transfer',
+                    route: 'Ginza Line: Ginza → Shibuya (direct, no transfers, ~20 min train)',
+                    totalTime: '~30 minutes door-to-door',
                     exit: 'Use Central Gate/East Exit for direct access to Shibuya Scramble Square',
-                    tips: 'Purchase IC card (Suica/Pasmo) for easy transit. Trains run frequently.'
+                    tips: 'Purchase IC card (Suica/Pasmo) for easy transit. Ginza Line runs frequently (every 3-5 min). Simple, direct route.'
                 }
             },
             {

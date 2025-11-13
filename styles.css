@@ -255,46 +255,30 @@ body {
 .day-card {
     background: var(--glass-white);
     border-radius: var(--radius-md);
-    padding: 16px var(--spacing-md);
+    padding: 0;
     box-shadow: var(--shadow-pink-small);
     cursor: pointer;
     transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
     border: 1px solid var(--glass-border);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-    min-height: 100px;
+    min-height: 88px;
     position: relative;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-.day-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, var(--sakura-pink) 0%, var(--sakura-rose) 100%);
-    opacity: 0;
-    transition: opacity 0.25s;
+    display: grid;
+    grid-template-columns: 72px 1fr auto;
+    gap: 0;
+    align-items: stretch;
 }
 
 .day-card:active {
-    transform: scale(0.97);
+    transform: scale(0.98);
     box-shadow: var(--shadow-pink-medium);
 }
 
 .day-card.current {
     border: 2px solid #007AFF;
-    background: linear-gradient(135deg, rgba(0, 122, 255, 0.08) 0%, var(--glass-white) 100%);
     box-shadow: 0 4px 16px rgba(0, 122, 255, 0.15);
-}
-
-.day-card.current::before {
-    opacity: 1;
 }
 
 .day-card.travel {
@@ -304,49 +288,120 @@ body {
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
-.day-card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-}
-
-.day-card-left {
+/* Calendar Date Block - Left Side */
+.day-card-date-block {
+    background: #F8F8F8;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 8px;
+    border-right: 1px solid rgba(0, 0, 0, 0.06);
+    min-width: 72px;
+}
+
+.day-card.current .day-card-date-block {
+    background: #007AFF;
+}
+
+.day-card.travel .day-card-date-block {
+    background: rgba(255, 255, 255, 0.15);
+    border-right-color: rgba(255, 255, 255, 0.1);
+}
+
+.day-month {
+    font-size: 10px;
+    font-weight: 700;
+    color: #8E8E93;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 2px;
+}
+
+.day-card.current .day-month {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.day-card.travel .day-month {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.day-day-number {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1C1C1E;
+    line-height: 1;
+    letter-spacing: -1px;
+}
+
+.day-card.current .day-day-number {
+    color: #FFFFFF;
+}
+
+.day-card.travel .day-day-number {
+    color: #FFFFFF;
+}
+
+.day-weekday-short {
+    font-size: 11px;
+    font-weight: 600;
+    color: #8E8E93;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: 2px;
+}
+
+.day-card.current .day-weekday-short {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.day-card.travel .day-weekday-short {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Main Content Area - Middle */
+.day-card-content {
+    padding: 14px 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     gap: 6px;
+    min-width: 0;
+}
+
+.day-card-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 2px;
 }
 
 .day-number {
     font-size: 11px;
     font-weight: 700;
-    color: var(--text-tertiary);
+    color: #8E8E93;
     text-transform: uppercase;
     letter-spacing: 0.8px;
 }
 
+.day-card.travel .day-number {
+    color: rgba(255, 255, 255, 0.7);
+}
+
 .day-type-badge {
-    font-size: 11px;
+    font-size: 10px;
     font-weight: 700;
-    padding: 4px 10px;
+    padding: 3px 8px;
     background: #F0F0F0;
-    border-radius: 6px;
+    border-radius: 4px;
     color: #5A5A5A;
     letter-spacing: 0.3px;
     display: inline-block;
-    width: fit-content;
 }
 
-.day-card.current .day-number {
-    color: #007AFF;
-}
-
-.day-card.travel .day-number,
 .day-card.travel .day-type-badge {
+    background: rgba(255, 255, 255, 0.2);
     color: rgba(255, 255, 255, 0.95);
-}
-
-.day-card.travel .day-type-badge {
-    background: rgba(255, 255, 255, 0.25);
 }
 
 .day-card.day-trip .day-type-badge {
@@ -359,71 +414,67 @@ body {
     color: #5A5A5A;
 }
 
-.day-badge {
-    font-size: 10px;
-    padding: 4px 8px;
-    background: #007AFF;
-    border-radius: 6px;
-    font-weight: 700;
-    color: white;
-    letter-spacing: 0.5px;
-}
-
-.day-card.travel .day-badge {
-    background: rgba(255, 255, 255, 0.3);
-    color: white;
-}
-
-.day-card-content {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-}
-
 .day-name {
-    font-size: 20px;
+    font-size: 17px;
     font-weight: 700;
-    letter-spacing: -0.4px;
+    letter-spacing: -0.3px;
     color: var(--text-primary);
-    line-height: 1.1;
+    line-height: 1.2;
+    margin-bottom: 2px;
 }
 
 .day-card.travel .day-name {
     color: white;
 }
 
-.day-date {
-    font-size: 14px;
+.day-description {
+    font-size: 13px;
     color: var(--text-secondary);
-    font-weight: 600;
+    font-weight: 500;
     line-height: 1.3;
 }
 
-.day-card.travel .day-date {
-    color: rgba(255, 255, 255, 0.9);
-}
-
-.day-description {
-    font-size: 13px;
-    color: var(--text-tertiary);
-    font-weight: 500;
-    margin-top: 2px;
-    font-style: italic;
-}
-
 .day-card.travel .day-description {
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* Right Side - Weather & Status */
+.day-card-right {
+    padding: 14px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 8px;
+    border-left: 1px solid rgba(0, 0, 0, 0.04);
+    min-width: 64px;
+}
+
+.day-card.travel .day-card-right {
+    border-left-color: rgba(255, 255, 255, 0.1);
+}
+
+.day-badge {
+    font-size: 9px;
+    padding: 4px 8px;
+    background: #007AFF;
+    border-radius: 4px;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.day-card.travel .day-badge {
+    background: rgba(255, 255, 255, 0.25);
+    color: white;
 }
 
 .day-weather {
     display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 7px;
-    font-size: 13px;
-    color: var(--text-secondary);
-    padding-top: 8px;
-    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    gap: 4px;
 }
 
 .day-card.travel .day-weather {
@@ -431,11 +482,20 @@ body {
 }
 
 .weather-icon {
-    font-size: 18px;
+    font-size: 24px;
+    line-height: 1;
 }
 
 .weather-temp {
+    font-size: 11px;
     font-weight: 700;
+    color: var(--text-primary);
+    text-align: center;
+    line-height: 1.2;
+}
+
+.day-card.travel .weather-temp {
+    color: rgba(255, 255, 255, 0.9);
 }
 
 /* Detail Header - Glassmorphism */

@@ -294,21 +294,36 @@ function renderCalendar() {
             </div>
         ` : '';
 
+        // Parse date for calendar-style display
+        const dateParts = day.dateShort.split(' '); // e.g., "Nov 26"
+        const month = dateParts[0];
+        const dayNumber = dateParts[1];
+        const weekdayShort = day.dayOfWeek.substring(0, 3).toUpperCase(); // e.g., "WED"
+
         return `
             <div class="${cardClass}" onclick="showDay(${day.id})">
-                <div class="day-card-header">
-                    <div class="day-card-left">
+                <!-- Left: Calendar Date Block -->
+                <div class="day-card-date-block">
+                    <div class="day-month">${month}</div>
+                    <div class="day-day-number">${dayNumber}</div>
+                    <div class="day-weekday-short">${weekdayShort}</div>
+                </div>
+
+                <!-- Middle: Main Content -->
+                <div class="day-card-content">
+                    <div class="day-card-header">
                         <span class="day-number">${day.name}</span>
                         ${typeLabel ? `<span class="day-type-badge">${typeLabel}</span>` : ''}
                     </div>
-                    ${isCurrentDay ? '<span class="day-badge">Today</span>' : ''}
-                </div>
-                <div class="day-card-content">
                     <div class="day-name">${day.dayOfWeek}</div>
-                    <div class="day-date">${day.dateShort}</div>
                     ${day.description ? `<div class="day-description">${day.description}</div>` : ''}
                 </div>
-                ${weatherHTML}
+
+                <!-- Right: Weather & Status -->
+                <div class="day-card-right">
+                    ${isCurrentDay ? '<div class="day-badge">Today</div>' : ''}
+                    ${weatherHTML}
+                </div>
             </div>
         `;
     }).join('');

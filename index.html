@@ -19,21 +19,35 @@
     <!-- Calendar Overview -->
     <div id="calendar-view" class="view active">
         <header class="app-header">
-            <div class="travelers-photo">
-                <img src="ali-najah.jpeg" alt="Ali & Najah">
-            </div>
-            <h1>Ali & Najah's Tokyo Adventure</h1>
-            <p class="subtitle">November 26 - December 3, 2025</p>
-            <div class="header-info">
-                <div class="tokyo-time" id="tokyo-time">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="10"/>
-                        <polyline points="12 6 12 12 16 14"/>
-                    </svg>
-                    <span id="time-display">--:--</span>
+            <div class="header-background-blur"></div>
+            <div class="header-content">
+                <div class="header-hero">
+                    <div class="travelers-photo">
+                        <img src="ali-najah.jpeg" alt="Ali & Najah">
+                        <div class="photo-glow"></div>
+                    </div>
+                    <div class="header-text">
+                        <h1>Tokyo Adventure</h1>
+                        <p class="subtitle">Nov 26 - Dec 3, 2025</p>
+                    </div>
                 </div>
-                <div class="countdown" id="countdown">
-                    <span id="countdown-display"></span>
+                <div class="header-info">
+                    <div class="info-card tokyo-time" id="tokyo-time">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polyline points="12 6 12 12 16 14"/>
+                        </svg>
+                        <span id="time-display">--:--</span>
+                    </div>
+                    <div class="info-card countdown" id="countdown">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                            <line x1="16" y1="2" x2="16" y2="6"/>
+                            <line x1="8" y1="2" x2="8" y2="6"/>
+                            <line x1="3" y1="10" x2="21" y2="10"/>
+                        </svg>
+                        <span id="countdown-display"></span>
+                    </div>
                 </div>
             </div>
         </header>

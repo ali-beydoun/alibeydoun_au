@@ -641,12 +641,13 @@ const tripData = [
                 description: 'Harajuku/Omotesando dining',
                 isFoodOption: true,
                 foodType: 'dinner',
+                foodAreas: ['Harajuku', 'Shibuya'],
                 details: {
-                    area: 'Harajuku/Omotesando',
+                    area: 'Harajuku/Omotesando/Shibuya',
                     recommended: 'Kuta Bali Cafe Harajuku (halal Indonesian, 1 min from Harajuku Station, prayer room available)',
                     alternatives: 'Kebab Box J (Turkish halal) | Milan Nataraj (Indian with halal options)',
                     walkingTime: '10-15 min from vintage shop area',
-                    note: 'See Food Options for full restaurant details with addresses and hours'
+                    note: 'Click to see filtered dinner options for this area'
                 }
             }
         ]
@@ -733,11 +734,12 @@ const tripData = [
                 description: 'Tokyo Station or Ginza area',
                 isFoodOption: true,
                 foodType: 'dinner',
+                foodAreas: ['Tokyo Station'],
                 details: {
                     option1: 'Mǎzilù Lanzhou Beef Noodles (Tokyo Station, 3 min walk)',
                     option2: 'Explore Ginza dining (near hotel)',
                     tips: 'Back at Tokyo Station by 17:28. Can eat near station or head to Ginza (~15 min).',
-                    note: 'See Food Options for full restaurant details'
+                    note: 'Click to see filtered dinner options for this area'
                 }
             }
         ]
@@ -1148,9 +1150,11 @@ function showActivityDetail(dayId, section, activityIndex) {
     const activity = day[section][activityIndex];
     if (!activity || !activity.details) return;
 
-    // Check if this is a food option - show all food options for that meal type
+    // Check if this is a food option - show food options for that meal type
     if (activity.isFoodOption && activity.foodType) {
-        showFoodOptionsForMeal(activity.foodType, activity.title);
+        // Pass areas filter if specified, otherwise show all
+        const areas = activity.foodAreas || null;
+        showFoodOptionsForMeal(activity.foodType, activity.title, areas);
         return;
     }
 
@@ -1452,13 +1456,19 @@ function showFoodOptions() {
 }
 
 // Food Options for specific meal type (called from activity card)
-function showFoodOptionsForMeal(mealType, title) {
+function showFoodOptionsForMeal(mealType, title, areas = null) {
     document.getElementById('modal-title').textContent = title || `${mealType.charAt(0).toUpperCase() + mealType.slice(1)} Options`;
 
     let modalHTML = '';
 
     if (tripInfo.foodOptions && tripInfo.foodOptions.length > 0) {
-        const foods = tripInfo.foodOptions.filter(f => f.type === mealType);
+        // Filter by meal type
+        let foods = tripInfo.foodOptions.filter(f => f.type === mealType);
+
+        // If areas are specified, filter by those areas
+        if (areas && areas.length > 0) {
+            foods = foods.filter(f => areas.includes(f.area));
+        }
 
         if (foods.length > 0) {
             foods.forEach(food => {

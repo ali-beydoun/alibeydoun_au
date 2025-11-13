@@ -516,7 +516,7 @@ const tripData = [
         description: 'Shibuya Sky & Vintage Designer Shopping',
         morning: [
             {
-                time: '09:00',
+                time: '9:00 AM',
                 title: 'Hotel Breakfast Buffet',
                 description: 'Leisurely breakfast at hotel',
                 details: {
@@ -525,22 +525,68 @@ const tripData = [
                 }
             },
             {
-                time: '10:00',
-                title: 'Ginza Luxury Shopping District Stroll',
-                description: 'Window shop iconic luxury flagships & architecture',
-                location: 'Ginza Chuo-dori (Central Street)',
+                time: '10:00 AM',
+                title: 'Ginza Luxury Flagship Hit List',
+                description: 'First impressions - iconic luxury architecture walk',
+                location: 'Ginza District',
                 details: {
-                    walkingTime: '10-15 min walk from hotel',
-                    duration: '1.5 hours exploring (until ~11:30)',
-                    highlights: 'Chanel Ginza, Dior Ginza, Hermès, Louis Vuitton, Gucci, Ginza Six (rooftop garden), Uniqlo Ginza flagship, Itoya stationery flagship',
-                    route: 'Start from Ginza 4-chome crossing (iconic intersection) → Walk Chuo-dori northward → Explore side streets',
-                    vibe: 'Tokyo\'s most prestigious shopping district. Wide tree-lined streets, art deco architecture, luxury window displays',
-                    tips: 'Perfect introduction to Tokyo luxury for first-timers. Most shops open 11:00-12:00, so focus on window shopping, architecture, and atmosphere. Save vintage shopping for Harajuku evening when everything is open.',
-                    note: 'This sets the luxury/designer theme for the day before heading to Shibuya Sky'
+                    area: 'Ginza Chuo-dori (south to north route)',
+                    duration: '1.5 hours (10:00 AM - 11:30 AM)',
+                    shops: [
+                        {
+                            name: '1. Itoya Stationery Flagship ⭐',
+                            address: '2-7-15 Ginza, Chuo-ku, Tokyo',
+                            highlight: '12-floor paradise • Opens 10:00 AM • Can browse!',
+                            hours: '10:00 AM - 8:00 PM',
+                            mapLink: 'Ginza Itoya, 2-7-15 Ginza, Chuo-ku, Tokyo'
+                        },
+                        {
+                            name: '2. Chanel Flagship Ginza ⭐⭐⭐',
+                            address: '3-5-3 Ginza, Chuo-ku, Tokyo',
+                            highlight: '10-story black glass tower • Most iconic Ginza facade',
+                            hours: '12:00 PM - 7:00 PM (window shopping only)',
+                            walk: '3 min from Itoya',
+                            mapLink: 'Chanel Ginza, 3-5-3 Ginza, Chuo-ku, Tokyo'
+                        },
+                        {
+                            name: '3. Wako Clock Tower (Ginza 4-chome) ⭐⭐⭐',
+                            address: '4-5-11 Ginza, Chuo-ku, Tokyo',
+                            highlight: 'Iconic Art Deco clock tower • Symbol of Ginza • Photo op!',
+                            hours: 'Exterior landmark',
+                            walk: '4 min from Chanel',
+                            mapLink: 'Wako Ginza, 4-5-11 Ginza, Chuo-ku, Tokyo'
+                        },
+                        {
+                            name: '4. Hermès Maison Ginza ⭐⭐⭐',
+                            address: '5-4-1 Ginza, Chuo-ku, Tokyo',
+                            highlight: 'Renzo Piano glass brick tower • Opens 11:00 AM • Can browse!',
+                            hours: '11:00 AM - 7:00 PM',
+                            walk: '2 min from Wako',
+                            mapLink: 'Hermès Maison Ginza, 5-4-1 Ginza, Chuo-ku, Tokyo'
+                        },
+                        {
+                            name: '5. Louis Vuitton Ginza Namikidori ⭐⭐',
+                            address: '7-6-1 Ginza, Chuo-ku, Tokyo',
+                            highlight: 'Faceted glass facade • Opens 11:00 AM • Can browse!',
+                            hours: '11:00 AM - 8:00 PM',
+                            walk: '5 min from Hermès',
+                            mapLink: 'Louis Vuitton Ginza Namikidori, 7-6-1 Ginza, Chuo-ku, Tokyo'
+                        },
+                        {
+                            name: '6. Ginza Six ⭐⭐⭐',
+                            address: '6-10-1 Ginza, Chuo-ku, Tokyo',
+                            highlight: 'Luxury mall • Rooftop garden views • Opens 10:30 AM',
+                            hours: '10:30 AM - 8:30 PM',
+                            walk: '3 min from LV',
+                            mapLink: 'Ginza Six, 6-10-1 Ginza, Chuo-ku, Tokyo'
+                        }
+                    ],
+                    strategy: 'Hit Itoya first (opens 10am), Hermès/LV after 11am opening, end at Ginza Six rooftop',
+                    note: 'Perfect luxury introduction for first-time Tokyo visitors'
                 }
             },
             {
-                time: '11:30',
+                time: '11:30 AM',
                 title: 'Transit to Shibuya',
                 description: 'Ginza Line direct to Shibuya (30 min)',
                 details: {
@@ -553,7 +599,7 @@ const tripData = [
                 }
             },
             {
-                time: '12:00',
+                time: '12:00 PM',
                 title: 'Lunch at Shibuya Scramble Square',
                 description: 'Quick lunch before Shibuya Sky',
                 location: 'Shibuya Scramble Square',
@@ -567,25 +613,25 @@ const tripData = [
         ],
         afternoon: [
             {
-                time: '13:00',
+                time: '1:00 PM',
                 title: 'Arrive at Shibuya Sky Entrance',
                 description: 'Head to 14F entrance (20 min before booking)',
                 details: {
                     entrance: '14th Floor, Shibuya Scramble Square',
-                    checkIn: '13:00-13:20 arrival window',
-                    tips: 'Arrive early to account for elevator wait times. Must check in within 20-minute window from 13:20 booking time.'
+                    checkIn: '1:00-1:20 PM arrival window',
+                    tips: 'Arrive early to account for elevator wait times. Must check in within 20-minute window from 1:20 PM booking time.'
                 }
             },
             {
-                time: '13:20',
+                time: '1:20 PM',
                 title: 'Shibuya Sky Observation Deck',
                 description: 'Admission ticket (2 adults) - 1 hour on deck',
                 location: 'Shibuya Sky, Shibuya Scramble Square',
                 details: {
                     venue: 'Shibuya Sky',
                     address: 'Shibuya Scramble Square, 2-24-12 Shibuya, Shibuya City, Tokyo',
-                    entryTime: '13:20 (Nov 27, 2025)',
-                    duration: '1 hour on observation deck (13:20-14:20)',
+                    entryTime: '1:20 PM (Nov 27, 2025)',
+                    duration: '1 hour on observation deck (1:20-2:20 PM)',
                     floors: '45F-46F and rooftop (229m high)',
                     tickets: '2 x Adult (Aged 12+)',
                     status: 'Confirmed',
@@ -594,7 +640,7 @@ const tripData = [
                 }
             },
             {
-                time: '14:40',
+                time: '2:40 PM',
                 title: 'Mega Don Quijote Shibuya',
                 description: '8-floor mega store - 4th floor has luxury designer section',
                 location: 'Mega Don Quijote Shibuya Honten',
@@ -611,7 +657,7 @@ const tripData = [
                 }
             },
             {
-                time: '16:30',
+                time: '4:30 PM',
                 title: 'Transit to Harajuku/Omotesando',
                 description: 'Scenic Cat Street walk OR quick JR Yamanote train',
                 details: {
@@ -624,7 +670,7 @@ const tripData = [
         ],
         evening: [
             {
-                time: '17:00',
+                time: '5:00 PM',
                 title: 'Harajuku/Omotesando Vintage Shopping Hit List',
                 description: '4 designer vintage shops (Chanel/LV focus)',
                 location: 'Harajuku/Omotesando Area',
@@ -636,14 +682,14 @@ const tripData = [
                             name: '1. Vintage Qoo Tokyo ⭐ PRIORITY',
                             address: 'B1-2F Colonnade Jingumae, 5-2-6 Jingumae, Shibuya-ku',
                             highlight: '3 floors • 2,000 Chanel basement • LV, Dior, Hermès',
-                            hours: '11:30-20:00',
+                            hours: '11:30 AM - 8:00 PM',
                             mapLink: 'Vintage Qoo Tokyo, 5-2-6 Jingumae, Shibuya-ku, Tokyo 150-0001'
                         },
                         {
                             name: '2. Amore Vintage Omotesando',
                             address: '2F 5-1-6 Jingumae, Shibuya, Tokyo',
                             highlight: 'Chanel heaven • Museum aesthetic • TikTok famous',
-                            hours: '10:00-20:00',
+                            hours: '10:00 AM - 8:00 PM',
                             walk: '5 min from Qoo',
                             mapLink: 'AMORE Vintage Omotesando, 5-1-6 Jingumae, Shibuya, Tokyo'
                         },
@@ -651,7 +697,7 @@ const tripData = [
                             name: '3. Kindal Harajuku',
                             address: '3F Omotesando Building, 4-29-3 Jingumae, Shibuya',
                             highlight: '3 floors • Chanel, Loewe, Burberry, Prada • Above Lawson',
-                            hours: '11:00-20:00',
+                            hours: '11:00 AM - 8:00 PM',
                             walk: '7 min from Amore',
                             mapLink: 'Kindal Harajuku, 4-29-3 Jingumae, Shibuya, Tokyo 150-0001'
                         },
@@ -659,7 +705,7 @@ const tripData = [
                             name: '4. Ragtag Harajuku (Cat Street)',
                             address: '1F-2F Hulic Jingu-mae, 5-17-9 Jingumae, Shibuya-ku',
                             highlight: 'Bargain prices • Céline, Comme des Garçons',
-                            hours: '11:00-20:00',
+                            hours: '11:00 AM - 8:00 PM',
                             walk: '5 min from Kindal',
                             mapLink: 'Ragtag Harajuku, 5-17-9 Jingumae, Shibuya-ku, Tokyo'
                         }
@@ -669,7 +715,7 @@ const tripData = [
                 }
             },
             {
-                time: '21:00',
+                time: '9:00 PM',
                 title: 'Dinner Options',
                 description: 'Harajuku/Omotesando dining',
                 isFoodOption: true,
@@ -784,8 +830,65 @@ const tripData = [
         date: 'Saturday, November 29',
         dayOfWeek: 'Saturday',
         dateShort: 'Nov 29',
-        description: 'City Discovery',
-        morning: [],
+        description: 'Tsukiji Market & Ginza Pedestrian Paradise',
+        morning: [
+            {
+                time: '8:00 AM',
+                title: 'Tsukiji Outer Market',
+                description: 'Traditional fish market & street food breakfast',
+                location: 'Tsukiji Outer Market',
+                details: {
+                    address: '3-15-1 Tsukiji, Chuo City, Tokyo 104-8435',
+                    walkingTime: '5-10 min walk from hotel',
+                    duration: '2.5 hours (8:00-10:30 AM)',
+                    highlights: 'Fresh seafood stalls, street food breakfast (grilled scallops, tamagoyaki), specialty shops (knives, tea, dried goods)',
+                    hours: '5:00 AM - 2:00 PM daily',
+                    vibe: 'Authentic market energy, local food culture',
+                    tips: 'Arrive after professional buyers finish (9am). Eat breakfast here - grilled seafood, tamago sandwiches. Bring cash.',
+                    note: 'Inner wholesale market moved to Toyosu, but outer market still vibrant with 400+ shops'
+                }
+            },
+            {
+                time: '10:30 AM',
+                title: 'Walk to Ginza',
+                description: '15 min walk from traditional market to luxury district',
+                details: {
+                    from: 'Tsukiji Outer Market',
+                    to: 'Ginza 8-chome (southern entrance)',
+                    distance: '1 mile / 1.6 km',
+                    duration: '15 minutes',
+                    route: 'Pleasant transition showing old Tokyo → modern luxury',
+                    tips: 'Walk northwest through Tsukiji toward Ginza Chuo-dori'
+                }
+            },
+            {
+                time: '10:45 AM',
+                title: 'Pre-Hokoten Ginza Browsing',
+                description: 'Early shopping while streets still open',
+                location: 'Ginza District',
+                details: {
+                    duration: '1 hour 15 min (until noon)',
+                    options: 'Ginza Six (opens 10:30 AM), Mitsukoshi, luxury boutiques, cafes',
+                    tips: 'Streets still have car traffic, but stores are open. Grab coffee and browse before the pedestrian paradise begins at noon.'
+                }
+            },
+            {
+                time: '12:00 PM',
+                title: 'Ginza Hokoten (Pedestrian Paradise)',
+                description: 'Car-free luxury boulevard experience',
+                location: 'Ginza Chuo-dori',
+                details: {
+                    hours: '12:00 PM - 5:00 PM (Oct-March Saturdays/Sundays)',
+                    section: 'Ginza 1-chome to 8-chome (1,100 meters car-free)',
+                    duration: '1 hour experience recommended',
+                    highlights: 'Walk down middle of Chuo-dori, benches & parasols set up, 300,000+ visitors, unique Tokyo tradition since 1970',
+                    atmosphere: 'Relaxed luxury shopping without traffic noise',
+                    photo: 'Iconic opportunity to photograph grand boulevard without cars',
+                    tips: 'This ONLY happens Sat/Sun/Holidays. Streets completely pedestrian-only. Perfect for leisurely strolling the luxury district.',
+                    note: 'Bicycles must be walked, not ridden. No street performances or vendors - pure pedestrian experience.'
+                }
+            }
+        ],
         afternoon: [],
         evening: []
     },

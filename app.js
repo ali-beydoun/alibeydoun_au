@@ -34,6 +34,15 @@ const tripInfo = {
             details: 'Green Car 11, Seats 9-C & 9-D',
             link: 'https://www.icloud.com/iclouddrive/0a8T3t4h3Rwgq9UcU1uW4qB-A#20251128_Hakutaka555_Tokyo-Karuizawa',
             icon: '🚄'
+        },
+        {
+            type: 'train',
+            title: 'Asama 624 - Karuizawa to Tokyo',
+            date: 'Nov 28, 2025',
+            time: '16:23 - 17:28',
+            details: 'Green Car 11, Seats 7-C & 7-D',
+            link: 'https://www.icloud.com/iclouddrive/007ykC75nU-ThDdIzm_XZN2fA#20251128_Asama624_Karuizawa-Tokyo',
+            icon: '🚄'
         }
         // Add more tickets/vouchers here following the same pattern:
         // { type: 'train|activity|transfer', title: '...', date: '...', link: '...', icon: '🚄|🎟️|🚗' }
@@ -228,28 +237,36 @@ const tripData = [
             {
                 time: '10:00',
                 title: 'Karuizawa Prince Shopping Plaza',
-                description: '3-4 hours shopping & lunch',
+                description: '5-6 hours shopping & lunch',
                 location: 'Karuizawa Prince Shopping Plaza',
                 details: {
                     location: 'South Exit of Karuizawa Station (2-3 min walk)',
                     website: 'https://www.karuizawa-psp.jp/en',
+                    hours: 'Shop until ~15:30, head back to station by 16:00',
                     highlights: '200+ outlet stores, food court, restaurants',
                     optional: 'Coffee or stroll around Karuizawa town if time permits',
-                    tips: 'Tax-free shopping with passport. Coin lockers available for bags.'
+                    tips: 'Tax-free shopping with passport. Coin lockers available for bags. Return train departs 16:23.'
                 }
             }
         ],
         evening: [
             {
-                time: '15:30',
+                time: '16:23',
                 title: 'Return Shinkansen to Tokyo',
-                description: 'Depart Karuizawa 3:30-4:00 PM',
+                description: 'Asama 624 - Green Car (1h 5m)',
+                location: 'Karuizawa Station',
                 details: {
-                    departure: 'Karuizawa Station (~15:30-16:00)',
-                    arrival: 'Tokyo Station (before evening)',
-                    duration: '~65-75 minutes',
-                    trainType: 'Hokuriku Shinkansen - Asama or Hakutaka',
-                    return: 'Walk or Marunouchi Line (1 stop) back to Ginza'
+                    train: 'Asama 624',
+                    departure: 'Karuizawa Station 16:23',
+                    arrival: 'Tokyo Station 17:28',
+                    duration: '1h 5m',
+                    car: 'Car 11 (Green)',
+                    seats: '7-C, 7-D',
+                    passengers: '2 adults',
+                    price: '¥16,580 (¥8,290 per person)',
+                    ticketType: 'Reserved - Pick up at ticket counter or vending machine',
+                    ticketLink: 'https://www.icloud.com/iclouddrive/007ykC75nU-ThDdIzm_XZN2fA#20251128_Asama624_Karuizawa-Tokyo',
+                    tips: 'Seats 7-C and 7-D in Green Car 11. Plenty of space for shopping bags. Can collect both train tickets at Tokyo Station in the morning.'
                 }
             },
             {
@@ -258,7 +275,8 @@ const tripData = [
                 description: 'Location TBD',
                 details: {
                     area: 'Ginza district (near hotel)',
-                    suggestions: 'Sushi, izakaya, ramen, or kaiseki cuisine'
+                    suggestions: 'Sushi, izakaya, ramen, or kaiseki cuisine',
+                    tips: 'Back in Ginza by ~18:00, giving you prime dinner timing'
                 }
             }
         ]

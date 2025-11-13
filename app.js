@@ -27,6 +27,15 @@ const tripInfo = {
             icon: '✈️'
         },
         {
+            type: 'activity',
+            title: 'Shibuya Sky - Observation Deck',
+            date: 'Nov 27, 2025',
+            time: '13:20',
+            details: 'Admission Ticket, 2 Adults',
+            link: 'https://www.icloud.com/iclouddrive/0b6j5lNumA7uSEYJn2KAEP4Fw#20251127_SHIBUYA_SKY_Ticket',
+            icon: '🏙️'
+        },
+        {
             type: 'train',
             title: 'Hakutaka 555 - Tokyo to Karuizawa',
             date: 'Nov 28, 2025',
@@ -188,9 +197,25 @@ const tripData = [
         date: 'Thursday, November 27',
         dayOfWeek: 'Thursday',
         dateShort: 'Nov 27',
-        description: 'Local Exploration',
+        description: 'Shibuya Sky & Exploration',
         morning: [],
-        afternoon: [],
+        afternoon: [
+            {
+                time: '13:20',
+                title: 'Shibuya Sky Observation Deck',
+                description: 'Admission ticket (2 adults)',
+                location: 'Shibuya Sky, Shibuya Scramble Square',
+                details: {
+                    venue: 'Shibuya Sky',
+                    address: 'Shibuya Scramble Square, 2-24-12 Shibuya, Shibuya City, Tokyo',
+                    entryTime: '13:20 (Nov 27, 2025)',
+                    tickets: '2 x Adult (Aged 12+)',
+                    status: 'Confirmed',
+                    ticketLink: 'https://www.icloud.com/iclouddrive/0b6j5lNumA7uSEYJn2KAEP4Fw#20251127_SHIBUYA_SKY_Ticket',
+                    tips: 'Located on floors 45-46 and rooftop (229m high). Amazing 360° views of Tokyo. Visit during golden hour for best photos.'
+                }
+            }
+        ],
         evening: []
     },
     {

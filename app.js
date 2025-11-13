@@ -930,18 +930,6 @@ const tripData = [
     },
     {
         id: 8,
-        type: 'explore',
-        name: 'Day 7',
-        date: 'Wednesday, December 3',
-        dayOfWeek: 'Wednesday',
-        dateShort: 'Dec 3',
-        description: 'Final Moments',
-        morning: [],
-        afternoon: [],
-        evening: []
-    },
-    {
-        id: 9,
         type: 'travel',
         name: 'Travel Day',
         date: 'Wednesday, December 3',

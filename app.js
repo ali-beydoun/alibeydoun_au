@@ -160,6 +160,7 @@ const tripData = [
                 time: '08:41',
                 title: 'Hokuriku Shinkansen to Karuizawa',
                 description: 'Hakutaka 555 - Green Car (1h 2m)',
+                location: 'Tokyo Station',
                 details: {
                     train: 'Hakutaka 555',
                     departure: 'Tokyo Station 08:41',
@@ -170,6 +171,7 @@ const tripData = [
                     passengers: '2 adults',
                     price: '¥16,580 (¥8,290 per person)',
                     ticketType: 'Reserved - Purchase at ticket counter or vending machine before boarding',
+                    ticketLink: 'https://www.icloud.com/iclouddrive/0a8T3t4h3Rwgq9UcU1uW4qB-A#20251128_Hakutaka555_Tokyo-Karuizawa',
                     tips: 'Seats 9-C and 9-D in Green Car 11. Purchase ekiben at Tokyo Station for the journey.'
                 }
             }
@@ -546,8 +548,10 @@ function showActivityDetail(dayId, section, activityIndex) {
 
     let modalHTML = '';
 
-    // Render all detail fields
+    // Render all detail fields (except ticketLink - handle separately)
     Object.entries(activity.details).forEach(([key, value]) => {
+        if (key === 'ticketLink') return; // Skip ticketLink, we'll add it as a button
+
         const label = key.charAt(0).toUpperCase() + key.slice(1).replace(/([A-Z])/g, ' $1');
         modalHTML += `
             <div class="detail-row">
@@ -557,15 +561,33 @@ function showActivityDetail(dayId, section, activityIndex) {
         `;
     });
 
-    // Add action buttons if location exists
-    if (activity.location || activity.details.pickup || activity.details.dropoff) {
+    // Add action buttons
+    const hasActions = activity.location || activity.details.pickup || activity.details.dropoff || activity.details.ticketLink;
+
+    if (hasActions) {
         modalHTML += '<div class="detail-actions">';
+
+        // Ticket link (prioritize at top)
+        if (activity.details.ticketLink) {
+            modalHTML += `
+                <a href="${activity.details.ticketLink}"
+                   target="_blank"
+                   class="action-button">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="2" y="7" width="20" height="10" rx="2" ry="2"/>
+                        <path d="M22 12h-4"/>
+                        <path d="M6 12H2"/>
+                    </svg>
+                    View Ticket & QR Code
+                </a>
+            `;
+        }
 
         if (activity.location) {
             modalHTML += `
                 <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(activity.location)}"
                    target="_blank"
-                   class="action-button">
+                   class="action-button secondary">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                         <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
                         <circle cx="12" cy="10" r="3"/>

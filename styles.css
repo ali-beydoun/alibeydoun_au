@@ -130,13 +130,15 @@ body {
 }
 
 .quick-access-section {
-    background: linear-gradient(180deg, var(--sakura-pink-light) 0%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(180deg, var(--sakura-pink-light) 0%, #FAFAFA 100%);
     padding-top: var(--spacing-md);
-    padding-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-lg);
+    border-bottom: 1px solid rgba(192, 108, 132, 0.08);
 }
 
 .itinerary-section {
-    padding-top: var(--spacing-md);
+    padding-top: var(--spacing-lg);
+    background: #FAFAFA;
 }
 
 .section-title {
@@ -168,6 +170,9 @@ body {
     box-shadow: var(--shadow-pink-small);
     min-height: 68px;
     text-align: left;
+    appearance: none;
+    -webkit-appearance: none;
+    font-family: inherit;
 }
 
 .quick-access-card:active {
@@ -205,11 +210,12 @@ body {
     color: var(--sakura-mauve);
     flex-shrink: 0;
     opacity: 0.7;
+    transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .quick-access-card:active .quick-access-arrow {
     opacity: 1;
-    transform: translateX(2px);
+    transform: translateX(3px);
 }
 
 .header-info {
@@ -563,25 +569,14 @@ body {
     font-size: 14px;
 }
 
-/* Responsive */
-@media (min-width: 768px) {
-    .day-grid {
-        grid-template-columns: repeat(2, 1fr);
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 24px;
+/* Responsive - Keep single column for iPhone Pro Max optimization */
+@media (min-width: 431px) {
+    body {
+        background: #E5E5E5;
     }
 
-    .day-content {
-        max-width: 800px;
-        margin: 0 auto;
-        padding: 32px 24px;
-    }
-}
-
-@media (min-width: 1024px) {
-    .day-grid {
-        grid-template-columns: repeat(3, 1fr);
+    .view {
+        background: linear-gradient(180deg, var(--sakura-pink-light) 0%, #F8F8F8 100%);
     }
 }
 

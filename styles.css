@@ -767,6 +767,44 @@ body {
     font-weight: 700;
 }
 
+/* Food Option Cards - Distinct Color Coding */
+.activity-card.food-option {
+    background: linear-gradient(135deg,
+        rgba(245, 158, 11, 0.1) 0%,
+        rgba(245, 158, 11, 0.06) 100%
+    );
+    border: 1px solid rgba(245, 158, 11, 0.25);
+    border-left: 4px solid #F59E0B;
+    box-shadow:
+        0 2px 8px rgba(245, 158, 11, 0.12),
+        0 4px 16px rgba(245, 158, 11, 0.08),
+        0 1px 0 rgba(255, 255, 255, 0.5) inset;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.activity-card.food-option.clickable:active {
+    box-shadow:
+        0 2px 12px rgba(245, 158, 11, 0.18),
+        0 4px 20px rgba(245, 158, 11, 0.12),
+        0 1px 0 rgba(255, 255, 255, 0.5) inset;
+    background: linear-gradient(135deg,
+        rgba(245, 158, 11, 0.13) 0%,
+        rgba(245, 158, 11, 0.08) 100%
+    );
+}
+
+.activity-card.food-option .activity-time {
+    background: #F59E0B;
+    color: white;
+    box-shadow: 0 2px 6px rgba(245, 158, 11, 0.3);
+}
+
+.activity-card.food-option .activity-title {
+    color: #D97706;
+    font-weight: 700;
+}
+
 .tap-hint {
     font-size: 12px;
     color: var(--color-blue);
@@ -1124,6 +1162,164 @@ body {
     font-size: 14px;
     font-weight: 700;
     margin-top: 4px;
+}
+
+/* Food Options Styling */
+.food-section-header {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: var(--spacing-lg) 0 var(--spacing-sm) 0;
+    padding-bottom: var(--spacing-xs);
+    border-bottom: 2px solid var(--color-gray-5);
+}
+
+.food-section-header:first-child {
+    margin-top: 0;
+}
+
+.food-item {
+    background: var(--color-white);
+    border-radius: var(--radius-md);
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    border: 1px solid var(--color-gray-5);
+    box-shadow: var(--shadow-sm);
+}
+
+.food-item-header {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
+}
+
+.food-icon {
+    font-size: 32px;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.food-main {
+    flex: 1;
+    min-width: 0;
+}
+
+.food-name {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+    line-height: 1.3;
+}
+
+.food-cuisine {
+    font-size: 14px;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.halal-badge {
+    display: inline-block;
+    background: #10B981;
+    color: white;
+    padding: 2px 8px;
+    border-radius: var(--radius-xs);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+.food-details {
+    padding: var(--spacing-sm) 0;
+    border-top: 1px solid var(--color-gray-6);
+    border-bottom: 1px solid var(--color-gray-6);
+    margin-bottom: var(--spacing-sm);
+}
+
+.food-detail-row {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-xs);
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+    line-height: 1.5;
+}
+
+.food-detail-row:last-child {
+    margin-bottom: 0;
+}
+
+.food-detail-row svg {
+    flex-shrink: 0;
+    margin-top: 2px;
+    color: var(--text-tertiary);
+}
+
+.food-specialty {
+    font-size: 14px;
+    color: #F59E0B;
+    font-weight: 600;
+    margin-top: var(--spacing-sm);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background: rgba(245, 158, 11, 0.1);
+    border-radius: var(--radius-xs);
+    border-left: 3px solid #F59E0B;
+}
+
+.food-certification {
+    font-size: 13px;
+    color: #10B981;
+    font-weight: 600;
+    margin-top: 6px;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background: rgba(16, 185, 129, 0.1);
+    border-radius: var(--radius-xs);
+}
+
+.food-tips {
+    font-size: 13px;
+    color: var(--text-tertiary);
+    font-style: italic;
+    margin-top: var(--spacing-sm);
+    padding-left: var(--spacing-sm);
+    border-left: 2px solid var(--color-gray-5);
+}
+
+.food-actions {
+    display: flex;
+    gap: var(--spacing-xs);
+    flex-wrap: wrap;
+}
+
+.food-action-button {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 14px;
+    background: var(--color-white);
+    border: 1px solid var(--color-gray-5);
+    border-radius: var(--radius-sm);
+    color: var(--color-blue);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: var(--shadow-sm);
+    flex: 1;
+    min-width: 90px;
+    justify-content: center;
+    min-height: 44px;
+}
+
+.food-action-button:active {
+    transform: scale(0.97);
+    background: var(--color-gray-6);
+    box-shadow: none;
+}
+
+.food-action-button svg {
+    flex-shrink: 0;
 }
 
 /* Smooth transitions */

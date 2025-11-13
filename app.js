@@ -146,15 +146,27 @@ const tripData = [
         description: 'Karuizawa Shopping Plaza',
         morning: [
             {
-                time: '08:00',
-                title: 'Shinkansen to Karuizawa',
-                description: 'Bullet train from Tokyo Station',
+                time: '07:30',
+                title: 'Depart for Tokyo Station',
+                description: 'Walk or Marunouchi Line (1 stop)',
+                details: {
+                    from: 'Hotel Keihan Tsukiji Ginza Grande',
+                    to: 'Tokyo Station',
+                    transport: 'Walk (~15 min) OR Marunouchi Line (1 stop from Ginza)',
+                    tips: 'Aim to reach Tokyo Station by 08:30 to purchase Shinkansen tickets and ekiben (train bento)'
+                }
+            },
+            {
+                time: '08:30',
+                title: 'Hokuriku Shinkansen to Karuizawa',
+                description: 'Asama or Hakutaka train (65-75 min)',
                 details: {
                     departure: 'Tokyo Station',
-                    destination: 'Karuizawa Station',
-                    duration: '~70 minutes',
-                    trainType: 'Hokuriku Shinkansen',
-                    tips: 'Book seats on the right side for Mt. Fuji views (weather permitting). Purchase ekiben (train bento) at Tokyo Station for the journey.'
+                    arrival: 'Karuizawa Station (~09:30-10:00)',
+                    duration: '~65-75 minutes',
+                    trainType: 'Hokuriku Shinkansen - Asama or Hakutaka',
+                    provider: 'JR East (no transfers)',
+                    tips: 'Book seats on right side for Mt. Fuji views. Purchase ekiben at Tokyo Station for the journey.'
                 }
             }
         ],
@@ -162,28 +174,37 @@ const tripData = [
             {
                 time: '10:00',
                 title: 'Karuizawa Prince Shopping Plaza',
-                description: 'Full day at outlet shopping mall',
+                description: '3-4 hours shopping & lunch',
                 location: 'Karuizawa Prince Shopping Plaza',
                 details: {
-                    address: 'Karuizawa Prince Shopping Plaza, Karuizawa, Nagano',
+                    location: 'South Exit of Karuizawa Station (2-3 min walk)',
                     website: 'https://www.karuizawa-psp.jp/en',
-                    highlights: '200+ outlet stores including international luxury brands',
-                    dining: 'Food court and restaurants available',
-                    tips: 'Bring luggage storage coins for lockers. Tax-free shopping available with passport.'
+                    highlights: '200+ outlet stores, food court, restaurants',
+                    optional: 'Coffee or stroll around Karuizawa town if time permits',
+                    tips: 'Tax-free shopping with passport. Coin lockers available for bags.'
                 }
             }
         ],
         evening: [
             {
-                time: '17:00',
+                time: '15:30',
                 title: 'Return Shinkansen to Tokyo',
-                description: 'Late afternoon departure back to Ginza',
+                description: 'Depart Karuizawa 3:30-4:00 PM',
                 details: {
-                    departure: 'Karuizawa Station',
-                    destination: 'Tokyo Station',
-                    duration: '~70 minutes',
-                    arrival: 'Back to hotel around 7:00 PM',
-                    note: 'Purchase any final items and souvenirs before departure'
+                    departure: 'Karuizawa Station (~15:30-16:00)',
+                    arrival: 'Tokyo Station (before evening)',
+                    duration: '~65-75 minutes',
+                    trainType: 'Hokuriku Shinkansen - Asama or Hakutaka',
+                    return: 'Walk or Marunouchi Line (1 stop) back to Ginza'
+                }
+            },
+            {
+                time: '18:00',
+                title: 'Dinner in Ginza',
+                description: 'Location TBD',
+                details: {
+                    area: 'Ginza district (near hotel)',
+                    suggestions: 'Sushi, izakaya, ramen, or kaiseki cuisine'
                 }
             }
         ]

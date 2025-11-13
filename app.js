@@ -725,26 +725,21 @@ function showTicketsVouchers() {
     if (tripInfo.ticketsVouchers && tripInfo.ticketsVouchers.length > 0) {
         tripInfo.ticketsVouchers.forEach(ticket => {
             modalHTML += `
-                <div class="ticket-item">
-                    <div class="ticket-icon">${ticket.icon}</div>
-                    <div class="ticket-info">
-                        <div class="detail-label">${ticket.title}</div>
-                        <div class="detail-value">${ticket.date}${ticket.time ? ' • ' + ticket.time : ''}</div>
-                        ${ticket.details ? `<div class="detail-value">${ticket.details}</div>` : ''}
-                    </div>
-                </div>
-                <div class="detail-actions">
-                    <a href="${ticket.link}"
-                       target="_blank"
-                       class="action-button">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="2" y="7" width="20" height="10" rx="2" ry="2"/>
-                            <path d="M22 12h-4"/>
-                            <path d="M6 12H2"/>
+                <a href="${ticket.link}"
+                   target="_blank"
+                   class="ticket-item-link">
+                    <div class="ticket-item">
+                        <div class="ticket-icon">${ticket.icon}</div>
+                        <div class="ticket-info">
+                            <div class="ticket-title">${ticket.title}</div>
+                            <div class="ticket-meta">${ticket.date}${ticket.time ? ' • ' + ticket.time : ''}</div>
+                            ${ticket.details ? `<div class="ticket-details">${ticket.details}</div>` : ''}
+                        </div>
+                        <svg class="ticket-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 18l6-6-6-6"/>
                         </svg>
-                        View Ticket & QR Code
-                    </a>
-                </div>
+                    </div>
+                </a>
             `;
         });
     } else {

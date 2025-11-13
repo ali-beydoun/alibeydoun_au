@@ -607,15 +607,26 @@ body {
     color: var(--text-primary);
 }
 
-/* Day Navigation */
+/* Day Navigation - Refined Visual Hierarchy */
 .day-navigation {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: var(--spacing-sm) var(--spacing-md);
-    background: var(--glass-white-heavy);
-    border-bottom: 1px solid var(--color-gray-5);
-    gap: var(--spacing-sm);
+    padding: var(--spacing-md) var(--spacing-md);
+    background: linear-gradient(180deg,
+        rgba(255, 255, 255, 0.95) 0%,
+        rgba(250, 250, 252, 0.95) 100%
+    );
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    gap: var(--spacing-md);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.5) inset,
+        0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .nav-arrow {
@@ -623,42 +634,59 @@ body {
     align-items: center;
     gap: 6px;
     background: var(--color-white);
-    border: 1px solid var(--color-gray-5);
+    border: 1px solid rgba(0, 0, 0, 0.08);
     border-radius: var(--radius-sm);
-    padding: 10px 16px;
+    padding: 10px 14px;
     font-size: 14px;
     font-weight: 600;
     color: var(--color-blue);
     cursor: pointer;
     transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
     min-height: 44px;
-    box-shadow: var(--shadow-sm);
-}
-
-.nav-arrow:hover {
-    background: var(--color-gray-6);
-    border-color: var(--color-gray-4);
-    transform: translateY(-1px);
-    box-shadow: var(--shadow-md);
+    box-shadow:
+        0 1px 3px rgba(0, 0, 0, 0.08),
+        0 1px 0 rgba(255, 255, 255, 0.8) inset;
+    flex: 1;
+    max-width: 140px;
+    justify-content: center;
 }
 
 .nav-arrow:active {
-    transform: scale(0.97);
-    box-shadow: var(--shadow-sm);
+    transform: scale(0.96);
+    box-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.1),
+        0 1px 0 rgba(255, 255, 255, 0.8) inset;
+    background: var(--color-gray-6);
 }
 
 .nav-arrow:disabled {
-    opacity: 0.3;
+    opacity: 0.25;
     cursor: not-allowed;
     pointer-events: none;
+    background: var(--color-gray-6);
+    color: var(--text-tertiary);
 }
 
 .nav-arrow svg {
     flex-shrink: 0;
+    width: 18px;
+    height: 18px;
 }
 
 .nav-arrow span {
     white-space: nowrap;
+    font-size: 13px;
+    letter-spacing: 0.1px;
+}
+
+/* Adjust Previous button alignment */
+.nav-prev {
+    justify-content: flex-start;
+}
+
+/* Adjust Next button alignment */
+.nav-next {
+    justify-content: flex-end;
 }
 
 /* Day Content */

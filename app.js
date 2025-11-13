@@ -1325,3 +1325,141 @@ function showFoodOptionsForMeal(mealType, title) {
 window.addEventListener('popstate', () => {
     showCalendar();
 });
+
+// ═══════════════════════════════════════════════════════════════════════════
+// SWIPE GESTURE NAVIGATION SYSTEM
+// ═══════════════════════════════════════════════════════════════════════════
+/*
+ * Implements iOS-like swipe gestures for day-to-day navigation
+ * - Swipe left → next day
+ * - Swipe right → previous day
+ * - Distinguishes horizontal swipes from vertical scrolls
+ * - Prevents swipes when at boundaries (first/last day)
+ * - Smooth slide animations with hardware acceleration
+ */
+
+(function initSwipeGestures() {
+    const dayView = document.getElementById('day-view');
+    const dayContent = document.getElementById('day-content');
+
+    let touchStartX = 0;
+    let touchStartY = 0;
+    let touchCurrentX = 0;
+    let touchCurrentY = 0;
+    let isSwiping = false;
+    let swipeDirection = null;
+
+    const SWIPE_THRESHOLD = 80; // Minimum distance to trigger navigation
+    const VELOCITY_THRESHOLD = 0.3; // Minimum velocity for quick swipes
+    const MAX_VERTICAL_DRIFT = 50; // Maximum vertical movement to still be horizontal swipe
+
+    // Touch start - record initial position
+    dayView.addEventListener('touchstart', (e) => {
+        // Don't interfere with modal interactions
+        if (document.getElementById('activity-modal').classList.contains('active')) {
+            return;
+        }
+
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+        touchCurrentX = touchStartX;
+        touchCurrentY = touchStartY;
+        isSwiping = false;
+        swipeDirection = null;
+
+        // Prepare for potential animation
+        dayContent.style.transition = 'none';
+    }, { passive: true });
+
+    // Touch move - track movement and provide visual feedback
+    dayView.addEventListener('touchmove', (e) => {
+        if (document.getElementById('activity-modal').classList.contains('active')) {
+            return;
+        }
+
+        touchCurrentX = e.touches[0].clientX;
+        touchCurrentY = e.touches[0].clientY;
+
+        const deltaX = touchCurrentX - touchStartX;
+        const deltaY = touchCurrentY - touchStartY;
+        const absDeltaX = Math.abs(deltaX);
+        const absDeltaY = Math.abs(deltaY);
+
+        // Determine if this is a horizontal swipe (not vertical scroll)
+        if (!isSwiping && absDeltaX > 10) {
+            if (absDeltaX > absDeltaY) {
+                isSwiping = true;
+                swipeDirection = deltaX > 0 ? 'right' : 'left';
+
+                // Check if swipe is allowed
+                const currentIndex = tripData.findIndex(day => day.id === currentDayId);
+                if (swipeDirection === 'right' && currentIndex === 0) {
+                    isSwiping = false; // At first day, can't go back
+                }
+                if (swipeDirection === 'left' && currentIndex === tripData.length - 1) {
+                    isSwiping = false; // At last day, can't go forward
+                }
+            }
+        }
+
+        // Provide visual feedback during swipe
+        if (isSwiping && Math.abs(deltaY) < MAX_VERTICAL_DRIFT) {
+            e.preventDefault(); // Prevent scroll during horizontal swipe
+
+            // Dampen the movement for rubber band effect
+            const dampening = 0.4;
+            const translationX = deltaX * dampening;
+            dayContent.style.transform = `translateX(${translationX}px)`;
+        }
+    }, { passive: false });
+
+    // Touch end - evaluate swipe and navigate if threshold met
+    dayView.addEventListener('touchend', () => {
+        if (document.getElementById('activity-modal').classList.contains('active')) {
+            return;
+        }
+
+        const deltaX = touchCurrentX - touchStartX;
+        const deltaY = touchCurrentY - touchStartY;
+        const absDeltaX = Math.abs(deltaX);
+        const absDeltaY = Math.abs(deltaY);
+
+        // Calculate swipe velocity (distance over approximate time)
+        const velocity = absDeltaX / 300;
+
+        // Reset visual state
+        dayContent.style.transition = 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+        dayContent.style.transform = 'translateX(0)';
+
+        // Determine if swipe should trigger navigation
+        const shouldNavigate = isSwiping &&
+                              absDeltaX > absDeltaY &&
+                              (absDeltaX > SWIPE_THRESHOLD || velocity > VELOCITY_THRESHOLD);
+
+        if (shouldNavigate) {
+            if (swipeDirection === 'left') {
+                // Swipe left = next day
+                setTimeout(() => {
+                    navigateNextDay();
+                }, 100);
+            } else if (swipeDirection === 'right') {
+                // Swipe right = previous day
+                setTimeout(() => {
+                    navigatePrevDay();
+                }, 100);
+            }
+        }
+
+        // Reset state
+        isSwiping = false;
+        swipeDirection = null;
+    }, { passive: true });
+
+    // Touch cancel - reset state
+    dayView.addEventListener('touchcancel', () => {
+        dayContent.style.transition = 'transform 0.3s cubic-bezier(0.4, 0, 0.2, 1)';
+        dayContent.style.transform = 'translateX(0)';
+        isSwiping = false;
+        swipeDirection = null;
+    }, { passive: true });
+})();

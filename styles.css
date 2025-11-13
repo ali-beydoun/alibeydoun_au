@@ -831,6 +831,12 @@ body {
 /* Day Content */
 .day-content {
     padding: var(--spacing-lg) var(--spacing-md);
+    /* Swipe gesture support - hardware accelerated */
+    will-change: transform;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 .time-section {
@@ -1464,6 +1470,60 @@ body {
 /* Smooth transitions */
 .view {
     animation: fadeIn 0.3s ease;
+}
+
+/* Swipe gesture animations - iOS-like slide transitions */
+@keyframes slideInFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOutToLeft {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+}
+
+@keyframes slideOutToRight {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+}
+
+/* Apply animation to day view when swiping */
+.day-view.swipe-right {
+    animation: slideInFromRight 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.day-view.swipe-left {
+    animation: slideInFromLeft 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @keyframes fadeIn {

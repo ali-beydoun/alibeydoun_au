@@ -549,7 +549,19 @@ function renderDayDetail(dayId) {
                 <h3 class="section-header">${section.title}</h3>
                 ${section.activities.map((activity, index) => {
                     const hasDetails = activity.details && Object.keys(activity.details).length > 0;
-                    const cardClass = hasDetails ? 'activity-card clickable' : 'activity-card';
+
+                    // Check if this is a transport/logistics item
+                    const isTransport = activity.title.toLowerCase().includes('flight') ||
+                                       activity.title.toLowerCase().includes('transfer') ||
+                                       activity.title.toLowerCase().includes('shinkansen') ||
+                                       activity.title.toLowerCase().includes('train') ||
+                                       activity.title.toLowerCase().includes('airport') ||
+                                       activity.details?.train ||
+                                       activity.details?.flight;
+
+                    let cardClass = hasDetails ? 'activity-card clickable' : 'activity-card';
+                    if (isTransport) cardClass += ' transport';
+
                     const onClick = hasDetails ? `onclick="showActivityDetail(${dayId}, '${section.title.toLowerCase()}', ${index})"` : '';
 
                     return `

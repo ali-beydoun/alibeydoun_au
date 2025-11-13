@@ -126,77 +126,84 @@ const tripData = [
     },
     {
         id: 2,
-        type: 'full',
+        type: 'explore',
         name: 'Day 1',
         date: 'Thursday, November 27',
         dayOfWeek: 'Thursday',
         dateShort: 'Nov 27',
+        description: 'Local Exploration',
         morning: [],
         afternoon: [],
         evening: []
     },
     {
         id: 3,
-        type: 'full',
+        type: 'day-trip',
         name: 'Day 2',
         date: 'Friday, November 28',
         dayOfWeek: 'Friday',
         dateShort: 'Nov 28',
+        description: 'Nikko Day Trip',
         morning: [],
         afternoon: [],
         evening: []
     },
     {
         id: 4,
-        type: 'full',
+        type: 'explore',
         name: 'Day 3',
         date: 'Saturday, November 29',
         dayOfWeek: 'Saturday',
         dateShort: 'Nov 29',
+        description: 'City Discovery',
         morning: [],
         afternoon: [],
         evening: []
     },
     {
         id: 5,
-        type: 'full',
+        type: 'explore',
         name: 'Day 4',
         date: 'Sunday, November 30',
         dayOfWeek: 'Sunday',
         dateShort: 'Nov 30',
+        description: 'Cultural Experience',
         morning: [],
         afternoon: [],
         evening: []
     },
     {
         id: 6,
-        type: 'full',
+        type: 'day-trip',
         name: 'Day 5',
         date: 'Monday, December 1',
         dayOfWeek: 'Monday',
         dateShort: 'Dec 1',
+        description: 'Hakone Day Trip',
         morning: [],
         afternoon: [],
         evening: []
     },
     {
         id: 7,
-        type: 'full',
+        type: 'explore',
         name: 'Day 6',
         date: 'Tuesday, December 2',
         dayOfWeek: 'Tuesday',
         dateShort: 'Dec 2',
+        description: 'Shopping & Dining',
         morning: [],
         afternoon: [],
         evening: []
     },
     {
         id: 8,
-        type: 'full',
+        type: 'explore',
         name: 'Day 7',
         date: 'Wednesday, December 3',
         dayOfWeek: 'Wednesday',
         dateShort: 'Dec 3',
+        description: 'Final Moments',
         morning: [],
         afternoon: [],
         evening: []
@@ -271,6 +278,15 @@ function renderCalendar() {
         };
         const dayDate = dateMap[day.id];
         const weather = weatherData[dayDate];
+
+        // Day type labels
+        const typeLabels = {
+            'travel': '✈️ Travel',
+            'explore': '🗺️ Explore',
+            'day-trip': '🚄 Day Trip'
+        };
+        const typeLabel = typeLabels[day.type] || '';
+
         const weatherHTML = weather ? `
             <div class="day-weather">
                 <span class="weather-icon">${weatherEmoji[weather.code] || '🌤️'}</span>
@@ -281,11 +297,17 @@ function renderCalendar() {
         return `
             <div class="${cardClass}" onclick="showDay(${day.id})">
                 <div class="day-card-header">
-                    <span class="day-number">${day.type === 'travel' ? '✈️ ' : ''}${day.name}</span>
+                    <div class="day-card-left">
+                        <span class="day-number">${day.name}</span>
+                        ${typeLabel ? `<span class="day-type-badge">${typeLabel}</span>` : ''}
+                    </div>
                     ${isCurrentDay ? '<span class="day-badge">Today</span>' : ''}
                 </div>
-                <div class="day-name">${day.dayOfWeek}</div>
-                <div class="day-date">${day.dateShort}</div>
+                <div class="day-card-content">
+                    <div class="day-name">${day.dayOfWeek}</div>
+                    <div class="day-date">${day.dateShort}</div>
+                    ${day.description ? `<div class="day-description">${day.description}</div>` : ''}
+                </div>
                 ${weatherHTML}
             </div>
         `;
@@ -329,7 +351,6 @@ function renderDayDetail(dayId) {
             html += `<div class="time-section">
                 <h3 class="section-header">${section.title}</h3>
                 ${section.activities.map((activity, index) => {
-                    const activityId = `${dayId}-${section.title.toLowerCase()}-${index}`;
                     const hasDetails = activity.details && Object.keys(activity.details).length > 0;
                     const cardClass = hasDetails ? 'activity-card clickable' : 'activity-card';
                     const onClick = hasDetails ? `onclick="showActivityDetail(${dayId}, '${section.title.toLowerCase()}', ${index})"` : '';

@@ -233,6 +233,69 @@ const tripInfo = {
  *
  * STRUCTURE: Array of day objects, each containing morning/afternoon/evening activities
  *
+ * ═══════════════════════════════════════════════════════════════════════════
+ * USER PREFERENCE: HIT LIST STRUCTURE FOR AREA-BASED ACTIVITIES
+ * ═══════════════════════════════════════════════════════════════════════════
+ *
+ * When creating itineraries, group activities by AREA, not by individual time slots.
+ * User wants tactical "hit lists" for each location - clean, minimal, bang-bang-bang.
+ *
+ * PREFERRED STRUCTURE:
+ * Travel to Area → HIT LIST (Place 1, 2, 3, 4...) → Travel to Next Area
+ *
+ * EXAMPLE (Day 1 Evening - Vintage Shopping):
+ * ✅ GOOD:
+ * {
+ *   time: '17:00',
+ *   title: 'Harajuku Vintage Shopping Hit List',
+ *   location: 'Harajuku/Omotesando Area',
+ *   details: {
+ *     shops: [
+ *       { name: '1. Vintage Qoo', mapLink: '...', highlight: '...', hours: '...' },
+ *       { name: '2. Amore Vintage', mapLink: '...', walk: '5 min from Qoo' },
+ *       { name: '3. Kindal', mapLink: '...', walk: '7 min from Amore' }
+ *     ]
+ *   }
+ * }
+ *
+ * ❌ AVOID:
+ * Separate activity cards for each shop at different times (17:00 Qoo, 18:20 Amore, etc.)
+ *
+ * WHY THIS WORKS:
+ * - See all stops in neighborhood at once (no mental piecing together)
+ * - One-tap Google Maps navigation for each location
+ * - Skip or hit shops based on time/energy in the moment
+ * - Clear separation: FIXED bookings (Shibuya Sky) vs FLEXIBLE hit lists
+ * - No fluff - just names, highlights, hours, walking times, navigation buttons
+ *
+ * HIT LIST DATA FORMAT:
+ * details: {
+ *   shops: [                              // Array triggers hit list rendering
+ *     {
+ *       name: 'Shop Name',                // Clean title with priority markers (⭐)
+ *       address: 'Full address',          // For reference
+ *       highlight: 'Key info',            // One-line highlights (brands, specialty)
+ *       hours: 'Opening hours',           // Essential timing info
+ *       walk: 'X min from previous',      // Optional - walking time from last stop
+ *       mapLink: 'Location for Google'    // Used for navigation button
+ *     }
+ *   ],
+ *   strategy: 'Optional note'             // Brief tactical tip (e.g., "Hit 1-2 priority shops")
+ * }
+ *
+ * RENDERING:
+ * When activity.details.shops exists → Renders as clean hit list with Navigate buttons
+ * Otherwise → Renders as normal activity detail modal
+ *
+ * USER TRAVEL BRAIN:
+ * "In each area, my list is like a hit list of places where I can go Store 1 bang,
+ * next Google link, Store 2 bang, next Google link. It allows me to know what I should
+ * be hitting if time permits, allowing me to use the logically routed flow to launch
+ * Google Maps and get there (or skip one!) should I want to or time persists."
+ *
+ * Apply this pattern to: shopping districts, restaurant crawls, sightseeing clusters,
+ * museum districts - anywhere with multiple stops in one area.
+ *
  * DAY TYPES:
  * - 'travel': Flight/major transport days (shows flight info prominently)
  * - 'day-trip': Day trips outside main city

@@ -18,6 +18,15 @@ const tripInfo = {
     // Add new tickets here with: type, title, date, link, and any extra info
     ticketsVouchers: [
         {
+            type: 'flight',
+            title: 'QF59 & QF26 - Qantas Flight Itinerary',
+            date: 'Nov 26 & Dec 3, 2025',
+            time: 'SYD→HND 12:00 / HND→SYD 06:55',
+            details: 'Economy Class, 2 Adults',
+            link: 'https://www.icloud.com/iclouddrive/014TquIMBXgLcqnW2rVPpyI-w#FZL4E6__Qantas_Flight_Itinerary',
+            icon: '✈️'
+        },
+        {
             type: 'train',
             title: 'Hakutaka 555 - Tokyo to Karuizawa',
             date: 'Nov 28, 2025',
@@ -110,11 +119,35 @@ const tripData = [
             {
                 time: '08:30',
                 title: 'Arrive at Sydney Airport',
-                description: 'Check-in for QF59 flight to Tokyo',
+                description: 'Check-in for QF59 (closes 60 min before)',
                 details: {
-                    location: 'Sydney International Airport',
-                    terminal: 'International Terminal',
-                    tips: 'Arrive early for international check-in and security'
+                    airport: 'Sydney International Airport',
+                    terminal: 'Terminal 1 (International)',
+                    checkInOpens: '24h before departure',
+                    checkInCloses: '60 minutes before departure',
+                    tips: 'Arrive early for international check-in and security. Check-in opens 24h before.'
+                }
+            },
+            {
+                time: '12:00',
+                title: 'QF59 Flight to Tokyo',
+                description: 'Airbus A330-300 (10h flight)',
+                location: 'Sydney International Airport',
+                details: {
+                    flight: 'QF59',
+                    operator: 'Qantas',
+                    aircraft: 'Airbus A330-300',
+                    from: 'Sydney (SYD) - Terminal 1',
+                    to: 'Tokyo Haneda (HND) - Terminal 3',
+                    departure: '12:00 PM (Wed)',
+                    arrival: '8:00 PM (Wed)',
+                    duration: '10h 00min',
+                    class: 'Economy (O)',
+                    status: 'Confirmed',
+                    passengers: '2 adults',
+                    meal: 'Hot meal / Refreshment',
+                    ticketLink: 'https://www.icloud.com/iclouddrive/014TquIMBXgLcqnW2rVPpyI-w#FZL4E6__Qantas_Flight_Itinerary',
+                    tips: 'In-flight entertainment available. Meal service included.'
                 }
             }
         ],
@@ -128,13 +161,13 @@ const tripData = [
                 details: {
                     service: 'Comfort 7 seater',
                     passengers: '2 Passenger(s)',
-                    pickup: 'Tokyo Haneda International Airport (HND)',
+                    pickup: 'Tokyo Haneda International Airport (HND) - Terminal 3',
                     dropoff: 'Hotel Keihan Tsukiji Ginza Grande',
                     dropoffAddress: '3 Chome-5-4 Tsukiji, Chuo City, Tokyo 104-0045, Japan',
                     bookingRef: 'AUD 135.08',
                     status: 'Booking confirmed',
                     pickupTime: 'Nov 26, 2025, 8:00 PM (Local time)',
-                    note: 'Driver will meet you at arrivals'
+                    note: 'Driver will meet you at arrivals with name sign'
                 }
             }
         ]
@@ -315,11 +348,35 @@ const tripData = [
                     passengers: '2 Passenger(s)',
                     pickup: 'Hotel Keihan Tsukiji Ginza Grande',
                     pickupAddress: '3 Chome-5-4 Tsukiji, Chuo City, Tokyo 104-0045, Japan',
-                    dropoff: 'Tokyo Haneda International Airport (HND)',
+                    dropoff: 'Tokyo Haneda International Airport (HND) - Terminal 3',
                     bookingRef: 'AUD 112.12',
                     status: 'Booking confirmed',
                     pickupTime: 'Dec 3, 2025, 4:30 AM (Local time)',
-                    note: 'Very early departure - driver will meet you at hotel'
+                    note: 'Very early departure - driver will meet you at hotel lobby'
+                }
+            },
+            {
+                time: '06:55',
+                title: 'QF26 Flight to Sydney',
+                description: 'Airbus A330-300 (9h 55min flight)',
+                location: 'Tokyo Haneda International Airport',
+                details: {
+                    flight: 'QF26',
+                    operator: 'Qantas',
+                    aircraft: 'Airbus A330-300',
+                    from: 'Tokyo Haneda (HND) - Terminal 3',
+                    to: 'Sydney (SYD) - Terminal 1',
+                    departure: '6:55 AM (Wed)',
+                    arrival: '6:50 PM (Wed)',
+                    duration: '9h 55min',
+                    class: 'Economy (O)',
+                    status: 'Confirmed',
+                    passengers: '2 adults',
+                    meal: 'Hot meal / Refreshment',
+                    checkInOpens: '24h before departure',
+                    checkInCloses: '60 minutes before departure',
+                    ticketLink: 'https://www.icloud.com/iclouddrive/014TquIMBXgLcqnW2rVPpyI-w#FZL4E6__Qantas_Flight_Itinerary',
+                    tips: 'Check-in at Terminal 3. In-flight entertainment and meal service included.'
                 }
             }
         ],

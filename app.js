@@ -725,7 +725,7 @@ function showTicketsVouchers() {
     if (tripInfo.ticketsVouchers && tripInfo.ticketsVouchers.length > 0) {
         tripInfo.ticketsVouchers.forEach(ticket => {
             modalHTML += `
-                <div class="detail-row ticket-item">
+                <div class="ticket-item">
                     <div class="ticket-icon">${ticket.icon}</div>
                     <div class="ticket-info">
                         <div class="detail-label">${ticket.title}</div>

@@ -1,5 +1,23 @@
-// Key Trip Info (Quick Reference)
+/*
+ * ═══════════════════════════════════════════════════════════════════════════
+ * TOKYO TRIP PLANNER - DATA STRUCTURE & PARADIGM DOCUMENTATION
+ * ═══════════════════════════════════════════════════════════════════════════
+ *
+ * This application follows specific design patterns. Read carefully before adding data.
+ *
+ * KEY CONCEPTS:
+ * 1. DUAL-ACCESS PATTERN: Items exist in BOTH centralized collections AND day itineraries
+ * 2. COLOR CODING: Activities are visually categorized by type
+ * 3. MOBILE-FIRST: All designs prioritize iOS mobile experience
+ *
+ * ═══════════════════════════════════════════════════════════════════════════
+ */
+
+// ═══════════════════════════════════════════════════════════════════════════
+// TRIP INFO - Centralized Reference Data
+// ═══════════════════════════════════════════════════════════════════════════
 const tripInfo = {
+    // Hotel information (single entry)
     hotel: {
         name: 'Hotel Keihan Tsukiji Ginza Grande',
         address: '3 Chome-5-4 Tsukiji, Chuo City, Tokyo 104-0045, Japan',
@@ -10,12 +28,40 @@ const tripInfo = {
         website: 'https://tsukijiginza.hotelkeihan.co.jp/',
         notes: '2 min walk from Tsukiji station (Hibiya line). 24-hour front desk. Baggage storage available.'
     },
+
+    // Flight summary (for header display only - full details in tripData)
     flights: [
         { number: 'QF59', route: 'Sydney → Tokyo', date: 'Nov 26', time: '12:00 - 20:00' },
         { number: 'QF26', route: 'Tokyo → Sydney', date: 'Dec 3', time: '06:55 - 18:50' }
     ],
-    // Centralized Tickets & Vouchers
-    // Add new tickets here with: type, title, date, link, and any extra info
+
+    /*
+     * ═══════════════════════════════════════════════════════════════════════
+     * TICKETS & VOUCHERS PARADIGM
+     * ═══════════════════════════════════════════════════════════════════════
+     *
+     * PURPOSE: Centralized access to all tickets/vouchers via "Tickets & Vouchers" button
+     * ALSO: Individual tickets accessible within daily itinerary via ticketLink field
+     *
+     * DUAL ACCESS:
+     * - Add ticket here for centralized view
+     * - Add ticketLink to activity.details for in-context access
+     *
+     * ICONS: ✈️ flights | 🚄 trains | 🎟️ activities | 🚗 transfers
+     *
+     * REQUIRED FIELDS:
+     * - type: 'flight' | 'train' | 'activity' | 'transfer'
+     * - title: Short descriptive name
+     * - date: Date(s) of use
+     * - link: iCloud share link to PDF/ticket
+     * - icon: Emoji for visual categorization
+     *
+     * OPTIONAL FIELDS:
+     * - time: Departure/entry time
+     * - details: Brief description (e.g., seat numbers, ticket type)
+     *
+     * RENDERING: Clickable document-list style (iOS Files app pattern)
+     */
     ticketsVouchers: [
         {
             type: 'flight',
@@ -53,11 +99,67 @@ const tripInfo = {
             link: 'https://www.icloud.com/iclouddrive/007ykC75nU-ThDdIzm_XZN2fA#20251128_Asama624_Karuizawa-Tokyo',
             icon: '🚄'
         }
-        // Add more tickets/vouchers here following the same pattern:
-        // { type: 'train|activity|transfer', title: '...', date: '...', link: '...', icon: '🚄|🎟️|🚗' }
+        // ADD NEW TICKETS ABOVE THIS LINE
     ],
-    // Centralized Food Options
-    // Add restaurants/cafes here: type (breakfast/lunch/dinner/cafe), name, location, cuisine, details
+
+    /*
+     * ═══════════════════════════════════════════════════════════════════════
+     * FOOD OPTIONS PARADIGM
+     * ═══════════════════════════════════════════════════════════════════════
+     *
+     * PURPOSE: Reference library of ALL restaurants/cafes throughout trip
+     * ACCESS: Via "Food Options" button (grouped by meal type: Breakfast/Lunch/Dinner/Cafes)
+     *
+     * LINKING TO DAYS:
+     * - Add restaurant here to centralized foodOptions array
+     * - Link to specific day by creating food option activity with:
+     *   isFoodOption: true
+     *   foodType: 'breakfast' | 'lunch' | 'dinner' | 'cafe'
+     *
+     * CONTEXTUAL vs CENTRALIZED:
+     * - Day-specific food cards show ONLY relevant options (e.g., near Tokyo Station after Karuizawa)
+     * - Centralized view shows ALL options for entire trip
+     * - This prevents overwhelming daily itinerary with irrelevant choices
+     *
+     * COLOR CODING: Orange gradient cards in daily view
+     *
+     * ICONS: 🍜 ramen | 🍣 sushi | ☕ cafe | 🍔 burgers | 🥗 healthy | 🍰 dessert
+     *
+     * REQUIRED FIELDS:
+     * - type: 'breakfast' | 'lunch' | 'dinner' | 'cafe'
+     * - name: Restaurant name
+     * - cuisine: Type of food
+     * - location: Descriptive location (e.g., "GranTokyo South Tower B1")
+     * - address: Full address for Google Maps
+     * - hours: Operating hours
+     * - priceRange: Price range (e.g., "¥1,000-1,500")
+     * - icon: Emoji representing cuisine type
+     *
+     * OPTIONAL FIELDS:
+     * - area: General area (e.g., "Tokyo Station", "Ginza")
+     * - distance: Walking distance from landmark
+     * - phone: Phone number for reservations
+     * - halal: true/false - shows green badge if true
+     * - certification: Halal certification details
+     * - specialty: Signature dish or highlight
+     * - tips: Additional notes (e.g., "Perfect after Karuizawa")
+     *
+     * ACTION BUTTONS:
+     * - Photos: Opens Google Images search
+     * - Navigate: Google Maps directions
+     * - Call: Direct phone link (if phone provided)
+     *
+     * EXAMPLE LINKAGE:
+     * In tripData day activity:
+     * {
+     *   time: '18:00',
+     *   title: 'Dinner Options',
+     *   isFoodOption: true,
+     *   foodType: 'dinner',
+     *   details: { ... }
+     * }
+     * This will filter and show ONLY dinner options when clicked
+     */
     foodOptions: [
         {
             type: 'dinner',
@@ -76,10 +178,56 @@ const tripInfo = {
             tips: 'Halal certified Chinese ramen. Perfect after returning from Karuizawa. Famous for hand-pulled noodles.',
             icon: '🍜'
         }
-        // Add more food options here following the same pattern:
-        // { type: 'breakfast|lunch|dinner|cafe', name: '...', cuisine: '...', location: '...', ... }
+        // ADD NEW FOOD OPTIONS ABOVE THIS LINE
     ]
 };
+
+/*
+ * ═══════════════════════════════════════════════════════════════════════════
+ * TRIP DATA - Daily Itinerary
+ * ═══════════════════════════════════════════════════════════════════════════
+ *
+ * STRUCTURE: Array of day objects, each containing morning/afternoon/evening activities
+ *
+ * DAY TYPES:
+ * - 'travel': Flight/major transport days (shows flight info prominently)
+ * - 'day-trip': Day trips outside main city
+ * - 'explore': Regular exploration/activity days
+ *
+ * COLOR CODING FOR ACTIVITIES (auto-detected by keywords/flags):
+ * - 🟦 BLUE (Transport): flights, trains, shinkansen, transfers, airport activities
+ * - 🟧 ORANGE (Food): activities with isFoodOption: true
+ * - 🟪 PINK/WHITE (Default): all other activities/experiences
+ *
+ * ACTIVITY STRUCTURE:
+ * {
+ *   time: '13:20',                    // 24hr format
+ *   title: 'Activity Name',
+ *   description: 'Brief summary',     // Keep concise - details go in details object
+ *   location: 'Venue Name',           // Optional - enables "Open in Maps" button
+ *   details: {                        // Drill-down information (shown in modal)
+ *     key: 'value',
+ *     ticketLink: 'https://...',      // Optional - adds "View Ticket" button
+ *     // Add any relevant details here
+ *   }
+ * }
+ *
+ * TRANSPORT ACTIVITIES (Blue cards):
+ * Automatically detected if title contains: flight, transfer, shinkansen, train, airport
+ * OR if details contains: train, flight fields
+ *
+ * FOOD OPTION ACTIVITIES (Orange cards):
+ * {
+ *   isFoodOption: true,
+ *   foodType: 'breakfast' | 'lunch' | 'dinner' | 'cafe',
+ *   // When clicked, shows filtered food options from tripInfo.foodOptions
+ * }
+ *
+ * KEEP IT CLEAN:
+ * - Title/description: Short & scannable (user sees this in daily view)
+ * - Details: Comprehensive info (user drills down to see this)
+ * - Don't overwhelm the itinerary card with too much text
+ */
 
 // Weather data storage
 let weatherData = {};
@@ -139,6 +287,44 @@ async function fetchWeather() {
         console.log('Weather data unavailable');
     }
 }
+
+/*
+ * ═══════════════════════════════════════════════════════════════════════════
+ * ADDING NEW DAYS - QUICK REFERENCE TEMPLATE
+ * ═══════════════════════════════════════════════════════════════════════════
+ *
+ * COPY THIS TEMPLATE WHEN ADDING NEW DAYS:
+ *
+ * {
+ *     id: X,                              // Sequential number
+ *     type: 'explore',                    // 'travel' | 'day-trip' | 'explore'
+ *     name: 'Day X',
+ *     date: 'Full Date',                  // e.g., 'Friday, November 28'
+ *     dayOfWeek: 'Friday',
+ *     dateShort: 'Nov 28',                // Format: 'Nov DD'
+ *     description: 'Brief day summary',   // Shown on day card
+ *     morning: [
+ *         {
+ *             time: 'HH:MM',
+ *             title: 'Activity Name',
+ *             description: 'Brief summary',
+ *             location: 'Venue',          // Optional - adds Maps button
+ *             details: {
+ *                 key: 'value',           // Any relevant info
+ *                 ticketLink: '...',      // Optional - adds Ticket button
+ *             }
+ *         }
+ *     ],
+ *     afternoon: [ ... ],
+ *     evening: [ ... ]
+ * }
+ *
+ * REMEMBER:
+ * - If transport: Use keywords (flight/train/transfer) OR add train/flight to details
+ * - If food: Set isFoodOption: true, foodType: 'dinner' and link to foodOptions
+ * - If ticket: Add to tripInfo.ticketsVouchers AND activity.details.ticketLink
+ * ═══════════════════════════════════════════════════════════════════════════
+ */
 
 // Trip Data
 const tripData = [

@@ -848,6 +848,43 @@ body {
     color: var(--text-primary);
 }
 
+/* Ticket Item Styling */
+.ticket-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md);
+    background: var(--color-gray-6);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--color-gray-5);
+    margin-bottom: var(--spacing-md);
+}
+
+.ticket-icon {
+    font-size: 32px;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.ticket-info {
+    flex: 1;
+}
+
+.ticket-item .detail-label {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-primary);
+    text-transform: none;
+    letter-spacing: 0;
+    margin-bottom: var(--spacing-xxs);
+}
+
+.ticket-item .detail-value {
+    font-size: 14px;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
 .detail-actions {
     margin-top: var(--spacing-lg);
     display: flex;

@@ -13,6 +13,21 @@ const tripInfo = {
     flights: [
         { number: 'QF59', route: 'Sydney → Tokyo', date: 'Nov 26', time: '12:00 - 20:00' },
         { number: 'QF26', route: 'Tokyo → Sydney', date: 'Dec 3', time: '06:55 - 18:50' }
+    ],
+    // Centralized Tickets & Vouchers
+    // Add new tickets here with: type, title, date, link, and any extra info
+    ticketsVouchers: [
+        {
+            type: 'train',
+            title: 'Hakutaka 555 - Tokyo to Karuizawa',
+            date: 'Nov 28, 2025',
+            time: '08:41 - 09:43',
+            details: 'Green Car 11, Seats 9-C & 9-D',
+            link: 'https://www.icloud.com/iclouddrive/0a8T3t4h3Rwgq9UcU1uW4qB-A#20251128_Hakutaka555_Tokyo-Karuizawa',
+            icon: '🚄'
+        }
+        // Add more tickets/vouchers here following the same pattern:
+        // { type: 'train|activity|transfer', title: '...', date: '...', link: '...', icon: '🚄|🎟️|🚗' }
     ]
 };
 
@@ -695,6 +710,46 @@ function showHotelDetails() {
             </a>
         </div>
     `;
+
+    document.getElementById('modal-body').innerHTML = modalHTML;
+    document.getElementById('activity-modal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+// Tickets & Vouchers modal
+function showTicketsVouchers() {
+    document.getElementById('modal-title').textContent = 'Tickets & Vouchers';
+
+    let modalHTML = '';
+
+    if (tripInfo.ticketsVouchers && tripInfo.ticketsVouchers.length > 0) {
+        tripInfo.ticketsVouchers.forEach(ticket => {
+            modalHTML += `
+                <div class="detail-row ticket-item">
+                    <div class="ticket-icon">${ticket.icon}</div>
+                    <div class="ticket-info">
+                        <div class="detail-label">${ticket.title}</div>
+                        <div class="detail-value">${ticket.date}${ticket.time ? ' • ' + ticket.time : ''}</div>
+                        ${ticket.details ? `<div class="detail-value">${ticket.details}</div>` : ''}
+                    </div>
+                </div>
+                <div class="detail-actions">
+                    <a href="${ticket.link}"
+                       target="_blank"
+                       class="action-button">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="7" width="20" height="10" rx="2" ry="2"/>
+                            <path d="M22 12h-4"/>
+                            <path d="M6 12H2"/>
+                        </svg>
+                        View Ticket & QR Code
+                    </a>
+                </div>
+            `;
+        });
+    } else {
+        modalHTML = '<div class="empty-section">No tickets or vouchers added yet</div>';
+    }
 
     document.getElementById('modal-body').innerHTML = modalHTML;
     document.getElementById('activity-modal').classList.add('active');

@@ -501,9 +501,33 @@ function closeActivityModal() {
     document.body.style.overflow = '';
 }
 
-// Quick reference info button
-function showQuickReference() {
-    document.getElementById('modal-title').textContent = 'Trip Info';
+// Flight Details modal
+function showFlightDetails() {
+    document.getElementById('modal-title').textContent = 'Flight Details';
+
+    let modalHTML = `
+        <div class="detail-row">
+            <div class="detail-label">Outbound Flight</div>
+            <div class="detail-value large">${tripInfo.flights[0].number}</div>
+            <div class="detail-value">${tripInfo.flights[0].route}</div>
+            <div class="detail-value">${tripInfo.flights[0].date} • ${tripInfo.flights[0].time}</div>
+        </div>
+        <div class="detail-row">
+            <div class="detail-label">Return Flight</div>
+            <div class="detail-value large">${tripInfo.flights[1].number}</div>
+            <div class="detail-value">${tripInfo.flights[1].route}</div>
+            <div class="detail-value">${tripInfo.flights[1].date} • ${tripInfo.flights[1].time}</div>
+        </div>
+    `;
+
+    document.getElementById('modal-body').innerHTML = modalHTML;
+    document.getElementById('activity-modal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+// Hotel Details modal
+function showHotelDetails() {
+    document.getElementById('modal-title').textContent = 'Hotel Details';
 
     let modalHTML = `
         <div class="detail-row">
@@ -518,15 +542,6 @@ function showQuickReference() {
         <div class="detail-row">
             <div class="detail-label">Hotel Notes</div>
             <div class="detail-value">${tripInfo.hotel.notes}</div>
-        </div>
-        <div class="detail-row">
-            <div class="detail-label">Flights</div>
-            ${tripInfo.flights.map(flight => `
-                <div class="detail-value">
-                    <strong>${flight.number}</strong> • ${flight.route}<br>
-                    ${flight.date} • ${flight.time}
-                </div>
-            `).join('<br>')}
         </div>
         <div class="detail-actions">
             <a href="tel:${tripInfo.hotel.phone}"

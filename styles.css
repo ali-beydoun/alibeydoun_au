@@ -1,42 +1,64 @@
-/* iOS Design System with Cherry Blossom Tokyo Theme - Mobile First */
+/* Modern iOS Design System - Dark/Light Contrast */
 :root {
-    /* Cherry Blossom Color Palette */
-    --sakura-pink-light: #FFE5EC;
-    --sakura-pink: #FFC2D4;
-    --sakura-pink-medium: #FFB3C6;
-    --sakura-rose: #FF6B9D;
-    --sakura-mauve: #C06C84;
-    --sakura-purple: #6C5B7B;
-    --sakura-deep: #8B5A7D;
+    /* Dark & Light Neutrals */
+    --color-black: #000000;
+    --color-dark: #1C1C1E;
+    --color-dark-elevated: #2C2C2E;
+    --color-dark-tertiary: #3A3A3C;
 
-    /* Glassmorphism with high contrast */
-    --glass-white: rgba(255, 255, 255, 0.85);
-    --glass-white-light: rgba(255, 255, 255, 0.7);
-    --glass-pink: rgba(255, 229, 236, 0.9);
-    --glass-border: rgba(255, 255, 255, 0.3);
+    --color-gray-1: #8E8E93;
+    --color-gray-2: #AEAEB2;
+    --color-gray-3: #C7C7CC;
+    --color-gray-4: #D1D1D6;
+    --color-gray-5: #E5E5EA;
+    --color-gray-6: #F2F2F7;
 
-    /* Text - High Contrast for Legibility */
+    --color-white: #FFFFFF;
+    --color-off-white: #FAFAFA;
+    --color-light-gray: #F5F5F7;
+
+    /* iOS System Colors */
+    --color-blue: #007AFF;
+    --color-blue-light: rgba(0, 122, 255, 0.1);
+
+    /* Text - High Contrast */
     --text-primary: #1C1C1E;
     --text-secondary: #3A3A3C;
-    --text-tertiary: #6C5B7B;
-    --text-on-pink: #5A3A4D;
+    --text-tertiary: #8E8E93;
+    --text-white: #FFFFFF;
+    --text-white-secondary: rgba(255, 255, 255, 0.85);
 
-    /* Shadows with pink tint */
-    --shadow-pink-small: 0 2px 8px rgba(192, 108, 132, 0.15);
-    --shadow-pink-medium: 0 4px 16px rgba(192, 108, 132, 0.2);
-    --shadow-pink-large: 0 8px 32px rgba(192, 108, 132, 0.25);
+    /* Glassmorphism - Subtle */
+    --glass-white: rgba(255, 255, 255, 0.9);
+    --glass-white-heavy: rgba(255, 255, 255, 0.95);
+    --glass-dark: rgba(28, 28, 30, 0.9);
 
-    /* Border Radius - Mobile friendly */
+    /* Elevated Shadows - Depth & Hierarchy */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+    --shadow-md: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 4px 16px rgba(0, 0, 0, 0.12);
+    --shadow-xl: 0 8px 32px rgba(0, 0, 0, 0.15);
+    --shadow-dark: 0 8px 32px rgba(0, 0, 0, 0.3);
+
+    /* Blue Shadows for Accents */
+    --shadow-blue: 0 4px 16px rgba(0, 122, 255, 0.2);
+    --shadow-blue-strong: 0 8px 24px rgba(0, 122, 255, 0.3);
+
+    /* Border Radius - iOS Style */
+    --radius-xl: 20px;
     --radius-lg: 16px;
     --radius-md: 12px;
     --radius-sm: 8px;
+    --radius-xs: 6px;
+    --radius-full: 100px;
 
-    /* Spacing - Mobile optimized */
+    /* Spacing - Consistent Scale */
     --spacing-xs: 8px;
     --spacing-sm: 12px;
     --spacing-md: 16px;
     --spacing-lg: 20px;
     --spacing-xl: 24px;
+    --spacing-2xl: 32px;
 }
 
 * {
@@ -48,7 +70,7 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', sans-serif;
-    background: #F5F5F7;
+    background: var(--color-light-gray);
     color: var(--text-primary);
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
@@ -58,7 +80,7 @@ body {
     line-height: 1.5;
     max-width: 430px;
     margin: 0 auto;
-    box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-xl);
 }
 
 /* Views */
@@ -71,17 +93,17 @@ body {
     display: block;
 }
 
-/* App Header - Modern Tailwind Style */
+/* App Header - Elevated White */
 .app-header {
-    background: #FFFFFF;
+    background: var(--glass-white-heavy);
     padding: max(env(safe-area-inset-top), 20px) var(--spacing-lg) 20px;
     position: sticky;
     top: 0;
     z-index: 100;
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
-    position: relative;
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow: var(--shadow-md);
 }
 
 .travelers-photo {
@@ -90,9 +112,9 @@ body {
     height: 72px;
     border-radius: 50%;
     overflow: hidden;
-    border: 4px solid #F8F8F8;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-    background: #FFFFFF;
+    border: 4px solid var(--color-white);
+    box-shadow: var(--shadow-lg);
+    background: var(--color-white);
 }
 
 .travelers-photo img {
@@ -128,15 +150,16 @@ body {
 }
 
 .quick-access-section {
-    background: #FFFFFF;
+    background: var(--color-white);
     padding-top: var(--spacing-md);
     padding-bottom: var(--spacing-lg);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    border-bottom: 1px solid var(--color-gray-5);
+    box-shadow: 0 1px 0 var(--color-white);
 }
 
 .itinerary-section {
     padding-top: var(--spacing-lg);
-    background: #F5F5F7;
+    background: var(--color-light-gray);
 }
 
 .section-title {
@@ -154,8 +177,8 @@ body {
 }
 
 .quick-access-card {
-    background: var(--glass-white);
-    border: 1px solid var(--glass-border);
+    background: var(--color-white);
+    border: 1px solid var(--color-gray-5);
     border-radius: var(--radius-md);
     padding: 14px var(--spacing-md);
     display: flex;
@@ -163,9 +186,7 @@ body {
     gap: 14px;
     cursor: pointer;
     transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    box-shadow: var(--shadow-pink-small);
+    box-shadow: var(--shadow-sm);
     min-height: 68px;
     text-align: left;
     appearance: none;
@@ -173,10 +194,15 @@ body {
     font-family: inherit;
 }
 
+.quick-access-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-1px);
+}
+
 .quick-access-card:active {
-    transform: scale(0.98);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-    background: #F8F8F8;
+    transform: scale(0.98) translateY(0);
+    box-shadow: var(--shadow-sm);
+    background: var(--color-gray-6);
 }
 
 .quick-access-icon {
@@ -230,12 +256,13 @@ body {
     gap: 6px;
     font-size: 13px;
     color: var(--text-primary);
-    background: #F8F8F8;
+    background: var(--color-gray-6);
     padding: 8px 14px;
-    border-radius: 100px;
+    border-radius: var(--radius-full);
     font-weight: 600;
-    border: 1px solid rgba(0, 0, 0, 0.06);
+    border: 1px solid var(--color-gray-5);
     min-height: 36px;
+    box-shadow: var(--shadow-sm);
 }
 
 .tokyo-time svg {
@@ -253,15 +280,13 @@ body {
 }
 
 .day-card {
-    background: var(--glass-white);
+    background: var(--color-white);
     border-radius: var(--radius-md);
     padding: 0;
-    box-shadow: var(--shadow-pink-small);
+    box-shadow: var(--shadow-md);
     cursor: pointer;
     transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-    border: 1px solid var(--glass-border);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--color-gray-5);
     min-height: 88px;
     position: relative;
     overflow: hidden;
@@ -271,42 +296,59 @@ body {
     align-items: stretch;
 }
 
+.day-card:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-2px);
+}
+
 .day-card:active {
-    transform: scale(0.98);
-    box-shadow: var(--shadow-pink-medium);
+    transform: scale(0.98) translateY(0);
+    box-shadow: var(--shadow-md);
 }
 
 .day-card.current {
-    border: 2px solid #007AFF;
-    box-shadow: 0 4px 16px rgba(0, 122, 255, 0.15);
+    border: 2px solid var(--color-blue);
+    box-shadow: var(--shadow-blue);
+}
+
+.day-card.current:hover {
+    box-shadow: var(--shadow-blue-strong);
 }
 
 .day-card.travel {
-    background: linear-gradient(135deg, #1C1C1E 0%, #2C2C2E 100%);
+    background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-dark-elevated) 100%);
     color: white;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: var(--shadow-dark);
+}
+
+.day-card.travel:hover {
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+    transform: translateY(-2px);
 }
 
 /* Calendar Date Block - Left Side */
 .day-card-date-block {
-    background: #F8F8F8;
+    background: var(--color-gray-6);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 12px 8px;
-    border-right: 1px solid rgba(0, 0, 0, 0.06);
+    border-right: 1px solid var(--color-gray-5);
     min-width: 72px;
+    box-shadow: inset -1px 0 0 var(--color-white);
 }
 
 .day-card.current .day-card-date-block {
-    background: #007AFF;
+    background: var(--color-blue);
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.1);
 }
 
 .day-card.travel .day-card-date-block {
-    background: rgba(255, 255, 255, 0.15);
-    border-right-color: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.12);
+    border-right-color: rgba(255, 255, 255, 0.08);
+    box-shadow: inset -1px 0 0 rgba(255, 255, 255, 0.05);
 }
 
 .day-month {
@@ -578,7 +620,7 @@ body {
 
 .tap-hint {
     font-size: 12px;
-    color: var(--sakura-rose);
+    color: var(--color-blue);
     margin-top: var(--spacing-xs);
     font-weight: 600;
 }
@@ -593,10 +635,10 @@ body {
 .activity-time {
     font-size: 12px;
     font-weight: 700;
-    color: var(--sakura-deep);
-    background: var(--glass-pink);
+    color: var(--color-blue);
+    background: var(--color-blue-light);
     padding: 4px 10px;
-    border-radius: var(--radius-sm);
+    border-radius: var(--radius-xs);
     white-space: nowrap;
 }
 
@@ -619,31 +661,31 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    color: var(--sakura-rose);
+    color: var(--color-blue);
     text-decoration: none;
     font-size: 14px;
     font-weight: 600;
     padding: 10px 14px;
-    background: var(--glass-pink);
+    background: var(--color-blue-light);
     border-radius: var(--radius-sm);
     transition: all 0.2s;
-    border: 1px solid var(--glass-border);
+    border: 1px solid var(--color-gray-5);
     min-height: 44px;
 }
 
 .map-link:active {
-    background: var(--sakura-pink);
+    background: var(--color-gray-5);
     transform: scale(0.97);
 }
 
 .flight-info {
-    background: linear-gradient(135deg, var(--sakura-mauve) 0%, var(--sakura-purple) 100%);
+    background: linear-gradient(135deg, var(--color-dark) 0%, var(--color-dark-elevated) 100%);
     color: white;
     border-radius: var(--radius-lg);
     padding: var(--spacing-lg);
     margin-bottom: var(--spacing-lg);
-    box-shadow: var(--shadow-pink-medium);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: var(--shadow-dark);
+    border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .flight-header {
@@ -685,7 +727,7 @@ body {
     }
 }
 
-/* Activity Detail Modal - High Contrast Glassmorphism */
+/* Activity Detail Modal - Elevated Design */
 .modal {
     display: none;
     position: fixed;
@@ -708,37 +750,37 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(28, 28, 30, 0.6);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
 }
 
 .modal-content {
     position: relative;
-    background: #FFFFFF;
+    background: var(--color-white);
     width: 100%;
     max-height: 85vh;
-    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     animation: modalSlideUp 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 -4px 24px rgba(192, 108, 132, 0.3);
+    box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.25);
 }
 
 .modal-header {
     padding: var(--spacing-lg);
-    border-bottom: 1px solid var(--glass-border);
+    border-bottom: 1px solid var(--color-gray-5);
     position: relative;
-    background: linear-gradient(135deg, var(--sakura-pink-light) 0%, rgba(255, 255, 255, 0.95) 100%);
+    background: var(--color-white);
 }
 
 .modal-close {
     position: absolute;
     top: var(--spacing-md);
     right: var(--spacing-md);
-    background: var(--glass-white);
-    border: 1px solid var(--glass-border);
+    background: var(--color-gray-6);
+    border: 1px solid var(--color-gray-5);
     width: 36px;
     height: 36px;
     border-radius: 50%;
@@ -753,7 +795,7 @@ body {
 }
 
 .modal-close:active {
-    background: var(--glass-pink);
+    background: var(--color-gray-5);
     transform: scale(0.92);
 }
 
@@ -775,7 +817,7 @@ body {
 .detail-row {
     margin-bottom: var(--spacing-lg);
     padding-bottom: var(--spacing-lg);
-    border-bottom: 1px solid rgba(192, 108, 132, 0.1);
+    border-bottom: 1px solid var(--color-gray-5);
 }
 
 .detail-row:last-child {
@@ -787,7 +829,7 @@ body {
 .detail-label {
     font-size: 11px;
     font-weight: 700;
-    color: var(--sakura-deep);
+    color: var(--text-tertiary);
     text-transform: uppercase;
     letter-spacing: 0.8px;
     margin-bottom: var(--spacing-xs);
@@ -819,7 +861,7 @@ body {
     justify-content: center;
     gap: var(--spacing-xs);
     padding: 14px var(--spacing-lg);
-    background: linear-gradient(135deg, var(--sakura-rose) 0%, var(--sakura-mauve) 100%);
+    background: var(--color-blue);
     color: white;
     border: none;
     border-radius: var(--radius-md);
@@ -829,26 +871,31 @@ body {
     text-decoration: none;
     transition: all 0.2s;
     min-height: 48px;
-    box-shadow: var(--shadow-pink-small);
+    box-shadow: var(--shadow-md);
+}
+
+.action-button:hover {
+    box-shadow: var(--shadow-lg);
+    transform: translateY(-1px);
 }
 
 .action-button:active {
-    transform: scale(0.97);
-    box-shadow: var(--shadow-pink-medium);
+    transform: scale(0.98) translateY(0);
+    box-shadow: var(--shadow-sm);
 }
 
 .action-button.secondary {
-    background: var(--glass-pink);
-    color: var(--sakura-deep);
-    border: 1px solid var(--glass-border);
+    background: var(--color-gray-6);
+    color: var(--text-primary);
+    border: 1px solid var(--color-gray-5);
 }
 
 .info-badge {
     display: inline-block;
     padding: 6px 12px;
-    background: var(--glass-pink);
-    color: var(--sakura-deep);
-    border-radius: var(--radius-sm);
+    background: var(--color-blue-light);
+    color: var(--color-blue);
+    border-radius: var(--radius-xs);
     font-size: 14px;
     font-weight: 700;
     margin-top: 4px;

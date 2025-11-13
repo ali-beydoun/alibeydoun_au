@@ -586,9 +586,14 @@ function renderDayDetail(dayId) {
     content.innerHTML = html;
 }
 
+// Current day being viewed
+let currentDayId = null;
+
 // Navigation functions
 function showDay(dayId) {
+    currentDayId = dayId;
     renderDayDetail(dayId);
+    updateNavigationButtons();
     document.getElementById('calendar-view').classList.remove('active');
     document.getElementById('day-view').classList.add('active');
     window.scrollTo(0, 0);
@@ -598,6 +603,38 @@ function showCalendar() {
     document.getElementById('day-view').classList.remove('active');
     document.getElementById('calendar-view').classList.add('active');
     window.scrollTo(0, 0);
+}
+
+// Day-to-day navigation
+function navigatePrevDay() {
+    if (currentDayId > 1) {
+        showDay(currentDayId - 1);
+    }
+}
+
+function navigateNextDay() {
+    if (currentDayId < tripData.length) {
+        showDay(currentDayId + 1);
+    }
+}
+
+function updateNavigationButtons() {
+    const prevBtn = document.getElementById('nav-prev');
+    const nextBtn = document.getElementById('nav-next');
+
+    // Disable prev button if on first day
+    if (currentDayId <= 1) {
+        prevBtn.disabled = true;
+    } else {
+        prevBtn.disabled = false;
+    }
+
+    // Disable next button if on last day
+    if (currentDayId >= tripData.length) {
+        nextBtn.disabled = true;
+    } else {
+        nextBtn.disabled = false;
+    }
 }
 
 // Update Tokyo time display

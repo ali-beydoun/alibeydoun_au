@@ -607,6 +607,60 @@ body {
     color: var(--text-primary);
 }
 
+/* Day Navigation */
+.day-navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: var(--glass-white-heavy);
+    border-bottom: 1px solid var(--color-gray-5);
+    gap: var(--spacing-sm);
+}
+
+.nav-arrow {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--color-white);
+    border: 1px solid var(--color-gray-5);
+    border-radius: var(--radius-sm);
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-blue);
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    min-height: 44px;
+    box-shadow: var(--shadow-sm);
+}
+
+.nav-arrow:hover {
+    background: var(--color-gray-6);
+    border-color: var(--color-gray-4);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+}
+
+.nav-arrow:active {
+    transform: scale(0.97);
+    box-shadow: var(--shadow-sm);
+}
+
+.nav-arrow:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.nav-arrow svg {
+    flex-shrink: 0;
+}
+
+.nav-arrow span {
+    white-space: nowrap;
+}
+
 /* Day Content */
 .day-content {
     padding: var(--spacing-lg) var(--spacing-md);

@@ -1187,12 +1187,18 @@ function showDay(dayId) {
     document.getElementById('calendar-view').classList.remove('active');
     document.getElementById('day-view').classList.add('active');
     window.scrollTo(0, 0);
+
+    // Update URL hash for deep linking (e.g., #day-2)
+    window.history.pushState(null, '', `#day-${dayId}`);
 }
 
 function showCalendar() {
     document.getElementById('day-view').classList.remove('active');
     document.getElementById('calendar-view').classList.add('active');
     window.scrollTo(0, 0);
+
+    // Clear hash when returning to calendar
+    window.history.pushState(null, '', window.location.pathname);
 }
 
 // Day-to-day navigation
@@ -1267,7 +1273,20 @@ document.addEventListener('DOMContentLoaded', () => {
     setInterval(updateTokyoTime, 1000);
     setInterval(updateCountdown, 60000);
 
-    // Auto-navigate to current day if on trip
+    // Check for URL hash and auto-open day (for deep linking)
+    const hash = window.location.hash;
+    if (hash && hash.startsWith('#day-')) {
+        const dayId = parseInt(hash.replace('#day-', ''));
+        if (dayId && dayId >= 1 && dayId <= tripData.length) {
+            // Auto-open the day from the URL hash
+            setTimeout(() => {
+                showDay(dayId);
+            }, 100);
+            return; // Skip auto-navigate to current day
+        }
+    }
+
+    // Auto-navigate to current day if on trip (only if no hash)
     const currentDayId = getCurrentDayId();
     if (currentDayId) {
         // Wait a bit for better UX, show calendar briefly first
@@ -1719,9 +1738,19 @@ function showFoodOptionsForMeal(mealType, title, areas = null) {
     document.body.style.overflow = 'hidden';
 }
 
-// Handle browser back button
+// Handle browser back/forward button and hash changes
 window.addEventListener('popstate', () => {
-    showCalendar();
+    const hash = window.location.hash;
+    if (hash && hash.startsWith('#day-')) {
+        const dayId = parseInt(hash.replace('#day-', ''));
+        if (dayId && dayId >= 1 && dayId <= tripData.length) {
+            showDay(dayId);
+        } else {
+            showCalendar();
+        }
+    } else {
+        showCalendar();
+    }
 });
 
 // ═══════════════════════════════════════════════════════════════════════════

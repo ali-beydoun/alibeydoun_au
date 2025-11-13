@@ -143,10 +143,50 @@ const tripData = [
         date: 'Friday, November 28',
         dayOfWeek: 'Friday',
         dateShort: 'Nov 28',
-        description: 'Nikko Day Trip',
-        morning: [],
-        afternoon: [],
-        evening: []
+        description: 'Karuizawa Shopping Plaza',
+        morning: [
+            {
+                time: '08:00',
+                title: 'Shinkansen to Karuizawa',
+                description: 'Bullet train from Tokyo Station',
+                details: {
+                    departure: 'Tokyo Station',
+                    destination: 'Karuizawa Station',
+                    duration: '~70 minutes',
+                    trainType: 'Hokuriku Shinkansen',
+                    tips: 'Book seats on the right side for Mt. Fuji views (weather permitting). Purchase ekiben (train bento) at Tokyo Station for the journey.'
+                }
+            }
+        ],
+        afternoon: [
+            {
+                time: '10:00',
+                title: 'Karuizawa Prince Shopping Plaza',
+                description: 'Full day at outlet shopping mall',
+                location: 'Karuizawa Prince Shopping Plaza',
+                details: {
+                    address: 'Karuizawa Prince Shopping Plaza, Karuizawa, Nagano',
+                    website: 'https://www.karuizawa-psp.jp/en',
+                    highlights: '200+ outlet stores including international luxury brands',
+                    dining: 'Food court and restaurants available',
+                    tips: 'Bring luggage storage coins for lockers. Tax-free shopping available with passport.'
+                }
+            }
+        ],
+        evening: [
+            {
+                time: '17:00',
+                title: 'Return Shinkansen to Tokyo',
+                description: 'Late afternoon departure back to Ginza',
+                details: {
+                    departure: 'Karuizawa Station',
+                    destination: 'Tokyo Station',
+                    duration: '~70 minutes',
+                    arrival: 'Back to hotel around 7:00 PM',
+                    note: 'Purchase any final items and souvenirs before departure'
+                }
+            }
+        ]
     },
     {
         id: 4,

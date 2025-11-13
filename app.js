@@ -1090,7 +1090,12 @@ function renderDayDetail(dayId) {
     const day = tripData.find(d => d.id === dayId);
     if (!day) return;
 
-    document.getElementById('day-title').textContent = `${day.name} • ${day.date}`;
+    // Create structured banner title with day name and date on separate lines
+    const titleEl = document.getElementById('day-title');
+    titleEl.innerHTML = `
+        <div style="font-size: 14px; font-weight: 600; color: var(--color-blue); text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 4px; opacity: 0.9;">${day.name}</div>
+        <div style="font-size: 20px; font-weight: 800; letter-spacing: -0.5px;">${day.date}</div>
+    `;
     const content = document.getElementById('day-content');
 
     let html = '';

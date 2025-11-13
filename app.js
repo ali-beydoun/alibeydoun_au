@@ -1085,6 +1085,33 @@ function renderCalendar() {
     }).join('');
 }
 
+// Apply time-of-day gradient that darkens as the day progresses
+function applyTimeOfDayGradient(contentEl, day) {
+    // Extract time sections from the day's schedule
+    const schedule = day.morning || day.afternoon || day.evening || day.night;
+    if (!schedule) {
+        // Default light gradient
+        contentEl.style.background = 'linear-gradient(180deg, #F8F8F9 0%, #F2F2F5 100%)';
+        return;
+    }
+
+    // Determine the latest time period in the schedule
+    let latestPeriod = 'morning';
+    if (day.night && day.night.length > 0) latestPeriod = 'night';
+    else if (day.evening && day.evening.length > 0) latestPeriod = 'evening';
+    else if (day.afternoon && day.afternoon.length > 0) latestPeriod = 'afternoon';
+
+    // Define gradients for each time period (progressively darker)
+    const gradients = {
+        morning: 'linear-gradient(180deg, #F8F8F9 0%, #F2F2F5 100%)',
+        afternoon: 'linear-gradient(180deg, #F5F5F7 0%, #EBEBED 100%)',
+        evening: 'linear-gradient(180deg, #EDEDEF 0%, #DCDCE0 100%)',
+        night: 'linear-gradient(180deg, #E5E5E8 0%, #D1D1D6 100%)'
+    };
+
+    contentEl.style.background = gradients[latestPeriod];
+}
+
 // Render day detail view
 function renderDayDetail(dayId) {
     const day = tripData.find(d => d.id === dayId);
@@ -1097,6 +1124,9 @@ function renderDayDetail(dayId) {
         <div style="font-size: 20px; font-weight: 800; letter-spacing: -0.5px;">${day.date}</div>
     `;
     const content = document.getElementById('day-content');
+
+    // Apply dynamic gradient based on time of day (darkens as day progresses)
+    applyTimeOfDayGradient(content, day);
 
     let html = '';
 

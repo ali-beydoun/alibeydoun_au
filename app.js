@@ -177,6 +177,50 @@ const tripInfo = {
             specialty: 'Authentic Lanzhou hand-pulled beef noodles',
             tips: 'Halal certified Chinese ramen. Perfect after returning from Karuizawa. Famous for hand-pulled noodles.',
             icon: '🍜'
+        },
+        {
+            type: 'dinner',
+            name: 'Kuta Bali Cafe Harajuku',
+            cuisine: 'Indonesian (Halal)',
+            location: 'Le Ponte Building, near Harajuku Station',
+            area: 'Harajuku',
+            distance: '1 min walk from Harajuku Station',
+            address: 'Le Ponte Building, Jingumae, Shibuya-ku, Tokyo',
+            hours: 'Daily: 11:00-22:00',
+            priceRange: '¥1,200-2,000',
+            halal: true,
+            certification: 'Halal certified, Prayer room (mushola) available',
+            specialty: 'Nasi Campur, Ayam Sambal Matah, Ikan Gurame',
+            tips: 'Opened Sept 2024. Perfect after Harajuku vintage shopping. Prayer room available for Muslim travelers.',
+            icon: '🍛'
+        },
+        {
+            type: 'dinner',
+            name: 'Kebab Box J',
+            cuisine: 'Turkish (Halal)',
+            location: 'Harajuku area',
+            area: 'Harajuku',
+            address: 'Harajuku, Shibuya-ku, Tokyo',
+            hours: 'Daily: 11:00-23:00',
+            priceRange: '¥800-1,500',
+            halal: true,
+            specialty: 'Generous doner kebabs (chicken/beef/mixed) with toasted pita bread',
+            tips: 'Famous for large portions and authentic Turkish flavors. Quick option near vintage shops.',
+            icon: '🥙'
+        },
+        {
+            type: 'dinner',
+            name: 'Milan Nataraj',
+            cuisine: 'Indian/Asian (Halal options)',
+            location: 'Shibuya district',
+            area: 'Shibuya',
+            address: 'Shibuya, Shibuya-ku, Tokyo',
+            hours: 'Daily: 11:00-22:30',
+            priceRange: '¥1,000-2,000',
+            halal: true,
+            specialty: 'Authentic Indian vegetarian dishes, halal options available',
+            tips: 'Long-established vegetarian restaurant with halal choices. Good for diverse dietary needs.',
+            icon: '🍛'
         }
         // ADD NEW FOOD OPTIONS ABOVE THIS LINE
     ]
@@ -406,26 +450,206 @@ const tripData = [
         date: 'Thursday, November 27',
         dayOfWeek: 'Thursday',
         dateShort: 'Nov 27',
-        description: 'Shibuya Sky & Exploration',
-        morning: [],
+        description: 'Shibuya Sky & Vintage Designer Shopping',
+        morning: [
+            {
+                time: '09:00',
+                title: 'Hotel Breakfast Buffet',
+                description: 'Leisurely breakfast at hotel',
+                details: {
+                    location: 'Hotel Keihan Tsukiji Ginza Grande',
+                    tips: 'Take your time with breakfast. Plan to leave hotel by 10:00 AM.'
+                }
+            },
+            {
+                time: '10:00',
+                title: 'Tsukiji Outer Market Walk',
+                description: 'Explore historic seafood market area',
+                location: 'Tsukiji Outer Market',
+                details: {
+                    address: '3-15-1 Tsukiji, Chuo City, Tokyo 104-8435',
+                    walkingTime: '5-10 min walk from hotel',
+                    duration: '30-40 minutes exploring',
+                    highlights: 'Fresh seafood vendors, street food, kitchenware shops, traditional atmosphere',
+                    tips: 'Even though the inner wholesale market moved to Toyosu, the outer market is still vibrant with shops and food stalls. Great cultural experience.'
+                }
+            },
+            {
+                time: '11:00',
+                title: 'Transit to Shibuya',
+                description: 'Hibiya Line to Ebisu, transfer to JR Yamanote',
+                details: {
+                    from: 'Tsukiji Station (Hibiya Line)',
+                    to: 'Shibuya Station (Central/East Exit)',
+                    route: 'Hibiya Line: Tsukiji → Ebisu (20 min) → Transfer to JR Yamanote Line (5 min walk) → Ebisu → Shibuya (3 min)',
+                    totalTime: '~35 minutes including transfer',
+                    exit: 'Use Central Gate/East Exit for direct access to Shibuya Scramble Square',
+                    tips: 'Purchase IC card (Suica/Pasmo) for easy transit. Trains run frequently.'
+                }
+            },
+            {
+                time: '12:00',
+                title: 'Lunch at Shibuya Scramble Square',
+                description: 'Quick lunch before Shibuya Sky',
+                location: 'Shibuya Scramble Square',
+                details: {
+                    address: '2-24-12 Shibuya, Shibuya City, Tokyo',
+                    options: 'B2F: Quick takeaway options (Kiyoken, Kaneko Hannosuke) | B1F: Kinokuniya luxury supermarket (bento boxes)',
+                    duration: '45 minutes',
+                    tips: 'Eat in the building where Shibuya Sky is located. Saves time and energy before observation deck.'
+                }
+            }
+        ],
         afternoon: [
+            {
+                time: '13:00',
+                title: 'Arrive at Shibuya Sky Entrance',
+                description: 'Head to 14F entrance (20 min before booking)',
+                details: {
+                    entrance: '14th Floor, Shibuya Scramble Square',
+                    checkIn: '13:00-13:20 arrival window',
+                    tips: 'Arrive early to account for elevator wait times. Must check in within 20-minute window from 13:20 booking time.'
+                }
+            },
             {
                 time: '13:20',
                 title: 'Shibuya Sky Observation Deck',
-                description: 'Admission ticket (2 adults)',
+                description: 'Admission ticket (2 adults) - 1 hour on deck',
                 location: 'Shibuya Sky, Shibuya Scramble Square',
                 details: {
                     venue: 'Shibuya Sky',
                     address: 'Shibuya Scramble Square, 2-24-12 Shibuya, Shibuya City, Tokyo',
                     entryTime: '13:20 (Nov 27, 2025)',
+                    duration: '1 hour on observation deck (13:20-14:20)',
+                    floors: '45F-46F and rooftop (229m high)',
                     tickets: '2 x Adult (Aged 12+)',
                     status: 'Confirmed',
                     ticketLink: 'https://www.icloud.com/iclouddrive/0b6j5lNumA7uSEYJn2KAEP4Fw#20251127_SHIBUYA_SKY_Ticket',
-                    tips: 'Located on floors 45-46 and rooftop (229m high). Amazing 360° views of Tokyo. Visit during golden hour for best photos.'
+                    tips: 'Amazing 360° views of Tokyo. First-day "wow moment" overlooking the city. Take photos of Shibuya Scramble Crossing from above.'
+                }
+            },
+            {
+                time: '14:40',
+                title: 'Mega Don Quijote Shibuya',
+                description: '8-floor mega store - 4th floor has luxury designer section',
+                location: 'Mega Don Quijote Shibuya Honten',
+                details: {
+                    address: '28-6 Udagawacho, Shibuya-ku, Tokyo 150-0042',
+                    walkingTime: '10 min walk from Shibuya Scramble Square (via Hachiko Exit → Scramble Crossing → Bunkamura-dori Street)',
+                    hours: '24 HOURS (open all day/night)',
+                    floors: '8 floors total (B1 + 7 above ground)',
+                    floor4: '4th Floor: LUXURY DESIGNER SECTION - Louis Vuitton, Chanel, Balenciaga, Gucci bags, shoes, accessories, watches (mix of new & second-hand)',
+                    otherFloors: '5F: Daily goods | 6F: Electronics | 7F: Duty-free souvenirs',
+                    duration: '1h 50min browsing',
+                    vibe: 'Sensory overload - maze-like layout, jingles, packed aisles. Quintessential Tokyo shopping chaos!',
+                    tips: 'THE Tokyo experience - uniquely Japanese retail. Tax-free for tourists (bring passport). Perfect "must-see" for first-time visitors!'
+                }
+            },
+            {
+                time: '16:30',
+                title: 'Transit to Harajuku/Omotesando',
+                description: 'Scenic Cat Street walk OR quick JR Yamanote train',
+                details: {
+                    option1: 'RECOMMENDED: Walk Cat Street from MIYASHITA PARK (5 min from station) → 20-30 min scenic walk with vintage shop views → End near Harajuku/Omotesando',
+                    option2: 'FASTER: JR Yamanote Line Shibuya (Platform 1) → Harajuku (1 stop, 3-4 min) + 5 min walk to Omotesando = ~10 min total',
+                    recommendation: 'Cat Street for atmosphere and window shopping along the way!',
+                    tips: 'Cat Street is a pedestrian-friendly street lined with boutiques. Great way to transition between neighborhoods.'
                 }
             }
         ],
-        evening: []
+        evening: [
+            {
+                time: '17:00',
+                title: 'Vintage Qoo Tokyo',
+                description: '3 floors, 2,000 Chanel pieces - THE showstopper',
+                location: 'Vintage Qoo Tokyo',
+                details: {
+                    address: 'B1-2F Colonnade Jingumae, 5-2-6 Jingumae, Shibuya-ku, Tokyo 150-0001',
+                    nearestStation: 'Omotesando Station Exit A1 (Chiyoda/Ginza/Hanzomon Lines) - 2 min walk',
+                    hours: '11:30-20:00',
+                    size: '3 floors, ~6,000 vintage luxury items',
+                    floors: 'B1F: 2,000 CHANEL pieces (entire basement floor) | 1F: Louis Vuitton, Fendi, Dior | 2F: Hermès Kelly bags, watches, fine jewelry',
+                    specialty: 'Largest Chanel selection in Tokyo. Celebrity clientele (BLACKPINK, Kim Kardashian, Victoria Beckham)',
+                    priceRange: 'Mid to high-end, museum-like presentation',
+                    duration: '1h 15min',
+                    authentication: 'Excellent reputation, trusted since early 2010s',
+                    taxFree: 'YES - show passport for tax-free purchases',
+                    tips: 'THE must-see vintage shop in Tokyo. Arrive before crowds (avoid after 2pm if possible). The Chanel basement is jaw-dropping!'
+                }
+            },
+            {
+                time: '18:20',
+                title: 'Amore Vintage Omotesando',
+                description: 'Chanel heaven - celebrity hotspot with Barbie dreamhouse aesthetic',
+                location: 'AMORE Vintage Omotesando',
+                details: {
+                    address: '2F 5-1-6 Jingumae, Shibuya, Tokyo',
+                    walkingTime: '5 min walk from Vintage Qoo (same block, 5-2-6 to 5-1-6 Jingumae)',
+                    hours: '10:00-20:00',
+                    locations: '4 Amore locations in Omotesando/Aoyama area (all walking distance)',
+                    mainStore: '5-1-6 Jingumae - Chanel bags, jewelry, accessories, watches',
+                    aoyamaStore: '3-9-1 Kita Aoyama, Minato-ku (8 min walk) - Hermès, Louis Vuitton, Dior',
+                    specialty: '"Almost every Chanel bag you ever wanted" - 1990s vintage Chanel, classic double flap, red velvet top handles. LV bags from $600',
+                    priceRange: 'Slightly higher than competitors, but fair for quality/selection',
+                    duration: '55 min',
+                    vibe: 'Museum-like exhibition style, Barbie dreamhouse aesthetic, TikTok famous',
+                    authentication: 'Excellent',
+                    taxFree: 'YES - show passport',
+                    tips: 'EXPECT A QUEUE (very popular). If Chanel is your priority, this is #1. Most well-known vintage luxury shop in Tokyo right now.'
+                }
+            },
+            {
+                time: '19:20',
+                title: 'Kindal Harajuku',
+                description: '3-floor treasure hunt - diverse designer brands',
+                location: 'Kindal Harajuku',
+                details: {
+                    address: '3F Omotesando Building, 4-29-3 Jingumae, Shibuya, Tokyo 150-0001',
+                    walkingTime: '5-7 min walk from Amore along Omotesando Avenue',
+                    landmark: '3rd floor above Lawson convenience store',
+                    hours: '11:00-20:00',
+                    floors: 'Ground floor: High-end designer (Marc Jacobs, Chanel) | 2nd floor: Casual & streetwear | 3rd floor: DESIGNER HANDBAGS',
+                    brands: 'Chanel, Loewe, Burberry, Bottega Veneta, Prada, Hysteric Glamour',
+                    priceRange: 'Mid-range, well-priced',
+                    duration: '40 min',
+                    condition: 'Excellent/mint condition items',
+                    service: 'Friendly, helpful, not pushy',
+                    tips: 'Great alternative if Amore/Qoo are too crowded. Multi-floor layout makes browsing fun. Also has Ginza and Shinjuku locations.'
+                }
+            },
+            {
+                time: '20:05',
+                title: 'Ragtag Harajuku',
+                description: 'Cat Street classic - bargain prices for designer goods',
+                location: 'Ragtag Harajuku',
+                details: {
+                    address: '1F-2F Hulic Jingu-mae, 5-17-9 Jingumae, Shibuya-ku, Tokyo',
+                    walkingTime: '5 min walk from Kindal, back toward Omotesando on Cat Street',
+                    nearestStation: '4 min from Meiji Jingumae Station Exit 4 | 7 min from Omotesando Station Exit A1',
+                    hours: '11:00-20:00 (closed New Year holidays)',
+                    floors: '2 floors (renovated Dec 2023) | 1F: Women\'s | 2F: Men\'s',
+                    brands: 'Hermès, Chanel, Louis Vuitton, Céline, Gucci, Prada, Comme des Garçons, Yohji Yamamoto, Vivienne Westwood, Sacai, Martin Margiela',
+                    priceRange: '"Bargain prices" for designer goods',
+                    duration: '30 min',
+                    specialty: 'Great mix of Western + Japanese designers at discounted prices. Strong Céline and Comme des Garçons selection',
+                    tips: 'Last shop before dinner - perfect for finding deals. Well-known chain with fresh renovation.'
+                }
+            },
+            {
+                time: '21:00',
+                title: 'Dinner Options',
+                description: 'Harajuku/Omotesando dining',
+                isFoodOption: true,
+                foodType: 'dinner',
+                details: {
+                    area: 'Harajuku/Omotesando',
+                    recommended: 'Kuta Bali Cafe Harajuku (halal Indonesian, 1 min from Harajuku Station, prayer room available)',
+                    alternatives: 'Kebab Box J (Turkish halal) | Milan Nataraj (Indian with halal options)',
+                    walkingTime: '10-15 min from vintage shop area',
+                    note: 'See Food Options for full restaurant details with addresses and hours'
+                }
+            }
+        ]
     },
     {
         id: 3,

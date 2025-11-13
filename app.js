@@ -738,6 +738,12 @@ function showActivityDetail(dayId, section, activityIndex) {
     const activity = day[section][activityIndex];
     if (!activity || !activity.details) return;
 
+    // Check if this is a food option - show all food options for that meal type
+    if (activity.isFoodOption && activity.foodType) {
+        showFoodOptionsForMeal(activity.foodType, activity.title);
+        return;
+    }
+
     document.getElementById('modal-title').textContent = activity.title;
 
     let modalHTML = '';
@@ -1026,6 +1032,100 @@ function showFoodOptions() {
         modalHTML += renderFoodSection('Dinner', dinner);
         modalHTML += renderFoodSection('Cafes & Snacks', cafe);
 
+    } else {
+        modalHTML = '<div class="empty-section">No food options added yet</div>';
+    }
+
+    document.getElementById('modal-body').innerHTML = modalHTML;
+    document.getElementById('activity-modal').classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+// Food Options for specific meal type (called from activity card)
+function showFoodOptionsForMeal(mealType, title) {
+    document.getElementById('modal-title').textContent = title || `${mealType.charAt(0).toUpperCase() + mealType.slice(1)} Options`;
+
+    let modalHTML = '';
+
+    if (tripInfo.foodOptions && tripInfo.foodOptions.length > 0) {
+        const foods = tripInfo.foodOptions.filter(f => f.type === mealType);
+
+        if (foods.length > 0) {
+            foods.forEach(food => {
+                const googleSearchQuery = encodeURIComponent(`${food.name} ${food.address} Tokyo`);
+                const googleMapsQuery = encodeURIComponent(`${food.name}, ${food.address}`);
+
+                modalHTML += `
+                    <div class="food-item">
+                        <div class="food-item-header">
+                            <div class="food-icon">${food.icon}</div>
+                            <div class="food-main">
+                                <div class="food-name">${food.name}</div>
+                                <div class="food-cuisine">${food.cuisine}${food.halal ? ' • <span class="halal-badge">Halal</span>' : ''}</div>
+                            </div>
+                        </div>
+                        <div class="food-details">
+                            <div class="food-detail-row">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                                <span>${food.location}</span>
+                            </div>
+                            <div class="food-detail-row">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <polyline points="12 6 12 12 16 14"/>
+                                </svg>
+                                <span>${food.hours}</span>
+                            </div>
+                            <div class="food-detail-row">
+                                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="12" y1="1" x2="12" y2="23"/>
+                                    <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                                </svg>
+                                <span>${food.priceRange}</span>
+                            </div>
+                            ${food.specialty ? `<div class="food-specialty">★ ${food.specialty}</div>` : ''}
+                            ${food.certification ? `<div class="food-certification">✓ ${food.certification}</div>` : ''}
+                            ${food.tips ? `<div class="food-tips">${food.tips}</div>` : ''}
+                        </div>
+                        <div class="food-actions">
+                            <a href="https://www.google.com/search?q=${googleSearchQuery}&tbm=isch"
+                               target="_blank"
+                               class="food-action-button">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="3" y="3" width="18" height="18" rx="2" ry="2"/>
+                                    <circle cx="8.5" cy="8.5" r="1.5"/>
+                                    <polyline points="21 15 16 10 5 21"/>
+                                </svg>
+                                Photos
+                            </a>
+                            <a href="https://www.google.com/maps/dir/?api=1&destination=${googleMapsQuery}"
+                               target="_blank"
+                               class="food-action-button">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                                Navigate
+                            </a>
+                            ${food.phone ? `
+                                <a href="tel:${food.phone}"
+                                   class="food-action-button">
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                    </svg>
+                                    Call
+                                </a>
+                            ` : ''}
+                        </div>
+                    </div>
+                `;
+            });
+        } else {
+            modalHTML = `<div class="empty-section">No ${mealType} options added yet</div>`;
+        }
     } else {
         modalHTML = '<div class="empty-section">No food options added yet</div>';
     }

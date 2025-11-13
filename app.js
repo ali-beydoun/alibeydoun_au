@@ -562,79 +562,47 @@ const tripData = [
         evening: [
             {
                 time: '17:00',
-                title: 'Vintage Qoo Tokyo',
-                description: '3 floors, 2,000 Chanel pieces - THE showstopper',
-                location: 'Vintage Qoo Tokyo',
+                title: 'Harajuku/Omotesando Vintage Shopping Hit List',
+                description: '4 designer vintage shops (Chanel/LV focus)',
+                location: 'Harajuku/Omotesando Area',
                 details: {
-                    address: 'B1-2F Colonnade Jingumae, 5-2-6 Jingumae, Shibuya-ku, Tokyo 150-0001',
-                    nearestStation: 'Omotesando Station Exit A1 (Chiyoda/Ginza/Hanzomon Lines) - 2 min walk',
-                    hours: '11:30-20:00',
-                    size: '3 floors, ~6,000 vintage luxury items',
-                    floors: 'B1F: 2,000 CHANEL pieces (entire basement floor) | 1F: Louis Vuitton, Fendi, Dior | 2F: Hermès Kelly bags, watches, fine jewelry',
-                    specialty: 'Largest Chanel selection in Tokyo. Celebrity clientele (BLACKPINK, Kim Kardashian, Victoria Beckham)',
-                    priceRange: 'Mid to high-end, museum-like presentation',
-                    duration: '1h 15min',
-                    authentication: 'Excellent reputation, trusted since early 2010s',
-                    taxFree: 'YES - show passport for tax-free purchases',
-                    tips: 'THE must-see vintage shop in Tokyo. Arrive before crowds (avoid after 2pm if possible). The Chanel basement is jaw-dropping!'
-                }
-            },
-            {
-                time: '18:20',
-                title: 'Amore Vintage Omotesando',
-                description: 'Chanel heaven - celebrity hotspot with Barbie dreamhouse aesthetic',
-                location: 'AMORE Vintage Omotesando',
-                details: {
-                    address: '2F 5-1-6 Jingumae, Shibuya, Tokyo',
-                    walkingTime: '5 min walk from Vintage Qoo (same block, 5-2-6 to 5-1-6 Jingumae)',
-                    hours: '10:00-20:00',
-                    locations: '4 Amore locations in Omotesando/Aoyama area (all walking distance)',
-                    mainStore: '5-1-6 Jingumae - Chanel bags, jewelry, accessories, watches',
-                    aoyamaStore: '3-9-1 Kita Aoyama, Minato-ku (8 min walk) - Hermès, Louis Vuitton, Dior',
-                    specialty: '"Almost every Chanel bag you ever wanted" - 1990s vintage Chanel, classic double flap, red velvet top handles. LV bags from $600',
-                    priceRange: 'Slightly higher than competitors, but fair for quality/selection',
-                    duration: '55 min',
-                    vibe: 'Museum-like exhibition style, Barbie dreamhouse aesthetic, TikTok famous',
-                    authentication: 'Excellent',
-                    taxFree: 'YES - show passport',
-                    tips: 'EXPECT A QUEUE (very popular). If Chanel is your priority, this is #1. Most well-known vintage luxury shop in Tokyo right now.'
-                }
-            },
-            {
-                time: '19:20',
-                title: 'Kindal Harajuku',
-                description: '3-floor treasure hunt - diverse designer brands',
-                location: 'Kindal Harajuku',
-                details: {
-                    address: '3F Omotesando Building, 4-29-3 Jingumae, Shibuya, Tokyo 150-0001',
-                    walkingTime: '5-7 min walk from Amore along Omotesando Avenue',
-                    landmark: '3rd floor above Lawson convenience store',
-                    hours: '11:00-20:00',
-                    floors: 'Ground floor: High-end designer (Marc Jacobs, Chanel) | 2nd floor: Casual & streetwear | 3rd floor: DESIGNER HANDBAGS',
-                    brands: 'Chanel, Loewe, Burberry, Bottega Veneta, Prada, Hysteric Glamour',
-                    priceRange: 'Mid-range, well-priced',
-                    duration: '40 min',
-                    condition: 'Excellent/mint condition items',
-                    service: 'Friendly, helpful, not pushy',
-                    tips: 'Great alternative if Amore/Qoo are too crowded. Multi-floor layout makes browsing fun. Also has Ginza and Shinjuku locations.'
-                }
-            },
-            {
-                time: '20:05',
-                title: 'Ragtag Harajuku',
-                description: 'Cat Street classic - bargain prices for designer goods',
-                location: 'Ragtag Harajuku',
-                details: {
-                    address: '1F-2F Hulic Jingu-mae, 5-17-9 Jingumae, Shibuya-ku, Tokyo',
-                    walkingTime: '5 min walk from Kindal, back toward Omotesando on Cat Street',
-                    nearestStation: '4 min from Meiji Jingumae Station Exit 4 | 7 min from Omotesando Station Exit A1',
-                    hours: '11:00-20:00 (closed New Year holidays)',
-                    floors: '2 floors (renovated Dec 2023) | 1F: Women\'s | 2F: Men\'s',
-                    brands: 'Hermès, Chanel, Louis Vuitton, Céline, Gucci, Prada, Comme des Garçons, Yohji Yamamoto, Vivienne Westwood, Sacai, Martin Margiela',
-                    priceRange: '"Bargain prices" for designer goods',
-                    duration: '30 min',
-                    specialty: 'Great mix of Western + Japanese designers at discounted prices. Strong Céline and Comme des Garçons selection',
-                    tips: 'Last shop before dinner - perfect for finding deals. Well-known chain with fresh renovation.'
+                    area: 'Omotesando/Harajuku (all within walking distance)',
+                    duration: '3-4 hours total (hit as many as time permits)',
+                    shops: [
+                        {
+                            name: '1. Vintage Qoo Tokyo ⭐ PRIORITY',
+                            address: 'B1-2F Colonnade Jingumae, 5-2-6 Jingumae, Shibuya-ku',
+                            highlight: '3 floors • 2,000 Chanel basement • LV, Dior, Hermès',
+                            hours: '11:30-20:00',
+                            mapLink: 'Vintage Qoo Tokyo, 5-2-6 Jingumae, Shibuya-ku, Tokyo 150-0001'
+                        },
+                        {
+                            name: '2. Amore Vintage Omotesando',
+                            address: '2F 5-1-6 Jingumae, Shibuya, Tokyo',
+                            highlight: 'Chanel heaven • Museum aesthetic • TikTok famous',
+                            hours: '10:00-20:00',
+                            walk: '5 min from Qoo',
+                            mapLink: 'AMORE Vintage Omotesando, 5-1-6 Jingumae, Shibuya, Tokyo'
+                        },
+                        {
+                            name: '3. Kindal Harajuku',
+                            address: '3F Omotesando Building, 4-29-3 Jingumae, Shibuya',
+                            highlight: '3 floors • Chanel, Loewe, Burberry, Prada • Above Lawson',
+                            hours: '11:00-20:00',
+                            walk: '7 min from Amore',
+                            mapLink: 'Kindal Harajuku, 4-29-3 Jingumae, Shibuya, Tokyo 150-0001'
+                        },
+                        {
+                            name: '4. Ragtag Harajuku (Cat Street)',
+                            address: '1F-2F Hulic Jingu-mae, 5-17-9 Jingumae, Shibuya-ku',
+                            highlight: 'Bargain prices • Céline, Comme des Garçons',
+                            hours: '11:00-20:00',
+                            walk: '5 min from Kindal',
+                            mapLink: 'Ragtag Harajuku, 5-17-9 Jingumae, Shibuya-ku, Tokyo'
+                        }
+                    ],
+                    strategy: 'Hit 1-2 priority shops (Qoo + Amore), add others if time permits',
+                    taxFree: 'Bring passport for tax-free purchases at all shops'
                 }
             },
             {
@@ -1164,18 +1132,46 @@ function showActivityDetail(dayId, section, activityIndex) {
 
     let modalHTML = '';
 
-    // Render all detail fields (except ticketLink - handle separately)
-    Object.entries(activity.details).forEach(([key, value]) => {
-        if (key === 'ticketLink') return; // Skip ticketLink, we'll add it as a button
+    // Check if this is a hit list (has shops array)
+    if (activity.details.shops && Array.isArray(activity.details.shops)) {
+        // Render hit list format - clean, minimal, bang bang bang
+        activity.details.shops.forEach(shop => {
+            modalHTML += `
+                <div class="hit-list-item">
+                    <div class="hit-list-name">${shop.name}</div>
+                    <div class="hit-list-highlight">${shop.highlight}</div>
+                    <div class="hit-list-meta">${shop.hours}${shop.walk ? ' • ' + shop.walk : ''}</div>
+                    <a href="https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(shop.mapLink)}"
+                       target="_blank"
+                       class="action-button">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                            <circle cx="12" cy="10" r="3"/>
+                        </svg>
+                        Navigate
+                    </a>
+                </div>
+            `;
+        });
 
-        const label = key.charAt(0).toUpperCase() + key.slice(1).replace(/([A-Z])/g, ' $1');
-        modalHTML += `
-            <div class="detail-row">
-                <div class="detail-label">${label}</div>
-                <div class="detail-value">${value}</div>
-            </div>
-        `;
-    });
+        // Add strategy note if present
+        if (activity.details.strategy) {
+            modalHTML += `<div class="detail-row"><div class="detail-value">${activity.details.strategy}</div></div>`;
+        }
+    } else {
+        // Render normal detail fields (except ticketLink and shops - handle separately)
+        Object.entries(activity.details).forEach(([key, value]) => {
+            if (key === 'ticketLink' || key === 'shops') return;
+
+            const label = key.charAt(0).toUpperCase() + key.slice(1).replace(/([A-Z])/g, ' $1');
+            modalHTML += `
+                <div class="detail-row">
+                    <div class="detail-label">${label}</div>
+                    <div class="detail-value">${value}</div>
+                </div>
+            `;
+        });
+    }
 
     // Add action buttons
     const hasActions = activity.location || activity.details.pickup || activity.details.dropoff || activity.details.ticketLink;

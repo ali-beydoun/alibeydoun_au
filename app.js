@@ -157,16 +157,20 @@ const tripData = [
                 }
             },
             {
-                time: '08:30',
+                time: '08:41',
                 title: 'Hokuriku Shinkansen to Karuizawa',
-                description: 'Asama or Hakutaka train (65-75 min)',
+                description: 'Hakutaka 555 - Green Car (1h 2m)',
                 details: {
-                    departure: 'Tokyo Station',
-                    arrival: 'Karuizawa Station (~09:30-10:00)',
-                    duration: '~65-75 minutes',
-                    trainType: 'Hokuriku Shinkansen - Asama or Hakutaka',
-                    provider: 'JR East (no transfers)',
-                    tips: 'Book seats on right side for Mt. Fuji views. Purchase ekiben at Tokyo Station for the journey.'
+                    train: 'Hakutaka 555',
+                    departure: 'Tokyo Station 08:41',
+                    arrival: 'Karuizawa Station 09:43',
+                    duration: '1h 2m',
+                    car: 'Car 11 (Green)',
+                    seats: '9-C, 9-D',
+                    passengers: '2 adults',
+                    price: '¥16,580 (¥8,290 per person)',
+                    ticketType: 'Reserved - Purchase at ticket counter or vending machine before boarding',
+                    tips: 'Seats 9-C and 9-D in Green Car 11. Purchase ekiben at Tokyo Station for the journey.'
                 }
             }
         ],

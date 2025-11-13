@@ -48,7 +48,7 @@
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', sans-serif;
-    background: linear-gradient(180deg, var(--sakura-pink-light) 0%, #F8F8F8 100%);
+    background: #F5F5F7;
     color: var(--text-primary);
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
@@ -128,15 +128,15 @@ body {
 }
 
 .quick-access-section {
-    background: linear-gradient(180deg, var(--sakura-pink-light) 0%, #FAFAFA 100%);
+    background: #FFFFFF;
     padding-top: var(--spacing-md);
     padding-bottom: var(--spacing-lg);
-    border-bottom: 1px solid rgba(192, 108, 132, 0.08);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .itinerary-section {
     padding-top: var(--spacing-lg);
-    background: #FAFAFA;
+    background: #F5F5F7;
 }
 
 .section-title {
@@ -175,8 +175,8 @@ body {
 
 .quick-access-card:active {
     transform: scale(0.98);
-    box-shadow: var(--shadow-pink-medium);
-    background: var(--glass-pink);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    background: #F8F8F8;
 }
 
 .quick-access-icon {
@@ -205,7 +205,7 @@ body {
 }
 
 .quick-access-arrow {
-    color: var(--sakura-mauve);
+    color: #8E8E93;
     flex-shrink: 0;
     opacity: 0.7;
     transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
@@ -288,9 +288,9 @@ body {
 }
 
 .day-card.current {
-    border: 2px solid var(--sakura-rose);
-    background: linear-gradient(135deg, var(--glass-pink) 0%, var(--glass-white) 100%);
-    box-shadow: var(--shadow-pink-medium);
+    border: 2px solid #007AFF;
+    background: linear-gradient(135deg, rgba(0, 122, 255, 0.08) 0%, var(--glass-white) 100%);
+    box-shadow: 0 4px 16px rgba(0, 122, 255, 0.15);
 }
 
 .day-card.current::before {
@@ -298,10 +298,10 @@ body {
 }
 
 .day-card.travel {
-    background: linear-gradient(135deg, var(--sakura-mauve) 0%, var(--sakura-purple) 100%);
+    background: linear-gradient(135deg, #1C1C1E 0%, #2C2C2E 100%);
     color: white;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: var(--shadow-pink-medium);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 
 .day-card-header {
@@ -328,16 +328,16 @@ body {
     font-size: 11px;
     font-weight: 700;
     padding: 4px 10px;
-    background: var(--glass-pink);
+    background: #F0F0F0;
     border-radius: 6px;
-    color: var(--sakura-deep);
+    color: #5A5A5A;
     letter-spacing: 0.3px;
     display: inline-block;
     width: fit-content;
 }
 
 .day-card.current .day-number {
-    color: var(--sakura-rose);
+    color: #007AFF;
 }
 
 .day-card.travel .day-number,
@@ -350,19 +350,19 @@ body {
 }
 
 .day-card.day-trip .day-type-badge {
-    background: linear-gradient(135deg, #FFE5EC 0%, #FFC2D4 100%);
-    color: var(--sakura-deep);
+    background: #007AFF;
+    color: #FFFFFF;
 }
 
 .day-card.explore .day-type-badge {
-    background: var(--glass-pink);
-    color: var(--sakura-deep);
+    background: #F0F0F0;
+    color: #5A5A5A;
 }
 
 .day-badge {
     font-size: 10px;
     padding: 4px 8px;
-    background: var(--sakura-rose);
+    background: #007AFF;
     border-radius: 6px;
     font-weight: 700;
     color: white;
@@ -422,8 +422,8 @@ body {
     gap: 7px;
     font-size: 13px;
     color: var(--text-secondary);
-    padding-top: 4px;
-    border-top: 1px solid rgba(192, 108, 132, 0.1);
+    padding-top: 8px;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
 }
 
 .day-card.travel .day-weather {

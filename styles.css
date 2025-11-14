@@ -78,9 +78,31 @@ body {
     min-height: 100vh;
     font-size: 17px;
     line-height: 1.5;
-    max-width: 430px;
+    width: 100%;
+    max-width: 100%;
     margin: 0 auto;
-    box-shadow: var(--shadow-xl);
+}
+
+/* Responsive width constraints */
+@media (min-width: 431px) {
+    body {
+        max-width: 430px;
+        box-shadow: var(--shadow-xl);
+    }
+}
+
+@media (min-width: 768px) {
+    body {
+        max-width: 600px;
+        box-shadow: var(--shadow-xl);
+    }
+}
+
+@media (min-width: 1024px) {
+    body {
+        max-width: 700px;
+        box-shadow: var(--shadow-xl);
+    }
 }
 
 /* Views */
@@ -899,8 +921,8 @@ body {
     border: 1px solid rgba(0, 122, 255, 0.2);
     border-radius: 50%;
     padding: 0;
-    width: 40px;
-    height: 40px;
+    width: 44px;
+    height: 44px;
     font-size: 0;
     color: var(--color-blue);
     cursor: pointer;
@@ -1174,7 +1196,7 @@ body {
     font-size: 14px;
 }
 
-/* Responsive - Keep single column for iPhone Pro Max optimization */
+/* Responsive - Desktop/Tablet backgrounds */
 @media (min-width: 431px) {
     body {
         background: #E5E5E5;
@@ -1182,6 +1204,460 @@ body {
 
     .view {
         background: linear-gradient(180deg, var(--sakura-pink-light) 0%, #F8F8F8 100%);
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * LANDSCAPE ORIENTATION OPTIMIZATIONS
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+@media (orientation: landscape) {
+    /* Reduce header height in landscape */
+    .app-header {
+        padding: max(env(safe-area-inset-top), 12px) var(--spacing-md) var(--spacing-sm);
+    }
+
+    .header-hero {
+        margin-bottom: var(--spacing-xs);
+    }
+
+    .travelers-photo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .app-header h1 {
+        font-size: clamp(22px, 4vw, 24px);
+    }
+
+    .app-header .subtitle {
+        font-size: 12px;
+    }
+
+    .header-info {
+        gap: 6px;
+        margin-top: 6px;
+    }
+
+    .info-card {
+        font-size: 11px;
+        padding: 6px 10px;
+        min-height: 32px;
+    }
+
+    /* Compact section spacing */
+    .quick-access-section,
+    .itinerary-section {
+        padding: var(--spacing-sm) var(--spacing-md);
+    }
+
+    .section-title {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    /* Reduce day card height */
+    .day-card {
+        min-height: 72px;
+        grid-template-columns: 60px 1fr auto;
+    }
+
+    .day-card-date-block {
+        padding: 10px 6px;
+        min-width: 60px;
+    }
+
+    .day-day-number {
+        font-size: 28px;
+    }
+
+    .day-month,
+    .day-weekday-short {
+        font-size: 10px;
+    }
+
+    .day-card-content {
+        padding: 12px 10px;
+        gap: 4px;
+    }
+
+    .day-name {
+        font-size: 16px;
+    }
+
+    .day-description {
+        font-size: 12px;
+    }
+
+    /* Compact day view header */
+    .header-top {
+        padding: max(env(safe-area-inset-top), 12px) var(--spacing-md) var(--spacing-sm);
+    }
+
+    .day-title {
+        font-size: 20px;
+        padding: var(--spacing-md);
+        min-height: 68px;
+    }
+
+    /* Reduce day content padding */
+    .day-content {
+        padding: var(--spacing-lg) var(--spacing-md) var(--spacing-md);
+        min-height: calc(100vh - 140px);
+    }
+
+    .section-header {
+        font-size: 20px;
+        margin-bottom: var(--spacing-sm);
+    }
+
+    .time-section {
+        margin-bottom: var(--spacing-lg);
+    }
+
+    /* Optimize modal for limited vertical space */
+    .modal-content {
+        max-height: 75vh;
+    }
+
+    .modal-header {
+        padding: var(--spacing-md);
+    }
+
+    .modal-body {
+        padding: var(--spacing-md);
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * FLUID TYPOGRAPHY SYSTEM
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Small phones (iPhone SE, Mini) - tighter spacing */
+@media (max-width: 374px) {
+    body {
+        font-size: 16px;
+    }
+
+    .app-header h1 {
+        font-size: clamp(22px, 6vw, 24px);
+    }
+
+    .app-header .subtitle {
+        font-size: 12px;
+    }
+
+    .travelers-photo {
+        width: 52px;
+        height: 52px;
+    }
+
+    .quick-access-icon {
+        font-size: 28px;
+    }
+
+    .quick-access-title {
+        font-size: 16px;
+    }
+
+    .quick-access-subtitle {
+        font-size: 13px;
+    }
+
+    .section-title {
+        font-size: 18px;
+    }
+
+    .day-card {
+        grid-template-columns: 64px 1fr auto;
+    }
+
+    .day-card-date-block {
+        min-width: 64px;
+    }
+
+    .day-day-number {
+        font-size: 28px;
+    }
+
+    .day-name {
+        font-size: 16px;
+    }
+
+    .day-description {
+        font-size: 12px;
+    }
+
+    .day-title {
+        font-size: 20px;
+    }
+
+    .section-header {
+        font-size: 20px;
+    }
+
+    .activity-title {
+        font-size: 17px;
+    }
+}
+
+/* iPad portrait and larger - scale up slightly */
+@media (min-width: 768px) {
+    body {
+        font-size: 18px;
+    }
+
+    .app-header h1 {
+        font-size: clamp(28px, 4vw, 30px);
+    }
+
+    .app-header .subtitle {
+        font-size: 14px;
+    }
+
+    .travelers-photo {
+        width: 68px;
+        height: 68px;
+    }
+
+    .quick-access-icon {
+        font-size: 36px;
+    }
+
+    .quick-access-title {
+        font-size: 18px;
+    }
+
+    .quick-access-subtitle {
+        font-size: 15px;
+    }
+
+    .quick-access-grid {
+        gap: var(--spacing-md);
+    }
+
+    .section-title {
+        font-size: 22px;
+    }
+
+    .day-card {
+        grid-template-columns: 80px 1fr auto;
+        min-height: 96px;
+    }
+
+    .day-card-date-block {
+        min-width: 80px;
+        padding: 14px 10px;
+    }
+
+    .day-day-number {
+        font-size: 36px;
+    }
+
+    .day-month {
+        font-size: 11px;
+    }
+
+    .day-weekday-short {
+        font-size: 12px;
+    }
+
+    .day-name {
+        font-size: 18px;
+    }
+
+    .day-description {
+        font-size: 14px;
+    }
+
+    .day-title {
+        font-size: 26px;
+        padding: var(--spacing-xl);
+        min-height: 96px;
+    }
+
+    .section-header {
+        font-size: 24px;
+    }
+
+    .activity-title {
+        font-size: 19px;
+    }
+
+    .activity-description {
+        font-size: 16px;
+    }
+
+    .weather-icon {
+        font-size: 28px;
+    }
+
+    .weather-temp {
+        font-size: 12px;
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * RESPONSIVE SPACING & GRID SYSTEMS
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Small phones - reduce padding */
+@media (max-width: 374px) {
+    .app-header {
+        padding: max(env(safe-area-inset-top), 14px) var(--spacing-sm) var(--spacing-sm);
+    }
+
+    .quick-access-section,
+    .itinerary-section {
+        padding: var(--spacing-sm) var(--spacing-sm) var(--spacing-md);
+    }
+
+    .quick-access-card {
+        padding: 12px var(--spacing-sm);
+        gap: 12px;
+    }
+
+    .day-card-content {
+        padding: 12px 10px;
+    }
+
+    .day-card-right {
+        padding: 12px 10px;
+        min-width: 56px;
+    }
+
+    .day-content {
+        padding: var(--spacing-lg) var(--spacing-sm) var(--spacing-md);
+    }
+
+    .activity-card {
+        padding: var(--spacing-md);
+    }
+}
+
+/* iPad and larger - increase spacing */
+@media (min-width: 768px) {
+    .app-header {
+        padding: max(env(safe-area-inset-top), 20px) var(--spacing-xl) var(--spacing-lg);
+    }
+
+    .quick-access-section,
+    .itinerary-section {
+        padding: var(--spacing-lg) var(--spacing-xl) var(--spacing-xl);
+    }
+
+    .quick-access-card {
+        padding: 16px var(--spacing-lg);
+        gap: 16px;
+        min-height: 76px;
+    }
+
+    .day-grid {
+        gap: 12px;
+    }
+
+    .day-card-content {
+        padding: 16px 14px;
+        gap: 8px;
+    }
+
+    .day-card-right {
+        padding: 16px 14px;
+        min-width: 72px;
+    }
+
+    .day-content {
+        padding: var(--spacing-2xl) var(--spacing-xl) var(--spacing-xl);
+    }
+
+    .activity-card {
+        padding: var(--spacing-xl);
+    }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+ * PERFORMANCE OPTIMIZATIONS
+ * ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Reduce motion for accessibility and battery savings */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .photo-glow {
+        animation: none;
+    }
+
+    .day-card.travel::before {
+        animation: none;
+    }
+
+    .view {
+        animation: none;
+    }
+
+    .modal.active,
+    .modal-content {
+        animation: none;
+    }
+
+    .day-view.swipe-right,
+    .day-view.swipe-left {
+        animation: none;
+    }
+}
+
+/* Reduce blur effects on lower-performance devices */
+@media (max-width: 767px) {
+    /* Simplify glassmorphism on mobile for better performance */
+    .app-header {
+        backdrop-filter: blur(15px) saturate(150%);
+        -webkit-backdrop-filter: blur(15px) saturate(150%);
+    }
+
+    .quick-access-section {
+        backdrop-filter: blur(8px) saturate(140%);
+        -webkit-backdrop-filter: blur(8px) saturate(140%);
+    }
+
+    .quick-access-card {
+        backdrop-filter: blur(10px) saturate(160%);
+        -webkit-backdrop-filter: blur(10px) saturate(160%);
+    }
+
+    .day-card {
+        backdrop-filter: blur(10px) saturate(160%);
+        -webkit-backdrop-filter: blur(10px) saturate(160%);
+    }
+
+    .day-card.travel {
+        backdrop-filter: blur(15px) saturate(160%);
+        -webkit-backdrop-filter: blur(15px) saturate(160%);
+    }
+
+    .day-card.day-trip {
+        backdrop-filter: blur(12px) saturate(140%);
+        -webkit-backdrop-filter: blur(12px) saturate(140%);
+    }
+
+    .header-top {
+        backdrop-filter: blur(20px) saturate(140%);
+        -webkit-backdrop-filter: blur(20px) saturate(140%);
+    }
+
+    .activity-card {
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
+    }
+
+    .modal-backdrop {
+        backdrop-filter: blur(15px);
+        -webkit-backdrop-filter: blur(15px);
     }
 }
 

@@ -995,34 +995,38 @@ const tripData = [
                     shops: [
                         {
                             name: '1. Turret Coffee or Yazawa Coffee Roasters',
-                            specialty: 'Specialty coffee • Pour-overs • Rich espresso & latte varieties',
+                            highlight: 'Specialty coffee • Pour-overs • Rich espresso & latte varieties',
                             hours: 'Early morning opening',
-                            tips: 'Start with a quality coffee - Turret is famous for lattes, Yazawa for pour-overs'
+                            address: 'Tsukiji Outer Market, Chuo City, Tokyo',
+                            mapLink: 'Turret Coffee Tsukiji, Tokyo'
                         },
                         {
                             name: '2. Yamachō (やまちょう)',
-                            specialty: 'Famous tamagoyaki (Japanese rolled omelet) • Kushidama (omelet on a stick)',
-                            hours: 'Open daily',
-                            phone: '03-3248-6002',
-                            tips: 'Icon of Tsukiji - perfect breakfast snack while walking'
+                            highlight: 'Famous tamagoyaki (Japanese rolled omelet) • Kushidama (omelet on a stick)',
+                            hours: 'Open daily • ☎️ 03-3248-6002',
+                            address: 'Tsukiji Outer Market (across from info center)',
+                            mapLink: 'Yamachō Tsukiji, Tokyo'
                         },
                         {
-                            name: '3. Tsukiji Aritsugu',
-                            specialty: 'Hand-crafted Japanese chef knives • High-quality kitchen knives',
-                            hours: '5:30 AM - 3:00 PM',
-                            closed: 'Sundays, National holidays, Sometimes Wednesdays',
-                            tips: 'Legendary knife shop - perfect souvenir for cooking enthusiasts'
+                            name: '3. Tsukiji Aritsugu (Knife Shop)',
+                            highlight: 'Hand-crafted Japanese chef knives • Legendary since 1560',
+                            hours: '5:30 AM - 3:00 PM • Closed: Sun, holidays, some Wed',
+                            address: 'Tsukiji Outer Market, Chuo City, Tokyo',
+                            mapLink: 'Tsukiji Aritsugu, Tokyo'
                         },
                         {
-                            name: '4. Takizawa Toki',
-                            specialty: 'Japanese ceramics & tableware • Rice bowls, plates, cups, teapots',
-                            hours: 'Daily (closed Wednesdays in August & New Year)',
-                            tips: 'Est. 1931 - beautiful traditional Japanese tableware for souvenirs'
+                            name: '4. Takizawa Toki (Ceramics)',
+                            highlight: 'Japanese ceramics & tableware • Rice bowls, plates, cups, teapots • Est. 1931',
+                            hours: 'Daily (closed Wed in August & New Year)',
+                            address: 'Tsukiji Outer Market, Chuo City, Tokyo',
+                            mapLink: 'Takizawa Toki Tsukiji, Tokyo'
                         },
                         {
                             name: '5. General Market Browsing',
-                            specialty: 'Tea shops • Dried goods • Specialty food stalls • Street snacks',
-                            tips: 'Over 400 vendors - wander and discover unique Japanese products'
+                            highlight: 'Tea shops • Dried goods • Specialty food stalls • Street snacks • 400+ vendors',
+                            hours: 'Most shops: 5:00 AM - 2:00 PM',
+                            address: '4 Chome Tsukiji, Chuo City, Tokyo',
+                            mapLink: 'Tsukiji Outer Market, 4 Chome Tsukiji, Chuo City, Tokyo 104-0045'
                         }
                     ],
                     strategy: 'Start with coffee, grab tamagoyaki as breakfast snack, browse kitchen goods (knives/ceramics), explore market freely',

@@ -22,7 +22,7 @@ export default {
                     area: 'Ginza - Start the day in Tokyo\'s luxury district',
                     duration: '1.5 hours (8:00-9:30 AM)',
                     vibe: 'Sophisticated breakfast culture, artisan coffee, French-Japanese pastries',
-                    strategy: 'Pick 1-2 spots maximum. These are all within 10-15 min walk from your hotel.',
+                    strategy: 'Pick 1-2 spots maximum. These are all within 10-15 min walk from your hotel. For A Happy Pancake, arrive at 9:40 AM (20 min before opening) to skip massive waits.',
                     shops: [
                         {
                             name: '1. Ginza West ⭐',
@@ -63,6 +63,14 @@ export default {
                             hours: '9:00 AM - 7:00 PM',
                             walk: '10 min walk from hotel',
                             mapLink: 'Turret Coffee Ginza, Tokyo'
+                        },
+                        {
+                            name: '6. A Happy Pancake Ginza ⭐⭐',
+                            address: '7F New Ginza Building No. 10, 5-8-5 Ginza, Chuo City',
+                            highlight: 'Ultra-fluffy Japanese soufflé pancakes with Hokkaido milk butter & Manuka honey. 20 min cook time. ARRIVE 20 MIN BEFORE OPENING to avoid 2-5 hour waits!',
+                            hours: 'Weekends 10:00 AM - 8:30 PM • Weekdays 10:30 AM - 8:30 PM • ☎️ 03-6255-1111',
+                            walk: '10-15 min walk from hotel (1 min from Ginza Station Exit A5, 7th floor)',
+                            mapLink: 'A Happy Pancake Ginza, 5-8-5 Ginza, Chuo City, Tokyo'
                         }
                     ]
                 }

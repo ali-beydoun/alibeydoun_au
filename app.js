@@ -364,6 +364,20 @@ function updateCountdown() {
     }
 }
 
+// Expose functions to global scope for onclick handlers
+window.showDay = showDay;
+window.showCalendar = showCalendar;
+window.navigatePrevDay = navigatePrevDay;
+window.navigateNextDay = navigateNextDay;
+window.showActivityDetail = showActivityDetail;
+window.closeActivityModal = closeActivityModal;
+window.showFlightDetails = showFlightDetails;
+window.showHotelDetails = showHotelDetails;
+window.showTicketsVouchers = showTicketsVouchers;
+window.showFoodOptions = showFoodOptions;
+window.showFoodOptionsForMeal = showFoodOptionsForMeal;
+window.copyDayToClipboard = copyDayToClipboard;
+
 // Initialize app
 document.addEventListener('DOMContentLoaded', () => {
     renderCalendar();

@@ -1212,6 +1212,12 @@ body {
  * ═══════════════════════════════════════════════════════════════════════════ */
 
 @media (orientation: landscape) {
+    /* Use full width in landscape mode - override portrait breakpoints */
+    body {
+        max-width: 100% !important;
+        box-shadow: none !important;
+    }
+
     /* Reduce header height in landscape */
     .app-header {
         padding: max(env(safe-area-inset-top), 12px) var(--spacing-md) var(--spacing-sm);

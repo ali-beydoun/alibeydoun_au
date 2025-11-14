@@ -247,7 +247,15 @@ export default {
                     vibe: 'High-energy, futuristic, sensory overload - neon lights, sounds, pop culture!',
                     shops: [
                         {
-                            name: '1. Yodobashi-Akiba ⭐⭐⭐ PRIORITY',
+                            name: '1. CAT CAFE MOCHA (Akihabara Store) ⭐',
+                            highlight: '28 resident cats including exotic breeds • Log house-style retreat • Feeding time shows (10:30 AM & 7:30 PM) • Spacious playrooms with artificial tree structures',
+                            hours: '10:00 AM - 9:00 PM daily (Last entry 8:30 PM) • Open year-round, no reservation required',
+                            address: 'Akihabara SIL Building 2F, 4-4-3 Sotokanda, Chiyoda-ku, Tokyo 101-0021',
+                            walk: '5 min from JR Akihabara Station Denkigai Exit (building has Carl\'s Jr. on ground floor)',
+                            mapLink: 'Cat Cafe MOCHA Akihabara, 4-4-3 Sotokanda, Chiyoda City, Tokyo 101-0021'
+                        },
+                        {
+                            name: '2. Yodobashi-Akiba ⭐⭐⭐ PRIORITY',
                             highlight: '9-floor electronics fortress • Floors 1-6: Tech/cameras/games • Floor 8: 30 restaurants • Floor 9: Batting center',
                             hours: '9:30 AM - 10:00 PM daily • ☎️ 03-5209-1010',
                             address: '1-1 Kanda Hanaokacho, Chiyoda City, Tokyo 101-0028',
@@ -255,7 +263,15 @@ export default {
                             mapLink: 'Yodobashi Camera Multimedia Akiba, 1-1 Kanda Hanaokacho, Chiyoda City, Tokyo 101-0028'
                         },
                         {
-                            name: '2. Chuo Dori (Central Street)',
+                            name: '3. @home cafe (Main Branch) ⭐',
+                            highlight: 'Iconic maid cafe experience • Birthplace of "Moe Moe Kyun" • Est. 2004, 10+ million visits • Inside Don Quijote building • Classic maid cafe culture',
+                            hours: 'Mon-Fri 11:00 AM - 10:00 PM • Sat-Sun 10:00 AM - 10:00 PM',
+                            address: '5F AKIBA Cultures Zone (inside Don Quijote), 1-7-6 Sotokanda, Chiyoda-ku, Tokyo 101-0021',
+                            walk: '2 min from Akihabara Station',
+                            mapLink: '@home cafe Akihabara, 1-7-6 Sotokanda, Chiyoda City, Tokyo 101-0021'
+                        },
+                        {
+                            name: '4. Chuo Dori (Central Street)',
                             highlight: 'Main street through Akihabara • Massive neon signs • Best viewing at night • Light trails',
                             hours: 'Best after 6:00 PM (dusk/night for full neon effect)',
                             address: 'Chuo Dori, runs north-south from Akihabara Station',
@@ -263,7 +279,7 @@ export default {
                             mapLink: 'Chuo Dori, Akihabara, Chiyoda City, Tokyo'
                         },
                         {
-                            name: '3. GiGO Akihabara Building 3 ⭐',
+                            name: '5. GiGO Akihabara Building 3 ⭐',
                             highlight: '6th Floor RETRO:G • Multi-floor arcade • Rhythm games (DDR, Maimai) • Racing games • 90s retro classics',
                             hours: '10:00 AM - 11:30 PM daily',
                             address: '1 Chome-11-11 Sotokanda, Chiyoda City, Tokyo',
@@ -271,7 +287,7 @@ export default {
                             mapLink: 'GiGO Akihabara Building 3, 1 Chome-11-11 Sotokanda, Chiyoda City, Tokyo'
                         }
                     ],
-                    strategy: 'Yodobashi-Akiba first (1.5 hours browsing all 9 floors) → Chuo Dori neon walk → GiGO arcade experience',
+                    strategy: 'Cat Cafe MOCHA for cat time → Yodobashi-Akiba (1.5 hours browsing all 9 floors) → @home cafe maid experience → Chuo Dori neon walk → GiGO arcade',
                     taxFree: 'Bring passport for tax-free electronics shopping at Yodobashi',
                     mapLink: 'Akihabara Station, Chiyoda City, Tokyo'
                 }

@@ -1350,15 +1350,19 @@ body {
         gap: var(--spacing-md);
         overflow-x: auto;
         overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x proximity;
     }
 
     .time-section {
-        flex: 1;
-        min-width: 280px;
+        flex: 1 1 0;
+        min-width: min(280px, 30%);
+        max-width: 400px;
         margin-bottom: 0;
         display: flex;
         flex-direction: column;
         height: fit-content;
+        scroll-snap-align: start;
     }
 
     .section-header {

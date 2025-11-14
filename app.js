@@ -1913,3 +1913,178 @@ window.addEventListener('popstate', () => {
         swipeDirection = null;
     }, { passive: true });
 })();
+
+// ═══════════════════════════════════════════════════════════════════════════
+// COPY DAY ITINERARY TO CLIPBOARD
+// ═══════════════════════════════════════════════════════════════════════════
+
+/**
+ * Copy current day's itinerary to clipboard with trip context
+ */
+async function copyDayToClipboard() {
+    const day = tripData.find(d => d.id === currentDayId);
+    if (!day) {
+        console.error('Day not found');
+        return;
+    }
+
+    const markdownText = generateDayMarkdown(day);
+    const button = document.querySelector('.copy-day-button');
+
+    try {
+        await navigator.clipboard.writeText(markdownText);
+        showCopySuccess(button);
+    } catch (err) {
+        console.error('Failed to copy to clipboard:', err);
+        // Fallback for older browsers
+        fallbackCopyToClipboard(markdownText, button);
+    }
+}
+
+/**
+ * Show success animation on copy button
+ */
+function showCopySuccess(button) {
+    if (!button) return;
+
+    button.classList.add('copied');
+
+    // Reset after 2 seconds
+    setTimeout(() => {
+        button.classList.remove('copied');
+    }, 2000);
+}
+
+/**
+ * Fallback copy method for older browsers
+ */
+function fallbackCopyToClipboard(text, button) {
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+    textArea.style.position = 'fixed';
+    textArea.style.left = '-9999px';
+    document.body.appendChild(textArea);
+    textArea.select();
+
+    try {
+        document.execCommand('copy');
+        showCopySuccess(button);
+    } catch (err) {
+        console.error('Fallback copy failed:', err);
+    }
+
+    document.body.removeChild(textArea);
+}
+
+/**
+ * Generate markdown text for the current day with full trip context
+ */
+function generateDayMarkdown(day) {
+    const lines = [];
+
+    // Trip Header
+    lines.push('# 🗼 Tokyo Trip: November 26 - December 3, 2025');
+    lines.push('**Travelers:** Ali & Najah');
+    lines.push('**Hotel:** Hotel Keihan Tsukiji Ginza Grande (Ginza/Tsukiji)');
+    lines.push('');
+    lines.push('---');
+    lines.push('');
+
+    // LLM Prompt
+    lines.push('**PLEASE REVIEW THIS DAY PLAN** and suggest improvements considering:');
+    lines.push('- Logistics and timing between locations');
+    lines.push('- Local customs and etiquette');
+    lines.push('- Nearby alternatives or additions');
+    lines.push('- Overall flow and pacing');
+    lines.push('- Connection to previous/next days');
+    lines.push('');
+    lines.push('---');
+    lines.push('');
+
+    // Day Header
+    lines.push(`## ${day.name} - ${day.date}`);
+    lines.push(`### ${day.description}`);
+    lines.push('');
+
+    // Flight info for travel days
+    if (day.flight) {
+        lines.push('### ✈️ Flight Details');
+        lines.push(`**Flight:** ${day.flight.number} - ${day.flight.route}`);
+        lines.push(`**Departure:** ${day.flight.departure}`);
+        lines.push(`**Arrival:** ${day.flight.arrival}`);
+        lines.push(`**Airport:** ${day.flight.airport}`);
+        lines.push('');
+    }
+
+    // Time sections
+    const sections = [
+        { key: 'morning', icon: '🌅', title: 'Morning' },
+        { key: 'afternoon', icon: '☀️', title: 'Afternoon' },
+        { key: 'evening', icon: '🌙', title: 'Evening' }
+    ];
+
+    sections.forEach(section => {
+        if (day[section.key] && day[section.key].length > 0) {
+            lines.push(`### ${section.icon} ${section.title}`);
+            lines.push('');
+
+            day[section.key].forEach(activity => {
+                // Activity header
+                lines.push(`**${activity.time} - ${activity.title}**`);
+                if (activity.description) {
+                    lines.push(activity.description);
+                }
+
+                // Location
+                if (activity.location) {
+                    lines.push(`- Location: ${activity.location}`);
+                }
+
+                // Details
+                if (activity.details) {
+                    const details = activity.details;
+
+                    // Common detail fields
+                    if (details.address) lines.push(`- Address: ${details.address}`);
+                    if (details.duration) lines.push(`- Duration: ${details.duration}`);
+                    if (details.hours) lines.push(`- Hours: ${details.hours}`);
+                    if (details.tips) lines.push(`- Tips: ${details.tips}`);
+                    if (details.strategy) lines.push(`- Strategy: ${details.strategy}`);
+
+                    // Hit list shops
+                    if (details.shops && details.shops.length > 0) {
+                        lines.push('');
+                        lines.push('**Shops to visit:**');
+                        details.shops.forEach(shop => {
+                            lines.push(`${shop.name}`);
+                            if (shop.address) lines.push(`   - Address: ${shop.address}`);
+                            if (shop.highlight) lines.push(`   - ${shop.highlight}`);
+                            if (shop.hours) lines.push(`   - Hours: ${shop.hours}`);
+                            if (shop.walk) lines.push(`   - Walk: ${shop.walk}`);
+                            if (shop.mapLink) {
+                                const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(shop.mapLink)}`;
+                                lines.push(`   - [Navigate](${mapsUrl})`);
+                            }
+                            lines.push('');
+                        });
+                    }
+
+                    // Ticket link
+                    if (details.ticketLink) {
+                        lines.push(`- [View Ticket](${details.ticketLink})`);
+                    }
+                }
+
+                // Map link
+                if (activity.location) {
+                    const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(activity.location)}`;
+                    lines.push(`- [Navigate](${mapsUrl})`);
+                }
+
+                lines.push('');
+            });
+        }
+    });
+
+    return lines.join('\n');
+}

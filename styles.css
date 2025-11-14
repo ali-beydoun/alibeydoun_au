@@ -866,6 +866,73 @@ body {
     transform: translateX(-2px);
 }
 
+/* Copy Day Button */
+.copy-day-button {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: transparent;
+    border: none;
+    color: var(--color-blue);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    flex-shrink: 0;
+    opacity: 0.9;
+    min-width: 44px;
+    min-height: 44px;
+    padding: 0;
+    position: relative;
+}
+
+.copy-day-button:active {
+    opacity: 1;
+    transform: scale(0.95);
+}
+
+.copy-day-button .copy-icon {
+    flex-shrink: 0;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Icon states - default: show clipboard, hide checkmark */
+.copy-day-button .clipboard-icon {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.copy-day-button .checkmark-icon {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0.5);
+    opacity: 0;
+}
+
+/* Copied state - hide clipboard, show checkmark */
+.copy-day-button.copied .clipboard-icon {
+    opacity: 0;
+    transform: scale(0.5);
+}
+
+.copy-day-button.copied .checkmark-icon {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    color: #34C759;
+}
+
+/* Hide text label on smaller screens */
+.copy-day-button span {
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .copy-day-button span {
+        display: inline;
+    }
+}
+
 .day-title {
     font-size: 24px;
     font-weight: 800;

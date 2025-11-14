@@ -982,171 +982,141 @@ const tripData = [
         description: 'Tokyo Essentials & Souvenirs',
         morning: [
             {
-                time: '9:00 AM',
-                title: 'Meiji Jingu Shrine & Yoyogi Park',
-                description: 'Peaceful cultural morning at Tokyo\'s most iconic shrine',
-                location: 'Meiji Jingu Shrine',
+                time: '8:00 AM',
+                title: 'Slow Morning at Tsukiji Outer Market',
+                description: 'Relaxed start near hotel - baked goods, kitchen goods, iconic Tokyo atmosphere',
+                location: 'Tsukiji Outer Market',
                 details: {
-                    address: '1-1 Yoyogikamizonocho, Shibuya-ku, Tokyo 151-8557',
-                    access: 'JR Harajuku Station (5 min walk) OR Tokyo Metro Meiji-Jingumae Station',
-                    fromHotel: '10-15 min from Shibuya area',
-                    hours: 'Sunrise to sunset (approximately 6:00 AM - 5:00 PM)',
-                    duration: '1.5-2 hours',
-                    highlights: 'Massive torii gates • Forest walk through 70 hectares • Traditional Shinto shrine • Connected to Yoyogi Park',
-                    vibe: 'Peaceful, cultural, photo-worthy - the perfect zen start to your last full day',
-                    tips: 'Arrive early for quieter experience. Free entry. Beautiful forest walk from entrance to main shrine.',
-                    mapLink: 'Meiji Jingu Shrine, 1-1 Yoyogikamizonocho, Shibuya-ku, Tokyo 151-8557'
-                }
-            },
-            {
-                time: '11:00 AM',
-                title: 'Transit to Shibuya for Lunch',
-                description: 'Short walk or 1-stop train to Shibuya',
-                details: {
-                    from: 'Harajuku Station (near Meiji Jingu)',
-                    to: 'Shibuya Station',
-                    option1: 'JR Yamanote Line: Harajuku → Shibuya (1 stop, 3 min)',
-                    option2: 'Walk: 20 min walk through Omotesando/Cat Street area',
-                    recommendation: 'Train if tired, walk if you want to see the neighborhood',
-                    totalTime: '~15 minutes'
+                    address: '4 Chome Tsukiji, Chuo City, Tokyo 104-0045',
+                    walkingTime: '5-10 min walk from hotel',
+                    duration: '2-3 hours (browse at your own pace)',
+                    highlights: 'Baked goods & coffee • Kitchen goods (knives, ceramics) • Specialty shops • Tea & dried goods',
+                    hours: 'Most shops: 8:00 AM - 2:00 PM',
+                    vibe: 'Slow, relaxed, authentic local market atmosphere - perfect last-day morning',
+                    tips: 'You\'re staying right next to Tsukiji! Walk down the iconic area, grab coffee and pastries, browse unique Japanese kitchen items.',
+                    mapLink: 'Tsukiji Outer Market, 4 Chome Tsukiji, Chuo City, Tokyo 104-0045',
+                    note: 'No rush - department stores don\'t open until 11 AM anyway!'
                 }
             }
         ],
         afternoon: [
             {
-                time: '11:30 AM',
-                title: 'Happy Pancake Shibuya',
-                description: 'Famous fluffy soufflé pancakes for lunch',
+                time: '11:00 AM',
+                title: 'Ginza Department Stores Hit List',
+                description: 'Food halls, rooftops & lifestyle goods (when stores open)',
+                location: 'Ginza District',
+                details: {
+                    area: 'Walk from hotel - you\'re already in Ginza!',
+                    duration: '2 hours (11:00 AM - 1:00 PM)',
+                    focus: 'Depachika food halls • Rooftop experiences • GRAB LUNCH HERE (bento boxes, gourmet items)',
+                    shops: [
+                        {
+                            name: '1. Mitsukoshi Ginza ⭐ MUST-VISIT',
+                            address: '4-6-16 Ginza, Chuo-ku, Tokyo',
+                            highlight: 'LEGENDARY DEPACHIKA (basement food hall) • Japanese sweets • Gourmet souvenirs • GRAB LUNCH BENTOS HERE',
+                            hours: '10:00 AM - 8:00 PM',
+                            floors: 'B2-B1: Food hall paradise - buy lunch here! | Upper floors: Homeware, beauty',
+                            walk: '10 min walk from hotel',
+                            mapLink: 'Mitsukoshi Ginza, 4-6-16 Ginza, Chuo-ku, Tokyo',
+                            tips: 'THE depachika experience! Buy high-end bento boxes/sandwiches as backup lunch for Shibuya.'
+                        },
+                        {
+                            name: '2. Ginza Six ⭐ PRIORITY',
+                            address: '6-10-1 Ginza, Chuo-ku, Tokyo',
+                            highlight: 'Rooftop garden (6F) with FREE city views • Curated lifestyle shops',
+                            hours: '10:30 AM - 8:30 PM',
+                            floors: 'B2-B1: Food hall | 6F: Rooftop terrace',
+                            walk: '2 min from Mitsukoshi',
+                            mapLink: 'Ginza Six, 6-10-1 Ginza, Chuo-ku, Tokyo',
+                            tips: 'Hit the rooftop for views before leaving for Shibuya'
+                        },
+                        {
+                            name: '3. Matsuya Ginza (if time permits)',
+                            address: '3-6-1 Ginza, Chuo-ku, Tokyo',
+                            highlight: 'Traditional department store • Practical Japanese goods',
+                            hours: '10:00 AM - 8:00 PM',
+                            walk: '4 min from Ginza Six',
+                            mapLink: 'Matsuya Ginza, 3-6-1 Ginza, Chuo-ku, Tokyo'
+                        }
+                    ],
+                    strategy: 'MUST: Mitsukoshi depachika (buy lunch!) + Ginza Six rooftop. Protect your Shibuya time!',
+                    lunchStrategy: '🚨 IMPORTANT: Buy bento/gourmet items at Mitsukoshi as backup lunch - Happy Pancake wait times can be 60-120 min!'
+                }
+            },
+            {
+                time: '1:00 PM',
+                title: 'Transit to Shibuya',
+                description: 'Ginza Line direct to Shibuya (25 min)',
+                details: {
+                    from: 'Ginza Station (Tokyo Metro Ginza Line)',
+                    to: 'Shibuya Station',
+                    route: 'Ginza Line: Ginza → Shibuya (direct, 9 stops, ~20 min)',
+                    totalTime: '~25 minutes door-to-door',
+                    tips: 'Simple direct line. One direction west - no backtracking!'
+                }
+            },
+            {
+                time: '1:30 PM',
+                title: 'Happy Pancake Shibuya (FLEXIBLE)',
+                description: 'Check wait time - if too long, skip and eat your depachika lunch!',
                 location: 'Happy Pancake Shibuya',
                 details: {
                     address: '1F Shibuya Parco, 15-1 Udagawacho, Shibuya-ku, Tokyo',
                     access: 'Inside Shibuya Parco (1F), 7 min walk from Shibuya Station',
-                    hours: '10:00 AM - 9:00 PM (last order 8:30 PM)',
-                    duration: '1 hour (expect wait times)',
-                    specialty: 'Soufflé pancakes - fluffy, jiggly, iconic Japanese breakfast/brunch experience',
+                    hours: '10:00 AM - 9:00 PM',
+                    waitTimeReality: '🚨 WAIT TIMES: Often 60-120 minutes even on weekdays',
+                    strategy: 'Check wait time when you arrive. If 30 min or less: go for it! If 60-120 min: BAIL and eat your Mitsukoshi lunch instead.',
+                    specialty: 'Soufflé pancakes - fluffy, jiggly, iconic experience',
                     priceRange: '¥1,000-1,500 per person',
-                    tips: 'Weekday lunch is less crowded than weekends. Take a number and wait. Perfect Instagram moment!',
-                    vibe: 'Cozy, trendy, quintessentially Japanese cafe experience',
-                    mapLink: 'Happy Pancake Shibuya Parco, 15-1 Udagawacho, Shibuya-ku, Tokyo'
-                }
-            },
-            {
-                time: '12:45 PM',
-                title: 'Transit to Ginza',
-                description: 'Tokyo Metro Ginza Line to Ginza (25 min)',
-                details: {
-                    from: 'Shibuya Station (Tokyo Metro Ginza Line)',
-                    to: 'Ginza Station',
-                    route: 'Ginza Line: Shibuya → Ginza (direct, 9 stops, ~20 min)',
-                    totalTime: '~25 minutes door-to-door',
-                    exit: 'Use Exit A3 or B3 for direct access to department stores',
-                    tips: 'Simple direct line. Ginza Station has multiple exits - use central exits for shopping area.'
-                }
-            },
-            {
-                time: '1:15 PM',
-                title: 'Ginza Shopping Hit List',
-                description: 'Food halls, rooftop gardens & lifestyle goods (not luxury fashion)',
-                location: 'Ginza District',
-                details: {
-                    area: 'Ginza (all within 5-10 min walk of each other)',
-                    duration: '3-4 hours total (hit as many as time permits)',
-                    focus: 'Depachika food halls • Rooftop experiences • Japanese lifestyle goods • Beautiful displays',
-                    shops: [
-                        {
-                            name: '1. Ginza Six ⭐ PRIORITY',
-                            address: '6-10-1 Ginza, Chuo-ku, Tokyo',
-                            highlight: 'Rooftop garden (6F) with FREE city views • Curated lifestyle shops • Modern luxury mall',
-                            hours: '10:30 AM - 8:30 PM',
-                            floors: 'B2-B1: Food hall | 6F: Rooftop terrace',
-                            walk: '3 min from Ginza Station Exit A3',
-                            mapLink: 'Ginza Six, 6-10-1 Ginza, Chuo-ku, Tokyo',
-                            tips: 'Start here for rooftop views, then explore food hall basement'
-                        },
-                        {
-                            name: '2. Mitsukoshi Ginza ⭐ MUST-VISIT',
-                            address: '4-6-16 Ginza, Chuo-ku, Tokyo',
-                            highlight: 'LEGENDARY DEPACHIKA (basement food hall) • Japanese sweets • Gourmet souvenirs',
-                            hours: '10:00 AM - 8:00 PM',
-                            floors: 'B2-B1: Food hall paradise | Upper floors: Homeware, beauty, lifestyle',
-                            walk: '2 min from Ginza Six',
-                            mapLink: 'Mitsukoshi Ginza, 4-6-16 Ginza, Chuo-ku, Tokyo',
-                            tips: 'THE department store food hall experience - beautiful displays, perfect souvenirs'
-                        },
-                        {
-                            name: '3. Matsuya Ginza',
-                            address: '3-6-1 Ginza, Chuo-ku, Tokyo',
-                            highlight: 'Traditional department store • Practical Japanese goods • Less touristy',
-                            hours: '10:00 AM - 8:00 PM',
-                            floors: 'B2-B1: Food hall | Upper floors: Everyday Japanese shopping',
-                            walk: '4 min from Mitsukoshi',
-                            mapLink: 'Matsuya Ginza, 3-6-1 Ginza, Chuo-ku, Tokyo'
-                        },
-                        {
-                            name: '4. Tokyu Plaza Ginza',
-                            address: '5-2-1 Ginza, Chuo-ku, Tokyo',
-                            highlight: 'Rooftop terrace "Kiriko Lounge" (FREE) • Modern lifestyle shopping',
-                            hours: '11:00 AM - 9:00 PM',
-                            floors: '6F: Rooftop terrace with lounges',
-                            walk: '5 min from Matsuya',
-                            mapLink: 'Tokyu Plaza Ginza, 5-2-1 Ginza, Chuo-ku, Tokyo',
-                            tips: 'Another beautiful rooftop - great for rest break with views'
-                        },
-                        {
-                            name: '5. Itoya Stationery (OPTIONAL)',
-                            address: '2-7-15 Ginza, Chuo-ku, Tokyo',
-                            highlight: '12 floors of Japanese stationery heaven • Unique souvenirs',
-                            hours: '10:00 AM - 8:00 PM',
-                            walk: '6 min from Tokyu Plaza',
-                            mapLink: 'Itoya Ginza, 2-7-15 Ginza, Chuo-ku, Tokyo',
-                            note: 'Only if you love stationery - can be skipped if tired'
-                        }
-                    ],
-                    strategy: 'MUST: Ginza Six rooftop + Mitsukoshi food hall. Add others as energy permits.',
-                    shoppingTips: 'Focus on basement food halls (depachika) for gourmet souvenirs and beautiful displays'
-                }
-            },
-            {
-                time: '5:00 PM',
-                title: 'Transit back to Shibuya',
-                description: 'Return to Shibuya for Donki souvenir mission',
-                details: {
-                    from: 'Ginza Station',
-                    to: 'Shibuya Station',
-                    route: 'Ginza Line: Ginza → Shibuya (direct, 9 stops, ~20 min)',
-                    totalTime: '~25 minutes',
-                    tips: 'Same line you came on - simple and direct back to Shibuya'
+                    vibe: 'Trendy cafe - but NOT worth sacrificing Don Quijote time!',
+                    mapLink: 'Happy Pancake Shibuya Parco, 15-1 Udagawacho, Shibuya-ku, Tokyo',
+                    protectDonki: '⚠️ PROTECT YOUR DONKI TIME - Don\'t let pancake wait ruin your souvenir mission!'
                 }
             }
         ],
         evening: [
             {
-                time: '5:30 PM',
-                title: 'Mega Don Quijote Shibuya',
-                description: '8-floor souvenir paradise - snacks, beauty products, quirky gifts',
+                time: '3:00 PM',
+                title: 'MEGA DON QUIJOTE SHIBUYA - 3 HOURS!',
+                description: '8-floor souvenir paradise - YOUR MAIN MISSION!',
                 location: 'Mega Don Quijote Shibuya Honten',
                 details: {
                     address: '28-6 Udagawacho, Shibuya-ku, Tokyo 150-0042',
                     walkingTime: '10 min walk from Shibuya Scramble Square (via Hachiko Exit → Scramble Crossing → Bunkamura-dori Street)',
                     hours: '24 HOURS (open all day/night)',
                     floors: '8 floors total (B1 + 7 above ground)',
-                    duration: '1.5-2 hours browsing',
-                    souvenirFloors: 'B1-3F: Snacks, beauty, character goods, quirky items | 4F: Luxury designer section (if interested) | 7F: Duty-free souvenirs',
+                    duration: '3 FULL HOURS (3:00-6:00 PM) - protected time!',
+                    souvenirFloors: 'B1-3F: Snacks, beauty, character goods, quirky items | 4F: Luxury designer section | 7F: Duty-free souvenirs',
                     vibe: 'Sensory overload - maze-like layout, jingles, packed aisles. Quintessential Tokyo shopping chaos!',
-                    tips: 'THE ultimate souvenir stop - get everything done here! Tax-free for tourists (bring passport). Budget 1.5-2 hours to really explore.',
-                    shoppingMission: 'Japanese snacks (KitKat flavors, Pocky, mochi) • Beauty products (face masks, skincare) • Character goods (Sanrio, Pokémon) • Quirky Japanese items',
-                    mapLink: 'Mega Don Quijote Shibuya Honten, 28-6 Udagawacho, Shibuya-ku, Tokyo 150-0042'
+                    tips: 'THE ultimate souvenir stop! Tax-free for tourists (bring passport). Take your time - you have 3 full hours to explore all 8 floors.',
+                    shoppingMission: 'Japanese snacks (KitKat flavors, Pocky, mochi) • Beauty products (face masks, skincare) • Character goods (Sanrio, Pokémon) • Quirky Japanese items • Souvenirs for everyone!',
+                    mapLink: 'Mega Don Quijote Shibuya Honten, 28-6 Udagawacho, Shibuya-ku, Tokyo 150-0042',
+                    priority: '🎯 THIS IS YOUR PRIORITY - Don\'t let anything steal this time!'
                 }
             },
             {
-                time: '8:00 PM',
-                title: 'Dinner & Head Back',
-                description: 'Grab dinner in Shibuya or head back to hotel',
+                time: '6:00 PM',
+                title: 'Transit back to Ginza Hotel',
+                description: 'Return to hotel to pack for tomorrow\'s early flight',
                 details: {
-                    area: 'Shibuya - walking distance from Donki',
-                    options: 'Quick ramen/izakaya nearby OR return to hotel area for relaxed dinner',
-                    vibe: 'Last night - keep it simple and relaxed after a full day',
-                    tips: 'You\'ll be tired from a full day - don\'t overthink it!'
+                    from: 'Shibuya Station',
+                    to: 'Ginza Station (walk to hotel)',
+                    route: 'Ginza Line: Shibuya → Ginza (direct, 9 stops, ~20 min)',
+                    totalTime: '~30 minutes including walk to hotel',
+                    arrival: 'Back at hotel by 6:30 PM',
+                    tips: 'Simple direct line back. Hotel is 5-10 min walk from Ginza Station.'
+                }
+            },
+            {
+                time: '7:00 PM',
+                title: 'Dinner & Pack for Tomorrow',
+                description: 'Relaxed dinner near hotel, then pack (4:30 AM pickup tomorrow!)',
+                details: {
+                    area: 'Ginza/Tsukiji area near hotel',
+                    options: 'Quick local restaurant near hotel OR grab something from convenience store',
+                    vibe: 'Last night - keep it very simple and relaxed',
+                    packingTime: 'Leave time to pack tonight - 4:30 AM airport pickup tomorrow morning!',
+                    tips: 'Don\'t stay out late - you have an early morning flight. Get rest!'
                 }
             }
         ]

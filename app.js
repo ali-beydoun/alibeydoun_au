@@ -579,9 +579,18 @@ const tripData = [
                             hours: '10:30 AM - 8:30 PM',
                             walk: '3 min from LV',
                             mapLink: 'Ginza Six, 6-10-1 Ginza, Chuo-ku, Tokyo'
+                        },
+                        {
+                            name: '7. KOMEHYO Ginza (OPTIONAL)',
+                            address: '7-8-13 Ginza, Chuo-ku, Tokyo',
+                            highlight: 'Pre-owned luxury department store • Multi-floor authenticated bags, watches, jewelry',
+                            hours: '10:30 AM - 7:30 PM',
+                            walk: '2 min from Ginza Six',
+                            mapLink: 'KOMEHYO Ginza, 7-8-13 Ginza, Chuo-ku, Tokyo',
+                            note: 'Alternative to architecture walk - dive straight into authenticated luxury bags'
                         }
                     ],
-                    strategy: 'Hit Itoya first (opens 10am), Hermès/LV after 11am opening, end at Ginza Six rooftop',
+                    strategy: 'Hit Itoya first (opens 10am), Hermès/LV after 11am opening, end at Ginza Six rooftop OR explore KOMEHYO for pre-owned luxury',
                     note: 'Perfect luxury introduction for first-time Tokyo visitors'
                 }
             },
@@ -641,19 +650,32 @@ const tripData = [
             },
             {
                 time: '2:40 PM',
-                title: 'Mega Don Quijote Shibuya',
-                description: '8-floor mega store - 4th floor has luxury designer section',
-                location: 'Mega Don Quijote Shibuya Honten',
+                title: 'Shibuya Vintage Shopping Hit List',
+                description: '2 designer vintage shops (Chanel/LV focus)',
+                location: 'Shibuya/Cat Street Area',
                 details: {
-                    address: '28-6 Udagawacho, Shibuya-ku, Tokyo 150-0042',
-                    walkingTime: '10 min walk from Shibuya Scramble Square (via Hachiko Exit → Scramble Crossing → Bunkamura-dori Street)',
-                    hours: '24 HOURS (open all day/night)',
-                    floors: '8 floors total (B1 + 7 above ground)',
-                    floor4: '4th Floor: LUXURY DESIGNER SECTION - Louis Vuitton, Chanel, Balenciaga, Gucci bags, shoes, accessories, watches (mix of new & second-hand)',
-                    otherFloors: '5F: Daily goods | 6F: Electronics | 7F: Duty-free souvenirs',
-                    duration: '1h 50min browsing',
-                    vibe: 'Sensory overload - maze-like layout, jingles, packed aisles. Quintessential Tokyo shopping chaos!',
-                    tips: 'THE Tokyo experience - uniquely Japanese retail. Tax-free for tourists (bring passport). Perfect "must-see" for first-time visitors!'
+                    area: 'Shibuya/Cat Street (within walking distance)',
+                    duration: '1h 50min total (hit as many as time permits)',
+                    shops: [
+                        {
+                            name: '1. 2nd Street Shibuya (Cat Street)',
+                            address: '31-2 Udagawacho, Shibuya-ku, Tokyo',
+                            highlight: 'Multi-level chain • Extensive designer sections • Giant well-organized thrift store vibe',
+                            hours: '11:00 AM - 8:00 PM',
+                            walk: '10 min from Shibuya Scramble Square',
+                            mapLink: '2nd Street Shibuya, 31-2 Udagawacho, Shibuya-ku, Tokyo'
+                        },
+                        {
+                            name: '2. Ragtag Shibuya',
+                            address: '23-3 Udagawacho, Shibuya-ku, Tokyo',
+                            highlight: 'Highly curated designer vintage • Sister location to Harajuku store',
+                            hours: '11:00 AM - 8:00 PM',
+                            walk: '5 min from 2nd Street',
+                            mapLink: 'Ragtag Shibuya, 23-3 Udagawacho, Shibuya-ku, Tokyo'
+                        }
+                    ],
+                    strategy: 'Browse both shops to maximize your finds before heading to Harajuku',
+                    taxFree: 'Bring passport for tax-free purchases at all shops'
                 }
             },
             {
@@ -672,7 +694,7 @@ const tripData = [
             {
                 time: '5:00 PM',
                 title: 'Harajuku/Omotesando Vintage Shopping Hit List',
-                description: '4 designer vintage shops (Chanel/LV focus)',
+                description: '8 designer vintage shops (Chanel/LV focus)',
                 location: 'Harajuku/Omotesando Area',
                 details: {
                     area: 'Omotesando/Harajuku (all within walking distance)',
@@ -686,7 +708,7 @@ const tripData = [
                             mapLink: 'Vintage Qoo Tokyo, 5-2-6 Jingumae, Shibuya-ku, Tokyo 150-0001'
                         },
                         {
-                            name: '2. Amore Vintage Omotesando',
+                            name: '2. Amore Vintage Omotesando ⭐ PRIORITY',
                             address: '2F 5-1-6 Jingumae, Shibuya, Tokyo',
                             highlight: 'Chanel heaven • Museum aesthetic • TikTok famous',
                             hours: '10:00 AM - 8:00 PM',
@@ -708,9 +730,43 @@ const tripData = [
                             hours: '11:00 AM - 8:00 PM',
                             walk: '5 min from Kindal',
                             mapLink: 'Ragtag Harajuku, 5-17-9 Jingumae, Shibuya-ku, Tokyo'
+                        },
+                        {
+                            name: '5. 2nd Street Harajuku (Cat Street)',
+                            address: '3-26-14 Jingumae, Shibuya-ku, Tokyo',
+                            highlight: 'Multi-level chain • Giant thrift store feel • Extensive designer + streetwear',
+                            hours: '11:00 AM - 8:00 PM',
+                            walk: '4 min from Ragtag',
+                            mapLink: '2nd Street Harajuku, 3-26-14 Jingumae, Shibuya-ku, Tokyo'
+                        },
+                        {
+                            name: '6. KOMEHYO Shinjuku (OPTIONAL)',
+                            address: '3-1-26 Shinjuku, Shinjuku-ku, Tokyo',
+                            highlight: 'Flagship multi-floor luxury • Massive authenticated bag/watch/jewelry selection',
+                            hours: '10:30 AM - 7:30 PM',
+                            walk: '15 min train from Harajuku (JR Yamanote)',
+                            mapLink: 'KOMEHYO Shinjuku, 3-1-26 Shinjuku, Shinjuku-ku, Tokyo',
+                            note: 'Worth detour if you want comprehensive high-end selection'
+                        },
+                        {
+                            name: '7. Brand Collect Harajuku',
+                            address: '1-16-4 Jingumae, Shibuya-ku, Tokyo',
+                            highlight: 'Takeshita Street location • Japanese & international designer brands',
+                            hours: '11:00 AM - 8:00 PM',
+                            walk: '8 min from Cat Street shops',
+                            mapLink: 'Brand Collect Harajuku, 1-16-4 Jingumae, Shibuya-ku, Tokyo'
+                        },
+                        {
+                            name: '8. Hedy Daikanyama (OPTIONAL DETOUR)',
+                            address: '20-23 Sarugakucho, Shibuya-ku, Tokyo',
+                            highlight: 'Beautifully curated boutique • Rare vintage bags & accessories • Quieter alternative',
+                            hours: '12:00 PM - 8:00 PM',
+                            walk: '10-15 min from Shibuya Station',
+                            mapLink: 'Hedy Daikanyama, 20-23 Sarugakucho, Shibuya-ku, Tokyo',
+                            note: 'Chic Daikanyama neighborhood - great if Amore/Qoo too crowded'
                         }
                     ],
-                    strategy: 'Hit 1-2 priority shops (Qoo + Amore), add others if time permits',
+                    strategy: 'Hit 1-2 priority shops (Qoo + Amore), explore others as time/energy permits. Hedy & KOMEHYO are optional detours for specific needs.',
                     taxFree: 'Bring passport for tax-free purchases at all shops'
                 }
             },
@@ -923,10 +979,177 @@ const tripData = [
         date: 'Tuesday, December 2',
         dayOfWeek: 'Tuesday',
         dateShort: 'Dec 2',
-        description: 'Shopping & Dining',
-        morning: [],
-        afternoon: [],
-        evening: []
+        description: 'Tokyo Essentials & Souvenirs',
+        morning: [
+            {
+                time: '9:00 AM',
+                title: 'Meiji Jingu Shrine & Yoyogi Park',
+                description: 'Peaceful cultural morning at Tokyo\'s most iconic shrine',
+                location: 'Meiji Jingu Shrine',
+                details: {
+                    address: '1-1 Yoyogikamizonocho, Shibuya-ku, Tokyo 151-8557',
+                    access: 'JR Harajuku Station (5 min walk) OR Tokyo Metro Meiji-Jingumae Station',
+                    fromHotel: '10-15 min from Shibuya area',
+                    hours: 'Sunrise to sunset (approximately 6:00 AM - 5:00 PM)',
+                    duration: '1.5-2 hours',
+                    highlights: 'Massive torii gates • Forest walk through 70 hectares • Traditional Shinto shrine • Connected to Yoyogi Park',
+                    vibe: 'Peaceful, cultural, photo-worthy - the perfect zen start to your last full day',
+                    tips: 'Arrive early for quieter experience. Free entry. Beautiful forest walk from entrance to main shrine.',
+                    mapLink: 'Meiji Jingu Shrine, 1-1 Yoyogikamizonocho, Shibuya-ku, Tokyo 151-8557'
+                }
+            },
+            {
+                time: '11:00 AM',
+                title: 'Transit to Shibuya for Lunch',
+                description: 'Short walk or 1-stop train to Shibuya',
+                details: {
+                    from: 'Harajuku Station (near Meiji Jingu)',
+                    to: 'Shibuya Station',
+                    option1: 'JR Yamanote Line: Harajuku → Shibuya (1 stop, 3 min)',
+                    option2: 'Walk: 20 min walk through Omotesando/Cat Street area',
+                    recommendation: 'Train if tired, walk if you want to see the neighborhood',
+                    totalTime: '~15 minutes'
+                }
+            }
+        ],
+        afternoon: [
+            {
+                time: '11:30 AM',
+                title: 'Happy Pancake Shibuya',
+                description: 'Famous fluffy soufflé pancakes for lunch',
+                location: 'Happy Pancake Shibuya',
+                details: {
+                    address: '1F Shibuya Parco, 15-1 Udagawacho, Shibuya-ku, Tokyo',
+                    access: 'Inside Shibuya Parco (1F), 7 min walk from Shibuya Station',
+                    hours: '10:00 AM - 9:00 PM (last order 8:30 PM)',
+                    duration: '1 hour (expect wait times)',
+                    specialty: 'Soufflé pancakes - fluffy, jiggly, iconic Japanese breakfast/brunch experience',
+                    priceRange: '¥1,000-1,500 per person',
+                    tips: 'Weekday lunch is less crowded than weekends. Take a number and wait. Perfect Instagram moment!',
+                    vibe: 'Cozy, trendy, quintessentially Japanese cafe experience',
+                    mapLink: 'Happy Pancake Shibuya Parco, 15-1 Udagawacho, Shibuya-ku, Tokyo'
+                }
+            },
+            {
+                time: '12:45 PM',
+                title: 'Transit to Ginza',
+                description: 'Tokyo Metro Ginza Line to Ginza (25 min)',
+                details: {
+                    from: 'Shibuya Station (Tokyo Metro Ginza Line)',
+                    to: 'Ginza Station',
+                    route: 'Ginza Line: Shibuya → Ginza (direct, 9 stops, ~20 min)',
+                    totalTime: '~25 minutes door-to-door',
+                    exit: 'Use Exit A3 or B3 for direct access to department stores',
+                    tips: 'Simple direct line. Ginza Station has multiple exits - use central exits for shopping area.'
+                }
+            },
+            {
+                time: '1:15 PM',
+                title: 'Ginza Shopping Hit List',
+                description: 'Food halls, rooftop gardens & lifestyle goods (not luxury fashion)',
+                location: 'Ginza District',
+                details: {
+                    area: 'Ginza (all within 5-10 min walk of each other)',
+                    duration: '3-4 hours total (hit as many as time permits)',
+                    focus: 'Depachika food halls • Rooftop experiences • Japanese lifestyle goods • Beautiful displays',
+                    shops: [
+                        {
+                            name: '1. Ginza Six ⭐ PRIORITY',
+                            address: '6-10-1 Ginza, Chuo-ku, Tokyo',
+                            highlight: 'Rooftop garden (6F) with FREE city views • Curated lifestyle shops • Modern luxury mall',
+                            hours: '10:30 AM - 8:30 PM',
+                            floors: 'B2-B1: Food hall | 6F: Rooftop terrace',
+                            walk: '3 min from Ginza Station Exit A3',
+                            mapLink: 'Ginza Six, 6-10-1 Ginza, Chuo-ku, Tokyo',
+                            tips: 'Start here for rooftop views, then explore food hall basement'
+                        },
+                        {
+                            name: '2. Mitsukoshi Ginza ⭐ MUST-VISIT',
+                            address: '4-6-16 Ginza, Chuo-ku, Tokyo',
+                            highlight: 'LEGENDARY DEPACHIKA (basement food hall) • Japanese sweets • Gourmet souvenirs',
+                            hours: '10:00 AM - 8:00 PM',
+                            floors: 'B2-B1: Food hall paradise | Upper floors: Homeware, beauty, lifestyle',
+                            walk: '2 min from Ginza Six',
+                            mapLink: 'Mitsukoshi Ginza, 4-6-16 Ginza, Chuo-ku, Tokyo',
+                            tips: 'THE department store food hall experience - beautiful displays, perfect souvenirs'
+                        },
+                        {
+                            name: '3. Matsuya Ginza',
+                            address: '3-6-1 Ginza, Chuo-ku, Tokyo',
+                            highlight: 'Traditional department store • Practical Japanese goods • Less touristy',
+                            hours: '10:00 AM - 8:00 PM',
+                            floors: 'B2-B1: Food hall | Upper floors: Everyday Japanese shopping',
+                            walk: '4 min from Mitsukoshi',
+                            mapLink: 'Matsuya Ginza, 3-6-1 Ginza, Chuo-ku, Tokyo'
+                        },
+                        {
+                            name: '4. Tokyu Plaza Ginza',
+                            address: '5-2-1 Ginza, Chuo-ku, Tokyo',
+                            highlight: 'Rooftop terrace "Kiriko Lounge" (FREE) • Modern lifestyle shopping',
+                            hours: '11:00 AM - 9:00 PM',
+                            floors: '6F: Rooftop terrace with lounges',
+                            walk: '5 min from Matsuya',
+                            mapLink: 'Tokyu Plaza Ginza, 5-2-1 Ginza, Chuo-ku, Tokyo',
+                            tips: 'Another beautiful rooftop - great for rest break with views'
+                        },
+                        {
+                            name: '5. Itoya Stationery (OPTIONAL)',
+                            address: '2-7-15 Ginza, Chuo-ku, Tokyo',
+                            highlight: '12 floors of Japanese stationery heaven • Unique souvenirs',
+                            hours: '10:00 AM - 8:00 PM',
+                            walk: '6 min from Tokyu Plaza',
+                            mapLink: 'Itoya Ginza, 2-7-15 Ginza, Chuo-ku, Tokyo',
+                            note: 'Only if you love stationery - can be skipped if tired'
+                        }
+                    ],
+                    strategy: 'MUST: Ginza Six rooftop + Mitsukoshi food hall. Add others as energy permits.',
+                    shoppingTips: 'Focus on basement food halls (depachika) for gourmet souvenirs and beautiful displays'
+                }
+            },
+            {
+                time: '5:00 PM',
+                title: 'Transit back to Shibuya',
+                description: 'Return to Shibuya for Donki souvenir mission',
+                details: {
+                    from: 'Ginza Station',
+                    to: 'Shibuya Station',
+                    route: 'Ginza Line: Ginza → Shibuya (direct, 9 stops, ~20 min)',
+                    totalTime: '~25 minutes',
+                    tips: 'Same line you came on - simple and direct back to Shibuya'
+                }
+            }
+        ],
+        evening: [
+            {
+                time: '5:30 PM',
+                title: 'Mega Don Quijote Shibuya',
+                description: '8-floor souvenir paradise - snacks, beauty products, quirky gifts',
+                location: 'Mega Don Quijote Shibuya Honten',
+                details: {
+                    address: '28-6 Udagawacho, Shibuya-ku, Tokyo 150-0042',
+                    walkingTime: '10 min walk from Shibuya Scramble Square (via Hachiko Exit → Scramble Crossing → Bunkamura-dori Street)',
+                    hours: '24 HOURS (open all day/night)',
+                    floors: '8 floors total (B1 + 7 above ground)',
+                    duration: '1.5-2 hours browsing',
+                    souvenirFloors: 'B1-3F: Snacks, beauty, character goods, quirky items | 4F: Luxury designer section (if interested) | 7F: Duty-free souvenirs',
+                    vibe: 'Sensory overload - maze-like layout, jingles, packed aisles. Quintessential Tokyo shopping chaos!',
+                    tips: 'THE ultimate souvenir stop - get everything done here! Tax-free for tourists (bring passport). Budget 1.5-2 hours to really explore.',
+                    shoppingMission: 'Japanese snacks (KitKat flavors, Pocky, mochi) • Beauty products (face masks, skincare) • Character goods (Sanrio, Pokémon) • Quirky Japanese items',
+                    mapLink: 'Mega Don Quijote Shibuya Honten, 28-6 Udagawacho, Shibuya-ku, Tokyo 150-0042'
+                }
+            },
+            {
+                time: '8:00 PM',
+                title: 'Dinner & Head Back',
+                description: 'Grab dinner in Shibuya or head back to hotel',
+                details: {
+                    area: 'Shibuya - walking distance from Donki',
+                    options: 'Quick ramen/izakaya nearby OR return to hotel area for relaxed dinner',
+                    vibe: 'Last night - keep it simple and relaxed after a full day',
+                    tips: 'You\'ll be tired from a full day - don\'t overthink it!'
+                }
+            }
+        ]
     },
     {
         id: 8,

@@ -1032,7 +1032,15 @@ async function copyDayToClipboard() {
         return;
     }
 
-    const markdownText = generateDayMarkdown(day);
+    let markdownText;
+    try {
+        markdownText = generateDayMarkdown(day);
+    } catch (error) {
+        console.error('Failed to generate markdown for Day', currentDayId, ':', error);
+        alert('Error generating itinerary: ' + error.message);
+        return;
+    }
+
     const button = document.querySelector('.copy-day-button');
 
     // Try modern Clipboard API first (Chrome, Firefox, Edge, modern Safari)
@@ -1182,7 +1190,7 @@ function generateDayMarkdown(day) {
                     if (details.strategy) lines.push(`- Strategy: ${details.strategy}`);
 
                     // Hit list shops
-                    if (details.shops && details.shops.length > 0) {
+                    if (Array.isArray(details.shops) && details.shops.length > 0) {
                         lines.push('');
                         lines.push('**Shops to visit:**');
                         details.shops.forEach(shop => {

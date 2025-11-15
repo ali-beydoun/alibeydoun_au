@@ -1013,6 +1013,7 @@ window.addEventListener('popstate', () => {
 
 /**
  * Copy current day's itinerary to clipboard with trip context
+ * Enhanced Safari compatibility
  */
 async function copyDayToClipboard() {
     const day = tripData.find(d => d.id === currentDayId);
@@ -1024,14 +1025,20 @@ async function copyDayToClipboard() {
     const markdownText = generateDayMarkdown(day);
     const button = document.querySelector('.copy-day-button');
 
-    try {
-        await navigator.clipboard.writeText(markdownText);
-        showCopySuccess(button);
-    } catch (err) {
-        console.error('Failed to copy to clipboard:', err);
-        // Fallback for older browsers
-        fallbackCopyToClipboard(markdownText, button);
+    // Try modern clipboard API first
+    if (navigator.clipboard && window.isSecureContext) {
+        try {
+            await navigator.clipboard.writeText(markdownText);
+            console.log('Copied to clipboard using Clipboard API');
+            showCopySuccess(button);
+            return;
+        } catch (err) {
+            console.warn('Clipboard API failed, trying fallback:', err);
+        }
     }
+
+    // Fallback for Safari and older browsers
+    fallbackCopyToClipboard(markdownText, button);
 }
 
 /**
@@ -1049,21 +1056,43 @@ function showCopySuccess(button) {
 }
 
 /**
- * Fallback copy method for older browsers
+ * Fallback copy method for older browsers and Safari
+ * Uses the deprecated but widely supported execCommand
  */
 function fallbackCopyToClipboard(text, button) {
     const textArea = document.createElement('textarea');
     textArea.value = text;
+
+    // Make it invisible but focusable
     textArea.style.position = 'fixed';
-    textArea.style.left = '-9999px';
+    textArea.style.top = '0';
+    textArea.style.left = '0';
+    textArea.style.width = '2em';
+    textArea.style.height = '2em';
+    textArea.style.padding = '0';
+    textArea.style.border = 'none';
+    textArea.style.outline = 'none';
+    textArea.style.boxShadow = 'none';
+    textArea.style.background = 'transparent';
+    textArea.style.opacity = '0';
+
     document.body.appendChild(textArea);
+    textArea.focus();
     textArea.select();
 
+    let success = false;
     try {
-        document.execCommand('copy');
-        showCopySuccess(button);
+        success = document.execCommand('copy');
+        if (success) {
+            console.log('Copied to clipboard using execCommand fallback');
+            showCopySuccess(button);
+        } else {
+            console.error('execCommand copy returned false');
+            alert('Copy failed. Please try manually selecting and copying the text.');
+        }
     } catch (err) {
         console.error('Fallback copy failed:', err);
+        alert('Copy failed. Please try manually selecting and copying the text.');
     }
 
     document.body.removeChild(textArea);

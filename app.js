@@ -1013,7 +1013,7 @@ window.addEventListener('popstate', () => {
 
 /**
  * Copy current day's itinerary to clipboard with trip context
- * Safari-first implementation using execCommand for maximum compatibility
+ * iOS Safari optimized - uses execCommand with strict iOS compatibility
  */
 function copyDayToClipboard() {
     console.log('copyDayToClipboard called, currentDayId:', currentDayId);
@@ -1032,25 +1032,39 @@ function copyDayToClipboard() {
 
     const button = document.querySelector('.copy-day-button');
 
-    // Use execCommand for Safari compatibility (works on all browsers)
+    // Create textarea for iOS Safari compatibility
+    // iOS Safari requires: not readonly, in viewport, and contentEditable
     const textArea = document.createElement('textarea');
     textArea.value = markdownText;
 
-    // Position off-screen but keep it visible to Safari
+    // iOS Safari friendly positioning - in viewport but invisible
     textArea.style.position = 'fixed';
-    textArea.style.top = '-1000px';
-    textArea.style.left = '-1000px';
-    textArea.style.width = '1px';
-    textArea.style.height = '1px';
-    textArea.style.opacity = '0';
-    textArea.setAttribute('readonly', '');
+    textArea.style.top = '0';
+    textArea.style.left = '0';
+    textArea.style.width = '2em';
+    textArea.style.height = '2em';
+    textArea.style.padding = '0';
+    textArea.style.border = 'none';
+    textArea.style.outline = 'none';
+    textArea.style.boxShadow = 'none';
+    textArea.style.background = 'transparent';
+    textArea.style.color = 'transparent';
+    textArea.style.fontSize = '1px';
+    textArea.style.opacity = '0.01'; // Not 0 - iOS needs minimal visibility
+    textArea.style.pointerEvents = 'none';
+    textArea.contentEditable = true;
+    textArea.readOnly = false;
 
     document.body.appendChild(textArea);
 
-    // iOS Safari requires focus before selection
+    // iOS Safari requires these steps in this order
     textArea.focus();
     textArea.select();
-    textArea.setSelectionRange(0, markdownText.length);
+
+    // iOS Safari specifically needs setSelectionRange
+    const range = document.createRange();
+    range.selectNodeContents(textArea);
+    textArea.setSelectionRange(0, 999999);
 
     let success = false;
     try {
@@ -1058,15 +1072,18 @@ function copyDayToClipboard() {
         console.log('execCommand copy result:', success);
 
         if (success) {
+            console.log('✅ Copied to clipboard successfully');
             showCopySuccess(button);
         } else {
-            console.error('execCommand returned false');
+            console.error('❌ execCommand returned false');
             alert('Copy failed. Please try selecting and copying manually.');
         }
     } catch (err) {
-        console.error('Copy error:', err);
+        console.error('❌ Copy error:', err);
         alert('Copy failed: ' + err.message);
     } finally {
+        // Clean up
+        textArea.blur();
         document.body.removeChild(textArea);
     }
 }

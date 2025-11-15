@@ -1,75 +1,104 @@
 /*
- * SERVICE WORKER - Offline Support for Tokyo Trip Planner
- * Caches all app resources for offline access
+ * SERVICE WORKER - Travel-Optimized Offline Support
+ *
+ * Strategy: NETWORK-FIRST with offline fallback
+ * - When online: Always fetch fresh content from server
+ * - When offline: Serve from cache for offline access during travel
+ *
+ * This ensures you always get the latest updates when connected,
+ * but can still access the app when traveling without internet.
  */
 
-const CACHE_NAME = 'tokyo-trip-v1';
+const CACHE_NAME = 'tokyo-trip-v2';
 const urlsToCache = [
     '/',
     '/index.html',
     '/styles.css',
     '/app.js',
     '/ali-najah.jpeg',
-    // Add any other assets here
+    '/manifest.json',
+    // Data modules
+    '/data/trip-info.js',
+    '/data/food-options.js',
+    '/data/days/day-1.js',
+    '/data/days/day-2.js',
+    '/data/days/day-3.js',
+    '/data/days/day-4.js',
+    '/data/days/day-5.js',
+    '/data/days/day-6.js',
+    '/data/days/day-7.js',
+    '/data/days/day-8.js',
 ];
 
 // Install event - cache all resources
 self.addEventListener('install', (event) => {
+    console.log('[ServiceWorker] Installing...');
     event.waitUntil(
         caches.open(CACHE_NAME)
             .then((cache) => {
-                console.log('Opened cache');
+                console.log('[ServiceWorker] Caching app shell');
                 return cache.addAll(urlsToCache);
+            })
+            .then(() => {
+                // Force the waiting service worker to become the active service worker
+                return self.skipWaiting();
             })
     );
 });
 
-// Fetch event - serve from cache when offline
+// Activate event - clean up old caches and take control immediately
+self.addEventListener('activate', (event) => {
+    console.log('[ServiceWorker] Activating...');
+    event.waitUntil(
+        caches.keys().then((cacheNames) => {
+            return Promise.all(
+                cacheNames.map((cacheName) => {
+                    if (cacheName !== CACHE_NAME) {
+                        console.log('[ServiceWorker] Deleting old cache:', cacheName);
+                        return caches.delete(cacheName);
+                    }
+                })
+            );
+        })
+        .then(() => {
+            // Take control of all pages immediately
+            return self.clients.claim();
+        })
+    );
+});
+
+// Fetch event - NETWORK-FIRST strategy
 self.addEventListener('fetch', (event) => {
     event.respondWith(
-        caches.match(event.request)
+        // Try network first
+        fetch(event.request)
             .then((response) => {
-                // Cache hit - return response
-                if (response) {
-                    return response;
-                }
-
-                // Clone the request
-                const fetchRequest = event.request.clone();
-
-                return fetch(fetchRequest).then((response) => {
-                    // Check if valid response
-                    if (!response || response.status !== 200 || response.type !== 'basic') {
-                        return response;
-                    }
-
-                    // Clone the response
+                // If we got a valid response, clone and cache it
+                if (response && response.status === 200) {
                     const responseToCache = response.clone();
 
                     caches.open(CACHE_NAME)
                         .then((cache) => {
                             cache.put(event.request, responseToCache);
                         });
+                }
 
-                    return response;
-                });
+                return response;
             })
-    );
-});
+            .catch(() => {
+                // Network failed, try cache
+                return caches.match(event.request)
+                    .then((cachedResponse) => {
+                        if (cachedResponse) {
+                            console.log('[ServiceWorker] Serving from cache (offline):', event.request.url);
+                            return cachedResponse;
+                        }
 
-// Activate event - clean up old caches
-self.addEventListener('activate', (event) => {
-    const cacheWhitelist = [CACHE_NAME];
-
-    event.waitUntil(
-        caches.keys().then((cacheNames) => {
-            return Promise.all(
-                cacheNames.map((cacheName) => {
-                    if (cacheWhitelist.indexOf(cacheName) === -1) {
-                        return caches.delete(cacheName);
-                    }
-                })
-            );
-        })
+                        // Not in cache either, return a basic offline response
+                        if (event.request.mode === 'navigate') {
+                            return caches.match('/index.html');
+                        }
+                    });
+            })
     );
 });

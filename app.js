@@ -1013,79 +1013,73 @@ window.addEventListener('popstate', () => {
 
 /**
  * Copy current day's itinerary to clipboard with trip context
- * iOS Safari optimized - uses execCommand with strict iOS compatibility
+ * Uses modern Clipboard API with execCommand fallback for compatibility
  */
-function copyDayToClipboard() {
-    console.log('copyDayToClipboard called, currentDayId:', currentDayId);
-
+async function copyDayToClipboard() {
     const day = tripData.find(d => d.id === currentDayId);
     if (!day) {
         console.error('Day not found for id:', currentDayId);
-        console.error('Available days:', tripData.map(d => d.id));
         alert('Error: Could not find day data');
         return;
     }
 
-    console.log('Found day:', day.name);
     const markdownText = generateDayMarkdown(day);
-    console.log('Generated markdown, length:', markdownText.length);
-
     const button = document.querySelector('.copy-day-button');
 
-    // Create textarea for iOS Safari compatibility
-    // iOS Safari requires: not readonly, in viewport, and contentEditable
-    const textArea = document.createElement('textarea');
-    textArea.value = markdownText;
+    // Try modern Clipboard API first (Chrome, Firefox, Edge, modern Safari)
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+        try {
+            await navigator.clipboard.writeText(markdownText);
+            console.log('✅ Copied via Clipboard API');
+            showCopySuccess(button);
+            return;
+        } catch (err) {
+            console.warn('Clipboard API failed, trying fallback:', err);
+            // Continue to fallback
+        }
+    }
 
-    // iOS Safari friendly positioning - in viewport but invisible
+    // Fallback: execCommand for older browsers/iOS Safari
+    try {
+        const success = fallbackCopyWithExecCommand(markdownText);
+        if (success) {
+            console.log('✅ Copied via execCommand fallback');
+            showCopySuccess(button);
+            return;
+        }
+    } catch (err) {
+        console.error('Copy failed:', err);
+    }
+
+    // If all methods fail
+    alert('Unable to copy to clipboard. Please try selecting and copying the text manually.');
+}
+
+/**
+ * Fallback copy method using deprecated execCommand
+ * Simplified approach that works across browsers including iOS Safari
+ */
+function fallbackCopyWithExecCommand(text) {
+    const textArea = document.createElement('textarea');
+    textArea.value = text;
+
+    // Simple off-screen positioning
     textArea.style.position = 'fixed';
+    textArea.style.left = '-9999px';
     textArea.style.top = '0';
-    textArea.style.left = '0';
-    textArea.style.width = '2em';
-    textArea.style.height = '2em';
-    textArea.style.padding = '0';
-    textArea.style.border = 'none';
-    textArea.style.outline = 'none';
-    textArea.style.boxShadow = 'none';
-    textArea.style.background = 'transparent';
-    textArea.style.color = 'transparent';
-    textArea.style.fontSize = '1px';
-    textArea.style.opacity = '0.01'; // Not 0 - iOS needs minimal visibility
-    textArea.style.pointerEvents = 'none';
-    textArea.contentEditable = true;
-    textArea.readOnly = false;
 
     document.body.appendChild(textArea);
-
-    // iOS Safari requires these steps in this order
     textArea.focus();
     textArea.select();
-
-    // iOS Safari specifically needs setSelectionRange
-    const range = document.createRange();
-    range.selectNodeContents(textArea);
-    textArea.setSelectionRange(0, 999999);
 
     let success = false;
     try {
         success = document.execCommand('copy');
-        console.log('execCommand copy result:', success);
-
-        if (success) {
-            console.log('✅ Copied to clipboard successfully');
-            showCopySuccess(button);
-        } else {
-            console.error('❌ execCommand returned false');
-            alert('Copy failed. Please try selecting and copying manually.');
-        }
-    } catch (err) {
-        console.error('❌ Copy error:', err);
-        alert('Copy failed: ' + err.message);
     } finally {
-        // Clean up
-        textArea.blur();
         document.body.removeChild(textArea);
     }
+
+    return success;
 }
 
 /**

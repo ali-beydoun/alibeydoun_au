@@ -52,6 +52,12 @@ async function fetchWeather() {
         );
         const data = await response.json();
 
+        // Validate weather data structure
+        if (!data || !data.daily || !Array.isArray(data.daily.time)) {
+            console.log('Invalid weather data structure');
+            return;
+        }
+
         // Store weather data indexed by date
         data.daily.time.forEach((date, index) => {
             weatherData[date] = {
@@ -220,7 +226,7 @@ function renderDayDetail(dayId) {
     ];
 
     sections.forEach(section => {
-        if (section.activities.length > 0) {
+        if (section.activities && section.activities.length > 0) {
             html += `<div class="time-section">
                 <h3 class="section-header">${section.title}</h3>
                 ${section.activities.map((activity, index) => {
@@ -418,7 +424,10 @@ function showActivityDetail(dayId, section, activityIndex) {
     const day = tripData.find(d => d.id === dayId);
     if (!day) return;
 
-    const activity = day[section][activityIndex];
+    const sectionActivities = day[section];
+    if (!sectionActivities || !Array.isArray(sectionActivities)) return;
+
+    const activity = sectionActivities[activityIndex];
     if (!activity || !activity.details) return;
 
     // Check if this is a food option - show food options for that meal type

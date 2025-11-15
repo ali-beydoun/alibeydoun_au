@@ -1013,32 +1013,62 @@ window.addEventListener('popstate', () => {
 
 /**
  * Copy current day's itinerary to clipboard with trip context
- * Enhanced Safari compatibility
+ * Safari-first implementation using execCommand for maximum compatibility
  */
-async function copyDayToClipboard() {
+function copyDayToClipboard() {
+    console.log('copyDayToClipboard called, currentDayId:', currentDayId);
+
     const day = tripData.find(d => d.id === currentDayId);
     if (!day) {
-        console.error('Day not found');
+        console.error('Day not found for id:', currentDayId);
+        console.error('Available days:', tripData.map(d => d.id));
+        alert('Error: Could not find day data');
         return;
     }
 
+    console.log('Found day:', day.name);
     const markdownText = generateDayMarkdown(day);
+    console.log('Generated markdown, length:', markdownText.length);
+
     const button = document.querySelector('.copy-day-button');
 
-    // Try modern clipboard API first
-    if (navigator.clipboard && window.isSecureContext) {
-        try {
-            await navigator.clipboard.writeText(markdownText);
-            console.log('Copied to clipboard using Clipboard API');
-            showCopySuccess(button);
-            return;
-        } catch (err) {
-            console.warn('Clipboard API failed, trying fallback:', err);
-        }
-    }
+    // Use execCommand for Safari compatibility (works on all browsers)
+    const textArea = document.createElement('textarea');
+    textArea.value = markdownText;
 
-    // Fallback for Safari and older browsers
-    fallbackCopyToClipboard(markdownText, button);
+    // Position off-screen but keep it visible to Safari
+    textArea.style.position = 'fixed';
+    textArea.style.top = '-1000px';
+    textArea.style.left = '-1000px';
+    textArea.style.width = '1px';
+    textArea.style.height = '1px';
+    textArea.style.opacity = '0';
+    textArea.setAttribute('readonly', '');
+
+    document.body.appendChild(textArea);
+
+    // iOS Safari requires focus before selection
+    textArea.focus();
+    textArea.select();
+    textArea.setSelectionRange(0, markdownText.length);
+
+    let success = false;
+    try {
+        success = document.execCommand('copy');
+        console.log('execCommand copy result:', success);
+
+        if (success) {
+            showCopySuccess(button);
+        } else {
+            console.error('execCommand returned false');
+            alert('Copy failed. Please try selecting and copying manually.');
+        }
+    } catch (err) {
+        console.error('Copy error:', err);
+        alert('Copy failed: ' + err.message);
+    } finally {
+        document.body.removeChild(textArea);
+    }
 }
 
 /**
@@ -1055,48 +1085,6 @@ function showCopySuccess(button) {
     }, 2000);
 }
 
-/**
- * Fallback copy method for older browsers and Safari
- * Uses the deprecated but widely supported execCommand
- */
-function fallbackCopyToClipboard(text, button) {
-    const textArea = document.createElement('textarea');
-    textArea.value = text;
-
-    // Make it invisible but focusable
-    textArea.style.position = 'fixed';
-    textArea.style.top = '0';
-    textArea.style.left = '0';
-    textArea.style.width = '2em';
-    textArea.style.height = '2em';
-    textArea.style.padding = '0';
-    textArea.style.border = 'none';
-    textArea.style.outline = 'none';
-    textArea.style.boxShadow = 'none';
-    textArea.style.background = 'transparent';
-    textArea.style.opacity = '0';
-
-    document.body.appendChild(textArea);
-    textArea.focus();
-    textArea.select();
-
-    let success = false;
-    try {
-        success = document.execCommand('copy');
-        if (success) {
-            console.log('Copied to clipboard using execCommand fallback');
-            showCopySuccess(button);
-        } else {
-            console.error('execCommand copy returned false');
-            alert('Copy failed. Please try manually selecting and copying the text.');
-        }
-    } catch (err) {
-        console.error('Fallback copy failed:', err);
-        alert('Copy failed. Please try manually selecting and copying the text.');
-    }
-
-    document.body.removeChild(textArea);
-}
 
 /**
  * Generate markdown text for the current day with full trip context

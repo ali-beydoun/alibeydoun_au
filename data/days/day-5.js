@@ -14,27 +14,32 @@ export default {
         description: 'East Tokyo Time Travel: Old → Retro → Future',
         morning: [
             {
-                time: '10:00 AM',
-                title: 'Depart for Asakusa',
-                description: 'Transit from Ginza hotel to Traditional Tokyo',
+                time: '9:30 AM',
+                title: 'Asakusa Culture Tourist Information Center',
+                description: 'FREE 8F observatory - panoramic view before temple crowds',
+                location: 'Asakusa Tourist Info Center',
                 details: {
-                    from: 'Hotel Keihan Tsukiji Ginza Grande',
-                    to: 'Asakusa Station',
-                    route: 'Walk to Tsukiji Station (2 min) → Hibiya Line to Higashi-Ginza → Transfer to Toei Asakusa Line → Asakusa',
-                    totalTime: '~25-30 minutes',
-                    cost: '~¥200-300 (Suica/Pasmo)',
-                    arrival: 'Arrive Asakusa by 10:30 AM',
-                    tips: 'Use Exit 1 for direct access to Kaminarimon Gate'
+                    area: 'Directly opposite Kaminarimon Gate',
+                    address: '2-18-9 Kaminarimon, Taito City, Tokyo 111-0034',
+                    duration: '30 minutes (9:30-10:00 AM)',
+                    hours: 'Open 9:00 AM - 8:00 PM daily',
+                    floor: '8th Floor - FREE Observation Deck',
+                    highlights: 'Unobstructed aerial view of entire Senso-ji complex (Kaminarimon, 250m Nakamise-dori, Hozomon Gate, main hall), Sumida River panorama, Tokyo Skytree views',
+                    strategy: '🎯 INSIDER MOVE: Visit BEFORE entering the temple complex. Provides perfect mental map and geographic orientation before being immersed in dense Sunday crowds. See the full scale of Japan\'s oldest temple from above.',
+                    vibe: 'Strategic pre-temple stop - understand the layout, take photos, then experience it at street level',
+                    transit: 'Walk 5-7 min from hotel to Higashi-Ginza Station → Take Toei Asakusa Line direct to Asakusa (11 min) → Exit A4 (nearest to Kaminarimon) → Info Center directly opposite gate',
+                    mapLink: 'Asakusa Culture Tourist Information Center, 2-18-9 Kaminarimon, Taito City, Tokyo',
+                    note: 'Sunday = peak crowd day. This aerial view first helps you navigate the chaos below.'
                 }
             },
             {
-                time: '10:30 AM',
+                time: '10:00 AM',
                 title: 'Asakusa Traditional Tokyo Hit List',
                 description: 'Historic temple, traditional market street & iconic snacks',
                 location: 'Asakusa District',
                 details: {
                     area: 'Asakusa - Tokyo\'s most famous traditional neighborhood',
-                    duration: '3 hours (10:30 AM - 1:30 PM)',
+                    duration: '2.5 hours (10:00 AM - 12:30 PM)',
                     vibe: 'Grand-scale history, sacred atmosphere, bustling traditional commerce',
                     shops: [
                         {
@@ -98,23 +103,26 @@ export default {
                             hours: '11:00 AM - 8:00 PM daily • ☎️ 03-3844-1111',
                             address: '1-38-10 Asakusa, Taito City, Tokyo 111-0032',
                             walk: '1 min from Senso-ji',
-                            mapLink: 'Tempura Daikokuya, 1-38-10 Asakusa, Taito City, Tokyo 111-0032'
+                            mapLink: 'Tempura Daikokuya, 1-38-10 Asakusa, Taito City, Tokyo 111-0032',
+                            note: 'Expect lines (worth it!) - queues can be long on Sundays'
                         },
                         {
-                            name: '2. Unagi Irokawa (Color River)',
-                            highlight: 'Michelin Bib Gourmand • Est. 1861 • Unadon • Binchotan charcoal grilled • 12 seats only',
-                            hours: '11:30 AM - 2:00 PM daily • ☎️ Check locally',
-                            address: '2-6-11 Kaminarimon, Taito-ku, Tokyo 111-0034',
-                            walk: '1 min from Asakusa Station A1 exit',
-                            mapLink: 'Unagi Irokawa, 2-6-11 Kaminarimon, Taito-ku, Tokyo 111-0034'
+                            name: '2. Asakusa Unagi Sansho ⭐ (SUNDAY-OPEN UNAGI)',
+                            highlight: 'High-quality unagi specialist • OPEN ON SUNDAY • Master chef with decades of experience • Proper sit-down specialty restaurant',
+                            hours: 'Open on Sundays (check exact hours) • ☎️ Check locally',
+                            address: '5-7 minute walk from Asakusa Station',
+                            walk: '5-7 min from station',
+                            mapLink: 'Asakusa Unagi Sansho, Asakusa, Tokyo',
+                            note: '🎯 EXPERT RECOMMENDATION: Sunday-open alternative for traditional unagi lunch experience'
                         },
                         {
-                            name: '3. Asakusa Unana (Budget-Friendly)',
-                            highlight: 'Grilled onigiri topped with unagi • Sansho pepper glaze • ¥600 per onigiri',
+                            name: '3. Asakusa Unana ⭐ (QUICK UNAGI OPTION)',
+                            highlight: '¥600 grilled eel onigiri (rice ball) • Famous food stand • Sansho pepper glaze • Social media hit',
                             hours: '9:30 AM - 5:30 PM • Sat/Sun until 6:30 PM (until sold out)',
                             address: '2-7-21 Asakusa, Taito City',
                             walk: 'Near Senso-ji',
-                            mapLink: 'Asakusa Unana, 2-7-21 Asakusa, Taito City, Tokyo'
+                            mapLink: 'Asakusa Unana, 2-7-21 Asakusa, Taito City, Tokyo',
+                            note: 'Premium snack, not a full sit-down lunch. Polarizing reviews (must-try vs overhyped) but fast and culturally current'
                         },
                         {
                             name: '4. Tatsumiya (Nyorosuke Tatsumiya)',
@@ -125,7 +133,7 @@ export default {
                             mapLink: 'Tatsumiya Asakusa Tokyo'
                         }
                     ],
-                    strategy: 'Daikokuya for tendon perfection OR Irokawa for intimate unagi experience. Unana if budget-conscious.',
+                    strategy: 'Daikokuya for tendon perfection OR Asakusa Unagi Sansho for sit-down unagi (Sunday-open!) OR Asakusa Unana for quick eel onigiri.',
                     note: 'All within 1-2 min of Senso-ji. Expect lines at Daikokuya (worth it!).'
                 }
             }
@@ -133,29 +141,69 @@ export default {
         afternoon: [
             {
                 time: '1:45 PM',
-                title: 'Transit to Yanaka',
-                description: 'Asakusa → Nippori Station (Retro Tokyo)',
+                title: 'Transit to Nezu (Start of Yanesen Walk)',
+                description: 'Asakusa → Nezu via scenic Toei Bus',
                 details: {
-                    from: 'Asakusa Station',
-                    to: 'Nippori Station',
-                    route: 'Toei Asakusa Line or bus (transfer at Ueno area)',
-                    alternative: 'Toei Bus every 15 min',
-                    duration: '~15 minutes',
-                    cost: '~¥170-200',
-                    arrival: 'Nippori Station by 2:00 PM',
-                    tips: 'Use West Exit of Nippori for direct access to Yuyake Dandan'
+                    from: 'Asakusa 2-chome bus stop (浅草二丁目)',
+                    to: 'Nezu Station (根津駅前 bus stop)',
+                    route: 'Toei Bus Route 上26 - DIRECT, no transfers',
+                    duration: '17-26 minutes',
+                    cost: '~¥210',
+                    arrival: 'Nezu by 2:00 PM',
+                    why: '🎯 LIFESTYLE CHOICE: This scenic bus route keeps you above ground, passing through authentic shitamachi (old downtown) neighborhoods. Sets the perfect nostalgic mood for the Yanesen afternoon walk.',
+                    alternative: 'Tokyo Metro Ginza Line to Ueno + transfer (fragmented, less atmospheric)',
+                    tips: 'Find the 浅草二丁目 (Asakusa 2-chome) bus stop near Senso-ji. Board Route 上26 heading toward Nezu.'
                 }
             },
             {
-                time: '2:30 PM',
-                title: 'Yanaka Retro Tokyo Hit List',
-                description: 'Sunset Steps, 1950s shotengai, street food & cemetery walk',
+                time: '2:00 PM',
+                title: 'Nezu Shrine - Vermilion Gate Tunnel',
+                description: 'Historic 1706 shrine with stunning torii pathway',
+                location: 'Nezu Shrine',
+                details: {
+                    area: 'Nezu - Starting point of the Yanesen (Yanaka/Nezu/Sendagi) walking tour',
+                    address: '1-28-9 Nezu, Bunkyo City, Tokyo 113-0031',
+                    duration: '1 hour (2:00-3:00 PM)',
+                    hours: 'Grounds: 9:00 AM - 5:00 PM daily • FREE admission',
+                    founded: '1706 (rebuilt by 5th shogun Tokugawa Tsunayoshi)',
+                    highlights: '⛩️ Senbon Torii - Hundreds of vermilion torii gates creating a stunning tunnel pathway up the hillside to Otome Inari Shrine • 1706 Romon Gate, Karamon Gate, and Honden (main hall) - all Important Cultural Properties',
+                    vibe: 'One of Tokyo\'s oldest and most beautiful shrines - serene, historic, photogenic',
+                    expectation: '🍂 NOTE: Famous for 6,000㎡ azalea garden (3,000+ plants) but these bloom in SPRING. In late November, focus on the historic 1706 architecture and stunning torii gate pathway.',
+                    walk: '3-5 min walk from Nezu Station',
+                    strategy: 'This is the designated start of your "golden hour" Yanesen walk. Spend 45-60 minutes exploring the grounds and torii pathway, then begin walking toward Yanaka Cemetery.',
+                    mapLink: 'Nezu Shrine, 1-28-9 Nezu, Bunkyo City, Tokyo 113-0031'
+                }
+            },
+            {
+                time: '3:00 PM',
+                title: 'Yanaka Cemetery - Golden Hour Walk',
+                description: 'Peaceful park-like cemetery with fall foliage & Skytree views',
+                location: 'Yanaka Cemetery (Yanaka Reien)',
+                details: {
+                    area: 'Yanaka Cemetery - 10 hectares, 7,000+ graves, one of Tokyo\'s most scenic cemeteries',
+                    address: 'Yanaka 7-chome, Taito City, Tokyo',
+                    duration: '1 hour (3:00-4:00 PM) - Golden Hour Walk',
+                    hours: 'Open 24 hours daily • FREE access',
+                    vibe: 'NOT creepy! Described as "vast, peaceful escape," "park-like area," and "popular dog-walking course." This is a safe, serene, contemplative space.',
+                    timing: '🌅 GOLDEN HOUR STRATEGY: Arriving during 3:00-4:15 PM provides "late afternoon" light for the most "contemplative atmosphere" and "better light for photos."',
+                    highlights: '🍂 Stunning fall foliage - "brilliant autumn colors like golden ginkgo leaves" (late November) • Tokyo Skytree views from cemetery grounds • Final resting place of last shogun Tokugawa Yoshinobu',
+                    walk: 'Slow atmospheric walk from Nezu Shrine through Yanaka neighborhood to the cemetery (10-15 min) • Traditional wooden houses and narrow back alleys - rare glimpse of old Tokyo',
+                    route: 'Walk concludes at the WESTERN EDGE of the cemetery, at the top of the Yuyake Dandan (Sunset Stairs)',
+                    strategy: 'This is the heart of the shitamachi experience. Walk slowly, absorb the fall colors, enjoy the peaceful atmosphere. Aim to reach the top of the Sunset Stairs by 4:00-4:15 PM.',
+                    mapLink: 'Yanaka Cemetery, Yanaka 7-chome, Taito City, Tokyo'
+                }
+            },
+            {
+                time: '4:00 PM',
+                title: 'Yuyake Dandan & Yanaka Ginza - Sunset "Money Shot"',
+                description: 'Sunset Steps view + quick shopping street snack blitz',
                 location: 'Yanaka Ginza',
                 details: {
                     area: 'Yanaka - Retro Showa-era "shitamachi" (old downtown Tokyo)',
-                    duration: '3 hours (2:30 PM - 5:30 PM)',
-                    vibe: 'Relaxed, charming, local "old school" neighborhood feel',
-                    sunsetTime: '🌅 Sunset at 4:28 PM - PERFECT TIMING for Yuyake Dandan!',
+                    duration: '1 hour 15 min (4:00-5:15 PM) - Sunset-focused',
+                    vibe: 'Fast-paced, high-reward experience - iconic sunset photo + priority snack grab before shops close',
+                    sunsetTime: '🌅 SUNSET AT 4:28 PM - This is THE timing target!',
+                    criticalTiming: '⏰ 4:15 PM: Be positioned at top of Yuyake Dandan stairs • 4:28 PM: Sunset "money shot" down the shopping street • 4:30-5:00 PM: Quick "snack blitz" - shops close at 5:00 PM!',
                     shops: [
                         {
                             name: '1. Yuyake Dandan (Sunset Steps) ⭐⭐⭐',
@@ -214,7 +262,8 @@ export default {
                             mapLink: 'Yanaka Cemetery, Yanaka 7-chome, Taito City, Tokyo'
                         }
                     ],
-                    strategy: 'Yuyake Dandan view → Browse Yanaka Ginza for menchi katsu → Catch sunset at ~4:28 PM from steps → Cemetery peaceful walk',
+                    strategy: '🎯 SUNSET STRATEGY: 4:15 PM - Position at top of stairs for sunset view down the 170m retro street • 4:28 PM - Capture the "magic hour" as sky\'s glow mixes with street lanterns turning on • 4:30-5:00 PM - IMMEDIATELY walk down stairs into Yanaka Ginza for fast "snack blitz" (NOT leisurely shopping - this is for atmosphere and priority snacks before 5 PM closures)',
+                    priority: '🥩 PRIORITY 1: Niku no Suzuki for "legendary" genki menchi katsu (approx ¥230) - despite long queues, this is the essential Yanaka Ginza experience • Priority 2 (if time): Yanaka Shippoya for kawaii cat-tail doughnuts',
                     cashNote: '💴 Yanaka is cash-heavy - bring yen! Small shops may not take cards.',
                     mapLink: 'Yanaka Ginza, Taito City, Tokyo'
                 }
@@ -222,28 +271,29 @@ export default {
         ],
         evening: [
             {
-                time: '5:45 PM',
+                time: '5:15 PM',
                 title: 'Transit to Akihabara',
                 description: 'Nippori → Akihabara (Future Tokyo arrives!)',
                 details: {
-                    from: 'Nippori Station',
+                    from: 'Nippori Station (3-5 min walk from end of Yanaka Ginza)',
                     to: 'Akihabara Station',
-                    route: 'JR Yamanote Line (direct, no transfers)',
+                    route: 'JR Yamanote Line OR JR Keihin-Tohoku Line (both direct, no transfers)',
                     frequency: 'Every 5 minutes',
-                    duration: '7 minutes',
-                    cost: '~¥140-280',
-                    arrival: 'Akihabara by 6:00 PM - neon lights turning on!',
-                    tips: 'Use Showa-dori exit for direct connection to Yodobashi-Akiba'
+                    duration: '7-10 minutes',
+                    cost: '~¥140',
+                    arrival: 'Akihabara by 5:30 PM - neon lights turning on as dusk arrives!',
+                    why: '🌃 PERFECT TIMING: Arriving at Akihabara as the sun sets means you experience "Electric Town" at its most impressive - vibrant neon signage illuminating the streets.',
+                    tips: 'Walk 3-5 min from Yanaka Ginza to Nippori Station • Use Electric Town Exit at Akihabara for immediate Radio Kaikan access'
                 }
             },
             {
-                time: '6:00 PM',
+                time: '5:30 PM',
                 title: 'Akihabara Future Tokyo Hit List',
-                description: '9-floor electronics, neon streets & arcades - Electric Town!',
+                description: 'Neon lights, anime merch, arcades & electronics - Electric Town!',
                 location: 'Akihabara District',
                 details: {
                     area: 'Akihabara - "Electric Town" (Future Tokyo)',
-                    duration: '3 hours (6:00 PM - 9:00 PM)',
+                    duration: '3.5 hours (5:30 PM - 9:00 PM)',
                     vibe: 'High-energy, futuristic, sensory overload - neon lights, sounds, pop culture!',
                     shops: [
                         {
@@ -285,9 +335,28 @@ export default {
                             address: '1 Chome-11-11 Sotokanda, Chiyoda City, Tokyo',
                             walk: '5-7 min from Akihabara Station',
                             mapLink: 'GiGO Akihabara Building 3, 1 Chome-11-11 Sotokanda, Chiyoda City, Tokyo'
+                        },
+                        {
+                            name: '6. Radio Kaikan ⭐⭐ (OTAKU PRIORITY)',
+                            highlight: '11-floor otaku paradise • THE hub for anime figures, manga, models, and merch • K-Books, Volks, AmiAmi (new & second-hand figures, hobby goods)',
+                            hours: 'Varies by shop (most 10:00 AM - 8:00 PM)',
+                            address: '1-15-16 Sotokanda, Chiyoda City, Tokyo',
+                            walk: 'Immediately visible when exiting Electric Town Exit - iconic Akihabara landmark',
+                            mapLink: 'Radio Kaikan, 1-15-16 Sotokanda, Chiyoda City, Tokyo',
+                            note: '🎯 EXPERT PRIORITY: This is the single best stop for anime/manga merch and figures. A thorough visit requires 2-4 hours, but even a 45-min "blitz" captures the essence of Akihabara otaku culture.'
+                        },
+                        {
+                            name: '7. Akihabara Gachapon Hall',
+                            highlight: 'Capsule toy paradise • ~500 gashapon vending machines • Unique souvenirs • Bring 100-yen coins!',
+                            hours: '11:00 AM - 8:00 PM daily',
+                            address: '3-15-5 Sotokanda, Chiyoda City, Tokyo',
+                            walk: '5-7 min walk from Akihabara Station',
+                            mapLink: 'Akihabara Gachapon Hall, 3-15-5 Sotokanda, Chiyoda City, Tokyo',
+                            note: 'Small venue, will be crowded on Sunday evening. Budget 30 minutes. Essential Akihabara experience!'
                         }
                     ],
-                    strategy: 'Cat Cafe MOCHA for cat time → Yodobashi-Akiba (1.5 hours browsing all 9 floors) → @home cafe maid experience → Chuo Dori neon walk → GiGO arcade',
+                    strategy: 'FLEXIBLE HIT LIST - Choose 2-3 experiences based on energy: Radio Kaikan (anime merch priority) • Yodobashi-Akiba (electronics) • @home cafe (maid experience - check booking) • Cat Cafe MOCHA (7:30 PM feeding time, no reservations) • Gachapon Hall (quick souvenir stop) • GiGO arcade (gaming atmosphere) • Chuo Dori neon walk',
+                    note: '⚠️ 3.5 hours is NOT enough for everything. Prioritize based on interests. @home cafe offers priority booking online. Cat Cafe has no reservations - 7:30 PM feeding time may require queue on Sunday.',
                     taxFree: 'Bring passport for tax-free electronics shopping at Yodobashi',
                     mapLink: 'Akihabara Station, Chiyoda City, Tokyo'
                 }

@@ -15,116 +15,123 @@ export default {
         morning: [
             {
                 time: '8:00 AM',
-                title: 'Ginza Breakfast Cafe Hit List',
-                description: 'Curated morning cafes & bakeries near hotel',
-                location: 'Ginza District',
+                title: 'Tsukiji Outer Market - Morning Atmosphere',
+                description: 'Bustling market on your hotel\'s doorstep',
+                location: 'Tsukiji Outer Market',
                 details: {
-                    area: 'Ginza - Start the day in Tokyo\'s luxury district',
-                    duration: '1.5 hours (8:00-9:30 AM)',
-                    vibe: 'Sophisticated breakfast culture, artisan coffee, French-Japanese pastries',
-                    strategy: 'Pick 1-2 spots maximum. These are all within 10-15 min walk from your hotel. For A Happy Pancake, arrive at 9:40 AM (20 min before opening) to skip massive waits.',
-                    shops: [
-                        {
-                            name: '1. Ginza West ⭐',
-                            address: '7-3-6 Ginza, Chuo City (Ginza Main Store)',
-                            highlight: 'Legendary Tokyo cafe since 1947. Famous for fluffy pancakes, Victoria cake, and old-school coffee service',
-                            hours: '10:00 AM - 9:00 PM (opens at 10 AM - plan accordingly)',
-                            walk: '8 min walk from hotel',
-                            mapLink: 'Ginza West Main Store, Tokyo'
-                        },
-                        {
-                            name: '2. Cafe de l\'Ambre',
-                            address: '8-10-15 Ginza, Chuo City',
-                            highlight: 'Iconic 1948 coffee house. Aged coffee beans (some 30+ years old), hand-drip pour-overs by master baristas',
-                            hours: '12:00 PM - 10:00 PM (opens noon - skip if you want early breakfast)',
-                            walk: '5 min walk from hotel',
-                            mapLink: 'Cafe de l\'Ambre Ginza, Tokyo'
-                        },
-                        {
-                            name: '3. Centre The Bakery',
-                            address: 'Pola Ginza Bldg 1F, 1-7-7 Ginza, Chuo City',
-                            highlight: 'Sleek modern bakery. Australian-style cafe, world-class croissants, avocado toast, flat whites',
-                            hours: '8:00 AM - 8:00 PM',
-                            walk: '12 min walk from hotel',
-                            mapLink: 'Centre The Bakery Ginza, Tokyo'
-                        },
-                        {
-                            name: '4. Ginza Kimuraya (Main Store)',
-                            address: '4-5-7 Ginza, Chuo City',
-                            highlight: 'Birthplace of anpan (sweet red bean buns) since 1869. Historic Japanese bakery institution',
-                            hours: '10:00 AM - 7:00 PM',
-                            walk: '15 min walk from hotel',
-                            mapLink: 'Ginza Kimuraya Sohonten, Tokyo'
-                        },
-                        {
-                            name: '5. Turret Coffee ⭐',
-                            address: '5-9-17 Ginza, Chuo City (2F)',
-                            highlight: 'Specialty third-wave coffee. Minimalist aesthetic, single-origin beans, expert pour-overs, morning pastries',
-                            hours: '9:00 AM - 7:00 PM',
-                            walk: '10 min walk from hotel',
-                            mapLink: 'Turret Coffee Ginza, Tokyo'
-                        },
-                        {
-                            name: '6. A Happy Pancake Ginza ⭐⭐',
-                            address: '7F New Ginza Building No. 10, 5-8-5 Ginza, Chuo City',
-                            highlight: 'Ultra-fluffy Japanese soufflé pancakes with Hokkaido milk butter & Manuka honey. 20 min cook time. ARRIVE 20 MIN BEFORE OPENING to avoid 2-5 hour waits!',
-                            hours: 'Weekends 10:00 AM - 8:30 PM • Weekdays 10:30 AM - 8:30 PM • ☎️ 03-6255-1111',
-                            walk: '10-15 min walk from hotel (1 min from Ginza Station Exit A5, 7th floor)',
-                            mapLink: 'A Happy Pancake Ginza, 5-8-5 Ginza, Chuo City, Tokyo'
-                        }
-                    ]
+                    area: 'Tsukiji Outer Market - authentic Tokyo morning market experience',
+                    address: '4 Chome Tsukiji, Chuo City, Tokyo',
+                    walkingTime: '5 min walk from Hotel Keihan Tsukiji Ginza Grande',
+                    duration: '45 minutes (8:00-8:45 AM)',
+                    marketHours: 'Most shops: 5:00 AM - 2:00 PM (vibrant 8-10 AM)',
+                    vibe: 'Electric morning energy - vendors, locals, tourists, fresh seafood displays, street food sizzling',
+                    experience: 'At 8:00 AM on Saturday, the market is at peak energy. This is one of Tokyo\'s definitive early-morning experiences - bustling, atmospheric, and right on your hotel\'s doorstep.',
+                    highlights: '400+ vendors, fresh seafood displays, street food stalls, kitchen goods shops, specialty tea & dried goods',
+                    strategy: 'Stroll through the market atmosphere, observe vendors preparing food, take in the sights and smells. This is about the EXPERIENCE, not a shopping mission (save that for Day 7 if you return).',
+                    photos: 'Vendors arranging seafood, colorful market stalls, locals shopping, street food being prepared',
+                    note: '🎯 INSIDER MOVE: Your hotel is in Tsukiji, NOT Ginza. This 5-minute walk replaces the original 15-minute walk to closed Ginza cafes, giving you an authentic Tokyo morning experience.',
+                    mapLink: 'Tsukiji Outer Market, 4 Chome Tsukiji, Chuo City, Tokyo'
                 }
             },
             {
-                time: '9:30 AM',
-                title: 'Pre-Hokoten Ginza Luxury Shopping',
-                description: 'Flagship stores before pedestrian paradise',
+                time: '8:45 AM',
+                title: 'Turret Coffee Breakfast',
+                description: 'Specialty coffee & morning pastries in Tsukiji',
+                location: 'Turret Coffee',
+                details: {
+                    area: 'Tsukiji - The only cafe on your original list open this early',
+                    address: 'Tsukiji 4-chome, Chuo City (near the market)',
+                    walkingTime: '3-5 min walk from Tsukiji Outer Market',
+                    duration: '30 minutes (8:45-9:15 AM)',
+                    hours: '7:00 AM - 7:00 PM (Saturdays) - opens earlier than any Ginza cafe',
+                    vibe: 'Third-wave specialty coffee, minimalist aesthetic, post-market local crowd',
+                    highlights: 'Expert pour-overs, single-origin beans, morning pastries, clean minimalist design',
+                    experience: 'After the bustling market, settle into this calm, sophisticated coffee spot. This is the only cafe from your original "Hit List" that\'s actually open at 8:00 AM - and it\'s right here in Tsukiji, not Ginza.',
+                    strategy: 'Order a pour-over coffee and a morning pastry. Enjoy the quiet, intentional coffee culture before heading to Ginza.',
+                    note: '⭐ CORRECTED LOCATION: This cafe is in Tsukiji, NOT Ginza. Original plan had incorrect 9:00 AM opening - it actually opens at 7:00 AM on Saturdays.',
+                    mapLink: 'Turret Coffee Tsukiji, Tokyo'
+                }
+            },
+            {
+                time: '9:15 AM',
+                title: 'Ginza Six Rooftop Garden - The "Secret" Start',
+                description: 'Serene rooftop views before the district wakes up',
+                location: 'Ginza Six Rooftop Garden',
+                details: {
+                    area: 'Ginza Six - 6th Floor Rooftop Garden',
+                    address: '6-10-1 Ginza, Chuo City (Ginza Six mall)',
+                    walkingTime: '10-15 min walk from Turret Coffee in Tsukiji',
+                    duration: '30 minutes (9:15-9:45 AM)',
+                    hours: 'Rooftop Garden: 7:00 AM - 11:00 PM (FREE public access) | Mall shops: 10:30 AM - 8:30 PM',
+                    vibe: 'Tranquil Japanese garden in the sky, bamboo groves, panoramic city views, morning calm',
+                    experience: 'This is the definitive "insider move." While Ginza\'s shops are still closed, you\'ll have this serene, beautifully designed rooftop garden almost entirely to yourself. Elevated views of the district before it officially "wakes up."',
+                    highlights: 'Traditional Japanese landscaping, bamboo, seasonal plants, benches with city views, art installations',
+                    strategy: 'Walk from Tsukiji/Turret Coffee to Ginza. Enter Ginza Six, take the elevator directly to the 6F rooftop. Enjoy 20-30 minutes of quiet, panoramic views. This transforms "dead time" (waiting for 10:00-11:00 AM store openings) into a premium, tranquil experience.',
+                    photos: 'Rooftop garden with Ginza skyline, bamboo groves, morning light on buildings, empty terraces',
+                    note: '🎯 STRATEGIC TIMING: Most Ginza stores don\'t open until 10:30-11:00 AM. This rooftop garden opens at 7:00 AM and is FREE. You\'re using the "dead time" brilliantly.',
+                    mapLink: 'Ginza Six Rooftop Garden, 6-10-1 Ginza, Chuo City, Tokyo'
+                }
+            },
+            {
+                time: '9:45 AM',
+                title: 'Ginza Flagship Shopping - Synchronized Openings',
+                description: 'Strategic shopping aligned with actual store hours',
                 location: 'Ginza Chuo-dori',
                 details: {
                     area: 'Ginza Chuo-dori - Luxury flagship boulevard',
-                    duration: '2.5 hours (9:30 AM - 12:00 PM)',
+                    duration: '2 hours 15 min (9:45 AM - 12:00 PM)',
                     vibe: 'High-end retail architecture, iconic Japanese flagships, morning shopping calm',
-                    strategy: 'Most stores open 10:30-11:00 AM. Window shop early, enter when they open. Streets still have traffic until noon.',
+                    strategy: '🎯 TWO STRATEGIC OPTIONS - Pick based on your priority:\n\nOPTION A: PANCAKE PRIORITY\n• 9:40 AM: Walk to A Happy Pancake Ginza (7F New Ginza Building, 5-8-5 Ginza)\n• Queue before 10:00 AM Saturday opening (NO online reservations on weekends)\n• Be FIRST in line to avoid 2-5 hour waits\n• After pancakes (~11:00 AM): Hit the 11:00 AM flagship openings (Wako, Uniqlo)\n\nOPTION B: SHOPPING PRIORITY\n• 10:00 AM: Start at Itoya Stationery (opens 10:00 AM) - explore 12 themed floors\n• 10:30 AM: Ginza Six shops open - explore the mall\n• 11:00 AM: Visit Wako (clock tower) and Uniqlo Ginza flagship (both open 11:00 AM)\n• Skip pancakes or accept long wait\n\nStores open in STAGGERED times: Itoya (10:00 AM) → Ginza Six shops (10:30 AM) → Wako & Uniqlo (11:00 AM).',
                     shops: [
                         {
-                            name: '1. Wako Ginza (The Clock Tower) ⭐',
-                            address: '4-5-11 Ginza, Chuo City',
-                            highlight: 'THE iconic Ginza landmark since 1932. Luxury watches, jewelry, department store. Don\'t miss the famous clock tower and rooftop terrace views.',
-                            hours: '10:30 AM - 7:00 PM',
-                            walk: 'Start here - central Ginza 4-chome crossing',
-                            mapLink: 'Wako Ginza, Tokyo'
+                            name: '1. A Happy Pancake Ginza ⭐⭐ (PANCAKE PRIORITY OPTION)',
+                            address: '7F New Ginza Building No. 10, 5-8-5 Ginza, Chuo City',
+                            highlight: 'Ultra-fluffy Japanese soufflé pancakes with Hokkaido milk butter & Manuka honey. 20 min cook time per order.',
+                            hours: 'Saturdays: 10:00 AM - 8:30 PM • ☎️ 03-6255-1111 • NO online reservations on weekends',
+                            walk: '12 min walk from Ginza Six Rooftop',
+                            strategy: '🚨 ARRIVE AT 9:40 AM (20 min before opening) to be first in line. Weekend waits can be 2-5 hours if you arrive late!',
+                            mapLink: 'A Happy Pancake Ginza, 5-8-5 Ginza, Chuo City, Tokyo'
                         },
                         {
-                            name: '2. Uniqlo Ginza (Global Flagship) ⭐',
-                            address: '6-9-5 Ginza, Chuo City (12 floors)',
-                            highlight: 'The ultimate Uniqlo experience. 12 floors showcasing Japanese minimalist fashion, exclusive Ginza items, incredible organization',
-                            hours: '11:00 AM - 9:00 PM',
-                            walk: '5 min walk north on Chuo-dori',
-                            mapLink: 'Uniqlo Ginza Flagship, Tokyo'
-                        },
-                        {
-                            name: '3. Itoya Stationery Store',
+                            name: '2. Itoya Stationery Store (SHOPPING PRIORITY OPTION)',
                             address: '2-7-15 Ginza, Chuo City (G.Itoya main building)',
                             highlight: '12 floors of stationery heaven. Japanese pens, washi paper, notebooks, luxury writing instruments. Each floor is themed.',
-                            hours: '10:00 AM - 8:00 PM (Mon-Sat), 10:00 AM - 7:00 PM (Sun)',
-                            walk: '8 min walk south toward Yurakucho',
+                            hours: '10:00 AM - 8:00 PM (Saturdays)',
+                            walk: '10 min walk from Ginza Six',
+                            strategy: 'Opens 10:00 AM - perfect if you skip pancakes and prioritize shopping time',
                             mapLink: 'Itoya Ginza, Tokyo'
                         },
                         {
-                            name: '4. Ginza Six',
+                            name: '3. Wako Ginza (The Clock Tower) ⭐',
+                            address: '4-5-11 Ginza, Chuo City',
+                            highlight: 'THE iconic Ginza landmark since 1932. Luxury watches, jewelry, department store. Don\'t miss the famous clock tower and rooftop terrace views.',
+                            hours: '11:00 AM - 7:00 PM (Saturdays)',
+                            walk: 'Central Ginza 4-chome crossing',
+                            mapLink: 'Wako Ginza, Tokyo'
+                        },
+                        {
+                            name: '4. Uniqlo Ginza (Global Flagship) ⭐',
+                            address: '6-9-5 Ginza, Chuo City (12 floors)',
+                            highlight: 'The ultimate Uniqlo experience. 12 floors showcasing Japanese minimalist fashion, exclusive Ginza items, incredible organization',
+                            hours: '11:00 AM - 9:00 PM (Saturdays)',
+                            walk: '5 min walk north from Wako on Chuo-dori',
+                            mapLink: 'Uniqlo Ginza Flagship, Tokyo'
+                        },
+                        {
+                            name: '5. Ginza Six',
                             address: '6-10-1 Ginza, Chuo City',
-                            highlight: 'Massive luxury mall (2017). Art installations, rooftop garden, 241 shops/restaurants, basement food hall (depachika)',
+                            highlight: 'Massive luxury mall (2017). Art installations, rooftop garden (visited earlier), 241 shops/restaurants, basement food hall (depachika)',
                             hours: '10:30 AM - 8:30 PM (shops)',
                             walk: 'Right next to Uniqlo',
                             mapLink: 'Ginza Six, Tokyo'
                         },
                         {
-                            name: '5. Mikimoto Ginza (Pearl Headquarters)',
-                            address: '2-4-12 Ginza, Chuo City',
-                            highlight: 'Stunning architecture by Toyo Ito. Birthplace of cultured pearls. Even if you don\'t buy, the building facade is iconic.',
-                            hours: '11:00 AM - 7:00 PM',
-                            walk: 'Near Itoya, southern Ginza',
-                            mapLink: 'Mikimoto Ginza, Tokyo'
+                            name: '6. Ginza Kimuraya (Anpan Historic Bakery)',
+                            address: '4-5-7 Ginza, Chuo City',
+                            highlight: 'Birthplace of anpan (sweet red bean buns) since 1869. Historic Japanese bakery institution. Perfect mid-morning snack.',
+                            hours: '10:00 AM - 7:00 PM (Saturdays)',
+                            walk: 'At Ginza 4-chome crossing (near Wako)',
+                            mapLink: 'Ginza Kimuraya Sohonten, Tokyo'
                         }
                     ]
                 }
@@ -254,16 +261,16 @@ export default {
                 description: 'Rainbow Bridge views & waterfront dining',
                 location: 'Aqua City Odaiba (return)',
                 details: {
-                    location: 'Walk back to Aqua City (10 min walk from DiverCity)',
+                    location: 'Walk back to Aqua City (7-10 min walk from DiverCity)',
                     floors: '5th & 6th floors - Restaurant Floors',
                     duration: 'Dinner + evening views (6:00 PM onwards)',
-                    strategy: 'Choose a restaurant with terrace seating or window tables facing Rainbow Bridge',
+                    strategy: '🚨 CRITICAL SATURDAY DINNER STRATEGY:\n\n5:10 PM: After Gundam show, walk IMMEDIATELY back to Aqua City\n5:45 PM: Arrive at restaurant level (5F/6F). Choose a restaurant with terrace/window views of Rainbow Bridge\n5:45-6:00 PM: Put your name on the IN-PERSON WAITLIST. Most restaurants do NOT accept reservations on Saturday evenings.\n• You\'ll receive a vibrating pager to hold your spot in the queue\n6:00-6:30 PM: Browse Aqua City shops while waiting for your pager to buzz\n6:30 PM (approx): Be seated for dinner with prime Rainbow Bridge views\n\nWhy this matters: Walk-ins at 6:00 PM on Saturday = 1-2 hour waits. Joining the waitlist at 5:45 PM = productive 30-45 min wait.',
                     views: 'Illuminated Rainbow Bridge (lights up at sunset), glittering Tokyo skyline across the bay, waterfront boardwalk',
-                    restaurants: 'Ramen Kokugikan Mai (ramen food hall), Gonpachi (Kill Bill restaurant), Bills (Australian breakfast/dinner), tonkatsu, yakiniku, Italian with terrace',
-                    tips: '🌉 This is THE iconic Odaiba dinner experience. Request window/terrace seating with bridge views. The Rainbow Bridge lights change colors throughout the night.',
+                    restaurants: 'Italian with terraces, tonkatsu, yakiniku, Bills (Australian), Gonpachi (Kill Bill restaurant), Ramen Kokugikan Mai. Choose based on view quality - prioritize terrace or window seating.',
+                    tips: '🌉 This is THE iconic Odaiba dinner experience. The 5:45 PM waitlist strategy is essential for Saturday nights. Rainbow Bridge lights change colors throughout the night.',
                     timing: 'Sunset in late November is around 4:30-5:00 PM, so by 6 PM the bridge will be fully illuminated',
                     vibe: 'Romantic, scenic, quintessential Tokyo waterfront dining. One of the most photographed views in the city.',
-                    note: 'No reservation needed for most casual spots, but arrive before 7 PM to avoid weekend dinner rush'
+                    note: '⚠️ Weekend dinner reservations often NOT accepted at view restaurants. The vibrating pager waitlist system is standard at Japanese malls - use it strategically.'
                 }
             },
             {

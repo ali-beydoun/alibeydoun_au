@@ -15,55 +15,32 @@ export default {
         morning: [
             {
                 time: '9:00 AM',
-                title: 'Slow Morning at Tsukiji Outer Market Hit List',
-                description: 'Relaxed start near hotel - coffee, kitchen goods, iconic Tokyo atmosphere',
-                location: 'Tsukiji Outer Market',
+                title: 'Slow Morning at Hotel & Nearby Breakfast',
+                description: 'Relaxed final morning - breakfast, pack extras, prepare for shopping mission',
+                location: 'Hotel area (Ginza/Tsukiji)',
                 details: {
-                    address: '4 Chome Tsukiji, Chuo City, Tokyo 104-0045',
-                    walkingTime: '5-10 min walk from hotel',
-                    duration: '2 hours (browse at your own pace until 11 AM)',
-                    marketHours: 'Most shops: 5:00 AM - 2:00 PM',
-                    vibe: 'Slow, relaxed, authentic local market atmosphere - perfect last-day morning',
-                    shops: [
+                    duration: '2 hours (9:00-11:00 AM)',
+                    vibe: 'Unhurried final morning before your last day of shopping and early flight tomorrow',
+                    strategy: 'Sleep in a bit, enjoy a leisurely breakfast near the hotel, do any final packing prep, organize shopping lists for Don Quijote',
+                    breakfastOptions: [
                         {
-                            name: '1. Turret Coffee or Yazawa Coffee Roasters',
-                            highlight: 'Specialty coffee • Pour-overs • Rich espresso & latte varieties',
-                            hours: 'Early morning opening',
-                            address: 'Tsukiji Outer Market, Chuo City, Tokyo',
-                            mapLink: 'Turret Coffee Tsukiji, Tokyo'
+                            name: 'Hotel Breakfast (if included)',
+                            highlight: 'Convenient, no travel required'
                         },
                         {
-                            name: '2. Yamachō (やまちょう)',
-                            highlight: 'Famous tamagoyaki (Japanese rolled omelet) • Kushidama (omelet on a stick)',
-                            hours: 'Open daily • ☎️ 03-3248-6002',
-                            address: 'Tsukiji Outer Market (across from info center)',
-                            mapLink: 'Yamachō Tsukiji, Tokyo'
+                            name: 'Nearby Convenience Store (7-Eleven, FamilyMart)',
+                            highlight: 'Quick onigiri, coffee, pastries - classic Tokyo breakfast',
+                            walk: 'Multiple locations within 2-5 min of hotel'
                         },
                         {
-                            name: '3. Tsukiji Aritsugu (Knife Shop)',
-                            highlight: 'Hand-crafted Japanese chef knives • Legendary since 1560',
-                            hours: '5:30 AM - 3:00 PM • Closed: Sun, holidays, some Wed',
-                            address: 'Tsukiji Outer Market, Chuo City, Tokyo',
-                            mapLink: 'Tsukiji Aritsugu, Tokyo'
-                        },
-                        {
-                            name: '4. Takizawa Toki (Ceramics)',
-                            highlight: 'Japanese ceramics & tableware • Rice bowls, plates, cups, teapots • Est. 1931',
-                            hours: 'Daily (closed Wed in August & New Year)',
-                            address: 'Tsukiji Outer Market, Chuo City, Tokyo',
-                            mapLink: 'Takizawa Toki Tsukiji, Tokyo'
-                        },
-                        {
-                            name: '5. General Market Browsing',
-                            highlight: 'Tea shops • Dried goods • Specialty food stalls • Street snacks • 400+ vendors',
-                            hours: 'Most shops: 5:00 AM - 2:00 PM',
-                            address: '4 Chome Tsukiji, Chuo City, Tokyo',
-                            mapLink: 'Tsukiji Outer Market, 4 Chome Tsukiji, Chuo City, Tokyo 104-0045'
+                            name: 'Ginza Cafes (if you prefer)',
+                            highlight: 'Various cafes in Ginza open by 9-10 AM',
+                            walk: '10-15 min walk to Ginza district'
                         }
                     ],
-                    strategy: 'Start with coffee, grab tamagoyaki as breakfast snack, browse kitchen goods (knives/ceramics), explore market freely',
-                    mapLink: 'Tsukiji Outer Market, 4 Chome Tsukiji, Chuo City, Tokyo 104-0045',
-                    note: 'No rush - department stores don\'t open until 11 AM anyway! Finish by 11 AM to head to Ginza.'
+                    note: '📝 TODAY\'S MISSION: Department stores (11 AM) → Shibuya → 3 HOURS at Don Quijote for souvenirs! Use this morning to mentally prepare your shopping list.',
+                    tips: 'Department stores don\'t open until 11 AM anyway, so there\'s no rush. Relax and recharge before your souvenir shopping marathon.',
+                    reminder: '⚠️ Tomorrow is departure day (4:30 AM pickup) - make sure you start organizing luggage today if needed'
                 }
             }
         ],

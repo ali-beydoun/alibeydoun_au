@@ -52,6 +52,22 @@ export const tripInfo = {
      */
     ticketsVouchers: [
         {
+            type: 'customs',
+            title: 'Ali Beydoun - Customs QR Code',
+            date: 'Nov 26, 2025',
+            details: 'Immigration & Customs Declaration',
+            link: 'ali-beydoun-customs-qr-code.png',
+            icon: '🛂'
+        },
+        {
+            type: 'customs',
+            title: 'Najah Elzein - Customs QR Code',
+            date: 'Nov 26, 2025',
+            details: 'Immigration & Customs Declaration',
+            link: 'najah-elzein-customs-qr-code.png',
+            icon: '🛂'
+        },
+        {
             type: 'flight',
             title: 'QF59 & QF26 - Qantas Flight Itinerary',
             date: 'Nov 26 & Dec 3, 2025',

@@ -140,30 +140,30 @@ export default {
         ],
         afternoon: [
             {
-                time: '1:45 PM',
-                title: 'Transit to Nezu (Start of Yanesen Walk)',
-                description: 'Asakusa → Nezu via scenic Toei Bus',
+                time: '1:30 PM',
+                title: 'Taxi to Nezu Shrine',
+                description: 'Comfortable direct ride from Asakusa to Nezu',
                 details: {
-                    from: 'Asakusa 2-chome bus stop (浅草二丁目)',
-                    to: 'Nezu Station (根津駅前 bus stop)',
-                    route: 'Toei Bus Route 上26 - DIRECT, no transfers',
-                    duration: '17-26 minutes',
-                    cost: '~¥210',
-                    arrival: 'Nezu by 2:00 PM',
-                    why: '🎯 LIFESTYLE CHOICE: This scenic bus route keeps you above ground, passing through authentic shitamachi (old downtown) neighborhoods. Sets the perfect nostalgic mood for the Yanesen afternoon walk.',
-                    alternative: 'Tokyo Metro Ginza Line to Ueno + transfer (fragmented, less atmospheric)',
-                    tips: 'Find the 浅草二丁目 (Asakusa 2-chome) bus stop near Senso-ji. Board Route 上26 heading toward Nezu.'
+                    from: 'Asakusa area (near Senso-ji / Kokusai Dori)',
+                    to: 'Nezu Shrine (Nezu Jinja)',
+                    method: 'Taxi (flag on street or use Uber/GO app)',
+                    instruction: 'Tell driver: "Nezu Jinja" (根津神社)',
+                    duration: '~15 minutes',
+                    cost: 'Approx. ¥2,500',
+                    arrival: 'Nezu Shrine by 1:45 PM',
+                    benefit: '🎯 COMFORT CHOICE: Saves 30 minutes and walking energy after a full morning of temple exploration. Direct, comfortable, and efficient.',
+                    tips: 'Flag a taxi on the main street (Kokusai Dori) near Senso-ji, or use Uber/GO app. Show driver "Nezu Jinja" (根津神社) on your phone if needed.'
                 }
             },
             {
-                time: '2:00 PM',
+                time: '1:45 PM',
                 title: 'Nezu Shrine - Vermilion Gate Tunnel',
                 description: 'Historic 1706 shrine with stunning torii pathway',
                 location: 'Nezu Shrine',
                 details: {
                     area: 'Nezu - Starting point of the Yanesen (Yanaka/Nezu/Sendagi) walking tour',
                     address: '1-28-9 Nezu, Bunkyo City, Tokyo 113-0031',
-                    duration: '1 hour (2:00-3:00 PM)',
+                    duration: '1 hour (1:45-2:45 PM)',
                     hours: 'Grounds: 9:00 AM - 5:00 PM daily • FREE admission',
                     founded: '1706 (rebuilt by 5th shogun Tokugawa Tsunayoshi)',
                     highlights: '⛩️ Senbon Torii - Hundreds of vermilion torii gates creating a stunning tunnel pathway up the hillside to Otome Inari Shrine • 1706 Romon Gate, Karamon Gate, and Honden (main hall) - all Important Cultural Properties',
@@ -175,21 +175,21 @@ export default {
                 }
             },
             {
-                time: '3:00 PM',
+                time: '2:45 PM',
                 title: 'Yanaka Cemetery - Golden Hour Walk',
                 description: 'Peaceful park-like cemetery with fall foliage & Skytree views',
                 location: 'Yanaka Cemetery (Yanaka Reien)',
                 details: {
                     area: 'Yanaka Cemetery - 10 hectares, 7,000+ graves, one of Tokyo\'s most scenic cemeteries',
                     address: 'Yanaka 7-chome, Taito City, Tokyo',
-                    duration: '1 hour (3:00-4:00 PM) - Golden Hour Walk',
+                    duration: '1 hour 15 min (2:45-4:00 PM) - Extended Golden Hour Walk',
                     hours: 'Open 24 hours daily • FREE access',
                     vibe: 'NOT creepy! Described as "vast, peaceful escape," "park-like area," and "popular dog-walking course." This is a safe, serene, contemplative space.',
-                    timing: '🌅 GOLDEN HOUR STRATEGY: Arriving during 3:00-4:15 PM provides "late afternoon" light for the most "contemplative atmosphere" and "better light for photos."',
+                    timing: '🌅 GOLDEN HOUR STRATEGY: Arriving at 2:45 PM gives you extra time to explore the cemetery at a relaxed pace with perfect "late afternoon" light for the most "contemplative atmosphere" and "better light for photos."',
                     highlights: '🍂 Stunning fall foliage - "brilliant autumn colors like golden ginkgo leaves" (late November) • Tokyo Skytree views from cemetery grounds • Final resting place of last shogun Tokugawa Yoshinobu',
                     walk: 'Slow atmospheric walk from Nezu Shrine through Yanaka neighborhood to the cemetery (10-15 min) • Traditional wooden houses and narrow back alleys - rare glimpse of old Tokyo',
                     route: 'Walk concludes at the WESTERN EDGE of the cemetery, at the top of the Yuyake Dandan (Sunset Stairs)',
-                    strategy: 'This is the heart of the shitamachi experience. Walk slowly, absorb the fall colors, enjoy the peaceful atmosphere. Aim to reach the top of the Sunset Stairs by 4:00-4:15 PM.',
+                    strategy: 'This is the heart of the shitamachi experience. With the earlier arrival, you have extra buffer time to walk slowly, absorb the fall colors, and enjoy the peaceful atmosphere without rushing. Aim to reach the top of the Sunset Stairs by 4:00 PM for the critical sunset timing.',
                     mapLink: 'Yanaka Cemetery, Yanaka 7-chome, Taito City, Tokyo'
                 }
             },

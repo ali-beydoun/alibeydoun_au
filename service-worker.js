@@ -9,13 +9,15 @@
  * but can still access the app when traveling without internet.
  */
 
-const CACHE_NAME = 'tokyo-trip-v2';
+const CACHE_NAME = 'tokyo-trip-v3';
 const urlsToCache = [
     '/',
     '/index.html',
     '/styles.css',
     '/app.js',
     '/ali-najah.jpeg',
+    '/ali-beydoun-customs-qr-code.png',
+    '/najah-elzein-customs-qr-code.png',
     '/manifest.json',
     // Data modules
     '/data/trip-info.js',

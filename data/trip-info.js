@@ -102,6 +102,15 @@ export const tripInfo = {
             details: 'Green Car 11, Seats 7-C & 7-D',
             link: 'https://www.icloud.com/iclouddrive/007ykC75nU-ThDdIzm_XZN2fA#20251128_Asama624_Karuizawa-Tokyo',
             icon: '🚄'
+        },
+        {
+            type: 'activity',
+            title: 'Kamakura Half-Day Walking Tour',
+            date: 'Dec 1, 2025',
+            time: '11:00 AM - 3:00 PM',
+            details: 'Great Buddha, Kamakura High School, Komachi Street, Shrines - English Guide',
+            link: 'https://www.klook.com/activity/91283-kotoku-temple-kamakura-high-school-mae-station-komachi-street-join-half-day-walking-tour/',
+            icon: '⛩️'
         }
         // ADD NEW TICKETS ABOVE THIS LINE
     ]

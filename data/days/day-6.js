@@ -46,16 +46,11 @@ export default {
                     greenCarSurcharge: '¥1,000 (Monday weekday rate)',
                     totalCost: '¥1,950 per person',
 
-                    greenCarPurchase: {
-                        title: '🎫 HOW TO PURCHASE GREEN CAR TICKETS',
-                        location: 'Shimbashi Station - Yokosuka Line platform area',
-                        method1: 'Green Ticket Machines (Recommended for speed)',
-                        method1Steps: 'Look for vertical machines with green four-leaf clover logo → Insert Suica/PASMO IC card → Select destination "Kamakura" → ¥1,000 surcharge deducted from card → Card is now loaded with Green ticket data',
-                        method2: 'JR East Midori no Madoguchi (Ticket Office)',
-                        method2Steps: 'Find the green "Midori no Madoguchi" ticket office window → Tell staff "Green Car to Kamakura" (show phone if needed) → Pay ¥1,950 total → Receive printed ticket + IC card fare adjustment',
-                        critical: '⚠️ MUST purchase BEFORE boarding. Buying onboard from attendant = ¥260 penalty fare.',
-                        authentication: 'After boarding double-decker Green Car, find seat with RED ceiling light (vacant) → Touch IC card to ceiling reader for 2 seconds → Light turns GREEN (confirmed)'
-                    },
+                    greenCarTicketPurchase: '🎫 HOW TO PURCHASE GREEN CAR TICKETS - At Shimbashi Station Yokosuka Line platform area',
+                    purchaseMethod1: 'Option 1: Green Ticket Machines (Recommended) - Look for vertical machines with green four-leaf clover logo → Insert Suica/PASMO IC card → Select "Kamakura" → ¥1,000 surcharge deducted → Card now loaded with Green ticket data',
+                    purchaseMethod2: 'Option 2: JR East Midori no Madoguchi (Ticket Office) - Find green "Midori no Madoguchi" window → Tell staff "Green Car to Kamakura" → Pay ¥1,950 total → Receive printed ticket',
+                    purchaseCritical: '⚠️ MUST purchase BEFORE boarding. Buying onboard from attendant = ¥260 penalty fare',
+                    greenCarBoarding: 'After boarding double-decker Green Car, find seat with RED ceiling light (vacant) → Touch IC card to ceiling reader for 2 seconds → Light turns GREEN (confirmed)',
 
                     experience: 'Reclining seats, 970mm legroom, 2+2 configuration. Upper deck offers elevated views. Watch Tokyo transform from urban sprawl (Shinagawa, Yokohama) to coastal greenery (Kita-Kamakura).',
                     scenicHighlight: 'After Ofuna station (~50 min into journey), train cuts through wooded hillsides and valleys - first glimpse of Kamakura\'s natural setting',
@@ -93,13 +88,11 @@ export default {
                     language: 'English-speaking guide',
                     groupSize: 'Small group or private (depends on booking)',
 
-                    itinerary: {
-                        stop1: '1. Kotoku-in Temple (Great Buddha) - 11.3m bronze Amida Nyorai statue, cast 1252, open-air National Treasure',
-                        stop2: '2. Kamakura High School Mae Station - Iconic Enoden railway crossing, coastal views, Slam Dunk anime pilgrimage site',
-                        stop3: '3. Komachi-dori Street - 170m traditional shopping street with local snacks, crafts, souvenirs',
-                        stop4: '4. Tsurugaoka Hachimangu Shrine - Main shrine of Kamakura, dedicated to Hachiman (patron of samurai)',
-                        stop5: '5. Genjiyama Park - Scenic hillside park with nature trails'
-                    },
+                    tourStop1: '1. Kotoku-in Temple (Great Buddha) - 11.3m bronze Amida Nyorai statue, cast 1252, open-air National Treasure',
+                    tourStop2: '2. Kamakura High School Mae Station - Iconic Enoden railway crossing, coastal views, Slam Dunk anime pilgrimage site',
+                    tourStop3: '3. Komachi-dori Street - 170m traditional shopping street with local snacks, crafts, souvenirs',
+                    tourStop4: '4. Tsurugaoka Hachimangu Shrine - Main shrine of Kamakura, dedicated to Hachiman (patron of samurai)',
+                    tourStop5: '5. Genjiyama Park - Scenic hillside park with nature trails',
 
                     included: 'English-speaking guide • Walking tour of all listed sites • Cultural context and historical stories • Navigation between locations',
                     notIncluded: 'Lunch (guide will recommend spots) • Entrance fees (most sites are free or ~¥300-400) • Personal expenses',
@@ -127,56 +120,20 @@ export default {
 
                     why: '🎯 GEOGRAPHIC EFFICIENCY: Yokohama is BETWEEN Kamakura and Tokyo. Stopping here eliminates 10km of backtracking vs. going to Shinjuku. Natural route progression.',
 
-                    step1: {
-                        title: 'Step 1: Kamakura → Yokohama',
-                        line: 'JR Yokosuka Line',
-                        direction: 'Toward Yokohama/Tokyo (NOT Shonan-Shinjuku Line)',
-                        frequency: 'Every 10-15 minutes',
-                        duration: '20-25 minutes',
-                        baseFare: '¥340 (IC card)',
-                        greenCar: 'Optional - ¥1,000 surcharge (recommend SKIP for this short 25-min leg)',
-                        platform: 'Board at Kamakura Station platforms - look for "Yokohama" or "Tokyo" destination',
-                        arrival: 'Yokohama Station ~3:25 PM'
-                    },
+                    transitStep1: 'Step 1: Kamakura → Yokohama (JR Yokosuka Line toward Yokohama/Tokyo, NOT Shonan-Shinjuku)',
+                    step1Details: 'Every 10-15 min • 20-25 min duration • ¥340 base fare (IC card) • Green Car optional ¥1,000 (recommend SKIP for this short leg) • Board at Kamakura platforms looking for "Yokohama" or "Tokyo" destination • Arrive Yokohama Station ~3:25 PM',
 
-                    step2: {
-                        title: 'Step 2: Transfer at Yokohama Station',
-                        walkTime: '5-7 minutes within station',
-                        navigation: 'Exit JR gates → Follow blue/purple "Minatomirai Line" signs',
-                        destination: 'Minatomirai Line platform (private railway)',
-                        tips: 'Look for Minatomirai Line logo (blue circle with ship). Well-signposted.'
-                    },
+                    transitStep2: 'Step 2: Transfer at Yokohama Station (5-7 min walk within station)',
+                    step2Navigation: 'Exit JR gates → Follow blue/purple "Minatomirai Line" signs → Look for Minatomirai Line logo (blue circle with ship) - well-signposted',
 
-                    step3: {
-                        title: 'Step 3: Yokohama → Motomachi-Chukagai',
-                        line: 'Minatomirai Line (private railway)',
-                        stops: '4 stops: Shin-Takashima → Minatomirai → Bashamichi → Nihon-Odori → Motomachi-Chukagai',
-                        duration: '8 minutes',
-                        cost: '¥220 (IC card)',
-                        exit: 'Exit via "Chukagai/Chinatown Exit" - leads directly toward Chinatown (3 min walk)',
-                        arrival: 'Motomachi-Chukagai Station ~3:40 PM'
-                    },
+                    transitStep3: 'Step 3: Yokohama → Motomachi-Chukagai (Minatomirai Line private railway)',
+                    step3Details: '4 stops: Shin-Takashima → Minatomirai → Bashamichi → Nihon-Odori → Motomachi-Chukagai • 8 min duration • ¥220 (IC card) • Exit via "Chukagai/Chinatown Exit" toward Chinatown (3 min walk) • Arrive ~3:40 PM',
 
-                    totalJourney: {
-                        time: '35-40 minutes (including transfer)',
-                        costWithoutGreen: '¥560 total (¥340 + ¥220)',
-                        costWithGreen: '¥1,560 (if you choose Green Car for Step 1)',
-                        recommendation: 'SKIP Green Car on this leg - only 25 min ride, save ¥2,000 for couple'
-                    },
+                    journeyTotal: '35-40 minutes total (including transfer) • ¥560 without Green Car (¥340 + ¥220) • ¥1,560 with Green Car • Recommendation: SKIP Green Car on this leg (only 25 min, saves ¥2,000 per couple)',
 
-                    arrival: {
-                        station: 'Motomachi-Chukagai Station',
-                        time: '~3:40-3:50 PM',
-                        walkToFirstAttraction: '5 min walk to Yamashita Park / 8 min to Red Brick Warehouse',
-                        positioning: 'Perfect arrival for 4:28 PM sunset at Osanbashi Pier'
-                    },
+                    arrivalDetails: 'Arrive Motomachi-Chukagai Station ~3:40-3:50 PM • 5 min walk to Yamashita Park / 8 min to Red Brick Warehouse • Perfect timing for 4:28 PM sunset at Osanbashi Pier',
 
-                    comparisonToShinjuku: {
-                        timeSaved: '10-20 minutes vs. Kamakura → Shinjuku route',
-                        backtrackingSaved: '10 km (Yokohama is on the way home, Shinjuku requires detour)',
-                        moneySaved: 'Up to ¥2,000 per couple (skip Green Car on short leg)',
-                        experience: 'Waterfront sunset + Chinatown vs. neon urban (unique to Yokohama)'
-                    },
+                    vsShinjuku: 'Yokohama advantages: 10-20 min time saved • 10 km less backtracking (on the way home vs. Shinjuku detour) • Up to ¥2,000 saved per couple (skip Green Car) • Unique waterfront sunset + Chinatown vs. neon urban experience',
 
                     mapLink: 'https://www.google.com/maps/dir/Kamakura+Station,+Kamakura,+Kanagawa/Motomachi-Chukagai+Station,+Yokohama'
                 }
@@ -194,12 +151,7 @@ export default {
                     navigation: 'Exit station → Walk south toward harbor (5 min) → Reach Yamashita Park waterfront promenade',
                     walkTime: '5 minutes from station to Yamashita Park',
 
-                    yamashitaPark: {
-                        description: 'Japan\'s first seaside park (opened 1930)',
-                        size: '750-meter waterfront promenade',
-                        views: 'Yokohama Bay, Bay Bridge, Marine Tower',
-                        activity: 'Brief stroll through park en route to sunset viewing spot'
-                    },
+                    yamashitaParkInfo: 'Japan\'s first seaside park (opened 1930) • 750-meter waterfront promenade • Views of Yokohama Bay, Bay Bridge, Marine Tower • Brief stroll through park en route to sunset viewing spot',
 
                     destination: 'Continue east along waterfront promenade to Osanbashi Pier (5 min walk from park)',
                     totalWalk: '10 minutes: Station → Yamashita Park → Osanbashi Pier',
@@ -226,11 +178,7 @@ export default {
                     blueHour: '4:30-5:00 PM - "Blue hour" as city lights turn on with twilight sky',
                     duration: '45 minutes (4:00-4:45 PM) - sunset viewing + photos',
 
-                    rooftopDeck: {
-                        access: 'Gently sloping, wheelchair accessible',
-                        features: 'Grass areas, benches, FREE public access 24/7',
-                        views: 'West-facing for sunset, Yokohama Bay Bridge, Minato Mirai towers, cruise ships, full harbor panorama'
-                    },
+                    rooftopDeckDetails: 'Gently sloping, wheelchair accessible • Grass areas, benches, FREE public access 24/7 • West-facing for sunset, Yokohama Bay Bridge, Minato Mirai towers, cruise ships, full harbor panorama',
 
                     viewingStrategy: '🎯 CRITICAL TIMING: Arrive by 4:00-4:15 PM → Position on rooftop facing west → 4:28 PM sunset "money shot" → Stay for blue hour as lights illuminate (4:30-5:00 PM)',
 
@@ -259,34 +207,14 @@ export default {
                     fullName: 'Yokohama Red Brick Warehouse (横浜赤レンガ倉庫)',
                     walkTime: '10 min from Osanbashi along waterfront boardwalk',
 
-                    theBuildings: {
-                        building1: 'Warehouse No. 1 - Event spaces, seasonal exhibitions',
-                        building2: 'Warehouse No. 2 - 1F: Shops/boutiques (10:00-19:00) • 2F: Restaurants/cafes (11:00-20:00)',
-                        outdoorPlaza: 'Event space between buildings, often has seasonal decorations (December = winter illuminations possible)'
-                    },
+                    buildingLayout: 'Warehouse No. 1: Event spaces, seasonal exhibitions • Warehouse No. 2: 1F: Shops/boutiques (10:00-19:00) • 2F: Restaurants/cafes (11:00-20:00) • Outdoor Plaza: Event space between buildings with seasonal decorations (December = winter illuminations possible)',
 
-                    mondayHours: {
-                        shops: '10:00-19:00 (Building 2, 1F)',
-                        restaurants: '11:00-20:00 (Building 2, 2F)',
-                        plaza: '24/7 accessible',
-                        note: 'NO Monday closures - fully operational'
-                    },
+                    mondayHours: 'Shops: 10:00-19:00 (Building 2, 1F) • Restaurants: 11:00-20:00 (Building 2, 2F) • Plaza: 24/7 accessible • NO Monday closures - fully operational',
 
-                    eveningAtmosphere: {
-                        illumination: 'Buildings lit in amber/orange at dusk (from ~4:30 PM onward)',
-                        vibe: 'Romantic waterfront setting, contrast to daytime, "fantastical" evening ambiance',
-                        crowds: 'Monday evening moderate (not peak weekend crowds)',
-                        views: 'Direct harbor views, Yokohama Bay in background'
-                    },
+                    eveningVibe: 'Buildings lit in amber/orange at dusk (from ~4:30 PM onward) • Romantic waterfront setting, "fantastical" evening ambiance • Monday evening moderate crowds (not peak weekend) • Direct harbor views, Yokohama Bay in background',
 
                     timeAllocation: '1 hour 15 min (4:45-6:00 PM)',
-                    activities: {
-                        exterior: '15 min - Photo walk around illuminated buildings and plaza',
-                        shopping: '20 min - Browse boutiques in Building 2 (1F)',
-                        cafe: '15-20 min - Optional cafe/snack break in Building 2 (2F)',
-                        waterfront: '10 min - Harbor views from warehouse waterfront side',
-                        buffer: '10 min - Flexibility for browsing or resting'
-                    },
+                    suggestedActivities: 'Exterior photos (15 min) • Browse boutiques Building 2 1F (20 min) • Optional cafe/snack Building 2 2F (15-20 min) • Harbor views from waterfront side (10 min) • Buffer time (10 min)',
 
                     photoSpots: [
                         'Front plaza looking up at illuminated red bricks',
@@ -333,20 +261,11 @@ export default {
 
                     atmosphere: 'Vibrant evening scene with lanterns, neon signs, and bustling dinner crowds. Peak dinner hours 18:00-20:00. Monday evenings still busy as most restaurants stay open.',
 
-                    diningStrategy: {
-                        reservationAdvice: 'Top restaurants require 2-3 weeks advance booking. Walk-in options exist but expect 15-30 min waits at popular spots during dinner rush.',
-                        timeWindow: '6:30-8:00 PM (1.5 hours for dinner)',
-                        seatingStyle: 'Most restaurants are large (50-150 seats) with group/couple seating',
-                        language: 'Many have English/photo menus. Staff may have limited English but pointing at menu works.'
-                    },
+                    diningAdvice: 'Top restaurants require 2-3 weeks advance booking • Walk-in options exist but expect 15-30 min waits during dinner rush • 6:30-8:00 PM time window (1.5 hours for dinner) • Most restaurants are large (50-150 seats) with group/couple seating • Many have English/photo menus, staff may have limited English but pointing works',
 
-                    mondayNote: '✅ Chinatown restaurants open 7 days/week. No Monday closures.',
+                    mondayNote: '✅ Chinatown restaurants open 7 days/week. No Monday closures',
 
-                    whatToOrder: {
-                        signature: 'Xiaolongbao (soup dumplings) • Peking duck • Mapo tofu • Dim sum platters',
-                        styles: 'Cantonese (dim sum, roasted meats) • Shanghainese (soup dumplings, braised) • Beijing (Peking duck, noodles)',
-                        drinks: 'Chinese tea (included), Shaoxing wine, Tsingtao beer'
-                    }
+                    dishesToOrder: 'Signature dishes: Xiaolongbao (soup dumplings) • Peking duck • Mapo tofu • Dim sum platters • Cuisine styles: Cantonese (dim sum, roasted meats) • Shanghainese (soup dumplings, braised) • Beijing (Peking duck, noodles) • Drinks: Chinese tea (included), Shaoxing wine, Tsingtao beer'
                 },
                 shops: [
                     {
@@ -409,35 +328,18 @@ export default {
                     from: 'Motomachi-Chukagai Station (3 min walk from Chinatown)',
                     to: 'Hotel Keihan Tsukiji Ginza Grande',
 
-                    walkToStation: {
-                        duration: '3 minutes',
-                        route: 'Exit Chinatown via nearest gate → Walk to Motomachi-Chukagai Station',
-                        mapLink: 'https://www.google.com/maps/dir/Yokohama+Chinatown/Motomachi-Chukagai+Station'
-                    },
+                    walkToStationInfo: '3 min walk - Exit Chinatown via nearest gate → Walk to Motomachi-Chukagai Station',
+                    walkToStationMapLink: 'https://www.google.com/maps/dir/Yokohama+Chinatown/Motomachi-Chukagai+Station',
 
-                    option1: {
-                        name: 'Minatomirai Line + JR (Recommended - Fewest Transfers)',
-                        step1: 'Motomachi-Chukagai → Yokohama Station (Minatomirai Line, 8 min, ¥220)',
-                        step2: 'Transfer to JR Keihin-Tohoku Line or Negishi Line',
-                        step3: 'Yokohama → Shimbashi (JR, 20 min, ¥310)',
-                        step4: 'Walk from Shimbashi to hotel (15 min) OR Hibiya Line to Tsukiji (1 stop)',
-                        totalTime: '45-50 minutes (including transfer)',
-                        totalCost: '¥530 (or ¥700 if using Hibiya Line final leg)',
-                        transfers: '1 transfer (at Yokohama Station)',
-                        mapLink: 'https://www.google.com/maps/dir/Motomachi-Chukagai+Station/Shimbashi+Station/Hotel+Keihan+Tsukiji+Ginza+Grande'
-                    },
+                    returnOption1: 'Minatomirai Line + JR (Recommended - Fewest Transfers)',
+                    option1Route: 'Step 1: Motomachi-Chukagai → Yokohama Station (Minatomirai Line, 8 min, ¥220) • Step 2: Transfer to JR Keihin-Tohoku/Negishi Line • Step 3: Yokohama → Shimbashi (JR, 20 min, ¥310) • Step 4: Walk from Shimbashi to hotel (15 min) OR Hibiya Line to Tsukiji (1 stop)',
+                    option1Summary: '45-50 min total (including transfer) • ¥530 (or ¥700 with Hibiya Line final leg) • 1 transfer at Yokohama Station',
+                    option1MapLink: 'https://www.google.com/maps/dir/Motomachi-Chukagai+Station/Shimbashi+Station/Hotel+Keihan+Tsukiji+Ginza+Grande',
 
-                    option2: {
-                        name: 'Direct to Ginza (Alternative via Negishi/Yamanote)',
-                        step1: 'Motomachi-Chukagai → Yokohama (Minatomirai Line, 8 min, ¥220)',
-                        step2: 'Yokohama → Yurakucho (JR Negishi → Yamanote transfer, 25 min, ¥310)',
-                        step3: 'Walk from Yurakucho through Ginza to hotel (12 min)',
-                        totalTime: '50-55 minutes',
-                        totalCost: '¥530',
-                        transfers: '1-2 transfers (Yokohama, possibly at Sakuragicho)',
-                        note: 'Slightly longer but ends closer to Ginza shopping area if you want to stroll',
-                        mapLink: 'https://www.google.com/maps/dir/Motomachi-Chukagai+Station/Yurakucho+Station/Hotel+Keihan+Tsukiji+Ginza+Grande'
-                    },
+                    returnOption2: 'Direct to Ginza (Alternative via Negishi/Yamanote)',
+                    option2Route: 'Step 1: Motomachi-Chukagai → Yokohama (Minatomirai Line, 8 min, ¥220) • Step 2: Yokohama → Yurakucho (JR Negishi → Yamanote transfer, 25 min, ¥310) • Step 3: Walk from Yurakucho through Ginza to hotel (12 min)',
+                    option2Summary: '50-55 min total • ¥530 • 1-2 transfers (Yokohama, possibly at Sakuragicho) • Slightly longer but ends closer to Ginza shopping area if you want to stroll',
+                    option2MapLink: 'https://www.google.com/maps/dir/Motomachi-Chukagai+Station/Yurakucho+Station/Hotel+Keihan+Tsukiji+Ginza+Grande',
 
                     recommendation: 'Option 1 (via Shimbashi) is most straightforward. You\'ve used this route before on Day 6 morning. Shimbashi is familiar territory.',
 

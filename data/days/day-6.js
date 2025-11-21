@@ -11,7 +11,7 @@ export default {
         date: 'Monday, December 1',
         dayOfWeek: 'Monday',
         dateShort: 'Dec 1',
-        description: 'Kamakura Coastal Heritage → Shinjuku Urban Energy',
+        description: 'Kamakura Coastal Heritage → Yokohama Waterfront Evening',
         morning: [
             {
                 time: '8:30 AM',
@@ -118,255 +118,334 @@ export default {
             },
             {
                 time: '3:00 PM',
-                title: 'Return Journey to Shinjuku',
-                description: 'Green Car on Shonan-Shinjuku Line (direct, no transfers)',
-                location: 'Kamakura → Shinjuku',
+                title: 'Return Journey to Yokohama',
+                description: 'Efficient routing to waterfront Yokohama (on the way back)',
+                location: 'Kamakura → Yokohama → Motomachi-Chukagai',
                 details: {
-                    from: 'Kamakura Station (tour likely ends here)',
-                    to: 'Shinjuku Station',
-                    line: 'JR Shonan-Shinjuku Line',
+                    from: 'Kamakura Station (tour ends here)',
+                    to: 'Motomachi-Chukagai Station (Yokohama Chinatown area)',
 
-                    critical: '🚨 CRITICAL: Board the SHONAN-SHINJUKU LINE, NOT the Yokosuka Line! Check platform displays carefully.',
+                    why: '🎯 GEOGRAPHIC EFFICIENCY: Yokohama is BETWEEN Kamakura and Tokyo. Stopping here eliminates 10km of backtracking vs. going to Shinjuku. Natural route progression.',
 
-                    platformNavigation: 'Kamakura Station platforms serve TWO different lines:\n• Yokosuka Line → goes to Tokyo Station/Shinagawa/Chiba (WRONG for Shinjuku)\n• Shonan-Shinjuku Line → goes to Shibuya/Shinjuku/Omiya (CORRECT)',
+                    step1: {
+                        title: 'Step 1: Kamakura → Yokohama',
+                        line: 'JR Yokosuka Line',
+                        direction: 'Toward Yokohama/Tokyo (NOT Shonan-Shinjuku Line)',
+                        frequency: 'Every 10-15 minutes',
+                        duration: '20-25 minutes',
+                        baseFare: '¥340 (IC card)',
+                        greenCar: 'Optional - ¥1,000 surcharge (recommend SKIP for this short 25-min leg)',
+                        platform: 'Board at Kamakura Station platforms - look for "Yokohama" or "Tokyo" destination',
+                        arrival: 'Yokohama Station ~3:25 PM'
+                    },
 
-                    verification: 'Look at the electronic display above the platform. Train destination should say "Shinjuku" or "Omiya" (via Shinjuku). If it says "Tokyo" or "Chiba," do NOT board.',
+                    step2: {
+                        title: 'Step 2: Transfer at Yokohama Station',
+                        walkTime: '5-7 minutes within station',
+                        navigation: 'Exit JR gates → Follow blue/purple "Minatomirai Line" signs',
+                        destination: 'Minatomirai Line platform (private railway)',
+                        tips: 'Look for Minatomirai Line logo (blue circle with ship). Well-signposted.'
+                    },
 
-                    frequency: 'Shonan-Shinjuku trains depart Kamakura roughly every 30 minutes (2 trains per hour)',
-                    alternativeIfMissed: 'If Shonan-Shinjuku just departed, take ANY Yokosuka Line train 2 stops to Ofuna Station. Transfer there to Shonan-Shinjuku Line (Ofuna is major hub with more frequent connections).',
+                    step3: {
+                        title: 'Step 3: Yokohama → Motomachi-Chukagai',
+                        line: 'Minatomirai Line (private railway)',
+                        stops: '4 stops: Shin-Takashima → Minatomirai → Bashamichi → Nihon-Odori → Motomachi-Chukagai',
+                        duration: '8 minutes',
+                        cost: '¥220 (IC card)',
+                        exit: 'Exit via "Chukagai/Chinatown Exit" - leads directly toward Chinatown (3 min walk)',
+                        arrival: 'Motomachi-Chukagai Station ~3:40 PM'
+                    },
 
-                    greenCarPurchase: 'Use green ticket machines on Kamakura platform. Insert IC card → Select "Shinjuku" → ¥1,000 deducted. Board Cars 4 or 5 (double-decker). Touch card to ceiling reader.',
+                    totalJourney: {
+                        time: '35-40 minutes (including transfer)',
+                        costWithoutGreen: '¥560 total (¥340 + ¥220)',
+                        costWithGreen: '¥1,560 (if you choose Green Car for Step 1)',
+                        recommendation: 'SKIP Green Car on this leg - only 25 min ride, save ¥2,000 for couple'
+                    },
 
-                    departureWindow: '3:00-3:30 PM',
-                    duration: '~60-70 minutes',
-                    arrival: 'Shinjuku Station ~4:15-4:30 PM',
+                    arrival: {
+                        station: 'Motomachi-Chukagai Station',
+                        time: '~3:40-3:50 PM',
+                        walkToFirstAttraction: '5 min walk to Yamashita Park / 8 min to Red Brick Warehouse',
+                        positioning: 'Perfect arrival for 4:28 PM sunset at Osanbashi Pier'
+                    },
 
-                    baseFare: '¥950',
-                    greenCarSurcharge: '¥1,000 (weekday)',
-                    totalCost: '¥1,950 per person',
+                    comparisonToShinjuku: {
+                        timeSaved: '10-20 minutes vs. Kamakura → Shinjuku route',
+                        backtrackingSaved: '10 km (Yokohama is on the way home, Shinjuku requires detour)',
+                        moneySaved: 'Up to ¥2,000 per couple (skip Green Car on short leg)',
+                        experience: 'Waterfront sunset + Chinatown vs. neon urban (unique to Yokohama)'
+                    },
 
-                    experience: 'Reverse journey - coastal hills to urban density. By 4:00 PM, daylight fading (sunset ~4:30 PM). Arriving Shinjuku as neon lights turn on.',
-
-                    tips: 'Rest during this leg. Shinjuku will be high-energy. Use Green Car reclining seat to recharge.',
-                    mapLink: 'https://www.google.com/maps/dir/Kamakura+Station,+Kamakura,+Kanagawa/Shinjuku+Station,+Shinjuku+City,+Tokyo'
+                    mapLink: 'https://www.google.com/maps/dir/Kamakura+Station,+Kamakura,+Kanagawa/Motomachi-Chukagai+Station,+Yokohama'
                 }
             }
         ],
         evening: [
             {
-                time: '4:30 PM',
-                title: 'Arrival at Shinjuku - East Side Orientation',
-                description: 'Navigate to Kabukicho entertainment district',
-                location: 'Shinjuku Station → Kabukicho',
+                time: '3:50 PM',
+                title: 'Arrival at Yokohama - Waterfront Walk',
+                description: 'Station to harbor via Yamashita Park',
+                location: 'Motomachi-Chukagai Station → Yamashita Park',
                 details: {
-                    arrival: 'Shinjuku Station ~4:15-4:30 PM',
-                    exitStrategy: '🎯 Use EAST EXIT (not West Exit). This places you directly in the entertainment/dining district.',
-                    navigation: 'Exit East Gate → Walk north through plaza → Cross Yasukuni-dori street → Enter Kabukicho district',
-                    walkTime: '5 minutes from station to Kabukicho main gate',
-                    landmark: 'Look for the large red/white "Kabukicho" gate arch - iconic photo spot',
-                    atmosphere: 'Neon signs turning on as dusk arrives. High energy, crowded, safe for tourists on main streets.',
-                    tips: 'Shinjuku Station is the world\'s busiest - follow "East Exit" signs carefully. If lost, ask station staff "Kabukicho?" and point.',
-                    mapLink: 'https://www.google.com/maps/dir/Shinjuku+Station,+Shinjuku+City,+Tokyo/Kabukicho,+1+Chome,+Shinjuku+City,+Tokyo'
+                    arrival: 'Motomachi-Chukagai Station ~3:50 PM',
+                    exitStrategy: 'Use "Yamashita Park Exit" or "Chukagai/Chinatown Exit" - both lead toward waterfront',
+                    navigation: 'Exit station → Walk south toward harbor (5 min) → Reach Yamashita Park waterfront promenade',
+                    walkTime: '5 minutes from station to Yamashita Park',
+
+                    yamashitaPark: {
+                        description: 'Japan\'s first seaside park (opened 1930)',
+                        size: '750-meter waterfront promenade',
+                        views: 'Yokohama Bay, Bay Bridge, Marine Tower',
+                        activity: 'Brief stroll through park en route to sunset viewing spot'
+                    },
+
+                    destination: 'Continue east along waterfront promenade to Osanbashi Pier (5 min walk from park)',
+                    totalWalk: '10 minutes: Station → Yamashita Park → Osanbashi Pier',
+                    arrivalAtPier: '~4:00 PM (perfect timing for 4:28 PM sunset)',
+
+                    tips: 'Follow waterfront boardwalk - well-paved, scenic, impossible to get lost. Osanbashi Pier visible from park.',
+                    mapLink: 'https://www.google.com/maps/dir/Motomachi-Chukagai+Station,+Yokohama/Yamashita+Park,+Yokohama/Osanbashi+Yokohama+International+Passenger+Terminal'
                 }
             },
             {
-                time: '5:00 PM',
-                title: 'Godzilla Head - The Roaring Icon',
-                description: 'Life-size Godzilla at Hotel Gracery Shinjuku',
-                location: 'Hotel Gracery Shinjuku / Toho Building',
+                time: '4:00 PM',
+                title: 'Osanbashi Pier - Harbor Sunset Viewing',
+                description: 'Rooftop observation deck for 4:28 PM sunset',
+                location: 'Osanbashi Yokohama International Passenger Terminal',
                 details: {
-                    area: 'Heart of Kabukicho, adjacent to Toho Cinema complex',
-                    address: '1-19-1 Kabukicho, Shinjuku City, Tokyo',
-                    walkTime: '2-3 min from Kabukicho gate',
+                    area: 'Yokohama Port waterfront - iconic sunset viewpoint',
+                    address: '1-4 Kaigan-dori, Naka-ku, Yokohama, Kanagawa 231-0002',
+                    fullName: 'Osanbashi Yokohama International Passenger Terminal',
+                    walkTime: '5 min from Yamashita Park along waterfront promenade',
 
-                    theAttraction: 'Life-size Godzilla head (12+ meters) peers over Hotel Gracery Shinjuku rooftop terrace. Every hour on the hour, it ROARS and emits steam (simulated atomic breath) with red LED eyes and sound effects.',
+                    theAttraction: 'Rooftop observation deck with 360° harbor panorama. Described as "one of the nicest sunset spots in Japan." Unobstructed views of Tokyo Bay, Yokohama Bay Bridge, and Minato Mirai skyline.',
 
-                    showTimes: 'Every hour: 12:00, 13:00, 14:00, 15:00, 16:00, 17:00, 18:00, 19:00, 20:00 PM',
-                    targetShow: 'Aim for 17:00 or 18:00 show - dusk lighting is dramatic',
-                    duration: 'Roar sequence lasts ~3 minutes',
+                    sunsetTime: '🌅 SUNSET AT 4:28 PM - This is THE timing target for December 1!',
+                    blueHour: '4:30-5:00 PM - "Blue hour" as city lights turn on with twilight sky',
+                    duration: '45 minutes (4:00-4:45 PM) - sunset viewing + photos',
 
-                    viewingSpot: 'Best photos from street level looking UP at the building. Also can access Hotel Gracery 8th floor terrace for close-up (sometimes restricted to hotel guests).',
+                    rooftopDeck: {
+                        access: 'Gently sloping, wheelchair accessible',
+                        features: 'Grass areas, benches, FREE public access 24/7',
+                        views: 'West-facing for sunset, Yokohama Bay Bridge, Minato Mirai towers, cruise ships, full harbor panorama'
+                    },
 
-                    experience: 'Quintessential Tokyo moment - giant monster meets urban architecture. Crowds gather on the hour for the show.',
+                    viewingStrategy: '🎯 CRITICAL TIMING: Arrive by 4:00-4:15 PM → Position on rooftop facing west → 4:28 PM sunset "money shot" → Stay for blue hour as lights illuminate (4:30-5:00 PM)',
 
-                    hours: '24/7 visible (roar shows during business hours only)',
-                    cost: 'FREE to view from street',
+                    photoSpots: 'Sunset over bay, Bay Bridge silhouette, Minato Mirai buildings, cruise ships at dock, twilight harbor',
 
-                    tips: 'Arrive 5-10 min before the hour. Queue forms but moves quickly. After the show, explore the Toho Cinema complex lobby for Godzilla statues and memorabilia.',
+                    experience: 'Peaceful, romantic, quintessential Yokohama waterfront moment. December = clear skies likely. Bring coat (harbor wind).',
 
-                    mapLink: 'https://www.google.com/maps/place/Hotel+Gracery+Shinjuku/@35.6938128,139.7013682,17z/data=!3m1!4b1!4m9!3m8!1s0x60188cd0d6b1ba1f:0x1c32a1f665fa1866!5m2!4m1!1i2!8m2!3d35.6938128!4d139.7039431'
+                    hours: 'Open 24/7',
+                    cost: 'FREE admission',
+
+                    tips: 'Arrive 15-30 min before sunset. December coastal wind can be cold - layer up. Best photography during 4:15-4:45 PM window. After sunset, walk west along waterfront to Red Brick Warehouse (10 min).',
+
+                    weatherNote: 'December evening temp ~10-12°C (50-54°F), feels colder with harbor wind. Clear weather likely.',
+
+                    mapLink: 'https://www.google.com/maps/place/Osanbashi+Yokohama+International+Passenger+Terminal/@35.4506,139.6469,17z'
+                }
+            },
+            {
+                time: '4:45 PM',
+                title: 'Red Brick Warehouse - Evening Illumination',
+                description: 'Historic waterfront warehouses lit up for the evening',
+                location: 'Yokohama Red Brick Warehouse (Akarenga Soko)',
+                details: {
+                    area: 'Minato Mirai waterfront - 10 min walk west from Osanbashi Pier',
+                    address: '1-1-1 Shinko, Naka-ku, Yokohama, Kanagawa 231-0001',
+                    fullName: 'Yokohama Red Brick Warehouse (横浜赤レンガ倉庫)',
+                    walkTime: '10 min from Osanbashi along waterfront boardwalk',
+
+                    theBuildings: {
+                        building1: 'Warehouse No. 1 - Event spaces, seasonal exhibitions',
+                        building2: 'Warehouse No. 2 - 1F: Shops/boutiques (10:00-19:00) • 2F: Restaurants/cafes (11:00-20:00)',
+                        outdoorPlaza: 'Event space between buildings, often has seasonal decorations (December = winter illuminations possible)'
+                    },
+
+                    mondayHours: {
+                        shops: '10:00-19:00 (Building 2, 1F)',
+                        restaurants: '11:00-20:00 (Building 2, 2F)',
+                        plaza: '24/7 accessible',
+                        note: 'NO Monday closures - fully operational'
+                    },
+
+                    eveningAtmosphere: {
+                        illumination: 'Buildings lit in amber/orange at dusk (from ~4:30 PM onward)',
+                        vibe: 'Romantic waterfront setting, contrast to daytime, "fantastical" evening ambiance',
+                        crowds: 'Monday evening moderate (not peak weekend crowds)',
+                        views: 'Direct harbor views, Yokohama Bay in background'
+                    },
+
+                    timeAllocation: '1 hour 15 min (4:45-6:00 PM)',
+                    activities: {
+                        exterior: '15 min - Photo walk around illuminated buildings and plaza',
+                        shopping: '20 min - Browse boutiques in Building 2 (1F)',
+                        cafe: '15-20 min - Optional cafe/snack break in Building 2 (2F)',
+                        waterfront: '10 min - Harbor views from warehouse waterfront side',
+                        buffer: '10 min - Flexibility for browsing or resting'
+                    },
+
+                    photoSpots: [
+                        'Front plaza looking up at illuminated red bricks',
+                        'Waterfront side with Minato Mirai skyline background',
+                        'Between the two buildings - architectural framing',
+                        'Evening "blue hour" lighting (5:00-5:30 PM best)'
+                    ],
+
+                    experience: 'Historic 1911 warehouses repurposed as cultural/shopping complex. Evening illumination creates magical atmosphere. Perfect transition from sunset to dinner.',
+
+                    tips: 'Arrive during blue hour (5:00-5:30 PM) for best photos. Buildings more photogenic than shopping inside. Save appetite for Chinatown dinner (30 min walk away).',
+
+                    nextStop: 'Walk 12 min east to Yokohama Chinatown for dinner (enter via Zenrin-mon Gate)',
+
+                    mapLink: 'https://www.google.com/maps/place/Yokohama+Red+Brick+Warehouse/@35.4526321,139.6428944,17z'
                 }
             },
             {
                 time: '6:00 PM',
-                title: 'Dinner in Kabukicho / Shinjuku 3-chome',
-                description: 'Authentic izakaya or speciality dining',
-                location: 'Kabukicho Area',
+                title: 'Walk to Yokohama Chinatown',
+                description: '12-min walk from Red Brick Warehouse',
+                location: 'Red Brick Warehouse → Yokohama Chinatown',
+                details: {
+                    from: 'Red Brick Warehouse',
+                    to: 'Yokohama Chinatown (Zenrin-mon East Gate)',
+                    walkTime: '12 minutes (950m)',
+                    route: 'Walk east along waterfront/inland streets from Red Brick → Reach Chinatown via Zenrin-mon Gate',
+                    arrival: 'Chinatown ~6:15 PM',
+                    mapLink: 'https://www.google.com/maps/dir/Yokohama+Red+Brick+Warehouse/Yokohama+Chinatown,+Yamashita-cho,+Naka+Ward,+Yokohama'
+                }
+            },
+            {
+                time: '6:30 PM',
+                title: 'Yokohama Chinatown Dinner - Japan\'s Largest Chinatown',
+                description: 'Authentic Cantonese/Chinese cuisine in historic district',
+                location: 'Yokohama Chinatown',
                 isFoodOption: false,
                 details: {
-                    area: 'Kabukicho and neighboring Shinjuku 3-chome - walking distance from Godzilla',
-                    duration: '1.5 hours (6:00-7:30 PM)',
-                    budget: '¥4,000 - ¥6,000 per person (meal + drinks)',
+                    area: 'Yokohama Chinatown (Yokohama Chukagai) - 0.2 km² historic district',
+                    address: 'Yamashita-cho, Naka Ward, Yokohama, Kanagawa',
+                    walkTime: '12 min from Red Brick Warehouse',
 
-                    shops: [
-                        {
-                            name: '1. Uoshin Shinjuku ⭐ PRIORITY',
-                            highlight: 'Fishmonger-owned izakaya • Nokke-sushi (overflowing sushi) • Ultra-fresh fish • Raucous, fun atmosphere',
-                            hours: 'Mon-Sat 17:00-23:00 • Sundays 16:00-23:00',
-                            address: 'Shinjuku 3-chome area (5-7 min walk from Godzilla)',
-                            walk: '5-7 min south from Kabukicho',
-                            mapLink: 'https://www.google.com/maps/search/Uoshin+Shinjuku+3-chome',
-                            note: '🎯 RESERVATION ESSENTIAL - Book 2-3 weeks ahead via Tabelog or AutoReserve. High-energy, beer-crate seating, staff shouting orders. Deeply fun experience.',
-                            style: 'Unpretentious, loud, authentic Japanese izakaya culture'
-                        },
-                        {
-                            name: '2. Kanae (Kappo-Izakaya)',
-                            highlight: 'Sophisticated izakaya • Seasonal cooked dishes • Extensive sake list • Quiet, dark wood atmosphere',
-                            hours: 'Mon-Sat 17:30-23:00 • Closed Sundays',
-                            address: 'Shinjuku 3-chome (basement location)',
-                            walk: '6-8 min from Kabukicho',
-                            mapLink: 'https://www.google.com/maps/search/Kanae+Izakaya+Shinjuku',
-                            note: 'Hyakumeiten (Top 100) restaurant. Reservation recommended. More refined than Uoshin - better for conversation.',
-                            style: 'Intimate counter seating, attentive service, focus on sake pairing'
-                        },
-                        {
-                            name: '3. Nagi Shinjuku Golden Gai (Niboshi Ramen)',
-                            highlight: 'Tiny 10-seat ramen counter • Niboshi (dried sardine) broth • Cult following • In Golden Gai area',
-                            hours: '24 hours (some days close 5:00-7:00 AM)',
-                            address: 'Golden Gai, Kabukicho 1-1-10',
-                            walk: '3 min from Kabukicho gate',
-                            mapLink: 'https://www.google.com/maps/place/Nagi+Shinjuku+Golden+Gai',
-                            note: 'NO reservation needed. Expect queue (15-30 min). Fast turnover. ¥1,000-1,500 budget.',
-                            style: 'Ultra-casual, cramped, ramen obsession'
-                        },
-                        {
-                            name: '4. Yakiniku Motoyama Shinjuku',
-                            highlight: 'High-quality Japanese beef BBQ • Established 1975 • Exclusively Japanese wagyu • Smoke-ventilated tables',
-                            hours: 'Dinner 16:00-23:00 daily',
-                            address: 'Near Shinjuku 3-chome (7-10 min walk)',
-                            walk: '7-10 min from Kabukicho',
-                            mapLink: 'https://www.google.com/maps/search/Yakiniku+Motoyama+Shinjuku',
-                            note: 'Budget ¥5,000-8,000 for quality cuts. Reservation helpful. Grill-your-own experience.',
-                            style: 'Upscale casual, interactive dining'
-                        }
-                    ],
+                    description: 'Japan\'s largest Chinatown with over 600 shops/restaurants. Founded in 1859 when Yokohama port opened. Authentic Cantonese, Shanghainese, and Beijing cuisine. 4 ornate gates (paifang) mark the boundaries.',
 
-                    strategy: 'Uoshin or Kanae for full izakaya experience (MUST reserve ahead) • Nagi for quick, excellent ramen (no reservation) • Yakiniku for grill-your-own beef (reserve if possible)',
+                    atmosphere: 'Vibrant evening scene with lanterns, neon signs, and bustling dinner crowds. Peak dinner hours 18:00-20:00. Monday evenings still busy as most restaurants stay open.',
 
-                    reservationCritical: '⚠️ Monday evening in Shinjuku is busy. If you want Uoshin or Kanae, book NOW (2-3 weeks before Dec 1). Otherwise, Nagi ramen is reliable walk-in option.',
-
-                    cashNote: '💴 Some smaller venues (Nagi) are cash-only. Bring yen. Uoshin/Kanae accept cards.',
-
-                    mapLink: 'https://www.google.com/maps/place/Kabukicho,+Shinjuku+City,+Tokyo'
-                }
-            },
-            {
-                time: '7:45 PM',
-                title: 'Omoide Yokocho - Memory Lane',
-                description: 'Atmospheric post-war alley of yakitori stalls',
-                location: 'Omoide Yokocho',
-                details: {
-                    area: 'Northwest side of Shinjuku Station, near the JR tracks',
-                    address: '1 Chome Nishi-Shinjuku, Shinjuku City (under the railway)',
-                    walkTime: '5 min from Kabukicho',
-
-                    history: 'Originated as black-market food stalls in burned-out post-war Tokyo (c. 1946). Historically called "Shonben Yokocho" (Piss Alley) due to primitive facilities. Now a preserved pocket of Showa-era architecture.',
-
-                    layout: '~60 tiny bars and yakitori stalls packed into alley space the size of a few tennis courts. Wooden structures separated by inches. Red lanterns (aka-chochin) illuminate narrow paths.',
-
-                    atmosphere: 'Thick smoke from binchotan (white charcoal) grilling chicken and pork. Salaryman crowds. Nostalgic, gritty, romantic.',
-
-                    activity: 'WALK-THROUGH recommended (not dining). Capture the atmosphere and photos. Stalls are cramped, often have cover charges, basic facilities.',
-                    duration: '15-20 minutes',
-
-                    hours: 'Most stalls open 17:00-24:00',
-                    cost: 'FREE to walk through',
-
-                    tips: 'Narrow paths - walk single file. Respectful photography (some stalls have "no photo" signs). If you DO want to eat here, budget ¥2,000-3,000 + seating charge.',
-
-                    mapLink: 'https://www.google.com/maps/place/Omoide+Yokocho/@35.6931653,139.6976889,17z/data=!3m1!4b1!4m6!3m5!1s0x60188cd652a80001:0x630616a67dd8c71e!8m2!3d35.6931653!4d139.7002638'
-                }
-            },
-            {
-                time: '8:15 PM',
-                title: 'Golden Gai - 200 Tiny Bars in a Labyrinth',
-                description: 'Iconic bar district with postwar architecture',
-                location: 'Shinjuku Golden Gai',
-                details: {
-                    area: 'East Shinjuku, adjacent to Kabukicho (1-1 Kabukicho)',
-                    walkTime: '5 min from Omoide Yokocho back toward Kabukicho',
-
-                    description: 'Over 200 micro-bars packed into 6 narrow alleys. Most bars seat only 5-7 people. Two-story wooden structures with steep ladder-stairs. Each bar is independently owned with unique theme/clientele.',
-
-                    history: 'Post-war black market area, evolved into artist/writer hangouts in the 1960s-80s. Survived fires and redevelopment pressure. Now UNESCO-consideration heritage site.',
-
-                    theSystem: {
-                        regularsOnly: 'Some bars are "Ichigen-san okotowari" (first-timers refused) - regulars only',
-                        touristFriendly: 'Others welcome tourists - look for English menus or "No Cover Charge" / "Tourists Welcome" signs outside',
-                        coverCharges: 'Many bars charge ¥500-1,500 "table charge" (otoshi) on top of drink prices',
-                        drinkPrices: '¥800-1,500 per drink (beer, whisky, cocktails)'
+                    diningStrategy: {
+                        reservationAdvice: 'Top restaurants require 2-3 weeks advance booking. Walk-in options exist but expect 15-30 min waits at popular spots during dinner rush.',
+                        timeWindow: '6:30-8:00 PM (1.5 hours for dinner)',
+                        seatingStyle: 'Most restaurants are large (50-150 seats) with group/couple seating',
+                        language: 'Many have English/photo menus. Staff may have limited English but pointing at menu works.'
                     },
 
-                    activity: 'Option A: Walk through all 6 alleys for atmosphere/photos (30 min) • Option B: Have one drink at a tourist-friendly bar (1 hour total)',
+                    mondayNote: '✅ Chinatown restaurants open 7 days/week. No Monday closures.',
 
-                    recommendedBars: {
-                        bar1: 'Albatross - English-speaking, no cover, rock music theme',
-                        bar2: 'Champion - Sports bar, welcoming, English menu',
-                        bar3: 'Bar Coo - Photography theme, indie music, English OK'
+                    whatToOrder: {
+                        signature: 'Xiaolongbao (soup dumplings) • Peking duck • Mapo tofu • Dim sum platters',
+                        styles: 'Cantonese (dim sum, roasted meats) • Shanghainese (soup dumplings, braised) • Beijing (Peking duck, noodles)',
+                        drinks: 'Chinese tea (included), Shaoxing wine, Tsingtao beer'
+                    }
+                },
+                shops: [
+                    {
+                        name: 'Saiko Shinkan (彩光新館)',
+                        address: '192 Yamashita-cho, Naka Ward, Yokohama, Kanagawa 231-0023',
+                        cuisine: 'Cantonese / Dim Sum specialist',
+                        specialty: 'Xiaolongbao (soup dumplings) • Shrimp dumplings • Roast duck • Dim sum platters',
+                        priceRange: '¥3,000-5,000 per person',
+                        hours: '11:00-21:30 (L.O. 21:00) - Open 7 days',
+                        reservation: '⚠️ HIGHLY RECOMMENDED - Popular spot, 2-3 week advance booking for dinner. Call +81-45-664-3155 or book via Tabelog.',
+                        atmosphere: 'Upscale Cantonese dining room with round tables. Busy, lively, traditional decor.',
+                        tips: 'Order xiaolongbao (soup dumplings) - their signature dish. Come hungry - portions are generous. If no reservation, try arriving at 6:00 PM sharp or after 8:00 PM for shorter waits.',
+                        mapLink: 'https://www.google.com/maps/place/Saiko+Shinkan/@35.4424896,139.6466321,17z',
+                        priority: '🌟 PRIORITY CHOICE if you can get a reservation'
                     },
-
-                    architecture: 'Note the steep ladder-stairs to second floors, nagaya (row house) construction, fire-escape aesthetic. Incredibly photogenic at night.',
-
-                    hours: 'Most bars open 19:00-02:00 (some until 05:00)',
-                    duration: '45 min - 1 hour',
-                    budget: '¥1,500-3,000 if having one drink',
-
-                    tips: 'Respect "Regulars Only" signs. If a door is unmarked/unwelcoming, move on. Dozens of other options. Narrow alleys - step aside for others. Cash essential - most bars don\'t take cards.',
-
-                    safety: 'Very safe. Crowded with tourists and locals. Main alleys are well-lit. Avoid aggressive touts (rare but exist).',
-
-                    mapLink: 'https://www.google.com/maps/place/Shinjuku+Golden+Gai/@35.6943589,139.7024539,17z/data=!3m1!4b1!4m6!3m5!1s0x60188cdc7a999999:0x630616a67dd8c71e!8m2!3d35.6943589!4d139.7050288'
-                }
+                    {
+                        name: 'Canton Hanten (廣東飯店)',
+                        address: '142 Yamashita-cho, Naka Ward, Yokohama, Kanagawa 231-0023',
+                        cuisine: 'Cantonese',
+                        specialty: 'Roast duck • Char siu (BBQ pork) • Fried rice • Cantonese stir-fries',
+                        priceRange: '¥2,500-4,000 per person',
+                        hours: '11:30-21:30 - Open 7 days',
+                        reservation: 'Walk-ins usually OK, but call ahead +81-45-681-3001 if possible',
+                        atmosphere: 'Casual, family-friendly, large dining hall. Fast service.',
+                        tips: 'Good backup if Saiko Shinkan is booked. Less wait time. Strong on roasted meats and rice dishes.',
+                        mapLink: 'https://www.google.com/maps/place/Canton+Hanten/@35.4426,139.6464,17z'
+                    },
+                    {
+                        name: 'Kaseiro Honten (華正樓本店)',
+                        address: '164 Yamashita-cho, Naka Ward, Yokohama, Kanagawa 231-0023',
+                        cuisine: 'Shanghainese / Beijing style',
+                        specialty: 'Xiaolongbao • Dan dan noodles • Mapo tofu • Peking duck (order 1 day ahead)',
+                        priceRange: '¥3,000-5,500 per person',
+                        hours: '11:00-22:00 - Open 7 days',
+                        reservation: 'Recommended for dinner - Call +81-45-681-4004',
+                        atmosphere: 'Traditional Chinese restaurant, 3 floors, elegant decor. More formal than Canton Hanten.',
+                        tips: 'Excellent xiaolongbao. Peking duck requires 1-day advance order. Multi-floor building - can accommodate groups.',
+                        mapLink: 'https://www.google.com/maps/place/Kaseiro+Honten/@35.4427,139.6468,17z'
+                    },
+                    {
+                        name: 'Walk-In Backup Option',
+                        address: 'Main Street (Chinatown Chuo-dori) - various restaurants',
+                        cuisine: 'Various (Cantonese, Shanghainese, Beijing, Szechuan)',
+                        specialty: 'Photo menus, visible food displays in windows',
+                        priceRange: '¥2,000-3,500 per person',
+                        hours: 'Most open 11:00-21:30',
+                        reservation: 'Not needed - casual walk-in dining',
+                        atmosphere: 'Tourist-friendly, English menus, fast turnover',
+                        tips: 'If all above are full, walk down main street and look for: 1) Photo menus outside 2) Food displays in windows 3) Moderate crowds (not empty, not 1hr wait). Avoid overly aggressive touts.',
+                        mapLink: 'https://www.google.com/maps/place/Yokohama+Chinatown/@35.4426,139.6461,16z'
+                    }
+                ]
             },
             {
-                time: '9:15 PM',
-                title: 'Return to Ginza Hotel',
-                description: 'Evening transit back to Tsukiji',
-                location: 'Shinjuku → Ginza / Tsukiji',
+                time: '8:00 PM',
+                title: 'Return to Tsukiji Hotel',
+                description: 'Evening transit from Yokohama back to Ginza area',
+                location: 'Yokohama Chinatown → Tsukiji Hotel',
                 details: {
-                    from: 'Shinjuku Station (5-7 min walk from Golden Gai)',
+                    from: 'Motomachi-Chukagai Station (3 min walk from Chinatown)',
                     to: 'Hotel Keihan Tsukiji Ginza Grande',
 
+                    walkToStation: {
+                        duration: '3 minutes',
+                        route: 'Exit Chinatown via nearest gate → Walk to Motomachi-Chukagai Station',
+                        mapLink: 'https://www.google.com/maps/dir/Yokohama+Chinatown/Motomachi-Chukagai+Station'
+                    },
+
                     option1: {
-                        name: 'Tokyo Metro Marunouchi Line (Fastest)',
-                        route: 'Shinjuku Station → Ginza Station',
-                        duration: '15 minutes + 10 min walk to hotel',
-                        transfers: 'None (direct)',
-                        platform: 'Shinjuku Station - follow red "M" Marunouchi Line signs',
-                        cost: '¥200 (IC card)',
-                        walkToHotel: 'Ginza Station Exit A13 → Walk east 10 min to Tsukiji hotel',
-                        mapLink: 'https://www.google.com/maps/dir/Shinjuku+Station,+Tokyo/Ginza+Station,+Tokyo/Hotel+Keihan+Tsukiji+Ginza+Grande'
+                        name: 'Minatomirai Line + JR (Recommended - Fewest Transfers)',
+                        step1: 'Motomachi-Chukagai → Yokohama Station (Minatomirai Line, 8 min, ¥220)',
+                        step2: 'Transfer to JR Keihin-Tohoku Line or Negishi Line',
+                        step3: 'Yokohama → Shimbashi (JR, 20 min, ¥310)',
+                        step4: 'Walk from Shimbashi to hotel (15 min) OR Hibiya Line to Tsukiji (1 stop)',
+                        totalTime: '45-50 minutes (including transfer)',
+                        totalCost: '¥530 (or ¥700 if using Hibiya Line final leg)',
+                        transfers: '1 transfer (at Yokohama Station)',
+                        mapLink: 'https://www.google.com/maps/dir/Motomachi-Chukagai+Station/Shimbashi+Station/Hotel+Keihan+Tsukiji+Ginza+Grande'
                     },
 
                     option2: {
-                        name: 'JR Yamanote Line (No Walking, Longer)',
-                        route: 'Shinjuku Station → Yurakucho Station',
-                        duration: '20 minutes + 12 min walk to hotel',
-                        transfers: 'None (direct)',
-                        platform: 'Shinjuku Station - JR Yamanote Line (green line)',
-                        cost: '¥170 (IC card)',
-                        walkToHotel: 'Yurakucho Station → Walk southeast through Ginza to Tsukiji',
-                        mapLink: 'https://www.google.com/maps/dir/Shinjuku+Station,+Tokyo/Yurakucho+Station,+Tokyo/Hotel+Keihan+Tsukiji+Ginza+Grande'
+                        name: 'Direct to Ginza (Alternative via Negishi/Yamanote)',
+                        step1: 'Motomachi-Chukagai → Yokohama (Minatomirai Line, 8 min, ¥220)',
+                        step2: 'Yokohama → Yurakucho (JR Negishi → Yamanote transfer, 25 min, ¥310)',
+                        step3: 'Walk from Yurakucho through Ginza to hotel (12 min)',
+                        totalTime: '50-55 minutes',
+                        totalCost: '¥530',
+                        transfers: '1-2 transfers (Yokohama, possibly at Sakuragicho)',
+                        note: 'Slightly longer but ends closer to Ginza shopping area if you want to stroll'
                     },
 
-                    recommendation: 'Option 1 (Marunouchi Line) is faster and more direct. Option 2 if you prefer staying on JR network.',
+                    recommendation: 'Option 1 (via Shimbashi) is most straightforward. You\'ve used this route before on Day 6 morning. Shimbashi is familiar territory.',
 
-                    departureWindow: '9:15-9:30 PM',
-                    arrival: 'Hotel by 10:00 PM',
+                    departureWindow: '8:00-8:15 PM (after ~1.5 hr dinner)',
+                    arrival: 'Hotel by 9:00-9:15 PM',
 
-                    tips: 'Shinjuku Station can be confusing at night. If lost, ask station staff "Marunouchi Line?" and show them. Trains run until midnight - no rush.',
+                    tips: 'Yokohama Station transfers well-signed but large. Follow "JR Lines" signs after exiting Minatomirai Line. Trains frequent until 11:30 PM - no rush. Shimbashi → hotel walk is pleasant evening stroll.',
 
-                    dayComplete: '🏯→🗼 Kamakura coastal heritage to Shinjuku urban energy - complete! Total steps: ~18,000. Well earned rest tonight.'
+                    dayComplete: '⛩️🌅🏮 Kamakura temples → Yokohama harbor sunset → Chinatown feast - complete! Geographic efficiency + waterfront beauty. Total steps: ~16,000. Rest well!'
                 }
             }
         ]

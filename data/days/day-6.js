@@ -435,7 +435,8 @@ export default {
                         totalTime: '50-55 minutes',
                         totalCost: '¥530',
                         transfers: '1-2 transfers (Yokohama, possibly at Sakuragicho)',
-                        note: 'Slightly longer but ends closer to Ginza shopping area if you want to stroll'
+                        note: 'Slightly longer but ends closer to Ginza shopping area if you want to stroll',
+                        mapLink: 'https://www.google.com/maps/dir/Motomachi-Chukagai+Station/Yurakucho+Station/Hotel+Keihan+Tsukiji+Ginza+Grande'
                     },
 
                     recommendation: 'Option 1 (via Shimbashi) is most straightforward. You\'ve used this route before on Day 6 morning. Shimbashi is familiar territory.',

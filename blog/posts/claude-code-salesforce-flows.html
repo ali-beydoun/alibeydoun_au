@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Claude Code: Your New Salesforce Flow Debugging Partner | Ali Beydoun</title>
+    <meta name="description" content="Can you really use an AI coding assistant to debug Salesforce Flows? Yes. Here's how Claude Code changes the game for complex org management.">
+    <meta name="keywords" content="Salesforce, Claude Code, Salesforce Flows, VS Code, AI, Debugging, SFDX, Flow Debugging">
+    <meta name="author" content="Ali Beydoun">
+
+    <link rel="canonical" href="https://alibeydoun.info/blog/posts/claude-code-salesforce-flows.html">
+
+    <!-- Open Graph / Facebook / LinkedIn -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://alibeydoun.info/blog/posts/claude-code-salesforce-flows.html">
+    <meta property="og:title" content="Claude Code: Your New Salesforce Flow Debugging Partner">
+    <meta property="og:description" content="Can you really use an AI coding assistant to debug Salesforce Flows? Yes.">
+    <meta property="og:image" content="https://alibeydoun.info/assets/ali-headshot.png">
+    <meta property="og:site_name" content="Ali Beydoun">
+
+    <!-- Article meta -->
+    <meta property="article:author" content="https://www.linkedin.com/in/ali-beydoun-salesforce/">
+    <meta property="article:published_time" content="2025-12-15">
+    <meta property="article:section" content="Salesforce Development">
+    <meta property="article:tag" content="Claude Code">
+    <meta property="article:tag" content="Salesforce Flows">
+    <meta property="article:tag" content="AI">
+    <meta property="article:tag" content="Debugging">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Claude Code: Your New Salesforce Flow Debugging Partner">
+    <meta name="twitter:description" content="Can you really use an AI coding assistant to debug Salesforce Flows? Yes.">
+    <meta name="twitter:image" content="https://alibeydoun.info/assets/ali-headshot.png">
+
+    <link rel="stylesheet" href="../../styles.css">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Claude Code: Your New Salesforce Flow Debugging Partner",
+        "description": "Can you really use an AI coding assistant to debug Salesforce Flows? Yes. Here's how Claude Code changes the game for complex org management.",
+        "image": "https://alibeydoun.info/assets/ali-headshot.png",
+        "author": {
+            "@type": "Person",
+            "name": "Ali Beydoun",
+            "url": "https://www.linkedin.com/in/ali-beydoun-salesforce/"
+        },
+        "publisher": {
+            "@type": "Person",
+            "name": "Ali Beydoun"
+        },
+        "datePublished": "2025-12-15",
+        "dateModified": "2025-12-15",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://alibeydoun.info/blog/posts/claude-code-salesforce-flows.html"
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="../../index.html" class="nav-logo">Ali Beydoun</a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../about.html">About</a></li>
+                <li><a href="../../experience.html">Experience</a></li>
+                <li><a href="../../blog/" class="active">Blog</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Blog Post Article -->
+    <article class="section" itemscope itemtype="https://schema.org/BlogPosting">
+        <div class="container blog-post">
+
+            <!-- Post Header -->
+            <header class="blog-post-header">
+                <p class="blog-category" itemprop="articleSection">Salesforce Development</p>
+                <h1 class="blog-post-title" itemprop="headline">Claude Code: Your New Salesforce Flow Debugging Partner</h1>
+                <div class="blog-post-meta">
+                    <span itemprop="datePublished" content="2025-12-15">December 2025</span>
+                    <span>3 min read</span>
+                </div>
+            </header>
+
+            <!-- Post Content -->
+            <div class="blog-post-content" itemprop="articleBody">
+
+                <p>I've been using <a href="https://www.zdnet.com/article/how-to-install-configure-claude-code-ai-pricing-developers/" target="_blank" rel="noopener">Claude Code</a> to help with development work lately, and it's genuinely changed how I approach certain tasks. For those unfamiliar, it's Anthropic's AI coding assistant that runs directly in your terminal or IDE. It can read your codebase, understand context, make changes, and even run commands.</p>
+
+                <p>But here's the thing that might surprise you: the most valuable use case I've found isn't writing Apex or debugging Lightning Web Components. It's working with Salesforce Flows.</p>
+
+                <h2>The Problem: Flow Chaos in Enterprise Orgs</h2>
+
+                <p>If you've worked in a mature Salesforce org, you know what I'm talking about. Flows multiply. What starts as a handful of automations becomes dozens, then hundreds. Record-triggered flows, screen flows, autolaunched flows, scheduled flows — all interacting with each other in ways that aren't always obvious.</p>
+
+                <p>When something breaks, or when you need to understand what's updating a particular field, the traditional approach is clicking through Setup. Open a flow, scan the canvas, open another flow, repeat. It's slow. It's tedious. And when you're dealing with complex logic spread across multiple automations, it's easy to miss things.</p>
+
+                <h2>The Unexpected Solution</h2>
+
+                <p>Here's where it gets interesting. If you're using SFDX (Salesforce CLI), you can pull your Flow metadata into VS Code. Flows are stored as XML files — they're just metadata like everything else. And once they're in your local project, Claude Code can read them.</p>
+
+                <div class="callout callout-info">
+                    <p class="callout-title">The key insight</p>
+                    <p>Claude Code doesn't care that Flows are "declarative" or "no-code" — it sees them as structured data. Which means you can ask questions about your automations the same way you'd ask about your Apex classes.</p>
+                </div>
+
+                <p>Suddenly, instead of clicking through dozens of flows in Setup, you can ask things like:</p>
+
+                <ul>
+                    <li>"Which flow updates the Lead Status field?"</li>
+                    <li>"Show me all record-triggered flows on the Opportunity object"</li>
+                    <li>"What's the logic path when this condition is true?"</li>
+                    <li>"Are there any flows that reference this custom field?"</li>
+                </ul>
+
+                <p>And Claude Code will search across your entire org's flow metadata, find the relevant files, and give you answers with specific file references.</p>
+
+                <h2>Beyond Analysis: Making Changes</h2>
+
+                <p>It doesn't stop at reading. Claude Code can help you modify the Flow XML directly — updating conditions, adding elements, fixing logic errors. And because you're working in a proper version-controlled environment, you can deploy those changes back to Salesforce using SFDX.</p>
+
+                <p>I've used this workflow to:</p>
+
+                <ul>
+                    <li>Quickly identify which automations were causing a field value conflict</li>
+                    <li>Trace execution paths across multiple flows that call each other</li>
+                    <li>Make bulk updates to similar logic across several flows</li>
+                    <li>Document what a complex set of automations actually does</li>
+                </ul>
+
+                <h2>The Bigger Point</h2>
+
+                <p>There's a perception that "declarative" tools like Flows are separate from the developer world. That if you're not writing code, you don't need developer tools. But that's increasingly not true.</p>
+
+                <blockquote>
+                    "Declarative doesn't mean you can't use developer tools. It means the tools work differently."
+                </blockquote>
+
+                <p>AI assistants like Claude Code work with metadata and structured data — they don't care whether that data represents Apex code, Flow XML, custom object definitions, or permission sets. The same capabilities that make them useful for debugging code make them useful for debugging your entire Salesforce configuration.</p>
+
+                <p>If you've been struggling to manage complex automations, or if you've ever thought "I wish I could just search across all my flows," give this approach a try. Pull your metadata into VS Code, point Claude Code at it, and start asking questions.</p>
+
+                <p>You might be surprised at how much easier it makes things.</p>
+
+                <!-- Tags -->
+                <div class="blog-tags">
+                    <span class="blog-tag">Claude Code</span>
+                    <span class="blog-tag">Salesforce Flows</span>
+                    <span class="blog-tag">VS Code</span>
+                    <span class="blog-tag">AI</span>
+                    <span class="blog-tag">Debugging</span>
+                </div>
+
+                <!-- Author Box -->
+                <div class="author-box">
+                    <img src="../../assets/ali-headshot.png" alt="Ali Beydoun" class="author-photo">
+                    <div class="author-info">
+                        <h4 itemprop="author" itemscope itemtype="https://schema.org/Person">
+                            <span itemprop="name">Ali Beydoun</span>
+                        </h4>
+                        <p>Technology Director specialising in enterprise Salesforce solutions. 13+ years building teams and platforms across financial services, HR, education, and more.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- Back to Blog -->
+    <section class="section section-alt">
+        <div class="container text-center">
+            <a href="../" class="hero-cta" style="background: var(--secondary);">
+                &larr; Back to Blog
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-text">&copy; 2025 Ali Beydoun. Sydney, Australia.</p>
+                <div class="footer-links">
+                    <a href="https://www.linkedin.com/in/ali-beydoun-salesforce/" target="_blank" rel="noopener">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../app.js"></script>
+</body>
+</html>

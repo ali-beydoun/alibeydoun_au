@@ -1501,6 +1501,30 @@ p {
     margin-top: 4px;
 }
 
+/* Hero Brand Mark - White logo accent on dark heroes */
+.hero-brand-mark {
+    position: absolute;
+    top: var(--space-md);
+    right: var(--space-md);
+    height: 48px;
+    width: auto;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.home-hero .container,
+.about-hero .container,
+.experience-hero .container,
+.blog-hero .container {
+    position: relative;
+}
+
+@media (max-width: 768px) {
+    .hero-brand-mark {
+        display: none;
+    }
+}
+
 /* Category Filter Pills */
 .blog-categories-section {
     padding: var(--space-sm) 0;

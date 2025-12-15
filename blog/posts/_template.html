@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- =====================================================================
+         BLOG POST TEMPLATE - Copy this file and update the values below
+
+         To create a new post:
+         1. Copy this file to blog/posts/your-post-slug.html
+         2. Update all values marked with [UPDATE] below
+         3. Add your content in the article body section
+         4. Add the post card to blog/index.html
+         ===================================================================== -->
+
+    <!-- [UPDATE] Post title and description -->
+    <title>[POST TITLE] | Ali Beydoun</title>
+    <meta name="description" content="[POST DESCRIPTION - 150-160 characters for SEO]">
+    <meta name="keywords" content="Salesforce, [ADD MORE KEYWORDS]">
+    <meta name="author" content="Ali Beydoun">
+
+    <!-- [UPDATE] Canonical URL -->
+    <link rel="canonical" href="https://alibeydoun.info/blog/posts/[POST-SLUG].html">
+
+    <!-- [UPDATE] Open Graph / Facebook / LinkedIn -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://alibeydoun.info/blog/posts/[POST-SLUG].html">
+    <meta property="og:title" content="[POST TITLE]">
+    <meta property="og:description" content="[SHORT DESCRIPTION FOR SOCIAL SHARING]">
+    <meta property="og:image" content="https://alibeydoun.info/assets/[POST-IMAGE].png">
+    <meta property="og:site_name" content="Ali Beydoun">
+
+    <!-- [UPDATE] Article meta -->
+    <meta property="article:author" content="https://www.linkedin.com/in/ali-beydoun-salesforce/">
+    <meta property="article:published_time" content="[YYYY-MM-DD]">
+    <meta property="article:section" content="[CATEGORY: Salesforce Development | Platform Architecture | Leadership]">
+    <meta property="article:tag" content="[TAG 1]">
+    <meta property="article:tag" content="[TAG 2]">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="[POST TITLE]">
+    <meta name="twitter:description" content="[SHORT DESCRIPTION]">
+    <meta name="twitter:image" content="https://alibeydoun.info/assets/[POST-IMAGE].png">
+
+    <link rel="stylesheet" href="../../styles.css">
+
+    <!-- [UPDATE] JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "[POST TITLE]",
+        "description": "[POST DESCRIPTION]",
+        "image": "https://alibeydoun.info/assets/[POST-IMAGE].png",
+        "author": {
+            "@type": "Person",
+            "name": "Ali Beydoun",
+            "url": "https://www.linkedin.com/in/ali-beydoun-salesforce/"
+        },
+        "publisher": {
+            "@type": "Person",
+            "name": "Ali Beydoun"
+        },
+        "datePublished": "[YYYY-MM-DD]",
+        "dateModified": "[YYYY-MM-DD]",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://alibeydoun.info/blog/posts/[POST-SLUG].html"
+        }
+    }
+    </script>
+</head>
+<body>
+    <!-- Navigation (no changes needed) -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="../../index.html" class="nav-logo">Ali Beydoun</a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="../../index.html">Home</a></li>
+                <li><a href="../../about.html">About</a></li>
+                <li><a href="../../experience.html">Experience</a></li>
+                <li><a href="../../blog/" class="active">Blog</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Blog Post Article -->
+    <article class="section" itemscope itemtype="https://schema.org/BlogPosting">
+        <div class="container blog-post">
+
+            <!-- [UPDATE] Post Header -->
+            <header class="blog-post-header">
+                <p class="blog-category" itemprop="articleSection">[CATEGORY]</p>
+                <h1 class="blog-post-title" itemprop="headline">[POST TITLE]</h1>
+                <div class="blog-post-meta">
+                    <span itemprop="datePublished" content="[YYYY-MM-DD]">[Month YYYY]</span>
+                    <span>[X] min read</span>
+                </div>
+            </header>
+
+            <!-- [OPTIONAL] Featured Image - uncomment and update if using -->
+            <!--
+            <img src="../../assets/[POST-IMAGE].jpg" alt="[IMAGE DESCRIPTION]" class="blog-featured-image" itemprop="image">
+            -->
+
+            <!-- Post Content - [UPDATE] with your article content -->
+            <div class="blog-post-content" itemprop="articleBody">
+
+                <p>[INTRODUCTION PARAGRAPH - Hook the reader]</p>
+
+                <h2>[SECTION HEADING]</h2>
+
+                <p>[CONTENT]</p>
+
+                <!-- CONTENT COMPONENTS YOU CAN USE:
+
+                === Info Callout ===
+                <div class="callout callout-info">
+                    <p class="callout-title">[CALLOUT TITLE]</p>
+                    <p>[CALLOUT CONTENT]</p>
+                </div>
+
+                === Warning Callout ===
+                <div class="callout callout-warning">
+                    <p class="callout-title">[WARNING TITLE]</p>
+                    <p>[WARNING CONTENT]</p>
+                </div>
+
+                === Success Callout ===
+                <div class="callout callout-success">
+                    <p class="callout-title">[SUCCESS TITLE]</p>
+                    <p>[SUCCESS CONTENT]</p>
+                </div>
+
+                === Blockquote ===
+                <blockquote>
+                    "[QUOTE TEXT]"
+                </blockquote>
+
+                === Bullet List ===
+                <ul>
+                    <li>[ITEM 1]</li>
+                    <li>[ITEM 2]</li>
+                </ul>
+
+                === Numbered List ===
+                <ol>
+                    <li>[STEP 1]</li>
+                    <li>[STEP 2]</li>
+                </ol>
+
+                === Code Block ===
+                <pre><code>
+// Your code here
+public class Example {
+    // ...
+}
+                </code></pre>
+
+                === Inline Code ===
+                <p>Use the <code>methodName()</code> method to...</p>
+
+                -->
+
+                <h2>[CONCLUSION HEADING]</h2>
+
+                <p>[CONCLUSION - Wrap up and call to action]</p>
+
+                <!-- [UPDATE] Tags -->
+                <div class="blog-tags">
+                    <span class="blog-tag">[TAG 1]</span>
+                    <span class="blog-tag">[TAG 2]</span>
+                    <span class="blog-tag">[TAG 3]</span>
+                </div>
+
+                <!-- Author Box (no changes needed) -->
+                <div class="author-box">
+                    <img src="../../assets/ali-headshot.png" alt="Ali Beydoun" class="author-photo">
+                    <div class="author-info">
+                        <h4 itemprop="author" itemscope itemtype="https://schema.org/Person">
+                            <span itemprop="name">Ali Beydoun</span>
+                        </h4>
+                        <p>Technology Director specialising in enterprise Salesforce solutions. 13+ years building teams and platforms across financial services, HR, education, and more.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- Back to Blog (no changes needed) -->
+    <section class="section section-alt">
+        <div class="container text-center">
+            <a href="../" class="hero-cta" style="background: var(--secondary);">
+                &larr; Back to Blog
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer (no changes needed) -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p class="footer-text">&copy; 2025 Ali Beydoun. Sydney, Australia.</p>
+                <div class="footer-links">
+                    <a href="https://www.linkedin.com/in/ali-beydoun-salesforce/" target="_blank" rel="noopener">LinkedIn</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../app.js"></script>
+</body>
+</html>

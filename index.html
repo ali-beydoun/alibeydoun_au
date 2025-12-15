@@ -2,214 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
-
-    <!-- PWA Support -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="apple-mobile-web-app-title" content="Tokyo Trip">
-    <link rel="manifest" href="manifest.json">
-    <meta name="theme-color" content="#007AFF">
-
-    <title>Ali & Najah's Tokyo Adventure 🌸</title>
+    <title>Coming Soon | alibeydoun.au</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Calendar Overview -->
-    <div id="calendar-view" class="view active">
-        <header class="app-header">
-            <div class="header-background-blur"></div>
-            <div class="header-content">
-                <div class="header-hero">
-                    <div class="travelers-photo">
-                        <img src="ali-najah.jpeg" alt="Ali & Najah">
-                        <div class="photo-glow"></div>
-                    </div>
-                    <div class="header-text">
-                        <h1>Tokyo Adventure</h1>
-                        <p class="subtitle">Nov 26 - Dec 3, 2025</p>
-                    </div>
-                </div>
-                <div class="header-info">
-                    <div class="info-card tokyo-time" id="tokyo-time">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <circle cx="12" cy="12" r="10"/>
-                            <polyline points="12 6 12 12 16 14"/>
-                        </svg>
-                        <span id="time-display">--:--</span>
-                    </div>
-                    <div class="info-card countdown" id="countdown">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
-                            <line x1="16" y1="2" x2="16" y2="6"/>
-                            <line x1="8" y1="2" x2="8" y2="6"/>
-                            <line x1="3" y1="10" x2="21" y2="10"/>
-                        </svg>
-                        <span id="countdown-display"></span>
-                    </div>
-                </div>
-            </div>
-        </header>
-
-        <!-- Quick Access Cards -->
-        <div class="quick-access-section">
-            <h2 class="section-title">Trip Essentials</h2>
-            <div class="quick-access-grid">
-                <button class="quick-access-card" onclick="showFlightDetails()">
-                    <div class="quick-access-icon">✈️</div>
-                    <div class="quick-access-content">
-                        <div class="quick-access-title">Flight Details</div>
-                        <div class="quick-access-subtitle">QF59 & QF26</div>
-                    </div>
-                    <svg class="quick-access-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M9 18l6-6-6-6"/>
-                    </svg>
-                </button>
-
-                <button class="quick-access-card" onclick="showHotelDetails()">
-                    <div class="quick-access-icon">🏨</div>
-                    <div class="quick-access-content">
-                        <div class="quick-access-title">Hotel Details</div>
-                        <div class="quick-access-subtitle">Keihan Tsukiji Ginza Grande</div>
-                    </div>
-                    <svg class="quick-access-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M9 18l6-6-6-6"/>
-                    </svg>
-                </button>
-
-                <button class="quick-access-card" onclick="showTicketsVouchers()">
-                    <div class="quick-access-icon">🎫</div>
-                    <div class="quick-access-content">
-                        <div class="quick-access-title">Tickets & Vouchers</div>
-                        <div class="quick-access-subtitle">All trip documents</div>
-                    </div>
-                    <svg class="quick-access-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M9 18l6-6-6-6"/>
-                    </svg>
-                </button>
-
-                <button class="quick-access-card" onclick="showFoodOptions()">
-                    <div class="quick-access-icon">🍽️</div>
-                    <div class="quick-access-content">
-                        <div class="quick-access-title">Food Options</div>
-                        <div class="quick-access-subtitle">Restaurants & cafes</div>
-                    </div>
-                    <svg class="quick-access-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M9 18l6-6-6-6"/>
-                    </svg>
-                </button>
-            </div>
-        </div>
-
-        <!-- Daily Itinerary Section -->
-        <div class="itinerary-section">
-            <h2 class="section-title">Daily Itinerary</h2>
-            <div class="day-grid" id="day-grid">
-                <!-- Day cards will be generated by JavaScript -->
+    <div class="coming-soon-container">
+        <div class="content">
+            <h1>Coming Soon</h1>
+            <p>We're working on something new.</p>
+            <div class="dots">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
     </div>
-
-    <!-- Day Detail View -->
-    <div id="day-view" class="view">
-        <header class="unified-day-header">
-            <!-- Top Row: Back Button + Banner with Navigation -->
-            <div class="header-top">
-                <button class="back-button" onclick="showCalendar()">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M15 18l-6-6 6-6"/>
-                    </svg>
-                    <span>Back</span>
-                </button>
-                <button class="copy-day-button" onclick="copyDayToClipboard()" title="Copy day itinerary">
-                    <svg class="copy-icon clipboard-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
-                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-                    </svg>
-                    <svg class="copy-icon checkmark-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                        <polyline points="20 6 9 17 4 12"></polyline>
-                    </svg>
-                    <span>Copy</span>
-                </button>
-                <div class="day-title">
-                    <h2 id="day-title-content" style="flex: 1;"></h2>
-
-                    <!-- Integrated Calendar Navigation -->
-                    <div class="header-navigation">
-                        <button class="nav-arrow nav-prev" id="nav-prev" onclick="navigatePrevDay()">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M15 18l-6-6 6-6"/>
-                            </svg>
-                            <span>Previous</span>
-                        </button>
-                        <div class="nav-divider"></div>
-                        <button class="nav-arrow nav-next" id="nav-next" onclick="navigateNextDay()">
-                            <span>Next</span>
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M9 18l6-6-6-6"/>
-                            </svg>
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </header>
-
-        <div class="day-content" id="day-content">
-            <!-- Content will be populated by JavaScript -->
-        </div>
-    </div>
-
-    <!-- Activity Detail Modal -->
-    <div id="activity-modal" class="modal">
-        <div class="modal-backdrop" onclick="closeActivityModal()"></div>
-        <div class="modal-content">
-            <div class="modal-header">
-                <button class="modal-close" onclick="closeActivityModal()">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M18 6L6 18M6 6l12 12"/>
-                    </svg>
-                </button>
-                <h3 id="modal-title"></h3>
-            </div>
-            <div class="modal-body" id="modal-body">
-                <!-- Activity details will be populated here -->
-            </div>
-        </div>
-    </div>
-
-    <script type="module" src="app.js"></script>
-
-    <!-- Service Worker Registration for Offline Support -->
-    <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/service-worker.js')
-                    .then((registration) => {
-                        console.log('ServiceWorker registered successfully:', registration.scope);
-
-                        // Check for updates periodically (every 60 seconds)
-                        setInterval(() => {
-                            registration.update();
-                        }, 60000);
-
-                        // Listen for updates
-                        registration.addEventListener('updatefound', () => {
-                            const newWorker = registration.installing;
-                            newWorker.addEventListener('statechange', () => {
-                                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                                    // New version available - reload to update
-                                    console.log('New version available! Reloading...');
-                                    window.location.reload();
-                                }
-                            });
-                        });
-                    })
-                    .catch((error) => {
-                        console.log('ServiceWorker registration failed:', error);
-                    });
-            });
-        }
-    </script>
 </body>
 </html>

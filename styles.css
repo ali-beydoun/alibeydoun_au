@@ -489,35 +489,123 @@ p {
 /* --------------------------------------------------------------------------
    About Page Styles
    -------------------------------------------------------------------------- */
-.about-intro {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: var(--space-2xl);
-    align-items: start;
+
+/* About Hero */
+.about-hero {
+    padding-top: calc(var(--nav-height) + var(--space-xl));
+    padding-bottom: var(--space-lg);
+    background: var(--primary);
+    color: var(--text-inverse);
 }
 
-.about-photo {
-    width: 100%;
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-lg);
+.about-hero-content {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);
 }
 
-.about-content h2 {
+.about-hero-photo {
+    width: 100px;
+    height: 100px;
+    border-radius: var(--radius-full);
+    object-fit: cover;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    flex-shrink: 0;
+}
+
+.about-hero-text h1 {
+    color: var(--text-inverse);
+    margin-bottom: 4px;
+    font-size: var(--text-3xl);
+}
+
+.about-hero-role {
+    color: var(--accent-warm);
+    font-weight: 600;
+    font-size: var(--text-base);
+    margin-bottom: 4px;
+}
+
+.about-hero-tagline {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: var(--text-base);
+    margin: 0;
+}
+
+/* About Intro Text */
+.about-intro-text {
+    max-width: var(--content-width);
+}
+
+.about-lead {
+    font-size: var(--text-xl);
+    color: var(--text-primary);
+    line-height: 1.6;
     margin-bottom: var(--space-md);
 }
 
-.about-content p {
+.about-intro-text p {
     color: var(--text-secondary);
 }
 
+/* Credentials Grid */
+.credentials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+}
+
+.credential-item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-sm);
+    padding: var(--space-md);
+    background: var(--background);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border);
+}
+
+.credential-badge {
+    background: var(--accent-warm);
+    color: var(--text-inverse);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: var(--radius-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    flex-shrink: 0;
+}
+
+.credential-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.credential-text strong {
+    font-size: var(--text-base);
+    color: var(--text-primary);
+}
+
+.credential-text span {
+    font-size: var(--text-sm);
+    color: var(--text-tertiary);
+}
+
 @media (max-width: 768px) {
-    .about-intro {
-        grid-template-columns: 1fr;
+    .about-hero-content {
+        flex-direction: column;
+        text-align: center;
     }
 
-    .about-photo {
-        max-width: 250px;
-        margin: 0 auto;
+    .about-hero-photo {
+        width: 80px;
+        height: 80px;
+    }
+
+    .credentials-grid {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -525,24 +613,27 @@ p {
 .philosophy-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--space-lg);
+    gap: var(--space-md);
 }
 
 .philosophy-card {
-    padding: var(--space-lg);
+    padding: var(--space-md);
     background: var(--background);
-    border-radius: var(--radius-lg);
+    border-radius: var(--radius-md);
     border: 1px solid var(--border);
+    border-top: 3px solid var(--accent);
 }
 
 .philosophy-card h3 {
     color: var(--primary);
-    margin-bottom: var(--space-sm);
+    font-size: var(--text-base);
+    margin-bottom: var(--space-xs);
 }
 
 .philosophy-card p {
     color: var(--text-secondary);
-    font-size: var(--text-base);
+    font-size: var(--text-sm);
+    line-height: 1.5;
     margin-bottom: 0;
 }
 

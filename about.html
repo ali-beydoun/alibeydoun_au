@@ -44,24 +44,26 @@
     </nav>
 
     <!-- Page Header -->
-    <header class="page-header">
+    <header class="about-hero">
         <div class="container">
-            <h1>About Me</h1>
-            <p class="lead">A bit about who I am and how I approach the work.</p>
+            <div class="about-hero-content">
+                <img src="assets/ali-headshot.png" alt="Ali Beydoun" class="about-hero-photo">
+                <div class="about-hero-text">
+                    <h1>Ali Beydoun</h1>
+                    <p class="about-hero-role">Technology Director · Sydney</p>
+                    <p class="about-hero-tagline">Building Salesforce teams and platforms for 13+ years.</p>
+                </div>
+            </div>
         </div>
     </header>
 
     <!-- About Intro Section -->
     <section class="section">
-        <div class="container">
-            <div class="about-intro">
-                <img src="assets/ali-headshot.png" alt="Ali Beydoun" class="about-photo">
-                <div class="about-content">
-                    <h2>The Short Version</h2>
-                    <p>I'm a Technology Director based in Sydney, currently leading platform strategy in financial services. Before that, I spent over a decade building and leading Salesforce teams across some of Australia's fastest-growing companies.</p>
-                    <p>What gets me out of bed? Honestly, it's the people stuff. There's something deeply satisfying about helping a team click — watching junior developers grow into leads, seeing a solution architect nail a complex integration, or sitting with a stakeholder who finally gets why we built something the way we did.</p>
-                    <p>The technology is important, but it's a means to an end. The real work is understanding what the business actually needs (not just what they're asking for), building a team that can deliver it, and creating an environment where good work can happen.</p>
-                </div>
+        <div class="container container-narrow">
+            <div class="about-intro-text">
+                <p class="about-lead">I'm a Technology Director based in Sydney, currently leading platform strategy in financial services. Before that, I spent over a decade building and leading Salesforce teams across some of Australia's fastest-growing companies.</p>
+                <p>What gets me out of bed? Honestly, it's the people stuff. There's something deeply satisfying about helping a team click — watching junior developers grow into leads, seeing a solution architect nail a complex integration, or sitting with a stakeholder who finally gets why we built something the way we did.</p>
+                <p>The technology is important, but it's a means to an end. The real work is understanding what the business actually needs (not just what they're asking for), building a team that can deliver it, and creating an environment where good work can happen.</p>
             </div>
         </div>
     </section>
@@ -69,7 +71,10 @@
     <!-- Philosophy Section -->
     <section class="section section-alt">
         <div class="container">
-            <h2 class="text-center mb-xl">How I Work</h2>
+            <div class="section-header">
+                <h2>How I Work</h2>
+                <span class="section-line"></span>
+            </div>
             <div class="philosophy-grid">
                 <div class="philosophy-card">
                     <h3>People First</h3>
@@ -90,8 +95,11 @@
     <!-- Journey Section -->
     <section class="section">
         <div class="container container-narrow">
-            <h2 class="text-center mb-xl">The Journey</h2>
-            <p class="lead text-center mb-xl">I didn't start out planning to be a technology director. Like most careers, mine has been a series of opportunities, challenges, and moments where I had to figure things out as I went.</p>
+            <div class="section-header">
+                <h2>The Journey</h2>
+                <span class="section-line"></span>
+            </div>
+            <p class="about-lead">I didn't start out planning to be a technology director. Like most careers, mine has been a series of opportunities, challenges, and moments where I had to figure things out as I went.</p>
 
             <p>I started in telecommunications — support and consulting work that taught me how to troubleshoot, communicate with frustrated users, and understand that behind every ticket is a real person with a real problem. Those early years were humbling in the best way.</p>
 
@@ -108,21 +116,31 @@
     <!-- Certifications Section -->
     <section class="section section-alt">
         <div class="container">
-            <h2 class="text-center mb-lg">Credentials</h2>
-            <p class="lead text-center mb-xl" style="max-width: 600px; margin-left: auto; margin-right: auto;">The formal stuff, for those who need it.</p>
-
-            <div class="philosophy-grid">
-                <div class="philosophy-card text-center">
-                    <h3>Salesforce Certified Administrator</h3>
-                    <p>Core platform administration and configuration expertise.</p>
+            <div class="section-header">
+                <h2>Credentials</h2>
+                <span class="section-line"></span>
+            </div>
+            <div class="credentials-grid">
+                <div class="credential-item">
+                    <span class="credential-badge">Salesforce</span>
+                    <div class="credential-text">
+                        <strong>Certified Administrator</strong>
+                        <span>Platform administration & configuration</span>
+                    </div>
                 </div>
-                <div class="philosophy-card text-center">
-                    <h3>Salesforce Certified Platform App Builder</h3>
-                    <p>Declarative development, data modelling, and business logic.</p>
+                <div class="credential-item">
+                    <span class="credential-badge">Salesforce</span>
+                    <div class="credential-text">
+                        <strong>Certified Platform App Builder</strong>
+                        <span>Declarative development & data modelling</span>
+                    </div>
                 </div>
-                <div class="philosophy-card text-center">
-                    <h3>Bachelor of Business</h3>
-                    <p>Marketing major, Western Sydney University.</p>
+                <div class="credential-item">
+                    <span class="credential-badge">Education</span>
+                    <div class="credential-text">
+                        <strong>Bachelor of Business</strong>
+                        <span>Marketing · Western Sydney University</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -130,15 +148,19 @@
 
     <!-- CTA Section -->
     <section class="section">
-        <div class="container text-center">
-            <h2 class="mb-md">Let's connect</h2>
-            <p class="lead mb-lg">I'm always happy to chat about Salesforce, technology leadership, or whatever's on your mind.</p>
-            <a href="https://www.linkedin.com/in/ali-beydoun-salesforce/" target="_blank" rel="noopener" class="hero-cta">
-                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
-                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                </svg>
-                Connect on LinkedIn
-            </a>
+        <div class="container">
+            <div class="blog-cta-card">
+                <div class="blog-cta-content">
+                    <h2>Let's connect</h2>
+                    <p>Happy to chat about Salesforce, technology leadership, or whatever's on your mind.</p>
+                </div>
+                <a href="https://www.linkedin.com/in/ali-beydoun-salesforce/" target="_blank" rel="noopener" class="hero-cta">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                    LinkedIn
+                </a>
+            </div>
         </div>
     </section>
 

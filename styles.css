@@ -1146,6 +1146,13 @@ p {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-md);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .experience-hero-stat-number {
@@ -1199,22 +1206,41 @@ p {
 
 .timeline-item {
     position: relative;
-    padding-bottom: var(--space-lg);
+    padding: var(--space-md);
+    padding-left: var(--space-lg);
+    margin-bottom: var(--space-md);
+    background: var(--background);
+    border-radius: var(--radius-md);
+    border: 1px solid var(--border);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.timeline-item:hover {
+    transform: translateX(4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 .timeline-item:last-child {
-    padding-bottom: 0;
+    margin-bottom: 0;
 }
 
 .timeline-dot {
     position: absolute;
-    left: calc(-1 * var(--space-xl) + 2px);
-    top: 4px;
-    width: 10px;
-    height: 10px;
+    left: calc(-1 * var(--space-xl) - 3px);
+    top: var(--space-md);
+    width: 12px;
+    height: 12px;
     background: var(--accent);
     border-radius: var(--radius-full);
-    border: 2px solid var(--background);
+    border: 3px solid var(--background);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.timeline-item:hover .timeline-dot {
+    transform: scale(1.2);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .timeline-period {
@@ -1259,6 +1285,13 @@ p {
     padding: var(--space-md);
     border-radius: var(--radius-md);
     border: 1px solid var(--border);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.capability-category:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 .capability-category h4 {
@@ -1276,11 +1309,20 @@ p {
 }
 
 .capability-tag {
-    padding: 4px 8px;
+    padding: 4px 10px;
     background: var(--surface);
-    border-radius: var(--radius-sm);
+    border-radius: var(--radius-full);
     font-size: var(--text-xs);
     color: var(--text-secondary);
+    border: 1px solid var(--border);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    transition: all var(--transition-fast);
+}
+
+.capability-tag:hover {
+    background: rgba(0, 116, 217, 0.08);
+    color: var(--accent-warm);
+    border-color: rgba(0, 116, 217, 0.2);
 }
 
 @media (max-width: 768px) {
@@ -2179,7 +2221,7 @@ p {
 /* Warm Timeline Dot (for current/active item) */
 .timeline-dot-active {
     background: var(--accent-warm);
-    box-shadow: 0 0 0 4px rgba(214, 158, 46, 0.2);
+    box-shadow: 0 0 0 4px rgba(0, 116, 217, 0.2), 0 2px 8px rgba(0, 116, 217, 0.3);
 }
 
 /* Warm Category Badge */

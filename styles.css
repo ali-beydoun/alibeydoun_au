@@ -1320,3 +1320,51 @@ p {
         font-size: var(--text-xl);
     }
 }
+
+/* --------------------------------------------------------------------------
+   Blog Post Header Illustrations
+   -------------------------------------------------------------------------- */
+.blog-post-illustration {
+    display: flex;
+    justify-content: center;
+    margin-bottom: var(--space-xl);
+}
+
+.blog-post-illustration svg {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+}
+
+/* Illustration color theming */
+.blog-illustration-primary {
+    fill: var(--primary);
+}
+
+.blog-illustration-secondary {
+    fill: var(--secondary);
+}
+
+.blog-illustration-accent {
+    fill: var(--accent);
+}
+
+.blog-illustration-light {
+    fill: var(--surface);
+}
+
+.blog-illustration-stroke {
+    stroke: var(--accent);
+    fill: none;
+}
+
+.blog-illustration-stroke-light {
+    stroke: var(--border);
+    fill: none;
+}
+
+@media (max-width: 640px) {
+    .blog-post-illustration svg {
+        max-width: 320px;
+    }
+}

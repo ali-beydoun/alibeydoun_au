@@ -21,8 +21,9 @@ alibeydoun.info/
 │       └── *.html          # Individual blog posts
 ├── assets/
 │   └── ali-headshot.png    # Profile photo
+├── favicon.svg             # AB monogram favicon
 ├── styles.css              # Complete design system
-├── app.js                  # Mobile nav, scroll behaviour
+├── app.js                  # Mobile nav, scroll behaviour, blog feed
 ├── CNAME                   # Custom domain config
 ├── robots.txt              # SEO crawl directives
 └── README.md               # This file
@@ -36,6 +37,28 @@ alibeydoun.info/
 **"Enterprise Salesforce Architect & Technology Leader"**
 
 Tone: Approachable Leader — warm, professional, team-focused, technically credible.
+
+### Brand Mark: Cloud Connector
+
+The site uses a cloud connector icon as the primary brand mark. The design represents:
+- **Cloud technology** — Salesforce, enterprise platforms
+- **Integration** — Connected nodes representing data flow
+- **Technology leadership** — Clean, modern, Apple-inspired aesthetic
+
+**Design Elements:**
+- Navy rounded square container (rx="7" for smooth corners)
+- White stroked cloud outline
+- Three connected nodes (white + gold accent)
+- Connector lines suggesting integration/flow
+
+**Usage:**
+- Navigation logo (36px mark + text)
+- Favicon (`favicon.svg`)
+- Mobile: Shows only mark on very small screens (< 480px)
+
+**Files:**
+- `favicon.svg` — SVG favicon
+- Inline SVG in navigation across all pages
 
 ### Color Palette
 
@@ -129,6 +152,7 @@ All design values are CSS custom properties in `:root`:
 2. Update all `[PLACEHOLDER]` values
 3. Add your content
 4. Add a card to `blog/index.html`
+5. Add post to `blogPosts` array in `app.js` for homepage feed
 
 ### SEO Checklist
 Each post should have:
@@ -198,9 +222,25 @@ Changes typically go live within 1-2 minutes.
 
 ### Performance
 - No build step required (vanilla HTML/CSS/JS)
-- Minimal JavaScript (nav toggle, scroll effects)
+- Minimal JavaScript (nav toggle, scroll effects, blog feed)
 - System fonts (no external font loading)
-- SVG illustrations (no image dependencies)
+- SVG illustrations and favicon (no image dependencies for branding)
+
+### Homepage Blog Feed
+The homepage displays the latest 2 blog posts dynamically from the `blogPosts` array in `app.js`. To add a new post to the feed:
+
+```javascript
+// In app.js, add to the beginning of blogPosts array:
+{
+    title: 'Your Post Title',
+    slug: 'your-post-slug',  // matches filename without .html
+    category: 'Category Name',
+    date: 'Month YYYY',
+    excerpt: 'Short description for the card.',
+    readTime: 'X min read',
+    featured: true  // true for first/latest post
+}
+```
 
 ### Browser Support
 - Modern browsers (Chrome, Firefox, Safari, Edge)

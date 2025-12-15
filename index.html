@@ -12,13 +12,29 @@
     <meta property="og:description" content="Building high-performing teams and scalable platforms that drive digital transformation.">
     <meta property="og:image" content="assets/ali-headshot.png">
 
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="nav">
         <div class="nav-container">
-            <a href="index.html" class="nav-logo">Ali Beydoun</a>
+            <a href="index.html" class="nav-logo">
+                <span class="nav-logo-mark">
+                    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Cloud connector mark -->
+                        <rect x="0" y="0" width="32" height="32" rx="7" fill="#1a365d"/>
+                        <path d="M23 18.5C24.4 18.5 25.5 17.4 25.5 16C25.5 14.8 24.7 13.8 23.6 13.5C23.5 11.6 21.9 10 20 10C18.8 10 17.8 10.6 17.2 11.5C16.8 11.2 16.2 11 15.5 11C14 11 12.8 12 12.5 13.3C11.1 13.6 10 14.9 10 16.5C10 18.2 11.3 19.5 13 19.5" stroke="white" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+                        <circle cx="14" cy="22" r="1.8" fill="white"/>
+                        <circle cx="20" cy="22" r="1.8" fill="#d69e2e"/>
+                        <circle cx="17" cy="18" r="1.5" fill="white" opacity="0.7"/>
+                        <line x1="15.5" y1="20.5" x2="16.3" y2="19.3" stroke="white" stroke-width="1.2" stroke-linecap="round" opacity="0.7"/>
+                        <line x1="18.5" y1="20.5" x2="17.7" y2="19.3" stroke="white" stroke-width="1.2" stroke-linecap="round" opacity="0.7"/>
+                        <line x1="15.5" y1="22" x2="18.5" y2="22" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
+                    </svg>
+                </span>
+                <span class="nav-logo-text">Ali Beydoun</span>
+            </a>
             <button class="nav-toggle" aria-label="Toggle navigation">
                 <span></span>
                 <span></span>
@@ -49,8 +65,8 @@
 
             <!-- Highlights -->
             <div class="highlights">
-                <div class="highlight-card">
-                    <div class="highlight-number">13+</div>
+                <div class="highlight-card highlight-card-accent">
+                    <div class="highlight-number text-warm">13+</div>
                     <div class="highlight-label">Years in Salesforce & Enterprise Tech</div>
                 </div>
                 <div class="highlight-card">
@@ -73,8 +89,8 @@
                 I've spent my career at the intersection of technology and business — figuring out how to make complex systems work for real people. These days, that mostly means Salesforce, but the principles stay the same: understand the problem, build the right team, and deliver something that lasts.
             </p>
             <div class="expertise-grid">
-                <div class="expertise-item">
-                    <div class="expertise-icon">
+                <div class="expertise-item expertise-item-featured">
+                    <div class="expertise-icon expertise-icon-warm">
                         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                             <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
                         </svg>
@@ -123,9 +139,9 @@
                 Every industry has its quirks, but the fundamentals of good technology leadership translate. I've been lucky to work across sectors that move fast and demand results.
             </p>
             <div class="highlights">
-                <div class="highlight-card">
+                <div class="highlight-card highlight-card-accent">
                     <div class="highlight-number" style="font-size: var(--text-xl);">Financial Services</div>
-                    <div class="highlight-label">Current</div>
+                    <div class="highlight-label"><span class="badge-current">Current</span></div>
                 </div>
                 <div class="highlight-card">
                     <div class="highlight-number" style="font-size: var(--text-xl);">HR & Workplace</div>
@@ -153,14 +169,33 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
+    <!-- Latest from Blog Section -->
     <section class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2>Latest from the Blog</h2>
+                <span class="section-line"></span>
+                <a href="blog/" class="section-link">View all posts</a>
+            </div>
+            <div id="blog-feed" class="blog-feed">
+                <!-- Blog posts loaded dynamically via JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section">
         <div class="container text-center">
             <h2 class="mb-md">Want to know more?</h2>
-            <p class="lead mb-lg">Check out my experience or read some of my thoughts on Salesforce and technology leadership.</p>
+            <p class="lead mb-lg">Check out my experience or connect on LinkedIn.</p>
             <div style="display: flex; gap: var(--space-md); justify-content: center; flex-wrap: wrap;">
                 <a href="experience.html" class="hero-cta" style="background: var(--secondary);">View Experience</a>
-                <a href="blog/" class="hero-cta">Read the Blog</a>
+                <a href="https://www.linkedin.com/in/ali-beydoun-salesforce/" target="_blank" rel="noopener" class="hero-cta-warm">
+                    <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                    </svg>
+                    Connect on LinkedIn
+                </a>
             </div>
         </div>
     </section>

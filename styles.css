@@ -750,11 +750,19 @@ p {
     background: var(--surface);
     border-radius: var(--radius-md);
     border: 1px solid var(--border);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03), inset 0 1px 0 rgba(255, 255, 255, 0.7);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.industry-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.7);
 }
 
 .industry-item-current {
     border-left: 3px solid var(--accent-warm);
     background: var(--background);
+    box-shadow: 0 4px 12px rgba(0, 116, 217, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 .industry-name {
@@ -788,9 +796,10 @@ p {
     justify-content: space-between;
     align-items: center;
     padding: var(--space-md) var(--space-lg);
-    background: var(--surface);
+    background: linear-gradient(135deg, var(--surface) 0%, rgba(247, 250, 252, 0.8) 100%);
     border: 1px solid var(--border);
     border-radius: var(--radius-lg);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
 .home-cta-content h2 {
@@ -842,6 +851,13 @@ p {
     background: var(--background);
     border-radius: var(--radius-md);
     border: 1px solid var(--border);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04), inset 0 1px 0 rgba(255, 255, 255, 0.8);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.expertise-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 .expertise-icon {
@@ -853,6 +869,7 @@ p {
     background: var(--surface);
     border-radius: var(--radius-md);
     color: var(--accent);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
 .expertise-text {
@@ -2173,18 +2190,21 @@ p {
     text-transform: uppercase;
     letter-spacing: 0.05em;
     border-radius: var(--radius-full);
+    box-shadow: 0 2px 8px rgba(0, 116, 217, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 /* Expertise Item Featured */
 .expertise-item-featured {
     border-color: var(--accent-warm);
     border-width: 2px;
+    box-shadow: 0 4px 16px rgba(0, 116, 217, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 /* Expertise Icon Warm */
 .expertise-icon-warm {
-    background: rgba(214, 158, 46, 0.1);
+    background: rgba(0, 116, 217, 0.1);
     color: var(--accent-warm);
+    box-shadow: 0 2px 8px rgba(0, 116, 217, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.9);
 }
 
 /* Section Link in Header */

@@ -551,6 +551,73 @@ p {
     }
 }
 
+/* Landscape mobile - use horizontal space */
+@media (max-width: 900px) and (orientation: landscape) {
+    .home-hero {
+        padding-top: calc(var(--nav-height) + var(--space-md));
+        padding-bottom: var(--space-md);
+    }
+
+    .home-hero .container {
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .brand-lockup {
+        flex-direction: row;
+        align-items: center;
+        gap: var(--space-lg);
+        margin-bottom: var(--space-sm);
+    }
+
+    .brand-lockup-logo {
+        position: static;
+        height: 48px;
+        opacity: 1;
+    }
+
+    .brand-lockup-photo {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 0;
+    }
+
+    .brand-lockup-text {
+        align-items: flex-start;
+    }
+
+    .brand-lockup-text h1 {
+        font-size: var(--text-xl);
+    }
+
+    .brand-lockup-role {
+        font-size: var(--text-xs);
+    }
+
+    .home-hero-tagline {
+        font-size: var(--text-sm);
+        margin-bottom: var(--space-sm);
+        max-width: 100%;
+    }
+
+    .home-hero-footer {
+        flex-direction: row;
+        padding: var(--space-sm) var(--space-md);
+    }
+
+    .home-hero-ctas {
+        width: auto;
+    }
+
+    .home-hero-stat {
+        padding: var(--space-xs) var(--space-sm);
+    }
+
+    .home-hero-stat-number {
+        font-size: var(--text-base);
+    }
+}
+
 /* Legacy hero (keeping for compatibility) */
 .hero {
     padding-top: calc(var(--nav-height) + var(--space-3xl));

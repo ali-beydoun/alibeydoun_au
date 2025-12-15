@@ -20,8 +20,10 @@ alibeydoun.info/
 │       ├── welcome.html    # First post
 │       └── *.html          # Individual blog posts
 ├── assets/
-│   └── ali-headshot.png    # Profile photo
-├── favicon.svg             # AB monogram favicon
+│   ├── ali-headshot.png    # Profile photo
+│   ├── logo.png            # Official AB logo (dark version for light backgrounds)
+│   └── logo-white.png      # White logo variant (for dark backgrounds)
+├── favicon (uses logo.png) # Browser tab icon
 ├── styles.css              # Complete design system
 ├── app.js                  # Mobile nav, scroll behaviour, blog feed
 ├── CNAME                   # Custom domain config
@@ -31,81 +33,88 @@ alibeydoun.info/
 
 ---
 
-## Brand Guidelines
+## Brand Identity & Design System
 
-### Positioning
-**"Enterprise Salesforce Architect & Technology Leader"**
+The visual identity for **Ali Beydoun** reflects a modern, professional, and technical persona, suited for Enterprise Salesforce Solutions.
+
+### Brand Positioning
+**"Technology Director | Enterprise Salesforce Solutions"**
 
 Tone: Approachable Leader — warm, professional, team-focused, technically credible.
 
-### Brand Mark: AB Lettermark
-
-The site uses a bold AB lettermark as the primary brand mark. The design represents:
-- **Personal brand** — Initials unmistakably identify the owner
-- **Integration** — Letters share space intelligently
-- **Technology leadership** — Clean, modern, Apple-inspired aesthetic
-
-**Design Principles:**
-- **Clear** — One focal point, visible at 16×16px
-- **Obvious** — Letters are universally understood, no interpretation needed
-- **Intentional** — Every stroke has purpose, gold accent adds warmth
-- **Modern** — Geometric precision, contemporary confidence
-
-**Design Elements:**
-- Navy rounded square container (rx="7" for smooth corners)
-- Bold white "A" — Geometric triangle with negative space counter
-- Bold white "B" — Two bumps sharing vertical stem, matching weight
-- Gold crossbar on "A" (#d69e2e) — Signature touch of warmth
-
-**Usage:**
-- Navigation logo (36px mark + text)
-- Favicon (`favicon.svg`)
-- Mobile: Shows only mark on very small screens (< 480px)
-
-**Files:**
-- `favicon.svg` — SVG favicon
-- Inline SVG in navigation across all pages
-
 ### Color Palette
 
-#### Primary (Navy & Blue)
-| Name | Hex | CSS Variable | Usage |
-|------|-----|--------------|-------|
-| Navy | `#1a365d` | `--primary` | Headings, footer, primary buttons |
-| Navy Dark | `#0f2744` | `--primary-dark` | Hover states |
-| Medium Blue | `#2c5282` | `--secondary` | Secondary elements |
-| Bright Blue | `#3182ce` | `--accent` | Links, informational accents |
-| Light Blue | `#4299e1` | `--accent-light` | Hover states |
-
-#### Warm Accents (Gold & Orange)
-| Name | Hex | CSS Variable | Usage |
-|------|-----|--------------|-------|
-| Gold/Amber | `#d69e2e` | `--accent-warm` | Primary CTAs, featured elements |
-| Gold Dark | `#b7791f` | `--accent-warm-dark` | Text on light backgrounds |
-| Light Gold | `#f6e05e` | `--accent-warm-light` | Subtle highlights, selection |
-| Orange | `#ed8936` | `--accent-pop` | Hover states, badges, emphasis |
-| Orange Dark | `#dd6b20` | `--accent-pop-dark` | Text/borders |
-
-#### Neutrals
-| Name | Hex | CSS Variable | Usage |
-|------|-----|--------------|-------|
-| Text Primary | `#1a202c` | `--text-primary` | Body text |
-| Text Secondary | `#4a5568` | `--text-secondary` | Descriptions |
-| Text Tertiary | `#718096` | `--text-tertiary` | Meta, timestamps |
-| Background | `#ffffff` | `--background` | Page background |
-| Surface | `#f7fafc` | `--surface` | Cards, sections |
-| Border | `#e2e8f0` | `--border` | Dividers, card borders |
-
-### Color Usage Ratios
-- **80%** Navy/Blue family (foundation)
-- **15%** Gold/Amber (warmth, key actions)
-- **5%** Orange (pop, emphasis)
+| Color Name | Hex Code | CSS Variable | Usage |
+|:-----------|:---------|:-------------|:------|
+| **Navy** | `#001f3f` | `--brand-navy` | Primary backgrounds, main headings |
+| **Electric Blue** | `#0074D9` | `--brand-blue` | Accents, links, buttons, CTAs |
+| **Cool Grey** | `#AAAAAA` | `--brand-grey` | Secondary text, borders, subtitles |
+| **White** | `#FFFFFF` | `--brand-white` | Card backgrounds, inverted text |
 
 ### Typography
-- **Font:** System fonts (`-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto...`)
-- **Base size:** 18px (`--text-lg`)
-- **Line height:** 1.6 body, 1.8 blog content
-- **Code:** `'Fira Code', 'Consolas', monospace`
+
+**Primary Font:** Montserrat (Geometric Sans-Serif)
+
+```html
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;800&display=swap" rel="stylesheet">
+```
+
+| Weight | Usage |
+|--------|-------|
+| **700-800** (Bold/ExtraBold) | Main headers (h1, h2), logo text |
+| **400** (Regular) | Body text |
+| **300** (Light) | Taglines, secondary details |
+
+### Logo Assets
+
+The AB monogram logo features the letters interlocked with a cloud element:
+
+| File | Usage |
+|------|-------|
+| `assets/logo.png` | Navigation on light backgrounds |
+| `assets/logo-white.png` | Hero sections on dark backgrounds |
+
+**Brand Lockup Format:**
+```
+[LOGO]  ALI BEYDOUN
+        Technology Director | Enterprise Salesforce Solutions
+```
+
+- Name: Montserrat Bold, uppercase, white on dark backgrounds
+- Subtitle: Montserrat Regular, Cool Grey (#AAAAAA)
+- Separator: Pipe character `|`
+
+### CSS Variables
+
+```css
+:root {
+    /* Brand Colors */
+    --brand-navy: #001f3f;
+    --brand-blue: #0074D9;
+    --brand-grey: #AAAAAA;
+
+    /* Typography */
+    --font-brand: 'Montserrat', sans-serif;
+
+    /* Accent (Electric Blue replaces gold) */
+    --accent-warm: #0074D9;
+    --accent-warm-dark: #005bb5;
+}
+```
+
+### Extended Palette
+
+| Name | Hex | CSS Variable | Usage |
+|------|-----|--------------|-------|
+| Navy | `#1a365d` | `--primary` | Hero backgrounds, footer |
+| Medium Blue | `#2c5282` | `--secondary` | Secondary elements |
+| Bright Blue | `#3182ce` | `--accent` | Links, info accents |
+| Text Primary | `#1a202c` | `--text-primary` | Body text |
+| Text Secondary | `#4a5568` | `--text-secondary` | Descriptions |
+| Surface | `#f7fafc` | `--surface` | Cards, sections |
+| Border | `#e2e8f0` | `--border` | Dividers |
 
 ---
 
@@ -129,24 +138,23 @@ All design values are CSS custom properties in `:root`:
 
 #### Buttons
 - `.hero-cta` — Navy button (default)
-- `.hero-cta-warm` — Gold/amber button (primary CTAs)
+- `.hero-cta-warm` — Electric Blue button (primary CTAs)
 
 #### Blog
 - `.blog-card` — Post card in grid
 - `.blog-featured-card` — Large featured post
-- `.blog-featured-card-warm` — Featured with gold accent border
-- `.callout` + `.callout-info|warning|success|warm` — Highlight boxes
+- `.blog-featured-card-warm` — Featured with blue accent border
+- `.callout` + `.callout-info|warning|success` — Highlight boxes
 - `.blog-post-illustration` — SVG illustration container
 
 #### Badges
-- `.badge-featured` — Gold "Latest/Featured" badge
-- `.badge-new` — Orange "New" badge
+- `.badge-featured` — Blue "Latest/Featured" badge
+- `.badge-new` — Blue "New" badge
 - `.blog-category` — Blue category label
-- `.blog-category-warm` — Gold category variant
 
 #### Utilities
-- `.text-warm`, `.text-pop` — Warm accent text colors
-- `.bg-warm`, `.bg-pop` — Warm accent backgrounds
+- `.text-warm` — Electric Blue accent text
+- `.bg-warm` — Electric Blue accent background
 - `.text-center`, `.mb-md`, `.mt-lg`, etc. — Common utilities
 
 ---
@@ -176,12 +184,10 @@ Add custom SVG illustrations after the header:
 <div class="blog-post-illustration">
     <svg viewBox="0 0 400 120" xmlns="http://www.w3.org/2000/svg">
         <!-- Use these classes for brand colors:
-             blog-illustration-primary (navy)
-             blog-illustration-secondary (medium blue)
-             blog-illustration-accent (bright blue)
-             blog-illustration-warm (gold)
-             blog-illustration-pop (orange)
-             blog-illustration-light (gray)
+             blog-illustration-primary (navy #1a365d)
+             blog-illustration-secondary (medium blue #2c5282)
+             blog-illustration-accent (electric blue #0074D9)
+             blog-illustration-light (cool grey #AAAAAA)
         -->
     </svg>
 </div>
@@ -194,8 +200,8 @@ Add custom SVG illustrations after the header:
     <p>Content here.</p>
 </div>
 
-<!-- Variants: callout-info (blue), callout-warning (yellow),
-     callout-success (green), callout-warm (gold) -->
+<!-- Variants: callout-info (blue), callout-warning (amber),
+     callout-success (green) -->
 ```
 
 ---
@@ -229,8 +235,9 @@ Changes typically go live within 1-2 minutes.
 ### Performance
 - No build step required (vanilla HTML/CSS/JS)
 - Minimal JavaScript (nav toggle, scroll effects, blog feed)
-- System fonts (no external font loading)
-- SVG illustrations and favicon (no image dependencies for branding)
+- Montserrat font via Google Fonts (preconnect for fast loading)
+- System fonts as fallback
+- PNG logo assets with favicon from logo.png
 
 ### Homepage Blog Feed
 The homepage displays the latest 2 blog posts dynamically from the `blogPosts` array in `app.js`. To add a new post to the feed:

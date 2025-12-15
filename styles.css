@@ -6,6 +6,11 @@
    CSS Variables - Brand Colors & Typography
    -------------------------------------------------------------------------- */
 :root {
+    /* Brand Colors (from official brand guide) */
+    --brand-navy: #001f3f;
+    --brand-blue: #0074D9;
+    --brand-grey: #AAAAAA;
+
     /* Primary Palette - Navy & Blue */
     --primary: #1a365d;
     --primary-dark: #0f2744;
@@ -13,12 +18,15 @@
     --accent: #3182ce;
     --accent-light: #4299e1;
 
-    /* Warm Accent Palette - Gold & Orange */
-    --accent-warm: #d69e2e;
-    --accent-warm-dark: #b7791f;
-    --accent-warm-light: #f6e05e;
-    --accent-pop: #ed8936;
-    --accent-pop-dark: #dd6b20;
+    /* Accent Palette - Electric Blue (was Gold) */
+    --accent-warm: #0074D9;
+    --accent-warm-dark: #005bb5;
+    --accent-warm-light: #4da6ff;
+    --accent-pop: #0074D9;
+    --accent-pop-dark: #005bb5;
+
+    /* Brand Typography */
+    --font-brand: 'Montserrat', sans-serif;
 
     /* Text Colors */
     --text-primary: #1a202c;
@@ -379,38 +387,36 @@ p {
     margin-bottom: var(--space-md);
 }
 
-/* Brand Lockup - Logo + Name + Title */
+/* Brand Lockup - Logo + Name + Title (following brand guidelines) */
 .brand-lockup {
     display: flex;
     align-items: center;
-    gap: var(--space-lg);
+    gap: var(--space-md);
     margin-bottom: var(--space-md);
 }
 
 .brand-lockup-logo {
-    height: 72px;
+    height: 64px;
     width: auto;
     flex-shrink: 0;
 }
 
 .brand-lockup-text h1 {
-    font-size: var(--text-4xl);
+    font-family: var(--font-brand);
+    font-size: var(--text-3xl);
+    font-weight: 700;
     color: var(--text-inverse);
+    letter-spacing: 0.02em;
     margin-bottom: 4px;
-    line-height: 1.1;
+    text-transform: uppercase;
 }
 
 .brand-lockup-role {
-    color: var(--accent-warm);
-    font-size: var(--text-lg);
-    font-weight: 500;
-}
-
-.brand-lockup-divider {
-    width: 60px;
-    height: 2px;
-    background: var(--accent-warm);
-    margin-top: var(--space-sm);
+    font-family: var(--font-brand);
+    font-size: var(--text-sm);
+    font-weight: 400;
+    color: var(--brand-grey);
+    letter-spacing: 0.01em;
 }
 
 .home-hero-tagline {
@@ -471,20 +477,21 @@ p {
         height: 80px;
     }
 
+    /* Keep lockup horizontal, just scale down */
     .brand-lockup {
-        flex-direction: column;
         gap: var(--space-sm);
-        text-align: center;
     }
 
     .brand-lockup-logo {
-        height: 56px;
+        height: 48px;
     }
 
-    .brand-lockup-text {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+    .brand-lockup-text h1 {
+        font-size: var(--text-xl);
+    }
+
+    .brand-lockup-role {
+        font-size: var(--text-xs);
     }
 
     .home-hero-tagline {

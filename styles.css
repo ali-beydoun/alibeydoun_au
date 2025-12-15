@@ -508,6 +508,10 @@ p {
     }
 
     /* Scale down on mobile */
+    .brand-lockup {
+        margin-bottom: var(--space-xs);
+    }
+
     .brand-lockup-logo {
         height: 40px;
         opacity: 0.7;
@@ -516,6 +520,7 @@ p {
     .brand-lockup-photo {
         width: 80px;
         height: 80px;
+        margin-bottom: var(--space-sm);
     }
 
     .brand-lockup-text h1 {

@@ -308,6 +308,16 @@ p {
     border: none;
     cursor: pointer;
     padding: var(--space-xs);
+    border-radius: var(--radius-sm);
+    transition: background var(--transition-fast);
+}
+
+.nav-toggle:hover {
+    background: rgba(0, 116, 217, 0.08);
+}
+
+.nav-toggle:active {
+    background: rgba(0, 116, 217, 0.15);
 }
 
 .nav-toggle span {
@@ -315,7 +325,7 @@ p {
     width: 24px;
     height: 2px;
     background: var(--text-primary);
-    transition: transform var(--transition-fast);
+    transition: transform var(--transition-fast), background var(--transition-fast);
 }
 
 @media (max-width: 768px) {
@@ -330,10 +340,12 @@ p {
         left: 0;
         right: 0;
         flex-direction: column;
-        background: var(--background);
+        background: rgba(255, 255, 255, 0.85);
+        backdrop-filter: blur(20px) saturate(180%);
+        -webkit-backdrop-filter: blur(20px) saturate(180%);
         padding: var(--space-md);
-        border-bottom: 1px solid var(--border);
-        box-shadow: var(--shadow-lg);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12), inset 0 1px 0 rgba(255, 255, 255, 0.6);
     }
 
     .nav-links.open {
@@ -341,7 +353,18 @@ p {
     }
 
     .nav-links a {
-        padding: var(--space-sm) 0;
+        padding: var(--space-sm) var(--space-md);
+        border-radius: var(--radius-md);
+        transition: background var(--transition-fast);
+    }
+
+    .nav-links a:hover {
+        background: rgba(0, 116, 217, 0.08);
+    }
+
+    .nav-links a.active {
+        background: rgba(0, 116, 217, 0.12);
+        color: var(--accent-warm);
     }
 }
 

@@ -13,6 +13,13 @@
     --accent: #3182ce;
     --accent-light: #4299e1;
 
+    /* Warm Accent Palette - Gold & Orange */
+    --accent-warm: #d69e2e;
+    --accent-warm-dark: #b7791f;
+    --accent-warm-light: #f6e05e;
+    --accent-pop: #ed8936;
+    --accent-pop-dark: #dd6b20;
+
     /* Text Colors */
     --text-primary: #1a202c;
     --text-secondary: #4a5568;
@@ -1367,4 +1374,106 @@ p {
     .blog-post-illustration svg {
         max-width: 320px;
     }
+}
+
+/* --------------------------------------------------------------------------
+   Warm Accent Styles - Gold/Amber & Orange
+   -------------------------------------------------------------------------- */
+
+/* Warm Utility Classes */
+.text-warm { color: var(--accent-warm); }
+.text-pop { color: var(--accent-pop); }
+.bg-warm { background-color: var(--accent-warm); }
+.bg-pop { background-color: var(--accent-pop); }
+.border-warm { border-color: var(--accent-warm); }
+
+/* Warm CTA Button */
+.hero-cta-warm {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    background: var(--accent-warm);
+    color: var(--text-inverse);
+    padding: var(--space-sm) var(--space-lg);
+    border-radius: var(--radius-full);
+    font-weight: 600;
+    transition: background var(--transition-fast), transform var(--transition-fast);
+}
+
+.hero-cta-warm:hover {
+    background: var(--accent-pop);
+    color: var(--text-inverse);
+    transform: translateY(-2px);
+}
+
+.hero-cta-warm svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Featured Badge */
+.badge-featured {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--space-xs);
+    padding: 4px 12px;
+    background: var(--accent-warm);
+    color: var(--text-inverse);
+    font-size: var(--text-xs);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-radius: var(--radius-full);
+}
+
+.badge-new {
+    background: var(--accent-pop);
+}
+
+/* Featured Post Card Accent */
+.blog-featured-card-warm {
+    border-left: 4px solid var(--accent-warm);
+}
+
+.blog-featured-card-warm:hover {
+    box-shadow: var(--shadow-lg), 0 0 0 1px var(--accent-warm-light);
+}
+
+/* Warm Callout */
+.callout-warm {
+    border-left-color: var(--accent-warm);
+    background: rgba(214, 158, 46, 0.08);
+}
+
+.callout-warm .callout-title {
+    color: var(--accent-warm-dark);
+}
+
+/* Warm Timeline Dot (for current/active item) */
+.timeline-dot-active {
+    background: var(--accent-warm);
+    box-shadow: 0 0 0 4px rgba(214, 158, 46, 0.2);
+}
+
+/* Warm Category Badge */
+.blog-category-warm {
+    color: var(--accent-warm-dark);
+    background: rgba(214, 158, 46, 0.1);
+    padding: 2px 8px;
+    border-radius: var(--radius-sm);
+}
+
+/* Selection Highlight */
+::selection {
+    background: var(--accent-warm-light);
+    color: var(--text-primary);
+}
+
+/* Warm accent for blog illustration */
+.blog-illustration-warm {
+    fill: var(--accent-warm);
+}
+
+.blog-illustration-pop {
+    fill: var(--accent-pop);
 }

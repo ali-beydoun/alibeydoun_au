@@ -245,7 +245,7 @@ p {
 }
 
 .nav-logo-img {
-    height: 32px;
+    height: 40px;
     width: auto;
     flex-shrink: 0;
 }
@@ -340,6 +340,10 @@ p {
 @media (max-width: 480px) {
     .nav-logo-text {
         display: none;
+    }
+
+    .nav-logo-img {
+        height: 44px;
     }
 
     .nav-logo-mark {

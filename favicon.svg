@@ -1,18 +1,13 @@
 <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <!-- Clean, modern cloud connector mark - Apple-inspired elegance -->
-    <!-- Rounded square container -->
-    <rect x="0" y="0" width="32" height="32" rx="7" fill="#1a365d"/>
+    <!-- Bold AB Lettermark - Clear, Obvious, Intentional, Modern -->
+    <rect width="32" height="32" rx="7" fill="#1a365d"/>
 
-    <!-- Simplified cloud shape -->
-    <path d="M23 18.5C24.4 18.5 25.5 17.4 25.5 16C25.5 14.8 24.7 13.8 23.6 13.5C23.5 11.6 21.9 10 20 10C18.8 10 17.8 10.6 17.2 11.5C16.8 11.2 16.2 11 15.5 11C14 11 12.8 12 12.5 13.3C11.1 13.6 10 14.9 10 16.5C10 18.2 11.3 19.5 13 19.5" stroke="white" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+    <!-- Letter A - Bold geometric -->
+    <path d="M5 24L10.5 8H13.5L19 24H16L14.5 20H9.5L8 24H5ZM10.5 17.5H13.5L12 12L10.5 17.5Z" fill="white"/>
 
-    <!-- Connection nodes - representing integration -->
-    <circle cx="14" cy="22" r="1.8" fill="white"/>
-    <circle cx="20" cy="22" r="1.8" fill="#d69e2e"/>
-    <circle cx="17" cy="18" r="1.5" fill="white" opacity="0.7"/>
+    <!-- Letter B - Matching weight -->
+    <path d="M20 8H25.5C27.4 8 29 9.6 29 11.5C29 12.8 28.2 13.9 27 14.4C28.4 14.9 29.5 16.2 29.5 17.8C29.5 20 27.8 21.5 25.5 21.5H20V8ZM22.5 13H25C25.8 13 26.5 12.3 26.5 11.5C26.5 10.7 25.8 10 25 10H22.5V13ZM22.5 19.5H25.2C26.2 19.5 27 18.7 27 17.7C27 16.7 26.2 16 25.2 16H22.5V19.5Z" fill="white"/>
 
-    <!-- Connector lines -->
-    <line x1="15.5" y1="20.5" x2="16.3" y2="19.3" stroke="white" stroke-width="1.2" stroke-linecap="round" opacity="0.7"/>
-    <line x1="18.5" y1="20.5" x2="17.7" y2="19.3" stroke="white" stroke-width="1.2" stroke-linecap="round" opacity="0.7"/>
-    <line x1="15.5" y1="22" x2="18.5" y2="22" stroke="white" stroke-width="1.2" stroke-linecap="round"/>
+    <!-- Gold accent - A crossbar -->
+    <rect x="10" y="16" width="4" height="2" rx="1" fill="#d69e2e"/>
 </svg>

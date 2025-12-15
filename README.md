@@ -38,18 +38,24 @@ alibeydoun.info/
 
 Tone: Approachable Leader — warm, professional, team-focused, technically credible.
 
-### Brand Mark: Cloud Connector
+### Brand Mark: AB Lettermark
 
-The site uses a cloud connector icon as the primary brand mark. The design represents:
-- **Cloud technology** — Salesforce, enterprise platforms
-- **Integration** — Connected nodes representing data flow
+The site uses a bold AB lettermark as the primary brand mark. The design represents:
+- **Personal brand** — Initials unmistakably identify the owner
+- **Integration** — Letters share space intelligently
 - **Technology leadership** — Clean, modern, Apple-inspired aesthetic
+
+**Design Principles:**
+- **Clear** — One focal point, visible at 16×16px
+- **Obvious** — Letters are universally understood, no interpretation needed
+- **Intentional** — Every stroke has purpose, gold accent adds warmth
+- **Modern** — Geometric precision, contemporary confidence
 
 **Design Elements:**
 - Navy rounded square container (rx="7" for smooth corners)
-- White stroked cloud outline
-- Three connected nodes (white + gold accent)
-- Connector lines suggesting integration/flow
+- Bold white "A" — Geometric triangle with negative space counter
+- Bold white "B" — Two bumps sharing vertical stem, matching weight
+- Gold crossbar on "A" (#d69e2e) — Signature touch of warmth
 
 **Usage:**
 - Navigation logo (36px mark + text)
